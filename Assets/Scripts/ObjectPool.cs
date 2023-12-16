@@ -3,16 +3,13 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public static ObjectPool Instance; // Singleton instance
-
-    public List<GameObject> objectPrefabs; // Farklı tipte prefab'leri içeren liste
-    public int poolSize = 10; // Her bir prefab için oluşturulacak obje sayısı
-
-    private List<List<GameObject>> objectPool; // Ana object pool listesi
-
+    public static ObjectPool Instance; 
+    public List<GameObject> objectPrefabs; 
+    public int poolSize = 10; 
+    private List<List<GameObject>> objectPool; 
+    public Transform parentSpawnObject;
     void Awake()
     {
-        // Singleton kontrolü
         if (Instance == null)
         {
             Instance = this;
@@ -27,8 +24,6 @@ public class ObjectPool : MonoBehaviour
     {
         InitializeObjectPool();
     }
-
-    // Object pool'ü başlatan fonksiyon
     void InitializeObjectPool()
     {
         objectPool = new List<List<GameObject>>();
@@ -40,18 +35,15 @@ public class ObjectPool : MonoBehaviour
             for (int i = 0; i < poolSize; i++)
             {
                 GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+                obj.transform.SetParent(parentSpawnObject);
                 obj.SetActive(false);
                 prefabPool.Add(obj);
             }
-
             objectPool.Add(prefabPool);
         }
     }
-
-    // Objeyi havuzdan çeken fonksiyon
     public GameObject GetObjectFromPool(int prefabIndex)
     {
-        // Belirtilen prefab'ın havuzundan etkin olmayan bir obje al
         foreach (GameObject obj in objectPool[prefabIndex])
         {
             if (!obj.activeInHierarchy)
@@ -60,16 +52,11 @@ public class ObjectPool : MonoBehaviour
                 return obj;
             }
         }
-
-        // Havuzda uygun obje yoksa yeni bir obje oluştur ve havuza ekle
         GameObject newObj = Instantiate(objectPrefabs[prefabIndex], Vector3.zero, Quaternion.identity);
         objectPool[prefabIndex].Add(newObj);
-
         newObj.SetActive(true);
         return newObj;
     }
-
-    // Objeyi havuza geri bırakan fonksiyon
     public void ReturnObjectToPool(GameObject obj)
     {
         obj.SetActive(false);
