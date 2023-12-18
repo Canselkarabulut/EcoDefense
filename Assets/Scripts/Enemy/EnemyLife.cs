@@ -7,7 +7,7 @@ public class EnemyLife : MonoBehaviour
 {
     private EnemyLevelStatus _enemyLevelStatus;
     private int _lifeCapacity;
-    
+
     private void Start()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();

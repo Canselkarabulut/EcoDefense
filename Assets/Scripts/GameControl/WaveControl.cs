@@ -72,8 +72,7 @@ public class WaveControl : MonoBehaviour
             countdownText.gameObject.SetActive(true);
             if (_countdownNum <= 1)
             {
-                Debug.Log("yeniWave");
-               EnemyText();
+                EnemyText();
                 isWaveWait = false;
             }
             else

@@ -11,6 +11,8 @@ public class EnemySpawn : MonoBehaviour
     public int prefabIndexToSpawn = 0;
     public Transform parentSpawnObject;
     public WaveControl waveControl;
+    public RangeControl rangeControl;
+
 
     private GameObject _pointEnemySpawn;
     private int _childCountPointEnemy;
@@ -18,6 +20,7 @@ public class EnemySpawn : MonoBehaviour
     private Transform _selectedPoint;
     private int enemySay;
     private bool isNextWave;
+
     private void Start()
     {
         _pointEnemySpawn = GameObject.Find("PointEnemySpawn");
@@ -54,7 +57,6 @@ public class EnemySpawn : MonoBehaviour
                 {
                     waveControl.isWaveWait = true;
                     waveControl.waveNumber = WaveNumber.Wave2;
-                  
                 }
                 else
                 {
@@ -78,6 +80,15 @@ public class EnemySpawn : MonoBehaviour
     IEnumerator EnemyFalse(GameObject obj)
     {
         yield return new WaitForSeconds(3);
+        obj.GetComponent<EnemyTrigger>().isTriggerPlayer = false;
+          if (!obj.GetComponent<EnemyTrigger>().isTriggerPlayer)
+          {
+              rangeControl.rangeEnemyList.Remove(obj);
+          }
+      
+         
+        //nolursa olsun yok olurken false ol değmiyorum ol
+    
         ObjectPool.Instance.ReturnObjectToPool(obj);
     }
 }

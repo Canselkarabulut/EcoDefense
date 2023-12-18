@@ -8,7 +8,6 @@ public class EnemyMove : MonoBehaviour
 {
     private Transform _player;
     private NavMeshAgent myNavMeshAgent;
-
     private void Awake()
     {
         _player = GameObject.Find("Body").transform;
@@ -22,4 +21,5 @@ public class EnemyMove : MonoBehaviour
     {
         myNavMeshAgent.SetDestination(_player.position);
     }
+
 }
