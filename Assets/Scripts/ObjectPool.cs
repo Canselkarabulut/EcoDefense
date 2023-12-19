@@ -26,10 +26,18 @@ public class ObjectPool : MonoBehaviour
     }
     void InitializeObjectPool()
     {
+        if (objectPrefabs == null)
+        {
+            return;
+        }
         objectPool = new List<List<GameObject>>();
-
+        
         foreach (GameObject prefab in objectPrefabs)
         {
+            if (prefab == null)
+            {
+                continue;
+            }
             List<GameObject> prefabPool = new List<GameObject>();
 
             for (int i = 0; i < poolSize; i++)
@@ -59,6 +67,9 @@ public class ObjectPool : MonoBehaviour
     }
     public void ReturnObjectToPool(GameObject obj)
     {
+        obj.transform.SetParent(parentSpawnObject);
         obj.SetActive(false);
+        obj.transform.position = Vector3.zero;  // Reset position
+        obj.transform.rotation = Quaternion.identity;  // Reset rotation
     }
 }

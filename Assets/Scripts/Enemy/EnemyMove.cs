@@ -6,8 +6,8 @@ using UnityEngine.AI;
 
 public class EnemyMove : MonoBehaviour
 {
-    private Transform _player;
-    private NavMeshAgent myNavMeshAgent;
+   [SerializeField] private Transform _player;
+   [SerializeField]  private NavMeshAgent myNavMeshAgent;
     private void Awake()
     {
         _player = GameObject.Find("Body").transform;

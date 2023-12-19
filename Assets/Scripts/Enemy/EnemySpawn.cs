@@ -10,26 +10,31 @@ public class EnemySpawn : MonoBehaviour
 {
     public int prefabIndexToSpawn = 0;
     public Transform parentSpawnObject;
+
     public WaveControl waveControl;
-    public RangeControl rangeControl;
+
+    //  public RangeControl rangeControl;
+    //  public PlayerRange playerRange;
+    public GameObject pointEnemySpawn;
+    public float spawnInterval = 2f;
+    public float activeTimeEnemy = 3f;
 
 
-    private GameObject _pointEnemySpawn;
+
     private int _childCountPointEnemy;
     private int _randomchild;
     private Transform _selectedPoint;
     private int enemySay;
     private bool isNextWave;
+    private float _timer = 0f;
+
 
     private void Start()
     {
-        _pointEnemySpawn = GameObject.Find("PointEnemySpawn");
-        _childCountPointEnemy = _pointEnemySpawn.transform.childCount;
+        _childCountPointEnemy = pointEnemySpawn.transform.childCount;
         // spawn için de wave lere göre sınırlanacak vawe 1 de 12 enemy gibi
     }
 
-    private float _timer = 0f;
-    public float spawnInterval = 2f;
 
     private void Update()
     {
@@ -44,7 +49,7 @@ public class EnemySpawn : MonoBehaviour
     public void RandomSpawnPoint()
     {
         _randomchild = Random.Range(0, _childCountPointEnemy);
-        _selectedPoint = _pointEnemySpawn.transform.GetChild(_randomchild);
+        _selectedPoint = pointEnemySpawn.transform.GetChild(_randomchild);
     }
 
     public void SpawnObject()
@@ -55,8 +60,8 @@ public class EnemySpawn : MonoBehaviour
                 enemySay++;
                 if (enemySay == waveControl.enemyLimit)
                 {
-                    waveControl.isWaveWait = true;
                     waveControl.waveNumber = WaveNumber.Wave2;
+                    waveControl.isWaveWait = true;
                 }
                 else
                 {
@@ -69,26 +74,16 @@ public class EnemySpawn : MonoBehaviour
                         obj.transform.position = _selectedPoint.position;
                         obj.transform.rotation = _selectedPoint.rotation;
                     }
-
-                    StartCoroutine(EnemyFalse(obj));
+                    StartCoroutine(CheckEnemyStatus(obj)); 
                 }
 
                 break;
         }
     }
 
-    IEnumerator EnemyFalse(GameObject obj)
+    IEnumerator CheckEnemyStatus(GameObject obj)
     {
-        yield return new WaitForSeconds(3);
-        obj.GetComponent<EnemyTrigger>().isTriggerPlayer = false;
-          if (!obj.GetComponent<EnemyTrigger>().isTriggerPlayer)
-          {
-              rangeControl.rangeEnemyList.Remove(obj);
-          }
-      
-         
-        //nolursa olsun yok olurken false ol değmiyorum ol
-    
+        yield return new WaitForSeconds(activeTimeEnemy);
         ObjectPool.Instance.ReturnObjectToPool(obj);
     }
 }

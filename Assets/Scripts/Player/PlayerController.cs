@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,18 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public DynamicJoystick dynamicJoystick;
     public Rigidbody rb;
+
     [SerializeField] Animator _anim;
+
+    // private List<GameObject> listRangeEnemy;
+    private PlayerRange playerRange;
+
+    private void Start()
+    {
+        //    listRangeEnemy = gameObject.GetComponentInChildren<RangeControl>().rangeEnemyList;
+        playerRange = gameObject.GetComponent<PlayerRange>();
+        _smallestDistance = Mathf.Infinity;
+    }
 
     public void FixedUpdate()
     {
@@ -15,25 +27,28 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
 
+    private float _smallestDistance;
+    private float distance;
+    private Vector3 enemyPositionY;
     private void Update()
     {
         rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed, rb.velocity.y, dynamicJoystick.Vertical * speed);
-
+        
         if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
         {
             _anim.SetBool("isRun", true);
-            if (gameObject.GetComponentInChildren<RangeControl>().rangeEnemyList.Count > 0)
+            
+            if (playerRange.enemys.transform.childCount > 0)
             {
-                var a = gameObject.GetComponentInChildren<RangeControl>().rangeEnemyList;
-                foreach (var b in a)
+                playerRange.NearestEnemy();
+                if (playerRange.LookAtEnemy())
                 {
-                    //b her eleman
-                    // ben ve b arasındaki mesafeyi ölç 
+                    transform.LookAt(playerRange.NearestEnemy().transform);
                 }
-                //alanımdaki yani listenin tüm elemanklarını dön
-                //bana en yakın olanı tut
-
-                //ona doğru dön
+                else
+                {
+                    transform.rotation = Quaternion.LookRotation(rb.velocity);
+                }
             }
             else
             {

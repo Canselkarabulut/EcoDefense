@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class RangeControl : MonoBehaviour
 {
-    public List<GameObject> rangeEnemyList;
-
-    private void OnTriggerEnter(Collider other)
+     public List<GameObject> rangeEnemyList;
+     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out EnemyTrigger enemyTrigger))
         {
-          // bana değen düşman mı
+            rangeEnemyList.Add(other.gameObject);
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out EnemyTrigger enemyTrigger))
         {
-          // benden ayrılan düşman mı
+            rangeEnemyList.Remove(other.gameObject);
         }
     }
 }

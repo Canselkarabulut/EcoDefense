@@ -14,16 +14,20 @@ public class WaveControl : MonoBehaviour
     [HideInInspector] public int enemyLimit;
     private float _timer;
     public float _countdownNum = 10;
-    [HideInInspector]public bool isWaveWait = false;
-    public TextMeshProUGUI countdownText ;
+    [HideInInspector] public bool isWaveWait = false;
+    public TextMeshProUGUI countdownText;
+    public GameObject enemys;
+
     private void Start()
     {
         EnemyText();
     }
+
     private void Update()
     {
         WaveWaitTime();
     }
+
     public WaveNumber WaveNumberReturn()
     {
         return waveNumber;
@@ -62,28 +66,29 @@ public class WaveControl : MonoBehaviour
         totalEnemyText.text = _totalEnemyText;
         enemyLimit = _enemyLimit;
     }
- 
 
     public void WaveWaitTime()
     {
         if (isWaveWait)
         {
-            countdownText.transform.parent.gameObject.SetActive(true);
-            countdownText.gameObject.SetActive(true);
-            if (_countdownNum <= 1)
+            if (enemys.transform.childCount < 1)
             {
-                EnemyText();
-                isWaveWait = false;
-            }
-            else
-            {
-                _countdownNum -= Time.deltaTime;
-                countdownText.text = Convert.ToInt32(_countdownNum).ToString();
-            
+                countdownText.transform.parent.gameObject.SetActive(true);
+                countdownText.gameObject.SetActive(true);
+                if (_countdownNum <= 1)
+                {
+                    EnemyText();
+                    isWaveWait = false;
+                }
+                else
+                {
+                    _countdownNum -= Time.deltaTime;
+                    countdownText.text = Convert.ToInt32(_countdownNum).ToString();
+                }
             }
         }
         else
-        { 
+        {
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
         }

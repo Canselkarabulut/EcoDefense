@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
@@ -8,9 +9,14 @@ public class EnemyLife : MonoBehaviour
     private EnemyLevelStatus _enemyLevelStatus;
     private int _lifeCapacity;
 
-    private void Start()
+    private void Awake()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();
+    }
+
+    private void Start()
+    {
+       
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)
         {
             _lifeCapacity = 4;
