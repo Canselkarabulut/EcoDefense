@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public DynamicJoystick dynamicJoystick;
     public Rigidbody rb;
-
-    [SerializeField] Animator _anim;
-
-    // private List<GameObject> listRangeEnemy;
+    
+    private float _smallestDistance;
+    private float distance;
+    private Vector3 enemyPositionY;
+    [SerializeField] Animator anim;
     private PlayerRange playerRange;
 
     private void Start()
@@ -27,16 +28,14 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
 
-    private float _smallestDistance;
-    private float distance;
-    private Vector3 enemyPositionY;
+    
     private void Update()
     {
         rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed, rb.velocity.y, dynamicJoystick.Vertical * speed);
         
         if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
         {
-            _anim.SetBool("isRun", true);
+            anim.SetBool("isRun", true);
             
             if (playerRange.enemys.transform.childCount > 0)
             {
@@ -57,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            _anim.SetBool("isRun", false);
+            anim.SetBool("isRun", false);
         }
     }
 }

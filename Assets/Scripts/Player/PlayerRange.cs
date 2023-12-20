@@ -6,30 +6,20 @@ using UnityEngine;
 public class PlayerRange : MonoBehaviour
 {
     public GameObject enemys;
-
-//ekranda aktif olan tüm enemyleri listele
-//listede bana en yakın olanı bul
-
-//enemys çocuklarını dolan sürekli mesfelerini hesapla en yakını bul
+    
     public float distance;
-    private float _smallestDistance;
+    public float smallestDistance;
     public Transform nearestEnemy;
-    private EnemyMove[] enemyList;
-   // public GameObject closesDetermined;
     public bool isEnemyNear;
+    
+    private float _lookAt;
+    private EnemyMove[] enemyList;
+ 
     private void Start()
     {
-        _smallestDistance = Mathf.Infinity;
+        smallestDistance = Mathf.Infinity;
         isEnemyNear = false;
     }
-    private void Update()
-    {
-        if (enemys.transform.childCount > 0)
-        {
-          //  NearestEnemy();
-        }
-    }
-
     public GameObject NearestEnemy()
     {
         enemyList = enemys.GetComponentsInChildren<EnemyMove>();
@@ -37,22 +27,21 @@ public class PlayerRange : MonoBehaviour
         foreach (var enemy in enemyList)
         {
             distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance < _smallestDistance)
+            if (distance < smallestDistance)
             {
-                _smallestDistance = distance;
+                smallestDistance = distance;
                 nearestEnemy = enemy.transform;
             }
-            
         }
         return nearestEnemy.gameObject;
     }
 
-    private float lookAt;
+
     public bool LookAtEnemy()
     {
-        lookAt = Vector3.Distance(transform.position, NearestEnemy().transform.position);
+        _lookAt = Vector3.Distance(transform.position, NearestEnemy().transform.position);
         
-        if (lookAt < 2.7f)
+        if (_lookAt < 2.7f)
         {
             return  isEnemyNear = true;
         }

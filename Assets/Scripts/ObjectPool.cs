@@ -6,8 +6,10 @@ public class ObjectPool : MonoBehaviour
     public static ObjectPool Instance; 
     public List<GameObject> objectPrefabs; 
     public int poolSize = 10; 
-    private List<List<GameObject>> objectPool; 
     public Transform parentSpawnObject;
+    
+    private List<List<GameObject>> objectPool; 
+    
     void Awake()
     {
         if (Instance == null)

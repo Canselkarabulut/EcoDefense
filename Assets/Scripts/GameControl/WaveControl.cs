@@ -17,7 +17,7 @@ public class WaveControl : MonoBehaviour
     [HideInInspector] public bool isWaveWait = false;
     public TextMeshProUGUI countdownText;
     public GameObject enemys;
-
+    public GameObject bulletSpawn;
     private void Start()
     {
         EnemyText();
@@ -74,6 +74,7 @@ public class WaveControl : MonoBehaviour
             if (enemys.transform.childCount < 1)
             {
                 countdownText.transform.parent.gameObject.SetActive(true);
+                bulletSpawn.SetActive(false);
                 countdownText.gameObject.SetActive(true);
                 if (_countdownNum <= 1)
                 {
@@ -89,6 +90,7 @@ public class WaveControl : MonoBehaviour
         }
         else
         {
+            bulletSpawn.SetActive(true);
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
         }
