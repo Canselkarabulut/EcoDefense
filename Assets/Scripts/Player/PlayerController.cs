@@ -6,37 +6,31 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+
     public DynamicJoystick dynamicJoystick;
     public Rigidbody rb;
-    
-    private float _smallestDistance;
-    private float distance;
-    private Vector3 enemyPositionY;
     [SerializeField] Animator anim;
     private PlayerRange playerRange;
 
     private void Start()
     {
-        //    listRangeEnemy = gameObject.GetComponentInChildren<RangeControl>().rangeEnemyList;
         playerRange = gameObject.GetComponent<PlayerRange>();
-        _smallestDistance = Mathf.Infinity;
     }
 
-    public void FixedUpdate()
-    {
-        Vector3 direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
-    }
-
-    
     private void Update()
     {
-        rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed, rb.velocity.y, dynamicJoystick.Vertical * speed);
+        Vector3 direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
+      
+        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+        
+        rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed,transform.position.y, dynamicJoystick.Vertical * speed);
+       
         
         if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
         {
             anim.SetBool("isRun", true);
-            
+
             if (playerRange.enemys.transform.childCount > 0)
             {
                 playerRange.NearestEnemy();
@@ -46,7 +40,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    transform.rotation = Quaternion.LookRotation(rb.velocity);
+                     transform.rotation = Quaternion.LookRotation(rb.velocity);
+                     
                 }
             }
             else
@@ -58,5 +53,37 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isRun", false);
         }
+        //   float horizontalInput = dynamicJoystick.Horizontal;
+        //   float verticalInput = dynamicJoystick.Vertical;
+//
+        //   Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+//
+        //   if (direction.magnitude >= 0.1f)
+        //   {
+        //       anim.SetBool("isRun", true);
+//
+        //       if (playerRange.enemys.transform.childCount > 0)
+        //       {
+        //           playerRange.NearestEnemy();
+        //           if (playerRange.LookAtEnemy())
+        //           {
+        //               transform.LookAt(playerRange.NearestEnemy().transform);
+        //           }
+        //           else
+        //           {
+        //               transform.rotation = Quaternion.LookRotation(direction);
+        //           }
+        //       }
+        //       else
+        //       {
+        //           transform.rotation = Quaternion.LookRotation(direction);
+        //       }
+//
+        //       transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        //   }
+        //   else
+        //   {
+        //       anim.SetBool("isRun", false);
+        //   }
     }
 }

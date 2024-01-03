@@ -78,10 +78,10 @@ PrefabInstance:
       addedObject: {fileID: 7283154323564983905}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6d1297777293db459ce7d92098cad0e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5691714924289946319}
+      addedObject: {fileID: 2541453506984617864}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6d1297777293db459ce7d92098cad0e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2541453506984617864}
+      addedObject: {fileID: 5609717936995735605}
   m_SourcePrefab: {fileID: 100100000, guid: f6d1297777293db459ce7d92098cad0e, type: 3}
 --- !u!95 &287531929368103033 stripped
 Animator:
@@ -138,7 +138,23 @@ CapsuleCollider:
   m_Height: 0.6356646
   m_Direction: 1
   m_Center: {x: 0.030738413, y: 0.32975227, z: 0.06645727}
---- !u!54 &5691714924289946319
+--- !u!114 &2541453506984617864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797753437222865081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8298f55a08ed645ad2905e750924e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  dynamicJoystick: {fileID: 0}
+  rb: {fileID: 5609717936995735605}
+  anim: {fileID: 287531929368103033}
+--- !u!54 &5609717936995735605
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,19 +181,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2541453506984617864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6797753437222865081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8298f55a08ed645ad2905e750924e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  dynamicJoystick: {fileID: 0}
-  rb: {fileID: 5691714924289946319}
-  _anim: {fileID: 287531929368103033}
