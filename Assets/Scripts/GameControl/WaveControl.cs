@@ -18,6 +18,8 @@ public class WaveControl : MonoBehaviour
     public TextMeshProUGUI countdownText;
     public GameObject enemys;
     public GameObject bulletSpawn;
+    public ParticleSystem shockWave;
+    public GameObject hitEffect;
     private void Start()
     {
         EnemyText();
@@ -38,25 +40,25 @@ public class WaveControl : MonoBehaviour
         switch (waveNumber)
         {
             case WaveNumber.Wave1:
-                EnemyTextLimit("12", 12);
+                EnemyTextLimit("12", 13);
                 break;
             case WaveNumber.Wave2:
-                EnemyTextLimit("14", 14);
+                EnemyTextLimit("14", 15);
                 break;
             case WaveNumber.Wave3:
-                EnemyTextLimit("16", 16);
+                EnemyTextLimit("16", 17);
                 break;
             case WaveNumber.Wave4:
-                EnemyTextLimit("18", 18);
+                EnemyTextLimit("18", 19);
                 break;
             case WaveNumber.Wave5:
-                EnemyTextLimit("20", 20);
+                EnemyTextLimit("20", 21);
                 break;
             case WaveNumber.Wave6:
-                EnemyTextLimit("22", 22);
+                EnemyTextLimit("22", 23);
                 break;
             case WaveNumber.Wave7:
-                EnemyTextLimit("4", 4);
+                EnemyTextLimit("4", 5);
                 break;
         }
     }
@@ -65,6 +67,7 @@ public class WaveControl : MonoBehaviour
     {
         totalEnemyText.text = _totalEnemyText;
         enemyLimit = _enemyLimit;
+        ShockWaveEffect();
     }
 
     public void WaveWaitTime()
@@ -75,6 +78,7 @@ public class WaveControl : MonoBehaviour
             {
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
+                hitEffect.gameObject.SetActive(false);
                 countdownText.gameObject.SetActive(true);
                 if (_countdownNum <= 1)
                 {
@@ -90,9 +94,17 @@ public class WaveControl : MonoBehaviour
         }
         else
         {
+            
             bulletSpawn.SetActive(true);
+            hitEffect.gameObject.SetActive(true);
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
         }
+    }
+
+    public void ShockWaveEffect()
+    {
+        shockWave.gameObject.SetActive(true);
+        shockWave.Play();
     }
 }

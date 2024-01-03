@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
@@ -14,13 +16,15 @@ public class EnemySpawn : MonoBehaviour
     public PlayerRange playerRange;
     public GameObject pointEnemySpawn;
     public float spawnInterval = 2f;
-    public float activeTimeEnemy = 3f;
+    public TextMeshProUGUI killEnemyText;
 
+    
     private int _childCountPointEnemy;
     private int _randomchild;
     private Transform _selectedPoint;
     private int _enemySay;
     private float _timer = 0f;
+    private int killEnemyCount;
     //public GameObject bulletSpawn;
 
     private void Start()
@@ -40,7 +44,6 @@ public class EnemySpawn : MonoBehaviour
             SpawnObject();
         }
     }
-
     public void RandomSpawnPoint()
     {
         _randomchild = Random.Range(0, _childCountPointEnemy);
@@ -68,19 +71,21 @@ public class EnemySpawn : MonoBehaviour
                         obj.transform.SetParent(parentSpawnObject);
                         obj.transform.position = _selectedPoint.position;
                         obj.transform.rotation = _selectedPoint.rotation;
-                        
+                        obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl1Enemy;
+                        StartCoroutine(DieCount(obj));
                     }
-                    StartCoroutine(CheckEnemyStatus(obj)); 
+                    
                 }
                 break;
         }
     }
 
-    IEnumerator CheckEnemyStatus(GameObject obj)
+ 
+    IEnumerator DieCount(GameObject obj)
     {
-        yield return new WaitForSeconds(activeTimeEnemy);
-        playerRange.smallestDistance = Mathf.Infinity;
-        playerRange.isEnemyNear = false;
-        ObjectPool.Instance.ReturnObjectToPool(obj);
+        yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
+        killEnemyCount++;
+        killEnemyText.text = killEnemyCount.ToString();
+        
     }
 }
