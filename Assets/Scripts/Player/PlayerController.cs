@@ -19,71 +19,44 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
+        if (dynamicJoystick != null)
+        {
+            Vector3 direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
       
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
         
-        rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed,transform.position.y, dynamicJoystick.Vertical * speed);
+            rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed,transform.position.y, dynamicJoystick.Vertical * speed);
        
         
-        if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
-        {
-            anim.SetBool("isRun", true);
-
-            if (playerRange.enemys.transform.childCount > 0)
+            if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
             {
-                playerRange.NearestEnemy();
-                if (playerRange.LookAtEnemy())
+                anim.SetBool("isRun", true);
+
+                if (playerRange.enemys.transform.childCount > 0)
                 {
-                    transform.LookAt(playerRange.NearestEnemy().transform);
+                    playerRange.NearestEnemy();
+                    if (playerRange.LookAtEnemy())
+                    {
+                        transform.LookAt(playerRange.NearestEnemy().transform);
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.LookRotation(rb.velocity);
+                     
+                    }
                 }
                 else
                 {
-                     transform.rotation = Quaternion.LookRotation(rb.velocity);
-                     
+                    transform.rotation = Quaternion.LookRotation(rb.velocity);
                 }
             }
             else
             {
-                transform.rotation = Quaternion.LookRotation(rb.velocity);
+                anim.SetBool("isRun", false);
             }
         }
-        else
-        {
-            anim.SetBool("isRun", false);
-        }
-        //   float horizontalInput = dynamicJoystick.Horizontal;
-        //   float verticalInput = dynamicJoystick.Vertical;
-//
-        //   Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-//
-        //   if (direction.magnitude >= 0.1f)
-        //   {
-        //       anim.SetBool("isRun", true);
-//
-        //       if (playerRange.enemys.transform.childCount > 0)
-        //       {
-        //           playerRange.NearestEnemy();
-        //           if (playerRange.LookAtEnemy())
-        //           {
-        //               transform.LookAt(playerRange.NearestEnemy().transform);
-        //           }
-        //           else
-        //           {
-        //               transform.rotation = Quaternion.LookRotation(direction);
-        //           }
-        //       }
-        //       else
-        //       {
-        //           transform.rotation = Quaternion.LookRotation(direction);
-        //       }
-//
-        //       transform.Translate(direction * speed * Time.deltaTime, Space.World);
-        //   }
-        //   else
-        //   {
-        //       anim.SetBool("isRun", false);
-        //   }
+      
+    
     }
 }
