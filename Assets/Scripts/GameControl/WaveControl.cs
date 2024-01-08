@@ -20,6 +20,10 @@ public class WaveControl : MonoBehaviour
     public GameObject bulletSpawn;
     public ParticleSystem shockWave;
     public GameObject hitEffect;
+    public GameObject healthPenguins;
+    public EnemySpawn enemySpawn;
+    public GameObject fireEffect;
+
     private void Start()
     {
         EnemyText();
@@ -79,10 +83,13 @@ public class WaveControl : MonoBehaviour
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
                 hitEffect.gameObject.SetActive(false);
+                healthPenguins.SetActive(true);
                 countdownText.gameObject.SetActive(true);
                 if (_countdownNum <= 1)
                 {
                     EnemyText();
+                    enemySpawn.killEnemyCount = 0;
+                    enemySpawn.killEnemyText.text = "0";
                     isWaveWait = false;
                 }
                 else
@@ -94,7 +101,7 @@ public class WaveControl : MonoBehaviour
         }
         else
         {
-            
+            healthPenguins.SetActive(false);
             bulletSpawn.SetActive(true);
             hitEffect.gameObject.SetActive(true);
             countdownText.transform.parent.gameObject.SetActive(false);
@@ -106,5 +113,6 @@ public class WaveControl : MonoBehaviour
     {
         shockWave.gameObject.SetActive(true);
         shockWave.Play();
+        fireEffect.SetActive(false);
     }
 }

@@ -45,7 +45,6 @@ public class PlayerTrigger : MonoBehaviour
             if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl1Enemy)
             {
                 PlayerLossLife(0.02f);
-                
             }
         }
     }

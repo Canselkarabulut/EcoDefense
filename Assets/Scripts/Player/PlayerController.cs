@@ -39,10 +39,12 @@ public class PlayerController : MonoBehaviour
                     if (playerRange.LookAtEnemy())
                     {
                         transform.LookAt(playerRange.NearestEnemy().transform);
+                     
                     }
                     else
                     {
                         transform.rotation = Quaternion.LookRotation(rb.velocity);
+               
                      
                     }
                 }

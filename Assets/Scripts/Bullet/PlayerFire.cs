@@ -13,15 +13,25 @@ public class PlayerFire : MonoBehaviour
     public GameObject body;
     private float _timer = 0f;
     public float bulletSpeed;
- 
-
+    public PlayerRange playerRange;
+    public GameObject fireEffect;
     private void Update()
     {
         _timer += Time.deltaTime;
         if (_timer >= spawnInterval)
         {
-            _timer = 0f;
-            SpawnObject();
+            if (playerRange.enemys.transform.childCount > 0)
+            {
+                if (playerRange.LookAtEnemy())
+                {
+                    _timer = 0f;
+                    SpawnObject();
+                }
+                else
+                {
+                    fireEffect.SetActive(false);
+                }
+            }
         }
     }
 
@@ -38,6 +48,7 @@ public class PlayerFire : MonoBehaviour
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             bulletRigidbody.velocity = barel.transform.forward * bulletSpeed;
         }
+        fireEffect.SetActive(true);
         StartCoroutine(CheckFireStatus(bullet));
     }
 
@@ -45,5 +56,6 @@ public class PlayerFire : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         ObjectPool.Instance.ReturnObjectToPool(bullet);
+        fireEffect.SetActive(false);
     }
 }

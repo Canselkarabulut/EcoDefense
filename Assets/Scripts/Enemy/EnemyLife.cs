@@ -69,10 +69,13 @@ public class EnemyLife : MonoBehaviour
                 GetComponent<EnemyLife>().enabled = false;
                 GetComponent<EnemyTrigger>().enabled = false;
                 enemyAnimator.SetBool("isDie",true);
-                StartCoroutine(EnemyDie());
+              
                 fireEffect.SetActive(false);
                 dieEffect.SetActive(true);
                 isDie = true;
+                StartCoroutine(EnemyDie());
+                //enemy ekonomisi
+                //
             }
             else
             {
@@ -90,8 +93,6 @@ public class EnemyLife : MonoBehaviour
     public void DieAnimEnd()
     {
         ObjectPool.Instance.ReturnObjectToPool(gameObject);
-        //texte ekle ölenleri
-       
         InitializeStart();
     }
     
@@ -112,4 +113,6 @@ public class EnemyLife : MonoBehaviour
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
     }
+
+   
 }

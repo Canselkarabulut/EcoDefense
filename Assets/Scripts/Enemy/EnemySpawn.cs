@@ -17,14 +17,14 @@ public class EnemySpawn : MonoBehaviour
     public GameObject pointEnemySpawn;
     public float spawnInterval = 2f;
     public TextMeshProUGUI killEnemyText;
-
+    public int killEnemyCount;
     
     private int _childCountPointEnemy;
     private int _randomchild;
     private Transform _selectedPoint;
     private int _enemySay;
     private float _timer = 0f;
-    private int killEnemyCount;
+    public GameEconomy gameEconomy;
     //public GameObject bulletSpawn;
 
     private void Start()
@@ -77,6 +77,8 @@ public class EnemySpawn : MonoBehaviour
                     
                 }
                 break;
+            case WaveNumber.Wave2:
+                break;
         }
     }
 
@@ -86,6 +88,31 @@ public class EnemySpawn : MonoBehaviour
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
         killEnemyCount++;
         killEnemyText.text = killEnemyCount.ToString();
+        EnemyDieEconomy(obj);
+    }
+
+  
+    
+    public void EnemyDieEconomy(GameObject obj)
+    {
+        var enemyLevelStatus = obj.GetComponent<EnemyLevelStatus>();
+        switch (enemyLevelStatus.EnemyLevelReturn())
+        {
+            case EnemyLevel.Lvl1Enemy:
+                gameEconomy.CoinCount(10);
+                break;
+            case EnemyLevel.Lvl2Enemy:
+                gameEconomy.CoinCount(20);
+                break;
+            case EnemyLevel.Lvl3Enemy:
+                gameEconomy.CoinCount(30);
+                break;
+            case EnemyLevel.Lvl4Enemy:
+                gameEconomy.CoinCount(40);
+                break;
+        }
+        
         
     }
+    
 }
