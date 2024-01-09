@@ -13,28 +13,23 @@ public class EnemySpawn : MonoBehaviour
     public int prefabIndexToSpawn = 0;
     public Transform parentSpawnObject;
     public WaveControl waveControl;
-    public PlayerRange playerRange;
     public GameObject pointEnemySpawn;
     public float spawnInterval = 2f;
     public TextMeshProUGUI killEnemyText;
     public int killEnemyCount;
-    
+
     private int _childCountPointEnemy;
     private int _randomchild;
     private Transform _selectedPoint;
     private int _enemySay;
     private float _timer = 0f;
     public GameEconomy gameEconomy;
-    //public GameObject bulletSpawn;
 
     private void Start()
     {
         _childCountPointEnemy = pointEnemySpawn.transform.childCount;
-      //  bulletSpawn.SetActive(true);
-        // spawn için de wave lere göre sınırlanacak vawe 1 de 12 enemy gibi
+        _enemySay = 0;
     }
-
-
     private void Update()
     {
         _timer += Time.deltaTime;
@@ -49,7 +44,6 @@ public class EnemySpawn : MonoBehaviour
         _randomchild = Random.Range(0, _childCountPointEnemy);
         _selectedPoint = pointEnemySpawn.transform.GetChild(_randomchild);
     }
-
     public void SpawnObject()
     {
         switch (waveControl.WaveNumberReturn())
@@ -74,15 +68,13 @@ public class EnemySpawn : MonoBehaviour
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl1Enemy;
                         StartCoroutine(DieCount(obj));
                     }
-                    
                 }
+
                 break;
             case WaveNumber.Wave2:
                 break;
         }
     }
-
- 
     IEnumerator DieCount(GameObject obj)
     {
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
@@ -90,9 +82,6 @@ public class EnemySpawn : MonoBehaviour
         killEnemyText.text = killEnemyCount.ToString();
         EnemyDieEconomy(obj);
     }
-
-  
-    
     public void EnemyDieEconomy(GameObject obj)
     {
         var enemyLevelStatus = obj.GetComponent<EnemyLevelStatus>();
@@ -111,8 +100,5 @@ public class EnemySpawn : MonoBehaviour
                 gameEconomy.CoinCount(40);
                 break;
         }
-        
-        
     }
-    
 }

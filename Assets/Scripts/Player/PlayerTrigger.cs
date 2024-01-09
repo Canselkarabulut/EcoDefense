@@ -53,8 +53,7 @@ public class PlayerTrigger : MonoBehaviour
     {
         
             healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
-            playerAnimator.SetBool("loseEffect", true);
-        loseEffect.Play();
+            loseEffect.Play();
         
             if (healthBar.transform.localScale.x < .35)
             {

@@ -14,16 +14,14 @@ public class EnemyLife : MonoBehaviour
     public GameObject particleEffect;
     public GameObject fireEffect;
     public GameObject dieEffect;
-
+    public GameObject coin;
     public Animator enemyAnimator;
 
     public bool isDie;
-    //private ParticleSystem _smokePaticleCount;
     private void Awake()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();
         playerRange = GameObject.Find("Body").GetComponent<PlayerRange>();
-    //    _smokePaticleCount = particleEffect.GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -73,9 +71,10 @@ public class EnemyLife : MonoBehaviour
                 fireEffect.SetActive(false);
                 dieEffect.SetActive(true);
                 isDie = true;
+                
+                //kafamın üstünde coin çıksın resim olarak içini yazı ile dolduracağız enemy spawn da belirtilen
+                coin.SetActive(true);
                 StartCoroutine(EnemyDie());
-                //enemy ekonomisi
-                //
             }
             else
             {
@@ -112,6 +111,7 @@ public class EnemyLife : MonoBehaviour
         GetComponent<EnemyLevelStatus>().enabled = true;
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
+        coin.SetActive(false);
     }
 
    
