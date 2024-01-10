@@ -32,7 +32,7 @@ public class PlayerTrigger : MonoBehaviour
         ecoGun.SetActive(true);
         shockWave.SetActive(true);
         bulletSpawn.SetActive(true);
-      waveControl.isWaveWait = false;
+     // waveControl.isWaveWait = false;
         dynamicJoystick.gameObject.SetActive(true);
         enemys.SetActive(true);
         dieEffect.SetActive(false);
@@ -64,7 +64,8 @@ public class PlayerTrigger : MonoBehaviour
                     if (healthBar.transform.localScale.x < .05)
                     {
                         dieEffect.SetActive(true);
-                        waveControl.isWaveWait = true;
+                      //  waveControl.waitStatus = WaitStatus.GameBreak;
+                     //  waveControl.isWaveWait = true;
                         bulletSpawn.SetActive(false);
                         healthBar.SetActive(false);
                         ecoGun.SetActive(false);

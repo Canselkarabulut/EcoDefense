@@ -11,7 +11,7 @@ public class EnemyLife : MonoBehaviour
     private int _lifeCapacity;
     private int _numberBulletsTouchedi=0;
     public PlayerRange playerRange;
-    public GameObject particleEffect;
+   // public GameObject particleEffect;
     public GameObject fireEffect;
     public GameObject dieEffect;
     public GameObject coin;
@@ -26,26 +26,7 @@ public class EnemyLife : MonoBehaviour
 
     private void Start()
     {
-       
-        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)
-        {
-            _lifeCapacity = 4;
-        }
-        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl2Enemy)
-        {
-            _lifeCapacity = 6;
-        }
-        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl3Enemy)
-        {
-            _lifeCapacity = 8;
-        }
-        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl4Enemy)
-        {
-            _lifeCapacity = 10;
-        }
-
         InitializeStart();
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,7 +36,7 @@ public class EnemyLife : MonoBehaviour
            
             if (_numberBulletsTouchedi == _lifeCapacity - 2)
             {
-                particleEffect.SetActive(false);
+              //  particleEffect.SetActive(false);
                 fireEffect.SetActive(true);
             }
             if (_numberBulletsTouchedi == _lifeCapacity-1)
@@ -101,7 +82,7 @@ public class EnemyLife : MonoBehaviour
         _numberBulletsTouchedi = 0;
         playerRange.smallestDistance = Mathf.Infinity;
         playerRange.isEnemyNear = false;
-        particleEffect.SetActive(true);
+//        particleEffect.SetActive(true);
         fireEffect.SetActive(false);
         dieEffect.SetActive(false);
         enemyAnimator.SetBool("isDie",false);
@@ -112,6 +93,25 @@ public class EnemyLife : MonoBehaviour
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
         coin.SetActive(false);
+        
+        
+        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)
+        {
+            _lifeCapacity = 4;
+        }
+        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl2Enemy)
+        {
+            _lifeCapacity = 6;
+        }
+        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl3Enemy)
+        {
+            _lifeCapacity = 8;
+        }
+        if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl4Enemy)
+        {
+            _lifeCapacity = 10;
+        }
+        
     }
 
    

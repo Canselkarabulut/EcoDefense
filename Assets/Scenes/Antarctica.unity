@@ -22023,6 +22023,7 @@ MonoBehaviour:
   spawnInterval: 3
   killEnemyText: {fileID: 1939077051}
   killEnemyCount: 0
+  enemyCount: 0
   gameEconomy: {fileID: 1068201431}
 --- !u!1001 &349960452
 PrefabInstance:
@@ -29293,7 +29294,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

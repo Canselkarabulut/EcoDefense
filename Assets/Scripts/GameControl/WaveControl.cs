@@ -14,7 +14,7 @@ public class WaveControl : MonoBehaviour
     [HideInInspector] public int enemyLimit;
     private float _timer;
     public float _countdownNum = 10;
-    [HideInInspector] public bool isWaveWait = false;
+ //   [HideInInspector] public bool isWaveWait = false;
     public TextMeshProUGUI countdownText;
     public GameObject enemys;
     public GameObject bulletSpawn;
@@ -24,9 +24,13 @@ public class WaveControl : MonoBehaviour
     public EnemySpawn enemySpawn;
     public GameObject fireEffect;
     public TextMeshProUGUI waveText;
+
+    public WaitStatus waitStatus;
+
     private void Start()
     {
         EnemyText();
+        waitStatus = WaitStatus.Game;
     }
 
     private void Update()
@@ -44,30 +48,30 @@ public class WaveControl : MonoBehaviour
         switch (waveNumber)
         {
             case WaveNumber.Wave1:
-                EnemyTextLimit("Wave 1","12", 13);
+                EnemyTextLimit("Wave 1", "12", 13);
                 break;
             case WaveNumber.Wave2:
-                EnemyTextLimit("Wave 2","14", 15);
+                EnemyTextLimit("Wave 2", "14", 15);
                 break;
             case WaveNumber.Wave3:
-                EnemyTextLimit("Wave 3","16", 17);
+                EnemyTextLimit("Wave 3", "16", 17);
                 break;
             case WaveNumber.Wave4:
-                EnemyTextLimit("Wave 4","18", 19);
+                EnemyTextLimit("Wave 4", "18", 19);
                 break;
             case WaveNumber.Wave5:
-                EnemyTextLimit("Wave 5","20", 21);
+                EnemyTextLimit("Wave 5", "20", 21);
                 break;
             case WaveNumber.Wave6:
-                EnemyTextLimit("Wave 6","22", 23);
+                EnemyTextLimit("Wave 6", "22", 23);
                 break;
             case WaveNumber.Wave7:
-                EnemyTextLimit("Wave 7","4", 5);
+                EnemyTextLimit("Wave 7", "4", 5);
                 break;
         }
     }
 
-    private void EnemyTextLimit(string _waveString,string _totalEnemyText, int _enemyLimit)
+    private void EnemyTextLimit(string _waveString, string _totalEnemyText, int _enemyLimit)
     {
         totalEnemyText.text = _totalEnemyText;
         enemyLimit = _enemyLimit;
@@ -77,7 +81,7 @@ public class WaveControl : MonoBehaviour
 
     public void WaveWaitTime()
     {
-        if (isWaveWait)
+        if (waitStatus == WaitStatus.GameBreak) //oyun arası
         {
             if (enemys.transform.childCount < 1)
             {
@@ -91,7 +95,9 @@ public class WaveControl : MonoBehaviour
                     EnemyText();
                     enemySpawn.killEnemyCount = 0;
                     enemySpawn.killEnemyText.text = "0";
-                    isWaveWait = false;
+                    // enemySpawn.enemyCount = 0;
+                    waitStatus = WaitStatus.Game;
+                   // isWaveWait = false;
                 }
                 else
                 {
@@ -100,7 +106,7 @@ public class WaveControl : MonoBehaviour
                 }
             }
         }
-        else
+        else if (waitStatus == WaitStatus.Game) //oyun
         {
             healthPenguins.SetActive(false);
             bulletSpawn.SetActive(true);

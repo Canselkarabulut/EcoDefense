@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
-
 public class EnemySpawn : MonoBehaviour
 {
     public int prefabIndexToSpawn = 0;
@@ -21,24 +20,29 @@ public class EnemySpawn : MonoBehaviour
     private int _childCountPointEnemy;
     private int _randomchild;
     private Transform _selectedPoint;
-    private int _enemySay;
+    public int enemyCount;
     private float _timer = 0f;
     public GameEconomy gameEconomy;
 
     private void Start()
     {
         _childCountPointEnemy = pointEnemySpawn.transform.childCount;
-        _enemySay = 0;
+        enemyCount = 0;
     }
+
     private void Update()
     {
         _timer += Time.deltaTime;
         if (_timer >= spawnInterval)
         {
-            _timer = 0f;
-            SpawnObject();
+            if (waveControl.waitStatus == WaitStatus.Game)
+            {
+                _timer = 0f;
+                SpawnObject();
+            }
         }
     }
+
     public void RandomSpawnPoint()
     {
         _randomchild = Random.Range(0, _childCountPointEnemy);
@@ -46,17 +50,20 @@ public class EnemySpawn : MonoBehaviour
     }
     public void SpawnObject()
     {
+        enemyCount++;
         switch (waveControl.WaveNumberReturn())
         {
             case WaveNumber.Wave1:
-                _enemySay++;
-                if (_enemySay == waveControl.enemyLimit)
+
+                if (enemyCount == waveControl.enemyLimit)
                 {
-                    waveControl.waveNumber = WaveNumber.Wave2;
-                    waveControl.isWaveWait = true;
+                    enemyCount = 0;
+                    waveControl.waitStatus = WaitStatus.GameBreak;
+                    waveControl.waveNumber = WaveNumber.Wave2 /*waveNumber*/;
                 }
                 else
                 {
+                    //waveControl.isWaveWait = false;
                     RandomSpawnPoint();
                     GameObject obj =
                         ObjectPool.Instance.GetObjectFromPool(prefabIndexToSpawn); //hangi prefabın spawnlanacağı index
@@ -70,8 +77,22 @@ public class EnemySpawn : MonoBehaviour
                     }
                 }
 
+
+                Debug.Log("enemy count: " + enemyCount);
+                Debug.Log(waveControl.enemyLimit);
+               
                 break;
             case WaveNumber.Wave2:
+                break;
+            case WaveNumber.Wave3:
+                break;
+            case WaveNumber.Wave4:
+                break;
+            case WaveNumber.Wave5:
+                break;
+            case WaveNumber.Wave6:
+                break;
+            case WaveNumber.Wave7:
                 break;
         }
     }
@@ -82,6 +103,7 @@ public class EnemySpawn : MonoBehaviour
         killEnemyText.text = killEnemyCount.ToString();
         EnemyDieEconomy(obj);
     }
+
     public void EnemyDieEconomy(GameObject obj)
     {
         var enemyLevelStatus = obj.GetComponent<EnemyLevelStatus>();
