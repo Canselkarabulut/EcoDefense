@@ -7,9 +7,9 @@ public class PlayerRange : MonoBehaviour
 {
     public GameObject enemys;
 
-    public float distance;
+    private float distance;
     public float smallestDistance;
-    public Transform nearestEnemy;
+    private Transform nearestEnemy;
     public bool isEnemyNear;
 
     private float _lookAt;

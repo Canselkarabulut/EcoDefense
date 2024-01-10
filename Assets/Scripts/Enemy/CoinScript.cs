@@ -8,18 +8,17 @@ using UnityEngine.UI;
 
 public class CoinScript : MonoBehaviour
 {
-    private Transform camera;
+    private Transform _camera;
     public EnemyLevelStatus enemyLevelStatus;
     public TextMeshPro enemyPrefabCoinText;
     private void Start()
     {
-        // camera = GameObject.Find("Main Camera").gameObject.transform;
-        camera = Camera.main.transform;
+        _camera = Camera.main.transform;
     }
 
     void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.forward);
+        transform.LookAt(transform.position + _camera.forward);
         switch (enemyLevelStatus.EnemyLevelReturn())
         {
             case EnemyLevel.Lvl1Enemy:

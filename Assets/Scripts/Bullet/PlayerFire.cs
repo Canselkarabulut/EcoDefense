@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {
     public int prefabIndexToSpawn = 0;
-    public Transform parentSpawnObject;
     public float spawnInterval = 2f;
     public GameObject barel;
     public GameObject body;
@@ -37,7 +36,6 @@ public class PlayerFire : MonoBehaviour
 
     public void SpawnObject()
     {
-        //ateş namlunun ucunda oluşup forward yönüne gideccek
         GameObject bullet =
             ObjectPool.Instance.GetObjectFromPool(prefabIndexToSpawn); //hangi prefabın spawnlanacağı index
         if (bullet != null && barel != null)
@@ -54,7 +52,7 @@ public class PlayerFire : MonoBehaviour
 
     IEnumerator CheckFireStatus(GameObject bullet)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         ObjectPool.Instance.ReturnObjectToPool(bullet);
         fireEffect.SetActive(false);
     }

@@ -16,7 +16,6 @@ public class PlayerTrigger : MonoBehaviour
     public GameObject ecoGun;
     public GameObject shockWave;
     public GameObject bulletSpawn;
-  public WaveControl waveControl;
     public DynamicJoystick dynamicJoystick;
 
     public GameObject enemys;
@@ -31,8 +30,7 @@ public class PlayerTrigger : MonoBehaviour
         healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
         ecoGun.SetActive(true);
         shockWave.SetActive(true);
-        bulletSpawn.SetActive(true);
-     // waveControl.isWaveWait = false;
+     //   bulletSpawn.SetActive(true);
         dynamicJoystick.gameObject.SetActive(true);
         enemys.SetActive(true);
         dieEffect.SetActive(false);
@@ -45,6 +43,18 @@ public class PlayerTrigger : MonoBehaviour
             if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl1Enemy)
             {
                 PlayerLossLife(0.02f);
+            }
+            if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl2Enemy)
+            {
+                PlayerLossLife(0.04f);
+            }
+            if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl3Enemy)
+            {
+                PlayerLossLife(.06f);
+            }
+            if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl4Enemy)
+            {
+                PlayerLossLife(0.08f);
             }
         }
     }
@@ -64,8 +74,6 @@ public class PlayerTrigger : MonoBehaviour
                     if (healthBar.transform.localScale.x < .05)
                     {
                         dieEffect.SetActive(true);
-                      //  waveControl.waitStatus = WaitStatus.GameBreak;
-                     //  waveControl.isWaveWait = true;
                         bulletSpawn.SetActive(false);
                         healthBar.SetActive(false);
                         ecoGun.SetActive(false);

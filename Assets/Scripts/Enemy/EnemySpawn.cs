@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
+
 public class EnemySpawn : MonoBehaviour
 {
     public int prefabIndexToSpawn = 0;
@@ -48,54 +49,86 @@ public class EnemySpawn : MonoBehaviour
         _randomchild = Random.Range(0, _childCountPointEnemy);
         _selectedPoint = pointEnemySpawn.transform.GetChild(_randomchild);
     }
-    public void SpawnObject()
+
+    public void SpawnObject() //düşmanı oluştur
     {
-        enemyCount++;
-        switch (waveControl.WaveNumberReturn())
+        enemyCount++; //oluşan düşmanı say
+        switch (waveControl.waveNumber)
         {
             case WaveNumber.Wave1:
-
-                if (enemyCount == waveControl.enemyLimit)
-                {
-                    enemyCount = 0;
-                    waveControl.waitStatus = WaitStatus.GameBreak;
-                    waveControl.waveNumber = WaveNumber.Wave2 /*waveNumber*/;
-                }
-                else
-                {
-                    //waveControl.isWaveWait = false;
-                    RandomSpawnPoint();
-                    GameObject obj =
-                        ObjectPool.Instance.GetObjectFromPool(prefabIndexToSpawn); //hangi prefabın spawnlanacağı index
-                    if (obj != null && _selectedPoint != null)
-                    {
-                        obj.transform.SetParent(parentSpawnObject);
-                        obj.transform.position = _selectedPoint.position;
-                        obj.transform.rotation = _selectedPoint.rotation;
-                        obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl1Enemy;
-                        StartCoroutine(DieCount(obj));
-                    }
-                }
-
-
-                Debug.Log("enemy count: " + enemyCount);
-                Debug.Log(waveControl.enemyLimit);
-               
+                EnemyLevelControl(0, 1); //0
                 break;
             case WaveNumber.Wave2:
+                EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave3:
+                EnemyLevelControl(1, 2); //1
                 break;
             case WaveNumber.Wave4:
+                EnemyLevelControl(1, 3); //1,2
                 break;
             case WaveNumber.Wave5:
+                EnemyLevelControl(2, 3); //2
                 break;
             case WaveNumber.Wave6:
+                EnemyLevelControl(2, 4); //2,3
                 break;
             case WaveNumber.Wave7:
+                EnemyLevelControl(3, 4); //3
                 break;
         }
     }
+
+    public void EnemyLevelControl(int startNum, int finihNum)
+    {
+        if (enemyCount == waveControl.enemyLimit + 1)
+        {
+            waveControl.waitStatus = WaitStatus.GameBreak;
+            waveControl._countdownNum = 10;
+        }
+        else
+        {
+            RandomSpawnPoint();
+            GameObject obj =
+                ObjectPool.Instance.GetObjectFromPool(prefabIndexToSpawn);
+            if (obj != null && _selectedPoint != null)
+            {
+                obj.transform.SetParent(parentSpawnObject);
+                obj.transform.position = _selectedPoint.position;
+                obj.transform.rotation = _selectedPoint.rotation;
+                //hangi lvl de üretilecek
+                
+               // enemyLevel =obj.GetComponent<EnemyLevelStatus>().enemyLevel;
+                var randomNumber = Random.Range(startNum, finihNum);
+                switch (randomNumber)
+                {
+                    case 0:
+                        obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl1Enemy;
+                        obj.GetComponent<EnemyLife>().InitializeStart();
+                        Debug.Log(randomNumber);
+                        break;
+                    case 1:
+                        obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl2Enemy;
+                        obj.GetComponent<EnemyLife>().InitializeStart();
+                        Debug.Log(randomNumber);
+                        break;
+                    case 2:
+                        obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl3Enemy;
+                        obj.GetComponent<EnemyLife>().InitializeStart();
+                        Debug.Log(randomNumber);
+                        break;
+                    case 3:
+                        obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl4Enemy;
+                        obj.GetComponent<EnemyLife>().InitializeStart();
+                        Debug.Log(randomNumber);
+                        break;
+                }
+
+                StartCoroutine(DieCount(obj));
+            }
+        }
+    }
+
     IEnumerator DieCount(GameObject obj)
     {
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);

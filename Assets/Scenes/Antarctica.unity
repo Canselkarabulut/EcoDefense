@@ -36090,7 +36090,6 @@ MonoBehaviour:
   totalEnemyText: {fileID: 1302241614}
   enemyLimit: 0
   _countdownNum: 10
-  isWaveWait: 0
   countdownText: {fileID: 1855220413}
   enemys: {fileID: 841945408}
   bulletSpawn: {fileID: 1823646403}
@@ -36100,6 +36099,7 @@ MonoBehaviour:
   enemySpawn: {fileID: 346612592}
   fireEffect: {fileID: 1902182142}
   waveText: {fileID: 1825559881}
+  waitStatus: 0
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
@@ -40940,7 +40940,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIndexToSpawn: 0
-  parentSpawnObject: {fileID: 1823646404}
   spawnInterval: 0.5
   barel: {fileID: 1902182142}
   body: {fileID: 163698168}
@@ -58422,8 +58421,8 @@ SceneRoots:
   - {fileID: 604087096}
   - {fileID: 641059938}
   - {fileID: 449563582}
-  - {fileID: 346612591}
   - {fileID: 841945409}
+  - {fileID: 346612591}
   - {fileID: 1068201430}
   - {fileID: 1823646404}
   - {fileID: 481863163}

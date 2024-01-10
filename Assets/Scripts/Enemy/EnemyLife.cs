@@ -9,15 +9,16 @@ public class EnemyLife : MonoBehaviour
 {
     private EnemyLevelStatus _enemyLevelStatus;
     private int _lifeCapacity;
-    private int _numberBulletsTouchedi=0;
+ //   private int _numberBulletsTouchedi=0;
+    private int _numberBulletsHit=0; //isabet eden mermi sayısı
     public PlayerRange playerRange;
-   // public GameObject particleEffect;
     public GameObject fireEffect;
     public GameObject dieEffect;
     public GameObject coin;
     public Animator enemyAnimator;
-
     public bool isDie;
+    
+    
     private void Awake()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();
@@ -33,13 +34,13 @@ public class EnemyLife : MonoBehaviour
     {
         if (other.TryGetComponent(out Bullet bullet))
         {
-           
-            if (_numberBulletsTouchedi == _lifeCapacity - 2)
+            _numberBulletsHit++;
+            
+            if (_numberBulletsHit == _lifeCapacity - 2)
             {
-              //  particleEffect.SetActive(false);
                 fireEffect.SetActive(true);
             }
-            if (_numberBulletsTouchedi == _lifeCapacity-1)
+            if (_numberBulletsHit == _lifeCapacity-1)
             {
                 GetComponent<NavMeshAgent>().enabled = false;
                 GetComponent<CapsuleCollider>().enabled = false;
@@ -56,10 +57,6 @@ public class EnemyLife : MonoBehaviour
                 //kafamın üstünde coin çıksın resim olarak içini yazı ile dolduracağız enemy spawn da belirtilen
                 coin.SetActive(true);
                 StartCoroutine(EnemyDie());
-            }
-            else
-            {
-                _numberBulletsTouchedi++;
             }
         }
     }
@@ -79,7 +76,7 @@ public class EnemyLife : MonoBehaviour
     public void InitializeStart()
     {
         isDie = false;
-        _numberBulletsTouchedi = 0;
+        _numberBulletsHit = 0;
         playerRange.smallestDistance = Mathf.Infinity;
         playerRange.isEnemyNear = false;
 //        particleEffect.SetActive(true);
@@ -93,7 +90,6 @@ public class EnemyLife : MonoBehaviour
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
         coin.SetActive(false);
-        
         
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)
         {
@@ -111,7 +107,6 @@ public class EnemyLife : MonoBehaviour
         {
             _lifeCapacity = 10;
         }
-        
     }
 
    
