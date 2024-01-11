@@ -16,7 +16,7 @@ public class PlayerTrigger : MonoBehaviour
     public GameObject ecoGun;
     public GameObject shockWave;
     public GameObject bulletSpawn;
-    public DynamicJoystick dynamicJoystick;
+    public FloatingJoystick floatingJoystick;
 
     public GameObject enemys;
 
@@ -31,7 +31,7 @@ public class PlayerTrigger : MonoBehaviour
         ecoGun.SetActive(true);
         shockWave.SetActive(true);
      //   bulletSpawn.SetActive(true);
-        dynamicJoystick.gameObject.SetActive(true);
+     floatingJoystick.gameObject.SetActive(true);
         enemys.SetActive(true);
         dieEffect.SetActive(false);
     }
@@ -80,8 +80,8 @@ public class PlayerTrigger : MonoBehaviour
                         shockWave.SetActive(false);
                         enemys.SetActive(false);
                         playerAnimator.SetBool("isDeath", true);
-                        transform.parent.GetComponent<PlayerController>().dynamicJoystick = null;
-                        dynamicJoystick.gameObject.SetActive(false);
+                        transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
+                        floatingJoystick.gameObject.SetActive(false);
                     }
                 }
             }

@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
 
-    public DynamicJoystick dynamicJoystick;
+    //public DynamicJoystick dynamicJoystick;
+    public FloatingJoystick floatingJoystick;
     public Rigidbody rb;
     [SerializeField] Animator anim;
     private PlayerRange playerRange;
@@ -19,17 +20,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (dynamicJoystick != null)
+        if (floatingJoystick != null)
         {
-            Vector3 direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
+            Vector3 direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
       
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
         
-            rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed,transform.position.y, dynamicJoystick.Vertical * speed);
+            rb.velocity = new Vector3(floatingJoystick.Horizontal * speed,transform.position.y, floatingJoystick.Vertical * speed);
        
         
-            if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
+            if (floatingJoystick.Horizontal != 0 || floatingJoystick.Vertical != 0)
             {
                 anim.SetBool("isRun", true);
 
