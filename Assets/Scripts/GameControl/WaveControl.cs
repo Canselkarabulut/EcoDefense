@@ -47,31 +47,32 @@ public class WaveControl : MonoBehaviour
         switch (waveNumber)
         {
             case WaveNumber.Wave1:
-                EnemyTextLimit("Wave 1", "12", 12);
+                EnemyTextLimit("Wave 1", "12", 12,1);
                 break;
             case WaveNumber.Wave2:
-                EnemyTextLimit("Wave 2", "14", 14);
+                EnemyTextLimit("Wave 2", "14", 14,2);
                 break;
             case WaveNumber.Wave3:
-                EnemyTextLimit("Wave 3", "16", 16);
+                EnemyTextLimit("Wave 3", "16", 16,3);
                 break;
             case WaveNumber.Wave4:
-                EnemyTextLimit("Wave 4", "18", 18);
+                EnemyTextLimit("Wave 4", "18", 18,4);
                 break;
             case WaveNumber.Wave5:
-                EnemyTextLimit("Wave 5", "20", 20);
+                EnemyTextLimit("Wave 5", "20", 20,5);
                 break;
             case WaveNumber.Wave6:
-                EnemyTextLimit("Wave 6", "22", 22);
+                EnemyTextLimit("Wave 6", "22", 22,6);
                 break;
             case WaveNumber.Wave7:
-                EnemyTextLimit("Wave 7", "4", 4);
+                EnemyTextLimit("Wave 7", "4", 4,7);
                 break;
         }
     }
 
-    private void EnemyTextLimit(string _waveString, string _totalEnemyText, int _enemyLimit)
+    private void EnemyTextLimit(string _waveString, string _totalEnemyText, int _enemyLimit,int waveCount)
     {
+        PlayerPrefs.SetInt("waveCount",waveCount);
         totalEnemyText.text = _totalEnemyText;
         enemyLimit = _enemyLimit;
         waveText.text = _waveString;
@@ -139,7 +140,6 @@ public class WaveControl : MonoBehaviour
                 }
                 else
                 {
-                    
                     _countdownNum -= Time.deltaTime;
                     countdownText.text = Convert.ToInt32(_countdownNum).ToString();
                 }
@@ -153,7 +153,6 @@ public class WaveControl : MonoBehaviour
             hitEffect.gameObject.SetActive(true);
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
-         
         }
     }
 
