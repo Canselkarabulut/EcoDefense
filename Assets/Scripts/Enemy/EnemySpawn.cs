@@ -53,6 +53,7 @@ public class EnemySpawn : MonoBehaviour
     public void SpawnObject() //düşmanı oluştur
     {
         enemyCount++; //oluşan düşmanı say
+       
         switch (waveControl.waveNumber)
         {
             case WaveNumber.Wave1:

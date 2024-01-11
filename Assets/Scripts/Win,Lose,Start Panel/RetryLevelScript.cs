@@ -1,17 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enum;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RetryLevelScript : MonoBehaviour
 {
-
+   public WaveControl waveControl;
+   private WaveNumber waveNumber;
    public void RetryButton()
    {
-      string sceneName = SceneManager.GetActiveScene().name;
-      //Sahneyi yeniden yükleyin
-      SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-     // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+      waveNumber = waveControl.WaveNumberReturn();
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+      waveControl.waveNumber = waveNumber;
    }
 }

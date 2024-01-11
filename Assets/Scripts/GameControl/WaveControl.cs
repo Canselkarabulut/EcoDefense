@@ -14,7 +14,6 @@ public class WaveControl : MonoBehaviour
     [HideInInspector] public int enemyLimit;
     private float _timer;
     public float _countdownNum = 10;
- //   [HideInInspector] public bool isWaveWait = false;
     public TextMeshProUGUI countdownText;
     public GameObject enemys;
     public GameObject bulletSpawn;
@@ -82,43 +81,23 @@ public class WaveControl : MonoBehaviour
     public void WaveWaitTime()
     {
       
-        if (waitStatus == WaitStatus.GameBreak) //oyun arası
-        {//oyun arasına girdiyse
+        if (waitStatus == WaitStatus.GameBreak)
+        {
             if (enemys.transform.childCount < 1)
             {
-               
-                //ve sahnedeki son kalan düşman da öldüyse 
-                enemySpawn.enemyCount = 0; // ölenlerin sayısını sıfırla 
-
-           
-                // ateş efektini kapat
+                enemySpawn.enemyCount = 0;
                 hitEffect.gameObject.SetActive(false);
-                
-                //penguenleri aç
                 healthPenguins.SetActive(true);
-                
-                //geri sayımı aç
                 countdownText.gameObject.SetActive(true);
-                
-                
-                // geri sayım parentini aç
                 countdownText.transform.parent.gameObject.SetActive(true);
-                
-                //ateş etme spawnı kapat
                 bulletSpawn.SetActive(false);
                 
                 if (_countdownNum <= 1)
                 {
-                    //geri sayım 1 in altına düştümü yani sürecini tamamladıysa 
-                    //wave textlerini değiştir
                     EnemyText();
-                    //ölen enemy sayı ve textlerini sıfırla 
                     enemySpawn.killEnemyCount = 0;
                     enemySpawn.killEnemyText.text = "0";
-                    //yeniden oyunu game'e al
                     waitStatus = WaitStatus.Game;
-                    
-                    //wave yi bir sonrakine artır
                     switch (waveNumber)
                     {
                         case WaveNumber.Wave1:
@@ -160,27 +139,21 @@ public class WaveControl : MonoBehaviour
                 }
                 else
                 {
-                    //geri sayım bitmediyse
+                    
                     _countdownNum -= Time.deltaTime;
-                    //geri sayıma devam et ve texte yazdır
                     countdownText.text = Convert.ToInt32(_countdownNum).ToString();
                 }
             }
         }
-        else if (waitStatus == WaitStatus.Game) //oyun
+        else if (waitStatus == WaitStatus.Game) 
         {
-            //state oyun olduysa 
             bulletSpawn.SetActive(true);
-            //penguenleri kapat
             healthPenguins.SetActive(false);
-            //ateş etmeyi aç
             bulletSpawn.SetActive(true);
-            //ateş efektini aç
             hitEffect.gameObject.SetActive(true);
-            //geri sayım parentini kapat
             countdownText.transform.parent.gameObject.SetActive(false);
-            //geri sayım texti kapat
             countdownText.gameObject.SetActive(false);
+         
         }
     }
 
