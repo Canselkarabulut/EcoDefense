@@ -84,15 +84,13 @@ public class WaveControl : MonoBehaviour
       
         if (waitStatus == WaitStatus.GameBreak) //oyun arası
         {//oyun arasına girdiyse
-            bulletSpawn.SetActive(false);
             if (enemys.transform.childCount < 1)
             {
                
                 //ve sahnedeki son kalan düşman da öldüyse 
                 enemySpawn.enemyCount = 0; // ölenlerin sayısını sıfırla 
 
-                //ateş etme spawnı kapat
-                bulletSpawn.SetActive(false);
+           
                 // ateş efektini kapat
                 hitEffect.gameObject.SetActive(false);
                 
@@ -106,6 +104,8 @@ public class WaveControl : MonoBehaviour
                 // geri sayım parentini aç
                 countdownText.transform.parent.gameObject.SetActive(true);
                 
+                //ateş etme spawnı kapat
+                bulletSpawn.SetActive(false);
                 
                 if (_countdownNum <= 1)
                 {
