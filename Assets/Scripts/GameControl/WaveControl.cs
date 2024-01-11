@@ -28,8 +28,34 @@ public class WaveControl : MonoBehaviour
 
     private void Start()
     {
-        EnemyText();
-        waitStatus = WaitStatus.Game;
+        switch (PlayerPrefs.GetInt("waveCount"))
+       {
+           case 1:
+               waveNumber = WaveNumber.Wave1;
+               break;
+           case 2:
+               waveNumber = WaveNumber.Wave2;
+               break;
+           case 3:
+               waveNumber = WaveNumber.Wave3;
+               break;
+           case 4:
+               waveNumber = WaveNumber.Wave4;
+               break;
+           case 5:
+               waveNumber = WaveNumber.Wave5;
+               break;
+           case 6:
+               waveNumber = WaveNumber.Wave6;
+               break;
+           case 7:
+               waveNumber = WaveNumber.Wave7;
+               break;
+           
+       }
+       EnemyText();
+       waitStatus = WaitStatus.Game;
+        
     }
 
     private void Update()
