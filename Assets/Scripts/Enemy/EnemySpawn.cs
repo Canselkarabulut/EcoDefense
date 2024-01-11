@@ -56,24 +56,31 @@ public class EnemySpawn : MonoBehaviour
         switch (waveControl.waveNumber)
         {
             case WaveNumber.Wave1:
+                spawnInterval = 3;
                 EnemyLevelControl(0, 1); //0
                 break;
             case WaveNumber.Wave2:
+                spawnInterval = 4;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave3:
+                spawnInterval = 5;
                 EnemyLevelControl(1, 2); //1
                 break;
             case WaveNumber.Wave4:
+                spawnInterval = 6;
                 EnemyLevelControl(1, 3); //1,2
                 break;
             case WaveNumber.Wave5:
+                spawnInterval = 7;
                 EnemyLevelControl(2, 3); //2
                 break;
             case WaveNumber.Wave6:
+                spawnInterval = 8;
                 EnemyLevelControl(2, 4); //2,3
                 break;
             case WaveNumber.Wave7:
+                spawnInterval = 9;
                 EnemyLevelControl(3, 4); //3
                 break;
         }
@@ -105,22 +112,22 @@ public class EnemySpawn : MonoBehaviour
                     case 0:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl1Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                        Debug.Log(randomNumber);
+                        
                         break;
                     case 1:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl2Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                        Debug.Log(randomNumber);
+                    
                         break;
                     case 2:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl3Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                        Debug.Log(randomNumber);
+                       
                         break;
                     case 3:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl4Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                        Debug.Log(randomNumber);
+                     
                         break;
                 }
 

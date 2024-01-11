@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  myNavMeshAgent: {fileID: 0}
+  myNavMeshAgent: {fileID: 9202338003655210797}
 --- !u!114 &8778589505086105377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,7 +1592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRange: {fileID: 0}
-  particleEffect: {fileID: 0}
   fireEffect: {fileID: 8835018947061197177}
   dieEffect: {fileID: 7861488269354488885}
   coin: {fileID: 6384894792907490652}
