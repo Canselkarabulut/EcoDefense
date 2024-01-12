@@ -16,4 +16,6 @@ public class AnimationEvents : MonoBehaviour
     {
         losePanel.SetActive(true);
     }
+
+  
 }
