@@ -1842,7 +1842,7 @@ MonoBehaviour:
   targetColor: {r: 0.99264705, g: 0.021896647, b: 0.021896647, a: 1}
   needBoxIndicator: 1
   needArrowIndicator: 1
-  needDistanceText: 1
+  needDistanceText: 0
   indicator: {fileID: 0}
 --- !u!1001 &8834037468706473937
 PrefabInstance:

@@ -40,12 +40,15 @@ public class PlayerController : MonoBehaviour
                     if (playerRange.LookAtEnemy())
                     {
                         transform.LookAt(playerRange.NearestEnemy().transform);
-                     
+                        var boxIndicator = playerRange.NearestEnemy().GetComponent<Target>().NeedBoxIndicator;
+                        boxIndicator = true;
+
                     }
                     else
                     {
                         transform.rotation = Quaternion.LookRotation(rb.velocity);
-               
+                        var boxIndicator = playerRange.NearestEnemy().GetComponent<Target>().NeedBoxIndicator;
+                        boxIndicator = false;
                      
                     }
                 }
