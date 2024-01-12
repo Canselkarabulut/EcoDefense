@@ -1651,6 +1651,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dbc07dcc1cea394db57c96a6513330a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1260597798614566948}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dbc07dcc1cea394db57c96a6513330a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3935674057352813684}
   m_SourcePrefab: {fileID: 100100000, guid: 0dbc07dcc1cea394db57c96a6513330a, type: 3}
 --- !u!4 &1425476904454423310 stripped
 Transform:
@@ -1824,6 +1827,23 @@ MonoBehaviour:
   triggerEffect: {fileID: 2382624000320397878}
   minusLife: {fileID: 8023393765702460750}
   minusLifeAnim: {fileID: 42680619467192270}
+--- !u!114 &3935674057352813684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022269977446156226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411060de4483b5e4c9847cd3cbc18554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 0.99264705, g: 0.021896647, b: 0.021896647, a: 1}
+  needBoxIndicator: 1
+  needArrowIndicator: 1
+  needDistanceText: 1
+  indicator: {fileID: 0}
 --- !u!1001 &8834037468706473937
 PrefabInstance:
   m_ObjectHideFlags: 0
