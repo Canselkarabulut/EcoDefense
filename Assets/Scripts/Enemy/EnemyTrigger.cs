@@ -15,8 +15,6 @@ public class EnemyTrigger : MonoBehaviour
       {
          triggerEffect.Play();
          minusLife.gameObject.SetActive(true);
-         minusLifeAnim.Play("MinusLife");
-         
       }
    }
 }
