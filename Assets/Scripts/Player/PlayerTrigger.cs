@@ -27,6 +27,8 @@ public class PlayerTrigger : MonoBehaviour
     public GameObject dieEffect;
     public TextMeshPro minusLifeText;
 
+    public bool isDie;
+
     private void Start()
     {
         DOTween.Init();
@@ -38,6 +40,7 @@ public class PlayerTrigger : MonoBehaviour
         floatingJoystick.gameObject.SetActive(true);
         enemys.SetActive(true);
         dieEffect.SetActive(false);
+        isDie = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,8 +87,9 @@ public class PlayerTrigger : MonoBehaviour
                 healthBar.GetComponent<Renderer>().material = healthbarRed;
                 if (healthBar.transform.localScale.x < .05)
                 {
+                    //   bulletSpawn.SetActive(false);
+                    isDie = true;
                     dieEffect.SetActive(true);
-                    bulletSpawn.SetActive(false);
                     healthBar.SetActive(false);
                     ecoGun.SetActive(false);
                     shockWave.SetActive(false);
