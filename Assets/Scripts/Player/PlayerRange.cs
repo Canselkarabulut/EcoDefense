@@ -42,7 +42,7 @@ public class PlayerRange : MonoBehaviour
     {
             _lookAt = Vector3.Distance(transform.position, NearestEnemy().transform.position);
 
-            if (_lookAt < 2.7f)
+            if (_lookAt < 2.5f)
             {
                 return isEnemyNear = true;
             }

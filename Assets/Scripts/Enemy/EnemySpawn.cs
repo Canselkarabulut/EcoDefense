@@ -57,31 +57,31 @@ public class EnemySpawn : MonoBehaviour
         switch (waveControl.waveNumber)
         {
             case WaveNumber.Wave1:
-                spawnInterval = 2.5f;
+                spawnInterval = 2.2f;
                 EnemyLevelControl(0, 1); //0
                 break;
             case WaveNumber.Wave2:
-                spawnInterval = 2.7f;
+                spawnInterval = 2.4f;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave3:
-                spawnInterval = 3;
+                spawnInterval = 2.6f;
                 EnemyLevelControl(1, 2); //1
                 break;
             case WaveNumber.Wave4:
-                spawnInterval = 3.3f;
+                spawnInterval = 2.8f;
                 EnemyLevelControl(1, 3); //1,2
                 break;
             case WaveNumber.Wave5:
-                spawnInterval = 3.5f;
+                spawnInterval = 3f;
                 EnemyLevelControl(2, 3); //2
                 break;
             case WaveNumber.Wave6:
-                spawnInterval = 3.7f;
+                spawnInterval = 3.2f;
                 EnemyLevelControl(2, 4); //2,3
                 break;
             case WaveNumber.Wave7:
-                spawnInterval = 3.9f;
+                spawnInterval = 3.4f;
                 EnemyLevelControl(3, 4); //3
                 break;
         }
@@ -92,7 +92,7 @@ public class EnemySpawn : MonoBehaviour
         if (enemyCount == waveControl.enemyLimit + 1)
         {
             waveControl.waitStatus = WaitStatus.GameBreak;
-            waveControl._countdownNum = 10;
+            waveControl._countdownNum = 15;
         }
         else
         {

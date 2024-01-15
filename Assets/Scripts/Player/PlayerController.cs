@@ -22,14 +22,16 @@ public class PlayerController : MonoBehaviour
     {
         if (floatingJoystick != null)
         {
-            Vector3 direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
-      
+            Vector3 direction = Vector3.forward * floatingJoystick.Vertical +
+                                Vector3.right * floatingJoystick.Horizontal;
+
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
-        
-            rb.velocity = new Vector3(floatingJoystick.Horizontal * speed,transform.position.y, floatingJoystick.Vertical * speed);
-       
-        
+
+            rb.velocity = new Vector3(floatingJoystick.Horizontal * speed, transform.position.y,
+                floatingJoystick.Vertical * speed);
+
+
             if (floatingJoystick.Horizontal != 0 || floatingJoystick.Vertical != 0)
             {
                 anim.SetBool("isRun", true);
@@ -40,16 +42,10 @@ public class PlayerController : MonoBehaviour
                     if (playerRange.LookAtEnemy())
                     {
                         transform.LookAt(playerRange.NearestEnemy().transform);
-                        var boxIndicator = playerRange.NearestEnemy().GetComponent<Target>().NeedBoxIndicator;
-                        boxIndicator = true;
-
                     }
                     else
                     {
                         transform.rotation = Quaternion.LookRotation(rb.velocity);
-                        var boxIndicator = playerRange.NearestEnemy().GetComponent<Target>().NeedBoxIndicator;
-                        boxIndicator = false;
-                     
                     }
                 }
                 else
@@ -60,9 +56,16 @@ public class PlayerController : MonoBehaviour
             else
             {
                 anim.SetBool("isRun", false);
+                if (playerRange.enemys.transform.childCount > 0)
+                {
+                    playerRange.NearestEnemy();
+                    if (playerRange.LookAtEnemy())
+                    {
+                        transform.LookAt(playerRange.NearestEnemy().transform);
+                    }
+                }
+               
             }
         }
-      
-    
     }
 }

@@ -13,7 +13,7 @@ public class WaveControl : MonoBehaviour
     public TextMeshProUGUI totalEnemyText;
     [HideInInspector] public int enemyLimit;
     private float _timer;
-    public float _countdownNum = 10;
+    public float _countdownNum = 15;
     public TextMeshProUGUI countdownText;
     public GameObject enemys;
     public GameObject bulletSpawn;
@@ -25,6 +25,7 @@ public class WaveControl : MonoBehaviour
     public TextMeshProUGUI waveText;
 
     public WaitStatus waitStatus;
+    public GameObject upgradeButton;
 
     private void Start()
     {
@@ -105,6 +106,7 @@ public class WaveControl : MonoBehaviour
         ShockWaveEffect();
     }
 
+
     public void WaveWaitTime()
     {
       
@@ -118,6 +120,7 @@ public class WaveControl : MonoBehaviour
                 countdownText.gameObject.SetActive(true);
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
+                upgradeButton.SetActive(true);
                 
                 if (_countdownNum <= 1)
                 {
@@ -179,6 +182,7 @@ public class WaveControl : MonoBehaviour
             hitEffect.gameObject.SetActive(true);
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
+            upgradeButton.SetActive(false);
         }
     }
 
