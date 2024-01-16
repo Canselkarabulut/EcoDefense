@@ -13,7 +13,7 @@ public class WaveControl : MonoBehaviour
     public TextMeshProUGUI totalEnemyText;
     [HideInInspector] public int enemyLimit;
     private float _timer;
-    public float _countdownNum = 15;
+    public float _countdownNum = 10;
     public TextMeshProUGUI countdownText;
     public GameObject enemys;
     public GameObject bulletSpawn;
@@ -92,7 +92,7 @@ public class WaveControl : MonoBehaviour
                 EnemyTextLimit("Wave 6", "22", 22,6);
                 break;
             case WaveNumber.Wave7:
-                EnemyTextLimit("Wave 7", "4", 4,7);
+                EnemyTextLimit("Wave 7", "10", 10,7);
                 break;
         }
     }
@@ -127,6 +127,7 @@ public class WaveControl : MonoBehaviour
                     EnemyText();
                     enemySpawn.killEnemyCount = 0;
                     enemySpawn.killEnemyText.text = "0";
+                    PlayerPrefs.SetInt("CountCoin",GameEconomy.sCoinCount); // bölüm bittikçe parayı kaydet
                     waitStatus = WaitStatus.Game;
                     switch (waveNumber)
                     {
@@ -161,6 +162,7 @@ public class WaveControl : MonoBehaviour
                             EnemyText();
                             break;
                         case WaveNumber.Wave7:
+                            //win sayfası açılacak
                             waveNumber = WaveNumber.Wave7;
                             WaveNumberReturn();
                             EnemyText();
@@ -183,6 +185,7 @@ public class WaveControl : MonoBehaviour
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
             upgradeButton.SetActive(false);
+           
         }
     }
 

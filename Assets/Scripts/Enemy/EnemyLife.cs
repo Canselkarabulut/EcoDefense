@@ -17,7 +17,7 @@ public class EnemyLife : MonoBehaviour
     public GameObject coin;
     public Animator enemyAnimator;
     public bool isDie;
-    
+    public GameObject heart;
     
     private void Awake()
     {
@@ -66,9 +66,13 @@ public class EnemyLife : MonoBehaviour
         yield return new WaitForSeconds(3);
         DieAnimEnd();
     }
-    
+ 
     public void DieAnimEnd()
     {
+        if (PlayerTrigger.isHealthRed)
+        {
+            Instantiate(heart,transform.position,transform.rotation);
+        }
         ObjectPool.Instance.ReturnObjectToPool(gameObject);
         InitializeStart();
     }

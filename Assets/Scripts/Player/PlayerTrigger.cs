@@ -28,7 +28,9 @@ public class PlayerTrigger : MonoBehaviour
     public TextMeshPro minusLifeText;
 
     public bool isDie;
+    public static bool isHealthRed;
 
+    public GameObject PauseButton;
     private void Start()
     {
         DOTween.Init();
@@ -41,6 +43,7 @@ public class PlayerTrigger : MonoBehaviour
         enemys.SetActive(true);
         dieEffect.SetActive(false);
         isDie = false;
+        PauseButton.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,14 +77,16 @@ public class PlayerTrigger : MonoBehaviour
         }
     }
 
+ 
     public void PlayerLossLife(float amountDdeath)
     {
         healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
         loseEffect.Play();
-
+       
         if (healthBar.transform.localScale.x < .35)
         {
             healthBar.GetComponent<Renderer>().material = healthbarOrange;
+
             if (healthBar.transform.localScale.x < .2)
             {
                 healthBar.GetComponent<Renderer>().material = healthbarRed;
@@ -97,12 +102,14 @@ public class PlayerTrigger : MonoBehaviour
                     playerAnimator.SetBool("isDeath", true);
                     transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
                     floatingJoystick.gameObject.SetActive(false);
+                    PauseButton.SetActive(false);
                 }
             }
         }
         else
         {
-            healthBar.GetComponent<Renderer>().material = healthbarGreen;
+            healthBar.GetComponent<Renderer>().material = healthbarGreen; 
+     
         }
     }
 }

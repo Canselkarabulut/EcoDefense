@@ -1,17 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthbarWiev : MonoBehaviour
 {
-    private Transform camera;
+    // ReSharper disable once InconsistentNaming
+    private Transform _camera;
     private void Start()
     {
-        camera = Camera.main.transform;
+        _camera = Camera.main.transform;
     }
 
     void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.forward);
+        transform.LookAt(transform.position + _camera.forward);
+        if (transform.localScale.x < .2f)
+        {
+            PlayerTrigger.isHealthRed = true;
+        }
+        else
+        {
+            PlayerTrigger.isHealthRed = false;
+        }
     }
+    
 }

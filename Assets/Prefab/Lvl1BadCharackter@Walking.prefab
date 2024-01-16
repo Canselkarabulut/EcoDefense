@@ -1812,6 +1812,7 @@ MonoBehaviour:
   coin: {fileID: 6384894792907490652}
   enemyAnimator: {fileID: 2858183646300079878}
   isDie: 0
+  heart: {fileID: 394902863238285878, guid: 8cfd4eb7cc359ea42b44ac480d6f1804, type: 3}
 --- !u!114 &1260597798614566948
 MonoBehaviour:
   m_ObjectHideFlags: 0

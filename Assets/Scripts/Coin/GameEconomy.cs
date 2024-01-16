@@ -9,6 +9,12 @@ public class GameEconomy : MonoBehaviour
     public static int sCoinCount;
     public TextMeshProUGUI coinText;
 
+    private void Start()
+    {
+        sCoinCount = PlayerPrefs.GetInt("CountCoin");
+        coinText.text = sCoinCount.ToString();
+    }
+
     public void CoinCount(int countCoin)
     {
         sCoinCount += countCoin;

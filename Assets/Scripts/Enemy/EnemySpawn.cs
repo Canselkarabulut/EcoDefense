@@ -92,7 +92,8 @@ public class EnemySpawn : MonoBehaviour
         if (enemyCount == waveControl.enemyLimit + 1)
         {
             waveControl.waitStatus = WaitStatus.GameBreak;
-            waveControl._countdownNum = 15;
+            waveControl._countdownNum = 10;
+           
         }
         else
         {
@@ -137,11 +138,14 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
+  
     IEnumerator DieCount(GameObject obj)
     {
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
         killEnemyCount++;
         killEnemyText.text = killEnemyCount.ToString();
+        //can var olsun
+       
         EnemyDieEconomy(obj);
     }
 
