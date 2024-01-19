@@ -45479,7 +45479,7 @@ MonoBehaviour:
   objectPrefabs:
   - {fileID: 3034698580723210716, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
   - {fileID: 9022269977446156226, guid: f1b72a6956d747848b32cda1e2e9d988, type: 3}
-  poolSize: 25
+  poolSize: 100
   parentSpawnObject: {fileID: 1981475851}
 --- !u!4 &1981475851
 Transform:

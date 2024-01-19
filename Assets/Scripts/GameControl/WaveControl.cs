@@ -127,7 +127,7 @@ public class WaveControl : MonoBehaviour
                     EnemyText();
                     enemySpawn.killEnemyCount = 0;
                     enemySpawn.killEnemyText.text = "0";
-                    PlayerPrefs.SetInt("CountCoin2",GameEconomy.sCoinCount); // bölüm bittikçe parayı kaydet
+                    PlayerPrefs.SetInt("CountCoin4",GameEconomy.sCoinCount); // bölüm bittikçe parayı kaydet
                     waitStatus = WaitStatus.Game;
                     switch (waveNumber)
                     {

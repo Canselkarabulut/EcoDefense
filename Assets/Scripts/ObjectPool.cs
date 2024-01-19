@@ -5,7 +5,7 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool Instance; 
     public List<GameObject> objectPrefabs; 
-    public int poolSize = 10; 
+    public int poolSize = 100; 
     public Transform parentSpawnObject;
     
     private List<List<GameObject>> objectPool; 

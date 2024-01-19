@@ -236,23 +236,23 @@ public class UpgradeButtonScript : MonoBehaviour
 
     private void SavePlayerPrefs()
     {
-        PlayerPrefs.SetInt("CountCoin2",GameEconomy.sCoinCount); 
+        PlayerPrefs.SetInt("CountCoin4",GameEconomy.sCoinCount); 
         
-        PlayerPrefs.SetInt("GunPowerCount13", gunPowerCount);
-        PlayerPrefs.SetInt("RateFireCount13", rateFireCount);
-        PlayerPrefs.SetInt("SizeBallCount13", sizeBallCount);
+        PlayerPrefs.SetInt("GunPowerCount14", gunPowerCount);
+        PlayerPrefs.SetInt("RateFireCount14", rateFireCount);
+        PlayerPrefs.SetInt("SizeBallCount14", sizeBallCount);
 
-        PlayerPrefs.SetInt("GunPriceInt13", gunPriceInt);
-        PlayerPrefs.SetInt("RateFirePriceInt13", rateFirePriceInt);
-        PlayerPrefs.SetInt("SizeBallPriceInt13", sizeBallPriceInt);
+        PlayerPrefs.SetInt("GunPriceInt14", gunPriceInt);
+        PlayerPrefs.SetInt("RateFirePriceInt14", rateFirePriceInt);
+        PlayerPrefs.SetInt("SizeBallPriceInt14", sizeBallPriceInt);
 
-        PlayerPrefs.SetString("gunLevelText13", gunLevelText.text);
-        PlayerPrefs.SetString("rateFireLevelText13", rateFireLevelText.text);
-        PlayerPrefs.SetString("sizeBallLevelText13", sizeBallLevelText.text);
+        PlayerPrefs.SetString("gunLevelText14", gunLevelText.text);
+        PlayerPrefs.SetString("rateFireLevelText14", rateFireLevelText.text);
+        PlayerPrefs.SetString("sizeBallLevelText14", sizeBallLevelText.text);
 
-        PlayerPrefs.SetString("gunPriceText13", gunPriceText.text);
-        PlayerPrefs.SetString("rateFirePriceText13", rateFirePriceText.text);
-        PlayerPrefs.SetString("sizeBallPriceText13", sizeBallPriceText.text);
+        PlayerPrefs.SetString("gunPriceText14", gunPriceText.text);
+        PlayerPrefs.SetString("rateFirePriceText14", rateFirePriceText.text);
+        PlayerPrefs.SetString("sizeBallPriceText14", sizeBallPriceText.text);
 
         
 
@@ -261,21 +261,21 @@ public class UpgradeButtonScript : MonoBehaviour
 
     private void LoadPlayerPrefs()
     {
-        gunPowerCount = PlayerPrefs.GetInt("GunPowerCount13", 2);
-        rateFireCount = PlayerPrefs.GetInt("RateFireCount13", 2);
-        sizeBallCount = PlayerPrefs.GetInt("SizeBallCount13", 2);
+        gunPowerCount = PlayerPrefs.GetInt("GunPowerCount14", 2);
+        rateFireCount = PlayerPrefs.GetInt("RateFireCount14", 2);
+        sizeBallCount = PlayerPrefs.GetInt("SizeBallCount14", 2);
 
-        gunPriceInt = PlayerPrefs.GetInt("GunPriceInt13", 330);
-        rateFirePriceInt = PlayerPrefs.GetInt("RateFirePriceInt13", 330);
-        sizeBallPriceInt = PlayerPrefs.GetInt("SizeBallPriceInt13", 330);
+        gunPriceInt = PlayerPrefs.GetInt("GunPriceInt14", 330);
+        rateFirePriceInt = PlayerPrefs.GetInt("RateFirePriceInt14", 330);
+        sizeBallPriceInt = PlayerPrefs.GetInt("SizeBallPriceInt14", 330);
 
-        gunLevelText.text = PlayerPrefs.GetString("gunLevelText13", "Lvl2");
-        rateFireLevelText.text = PlayerPrefs.GetString("rateFireLevelText13", "Lvl2");
-        sizeBallLevelText.text = PlayerPrefs.GetString("sizeBallLevelText13", "Lvl2");
+        gunLevelText.text = PlayerPrefs.GetString("gunLevelText14", "Lvl2");
+        rateFireLevelText.text = PlayerPrefs.GetString("rateFireLevelText14", "Lvl2");
+        sizeBallLevelText.text = PlayerPrefs.GetString("sizeBallLevelText14", "Lvl2");
 
-        gunPriceText.text = PlayerPrefs.GetString("gunPriceText13", "330");
-        rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText13", "330");
-        sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText13", "330");
+        gunPriceText.text = PlayerPrefs.GetString("gunPriceText14", "330");
+        rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText14", "330");
+        sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText14", "330");
         
         
     }

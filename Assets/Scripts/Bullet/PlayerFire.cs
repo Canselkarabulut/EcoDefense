@@ -15,7 +15,7 @@ public class PlayerFire : MonoBehaviour
     public PlayerRange playerRange;
     public GameObject fireEffect;
 
-    private void Update()
+    private void FixedUpdate()
     {
         _timer += Time.deltaTime;
         if (_timer >= spawnInterval)
