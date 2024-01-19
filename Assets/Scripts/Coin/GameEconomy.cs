@@ -11,7 +11,7 @@ public class GameEconomy : MonoBehaviour
 
     private void Start()
     {
-        sCoinCount = PlayerPrefs.GetInt("CountCoin");
+        sCoinCount = PlayerPrefs.GetInt("CountCoin2");
         coinText.text = sCoinCount.ToString();
     }
 

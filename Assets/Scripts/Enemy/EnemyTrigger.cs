@@ -17,7 +17,7 @@ public class EnemyTrigger : MonoBehaviour
       if (other.TryGetComponent(out Bullet bullet))
       {
          triggerEffect.Play();
-         triggerBulletLevel = bullet.LevelReturn();
+         triggerBulletLevel =bullet.bulletLevel;
          minusLife.gameObject.SetActive(true);
   
       }

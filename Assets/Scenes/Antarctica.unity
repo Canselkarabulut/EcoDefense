@@ -16755,6 +16755,8 @@ MonoBehaviour:
   sizeBallLevelText: {fileID: 2022971487}
   sizeBallPriceText: {fileID: 1784195656}
   gameEconomy: {fileID: 1068201431}
+  playerFire: {fileID: 1823646405}
+  bullet: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
 --- !u!1 &246777953
 GameObject:
   m_ObjectHideFlags: 0
@@ -17536,18 +17538,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
-        m_MethodName: BulletSizeLevelButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 241408527}
         m_TargetAssemblyTypeName: UpgradeButtonScript, Assembly-CSharp
         m_MethodName: SizeBallButton
@@ -32101,7 +32091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: 0.0000000163965, z: -0.0000000052167257, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: -0.000000016396507, z: 0.000000005216728, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.462, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33738,18 +33728,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
-        m_MethodName: BulletLevelPowerButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 241408527}
         m_TargetAssemblyTypeName: UpgradeButtonScript, Assembly-CSharp
         m_MethodName: GunPowerBtn
@@ -36877,7 +36855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: 0.0000000163965, z: -0.0000000052167257, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: -0.000000016396507, z: 0.000000005216728, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.462, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38960,7 +38938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIndexToSpawn: 0
-  spawnInterval: 0.5
+  spawnInterval: 0.4
   barel: {fileID: 1902182142}
   body: {fileID: 163698168}
   bulletSpeed: 15
