@@ -61,28 +61,28 @@ public class EnemySpawn : MonoBehaviour
                 EnemyLevelControl(0, 1); //0
                 break;
             case WaveNumber.Wave2:
-                spawnInterval = 2.4f;
+                spawnInterval = 2.5f;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave3:
-                spawnInterval = 2.6f;
-                EnemyLevelControl(1, 2); //1
+                spawnInterval = 3f;
+                EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave4:
-                spawnInterval = 2.8f;
-                EnemyLevelControl(1, 3); //1,2
+                spawnInterval = 3.5f;
+                EnemyLevelControl(0, 3); //0,1,2
                 break;
             case WaveNumber.Wave5:
-                spawnInterval = 3f;
-                EnemyLevelControl(2, 3); //2
+                spawnInterval = 4f;
+                EnemyLevelControl(1, 3); //1,2
                 break;
             case WaveNumber.Wave6:
-                spawnInterval = 3.2f;
-                EnemyLevelControl(2, 4); //2,3
+                spawnInterval = 4.5f;
+                EnemyLevelControl(1, 4); //1.2,3
                 break;
             case WaveNumber.Wave7:
-                spawnInterval = 3.4f;
-                EnemyLevelControl(3, 4); //3
+                spawnInterval = 5f;
+                EnemyLevelControl(2, 4); //2,3
                 break;
         }
     }
@@ -144,8 +144,6 @@ public class EnemySpawn : MonoBehaviour
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
         killEnemyCount++;
         killEnemyText.text = killEnemyCount.ToString();
-        //can var olsun
-       
         EnemyDieEconomy(obj);
     }
 

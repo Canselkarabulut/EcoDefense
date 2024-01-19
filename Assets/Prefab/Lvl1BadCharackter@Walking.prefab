@@ -513,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.05, y: 0.3}
+  m_AnchoredPosition: {x: 0.05, y: 0.277}
   m_SizeDelta: {x: 2.006, y: 1.755}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6435622085079455670
@@ -685,6 +685,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLevelStatus: {fileID: 8778589505086105377}
   minusLifeText: {fileID: 5564548571877642279}
+  enemyTrigger: {fileID: 1260597798614566948}
+  isMinusLifeText: 0
 --- !u!1 &9206055075475342192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,6 +1815,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 2858183646300079878}
   isDie: 0
   heart: {fileID: 394902863238285878, guid: 8cfd4eb7cc359ea42b44ac480d6f1804, type: 3}
+  enemyTrigger: {fileID: 1260597798614566948}
 --- !u!114 &1260597798614566948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1828,6 +1831,8 @@ MonoBehaviour:
   triggerEffect: {fileID: 2382624000320397878}
   minusLife: {fileID: 8023393765702460750}
   minusLifeAnim: {fileID: 42680619467192270}
+  triggerBulletLevel: 0
+  numberLivesLost: 0
 --- !u!114 &3935674057352813684
 MonoBehaviour:
   m_ObjectHideFlags: 0

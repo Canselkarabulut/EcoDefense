@@ -45,7 +45,6 @@ public class HealthBooster : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(_timer);
         if (isHealthPower)
         {
             _timer += Time.deltaTime;

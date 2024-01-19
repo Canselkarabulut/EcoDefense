@@ -19,7 +19,11 @@ public class GameEconomy : MonoBehaviour
     {
         sCoinCount += countCoin;
         coinText.text = sCoinCount.ToString();
+    }
 
+    public void CoinText()
+    {
+        coinText.text = sCoinCount.ToString();
     }
     
 }

@@ -16653,6 +16653,7 @@ GameObject:
   - component: {fileID: 241408525}
   - component: {fileID: 241408524}
   - component: {fileID: 241408526}
+  - component: {fileID: 241408527}
   m_Layer: 5
   m_Name: UpgradePanel
   m_TagString: Untagged
@@ -16732,6 +16733,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameControl: {fileID: 745067804}
+--- !u!114 &241408527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241408522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f6b698e3189d4fb05cd510aca97c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPowerBtn: {fileID: 1153608461}
+  gunLevelText: {fileID: 1468136564}
+  gunPriceText: {fileID: 1848671029}
+  rateFireButton: {fileID: 806804726}
+  rateFireLevelText: {fileID: 878026663}
+  rateFirePriceText: {fileID: 427928768}
+  sizeBallButton: {fileID: 338891224}
+  sizeBallLevelText: {fileID: 2022971487}
+  sizeBallPriceText: {fileID: 1784195656}
+  gameEconomy: {fileID: 1068201431}
 --- !u!1 &246777953
 GameObject:
   m_ObjectHideFlags: 0
@@ -17512,7 +17535,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 338891225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: BulletSizeLevelButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 241408527}
+        m_TargetAssemblyTypeName: UpgradeButtonScript, Assembly-CSharp
+        m_MethodName: SizeBallButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &338891225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23020,7 +23067,7 @@ GameObject:
   - component: {fileID: 427928769}
   - component: {fileID: 427928768}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RateFirePriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23065,7 +23112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000
+  m_text: 330
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26047,7 +26094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 806804727}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241408527}
+        m_TargetAssemblyTypeName: UpgradeButtonScript, Assembly-CSharp
+        m_MethodName: RateOfFireButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &806804727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26631,7 +26690,7 @@ GameObject:
   - component: {fileID: 878026664}
   - component: {fileID: 878026663}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RateFireLevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26676,7 +26735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lvl 1
+  m_text: Lvl 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -33678,7 +33737,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1153608462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: BulletLevelPowerButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 241408527}
+        m_TargetAssemblyTypeName: UpgradeButtonScript, Assembly-CSharp
+        m_MethodName: GunPowerBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1153608462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35524,7 +35607,7 @@ GameObject:
   - component: {fileID: 1468136565}
   - component: {fileID: 1468136564}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GunLevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35569,7 +35652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lvl 1
+  m_text: Lvl 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -38585,7 +38668,7 @@ GameObject:
   - component: {fileID: 1784195657}
   - component: {fileID: 1784195656}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SizeBallPriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38630,7 +38713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000
+  m_text: 330
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39156,7 +39239,7 @@ GameObject:
   - component: {fileID: 1848671030}
   - component: {fileID: 1848671029}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GunPriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39201,7 +39284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000
+  m_text: 330
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55300,7 +55383,7 @@ GameObject:
   - component: {fileID: 2022971488}
   - component: {fileID: 2022971487}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SizeBallLevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55345,7 +55428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lvl 1
+  m_text: Lvl 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

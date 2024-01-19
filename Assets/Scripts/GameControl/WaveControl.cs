@@ -92,7 +92,7 @@ public class WaveControl : MonoBehaviour
                 EnemyTextLimit("Wave 6", "22", 22,6);
                 break;
             case WaveNumber.Wave7:
-                EnemyTextLimit("Wave 7", "10", 10,7);
+                EnemyTextLimit("Wave 7", "25", 25,7);
                 break;
         }
     }
