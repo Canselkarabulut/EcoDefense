@@ -10,14 +10,15 @@ public class Bullet : MonoBehaviour
     public BulletLevel bulletLevel;
     public BulletSize bulletSize;
     public BulletRateFire bulletRateFire;
-    
+
     private int bulletLevelNumber = 1;
     private int bulleSizeNumber = 1;
   
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out EnemyMove enemyMove))
+        if (other.TryGetComponent(out EnemyTrigger enemyTrigger))
         {
+            enemyTrigger.minusLife.MinusText();
             ObjectPool.Instance.ReturnObjectToPool(gameObject);
         }
     }

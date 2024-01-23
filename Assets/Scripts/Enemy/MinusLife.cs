@@ -11,7 +11,7 @@ public class MinusLife : MonoBehaviour
     public EnemyLevelStatus enemyLevelStatus;
     public TextMeshPro minusLifeText;
     public EnemyTrigger enemyTrigger;
-    public bool isMinusLifeText;
+  //  public bool isMinusLifeText;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class MinusLife : MonoBehaviour
     void LateUpdate()
     {
         transform.LookAt(transform.position + _camera.forward);
-        MinusText();
+     //   MinusText();
     }
 
     public void MinusText()

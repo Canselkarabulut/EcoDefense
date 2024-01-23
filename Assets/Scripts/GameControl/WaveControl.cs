@@ -26,31 +26,39 @@ public class WaveControl : MonoBehaviour
 
     public WaitStatus waitStatus;
     public GameObject upgradeButton;
-
+    public UpgradeButtonScript upgradePanel;
+ 
     private void Start()
     {
         switch (PlayerPrefs.GetInt("waveCount"))
        {
            case 1:
                waveNumber = WaveNumber.Wave1;
+               upgradePanel.LoadPlayerPrefs();
                break;
            case 2:
                waveNumber = WaveNumber.Wave2;
+               upgradePanel.LoadPlayerPrefs();
                break;
            case 3:
                waveNumber = WaveNumber.Wave3;
+               upgradePanel.LoadPlayerPrefs();
                break;
            case 4:
                waveNumber = WaveNumber.Wave4;
+               upgradePanel.LoadPlayerPrefs();
                break;
            case 5:
                waveNumber = WaveNumber.Wave5;
+               upgradePanel.LoadPlayerPrefs();
                break;
            case 6:
                waveNumber = WaveNumber.Wave6;
+               upgradePanel.LoadPlayerPrefs();
                break;
            case 7:
                waveNumber = WaveNumber.Wave7;
+               upgradePanel.LoadPlayerPrefs();
                break;
            
        }
@@ -77,7 +85,7 @@ public class WaveControl : MonoBehaviour
                 EnemyTextLimit("Wave 1", "12", 12,1);
                 break;
             case WaveNumber.Wave2:
-                EnemyTextLimit("Wave 2", "14", 14,2);
+                EnemyTextLimit("Wave 2", "14", 14,1);
                 break;
             case WaveNumber.Wave3:
                 EnemyTextLimit("Wave 3", "16", 16,3);
@@ -127,7 +135,7 @@ public class WaveControl : MonoBehaviour
                     EnemyText();
                     enemySpawn.killEnemyCount = 0;
                     enemySpawn.killEnemyText.text = "0";
-                    PlayerPrefs.SetInt("CountCoin4",GameEconomy.sCoinCount); // bölüm bittikçe parayı kaydet
+                    PlayerPrefs.SetInt("CountCoin6",GameEconomy.sCoinCount); // bölüm bittikçe parayı kaydet
                     waitStatus = WaitStatus.Game;
                     switch (waveNumber)
                     {
