@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 1e6dd9ca9b9806349aba2669d8d6414e
   - enabled: 1
-    path: Assets/Scenes/WordMap.unity
+    path: Assets/Scenes/WorldMap.unity
     guid: defff774c4600df48a8e42bcf69643cf
   - enabled: 1
     path: Assets/Scenes/Antarctica.unity

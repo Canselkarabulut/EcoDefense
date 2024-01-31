@@ -318,7 +318,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157238130}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -328,8 +328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 44.299988}
-  m_SizeDelta: {x: 67.4185, y: 67.1707}
+  m_AnchoredPosition: {x: 0.0000009536743, y: 70}
+  m_SizeDelta: {x: 69.2913, y: 69.0366}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &157238133
 MonoBehaviour:
@@ -4348,12 +4348,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5179,7 +5179,7 @@ GameObject:
   - component: {fileID: 1878394420}
   - component: {fileID: 1878394419}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5201,8 +5201,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -64}
-  m_SizeDelta: {x: 229.4261, y: 82.2689}
+  m_AnchoredPosition: {x: 0, y: -60}
+  m_SizeDelta: {x: 218.4831, y: 78.3448}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1878394419
 MonoBehaviour:
@@ -9584,6 +9584,7 @@ SceneRoots:
   - {fileID: 633898505}
   - {fileID: 1961702519}
   - {fileID: 463149032}
+  - {fileID: 1655765264}
   - {fileID: 1429801398}
   - {fileID: 2316891369038152062}
   - {fileID: 781665268}
@@ -9593,4 +9594,3 @@ SceneRoots:
   - {fileID: 473299525}
   - {fileID: 299450676}
   - {fileID: 421776860}
-  - {fileID: 1655765264}
