@@ -8,8 +8,10 @@ using UnityEngine.AI;
 public class EnemyLife : MonoBehaviour
 {
     private EnemyLevelStatus _enemyLevelStatus;
+
     private int _lifeCapacity;
-   // private int _numberBulletsHit=0; //isabet eden mermi sayısı
+
+    // private int _numberBulletsHit=0; //isabet eden mermi sayısı
     public PlayerRange playerRange;
     public GameObject fireEffect;
     public GameObject dieEffect;
@@ -18,6 +20,7 @@ public class EnemyLife : MonoBehaviour
     public bool isDie;
     public GameObject heart;
     public EnemyTrigger enemyTrigger;
+
     private void Awake()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();
@@ -34,83 +37,87 @@ public class EnemyLife : MonoBehaviour
         if (other.TryGetComponent(out Bullet bullet))
         {
             _lifeCapacity += enemyTrigger.numberLivesLost; //enemy triggerdaki sayı kadar azaltacak
-            
+
             if (_lifeCapacity == 2)
             {
                 fireEffect.SetActive(true);
             }
+
             if (_lifeCapacity < 1)
             {
-                GetComponent<NavMeshAgent>().enabled = false;
                 GetComponent<CapsuleCollider>().enabled = false;
-               GetComponent<EnemyMove>().enabled = false;
+                GetComponent<NavMeshAgent>().enabled = false;
+                GetComponent<EnemyMove>().enabled = false;
                 GetComponent<EnemyLevelStatus>().enabled = false;
                 GetComponent<EnemyLife>().enabled = false;
                 GetComponent<EnemyTrigger>().enabled = false;
-                enemyAnimator.SetBool("isDie",true);
-              
+                enemyAnimator.SetBool("isDie", true);
                 fireEffect.SetActive(false);
                 dieEffect.SetActive(true);
                 isDie = true;
-                
+
                 //kafamın üstünde coin çıksın resim olarak içini yazı ile dolduracağız enemy spawn da belirtilen
                 coin.SetActive(true);
                 StartCoroutine(EnemyDie());
             }
         }
     }
-    
+
     IEnumerator EnemyDie()
     {
         yield return new WaitForSeconds(3);
         DieAnimEnd();
     }
- 
+
     public void DieAnimEnd()
     {
         if (PlayerTrigger.isHealthRed)
         {
-            Instantiate(heart,transform.position,transform.rotation);
+            Instantiate(heart, transform.position, transform.rotation);
         }
+
         ObjectPool.Instance.ReturnObjectToPool(gameObject);
         InitializeStart();
     }
-    
+
     public void InitializeStart()
     {
         isDie = false;
-      //  _numberBulletsHit = 0;
+        //  _numberBulletsHit = 0;
         playerRange.smallestDistance = Mathf.Infinity;
         playerRange.isEnemyNear = false;
 //        particleEffect.SetActive(true);
         fireEffect.SetActive(false);
         dieEffect.SetActive(false);
-        enemyAnimator.SetBool("isDie",false);
-        GetComponent<NavMeshAgent>().enabled = true;
+        enemyAnimator.SetBool("isDie", false);
         GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<NavMeshAgent>().enabled = true;
         GetComponent<EnemyMove>().enabled = true;
         GetComponent<EnemyLevelStatus>().enabled = true;
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
+
+
         coin.SetActive(false);
-        
+
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)
         {
             _lifeCapacity = 8;
         }
+
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl2Enemy)
         {
             _lifeCapacity = 24;
         }
+
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl3Enemy)
         {
             _lifeCapacity = 48;
         }
+
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl4Enemy)
         {
             _lifeCapacity = 80;
         }
     }
-
-   
 }

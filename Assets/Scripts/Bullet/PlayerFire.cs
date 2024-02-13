@@ -35,9 +35,10 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
+    public GameObject bullet;
     public void SpawnObject()
     {
-        GameObject bullet =
+        bullet =
             ObjectPool.Instance.GetObjectFromPool(prefabIndexToSpawn); //hangi prefabın spawnlanacağı index
         if (bullet != null && barel != null)
         {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enum;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,16 +24,16 @@ public class ResetGame : MonoBehaviour
     public TextMeshProUGUI sizeBallPriceText;
     private int sizeBallCount = 2;
     private int sizeBallPriceInt = 330;
-    
-    
-    private void Start()
-    {
-       // ResetGetPlayerPrefs();
-    }
 
+    public Bullet bullet;
 
     public void ResetSetPlayerPrefs()
     {
+        bullet.bulletLevel = BulletLevel.Lvl1;
+        bullet.bulletSize = BulletSize.Size1;
+        bullet.bulletRateFire = BulletRateFire.FireLvl1;
+        bullet.transform.localScale = new Vector3(.4f, .4f,.4f);
+        
         waveCount = 1;
         GameEconomy.sCoinCount = 0;
         gunPowerCount = 2;

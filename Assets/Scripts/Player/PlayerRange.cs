@@ -24,31 +24,37 @@ public class PlayerRange : MonoBehaviour
     public GameObject NearestEnemy()
     {
         enemyList = enemys.GetComponentsInChildren<EnemyMove>();
-      
-            foreach (var enemy in enemyList)
+
+        foreach (var enemy in enemyList)
+        {
+            distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (enemy != null)
             {
-                distance = Vector3.Distance(transform.position, enemy.transform.position);
-                if (distance < smallestDistance)
+                if (distance < smallestDistance && !enemy.GetComponent<EnemyLife>().isDie)
                 {
                     smallestDistance = distance;
                     nearestEnemy = enemy.transform;
                 }
             }
-            return nearestEnemy.gameObject;
+            
+        }
+
+
+        return nearestEnemy.gameObject;
     }
 
 
     public bool LookAtEnemy()
     {
-            _lookAt = Vector3.Distance(transform.position, NearestEnemy().transform.position);
+        _lookAt = Vector3.Distance(transform.position, NearestEnemy().transform.position);
 
-            if (_lookAt < 2.8f)
-            {
-                return isEnemyNear = true;
-            }
-            else
-            {
-                return isEnemyNear = false;
-            }
+        if (_lookAt < 3.2f)
+        {
+            return isEnemyNear = true;
+        }
+        else
+        {
+            return isEnemyNear = false;
+        }
     }
 }
