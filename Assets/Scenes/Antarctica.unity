@@ -17040,9 +17040,11 @@ MonoBehaviour:
   sizeBallButton: {fileID: 338891224}
   sizeBallLevelText: {fileID: 2022971487}
   sizeBallPriceText: {fileID: 1784195656}
+  sizeBallCount: 2
   gameEconomy: {fileID: 1068201431}
   playerFire: {fileID: 1823646405}
   bullet: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
+  pool: {fileID: 1981475849}
 --- !u!1 &246777953
 GameObject:
   m_ObjectHideFlags: 0
@@ -24645,9 +24647,11 @@ MonoBehaviour:
   sizeBallButton: {fileID: 1461113337}
   sizeBallLevelText: {fileID: 2133545668}
   sizeBallPriceText: {fileID: 928927392}
+  sizeBallCount: 2
   gameEconomy: {fileID: 1068201431}
   playerFire: {fileID: 1823646405}
   bullet: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
+  pool: {fileID: 0}
 --- !u!114 &498473073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27980,6 +27984,7 @@ MonoBehaviour:
   sizeBallLevelText: {fileID: 2022971487}
   sizeBallPriceText: {fileID: 1784195656}
   bullet: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
+  playerFire: {fileID: 1823646405}
 --- !u!1 &827357703
 GameObject:
   m_ObjectHideFlags: 0
@@ -34692,7 +34697,7 @@ GameObject:
   - component: {fileID: 1068201429}
   - component: {fileID: 1068201431}
   m_Layer: 0
-  m_Name: GameControl
+  m_Name: GameControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

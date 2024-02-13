@@ -13,7 +13,6 @@ public class HeartTrigger : MonoBehaviour
    {
       if (other.TryGetComponent(out PlayerTrigger playerTrigger))
       {
-         Debug.Log("kalbe değdi");
          var healthbarWiev = playerTrigger.GetComponentInChildren<HealthbarWiev>().gameObject;
          if (healthbarWiev.transform.localScale.x <= .6f)
          {

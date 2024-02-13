@@ -45,11 +45,11 @@ public class MinusLife : MonoBehaviour
 
     public void MinusBulletLevel(string lvl1,string lvl2,string lvl3,string lvl4,string lvl5,string lvl6,string lvl7)
     {
-        switch (enemyTrigger.triggerBulletLevel)
+        switch (enemyTrigger.triggerBulletLevel) //bana değen bulletin leveli kontrolü
         {
             case BulletLevel.Lvl1:
                 minusLifeText.text = lvl1;
-                enemyTrigger.numberLivesLost = System.Convert.ToInt32(lvl1);
+                enemyTrigger.numberLivesLost = System.Convert.ToInt32(lvl1); 
                 break;
             case BulletLevel.Lvl2:
                 minusLifeText.text = lvl2;

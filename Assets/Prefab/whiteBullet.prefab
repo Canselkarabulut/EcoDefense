@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLevel: 0
-  bulletSize: 0
+  bulletSize: 2
   bulletRateFire: 0
 --- !u!54 &8355960032959020931
 Rigidbody:

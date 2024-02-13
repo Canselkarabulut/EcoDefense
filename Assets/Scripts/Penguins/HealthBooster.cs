@@ -17,6 +17,7 @@ public class HealthBooster : MonoBehaviour
     {
         _playerHealthbar = playerTrigger.healthBar;
         isHealthPower = false;
+        
     }
     
     private void OnTriggerEnter(Collider other)
@@ -62,6 +63,10 @@ public class HealthBooster : MonoBehaviour
                     }
                 }
             }
+        }
+        else if(_playerHealthbar.transform.localScale.x >= .6f)
+        {
+            _playerHealthbar.transform.localScale = new Vector3(.6f, .07f, .02f);
         }
     }
 }

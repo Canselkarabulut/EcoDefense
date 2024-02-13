@@ -578,7 +578,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -686,7 +686,6 @@ MonoBehaviour:
   enemyLevelStatus: {fileID: 8778589505086105377}
   minusLifeText: {fileID: 5564548571877642279}
   enemyTrigger: {fileID: 1260597798614566948}
-  isMinusLifeText: 0
 --- !u!1 &9206055075475342192
 GameObject:
   m_ObjectHideFlags: 0

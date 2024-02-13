@@ -61,27 +61,27 @@ public class EnemySpawn : MonoBehaviour
                 EnemyLevelControl(0, 1); //0
                 break;
             case WaveNumber.Wave2:
-                spawnInterval = 2.5f;
+                spawnInterval = 2.3f;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave3:
-                spawnInterval = 3f;
+                spawnInterval = 2.5f;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave4:
-                spawnInterval = 3.5f;
+                spawnInterval = 2.7f;
                 EnemyLevelControl(0, 3); //0,1,2
                 break;
             case WaveNumber.Wave5:
-                spawnInterval = 4f;
+                spawnInterval = 3f;
                 EnemyLevelControl(1, 3); //1,2
                 break;
             case WaveNumber.Wave6:
-                spawnInterval = 4.5f;
+                spawnInterval = 3.2f;
                 EnemyLevelControl(1, 4); //1.2,3
                 break;
             case WaveNumber.Wave7:
-                spawnInterval = 5f;
+                spawnInterval = 3.7f;
                 EnemyLevelControl(2, 4); //2,3
                 break;
         }

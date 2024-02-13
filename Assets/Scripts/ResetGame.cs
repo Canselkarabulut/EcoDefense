@@ -26,13 +26,16 @@ public class ResetGame : MonoBehaviour
     private int sizeBallPriceInt = 330;
 
     public Bullet bullet;
+    public PlayerFire playerFire;
 
     public void ResetSetPlayerPrefs()
     {
         bullet.bulletLevel = BulletLevel.Lvl1;
-        bullet.bulletSize = BulletSize.Size1;
         bullet.bulletRateFire = BulletRateFire.FireLvl1;
+        bullet.bulletSize = BulletSize.Size1;
         bullet.transform.localScale = new Vector3(.4f, .4f,.4f);
+        playerFire.spawnInterval = .35f;
+        
         
         waveCount = 1;
         GameEconomy.sCoinCount = 0;

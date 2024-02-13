@@ -36,14 +36,14 @@ public class EnemyLife : MonoBehaviour
     {
         if (other.TryGetComponent(out Bullet bullet))
         {
-            _lifeCapacity += enemyTrigger.numberLivesLost; //enemy triggerdaki sayı kadar azaltacak
+            _lifeCapacity += enemyTrigger.numberLivesLost; //enemy triggerdaki sayı kadar azaltacak "- olarak geliyor sayı" örneğin -2
 
             if (_lifeCapacity == 2)
             {
-                fireEffect.SetActive(true);
+                fireEffect.SetActive(true); //kafanın üstünde ölümünün habercisi olan ateş
             }
 
-            if (_lifeCapacity < 1)
+            if (_lifeCapacity < 1) // yaşam kapasitesi bittiyse
             {
                 GetComponent<CapsuleCollider>().enabled = false;
                 GetComponent<NavMeshAgent>().enabled = false;

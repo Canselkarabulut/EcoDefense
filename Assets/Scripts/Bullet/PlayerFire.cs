@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine.Utility;
+using Enum;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
@@ -14,7 +16,6 @@ public class PlayerFire : MonoBehaviour
     public float bulletSpeed;
     public PlayerRange playerRange;
     public GameObject fireEffect;
-
     private void FixedUpdate()
     {
         _timer += Time.deltaTime;
@@ -26,6 +27,7 @@ public class PlayerFire : MonoBehaviour
                 {
                     _timer = 0f;
                     SpawnObject();
+           
                 }
                 else
                 {
@@ -47,8 +49,8 @@ public class PlayerFire : MonoBehaviour
             bullet.transform.rotation = body.transform.rotation;
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             bulletRigidbody.velocity = barel.transform.forward * bulletSpeed;
+            bullet.GameObject().SetActive(true);
         }
-
         fireEffect.SetActive(true);
         StartCoroutine(CheckFireStatus(bullet));
     }
@@ -56,7 +58,11 @@ public class PlayerFire : MonoBehaviour
     IEnumerator CheckFireStatus(GameObject bullet)
     {
         yield return new WaitForSeconds(3f);
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
         ObjectPool.Instance.ReturnObjectToPool(bullet);
         fireEffect.SetActive(false);
     }
+
+  
 }

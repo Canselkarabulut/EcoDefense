@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Enum;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,6 @@ using TMPro;
 
 public class UpgradeButtonScript : MonoBehaviour
 {
-
     public Button gunPowerBtn;
     public TextMeshProUGUI gunLevelText;
     public TextMeshProUGUI gunPriceText;
@@ -24,19 +24,19 @@ public class UpgradeButtonScript : MonoBehaviour
     public Button sizeBallButton;
     public TextMeshProUGUI sizeBallLevelText;
     public TextMeshProUGUI sizeBallPriceText;
-    private int sizeBallCount = 2;
+    public int sizeBallCount = 2;
     private int sizeBallPriceInt = 330;
 
 
     public GameEconomy gameEconomy;
     public PlayerFire playerFire;
-    
-    
- 
+
+
     private int bulletLevelNumber = 1;
     private int bulleSizeNumber = 1;
 
     public Bullet bullet;
+
     private void Start()
     {
         LoadPlayerPrefs();
@@ -47,13 +47,21 @@ public class UpgradeButtonScript : MonoBehaviour
         GameEconomy.sCoinCount -= gunPriceInt;
         gameEconomy.CoinText();
         gunPowerCount++;
-       
+
         switch (gunPowerCount)
         {
             case 2:
                 gunLevelText.text = "Lvl 2";
                 gunPriceText.text = "330";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl2;
+                    }
+                }
                 bullet.bulletLevel = BulletLevel.Lvl2;
 
                 break;
@@ -61,30 +69,64 @@ public class UpgradeButtonScript : MonoBehaviour
                 gunLevelText.text = "Lvl 3";
                 gunPriceText.text = "430";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl3;
+                    }
+                }
                 bullet.bulletLevel = BulletLevel.Lvl3;
                 break;
             case 4:
                 gunLevelText.text = "Lvl 4";
                 gunPriceText.text = "600";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl4;
+                    }
+                }
                 bullet.bulletLevel = BulletLevel.Lvl4;
                 break;
             case 5:
                 gunLevelText.text = "Lvl 5";
                 gunPriceText.text = "860";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl5;
+                    }
+                }
                 bullet.bulletLevel = BulletLevel.Lvl5;
                 break;
             case 6:
                 gunLevelText.text = "Lvl 6";
                 gunPriceText.text = "1160";
-                gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                gunPriceInt = Convert.ToInt32(gunPriceText.text);  for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl6;
+                    }
+                }
                 bullet.bulletLevel = BulletLevel.Lvl6;
                 break;
             case 7:
                 gunLevelText.text = "Lvl 7";
                 gunPriceText.text = "1535";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl7;
+                    }
+                }
                 bullet.bulletLevel = BulletLevel.Lvl7;
                 break;
             default:
@@ -150,9 +192,9 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
         }
 
+
         SavePlayerPrefs();
     }
-
 
     public void SizeBallButton()
     {
@@ -166,7 +208,15 @@ public class UpgradeButtonScript : MonoBehaviour
                 sizeBallPriceText.text = "330";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size2;
-                bullet.transform.localScale = new Vector3(.5f, .5f, .5f);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
+                            new Vector3(.5f, .5f, .5f);
+                    }
+                }
+
 
                 break;
             case 3:
@@ -174,70 +224,114 @@ public class UpgradeButtonScript : MonoBehaviour
                 sizeBallPriceText.text = "430";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size3;
-                bullet.transform.localScale = new Vector3(.6f, .6f, .6f);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
+                            new Vector3(.6f, .6f, .6f);
+                    }
+                }
+
                 break;
             case 4:
                 sizeBallLevelText.text = "Lvl 4";
                 sizeBallPriceText.text = "600";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size4;
-                bullet.transform.localScale = new Vector3(.7f, .7f, .7f);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
+                            new Vector3(.7f, .7f, .7f);
+                    }
+                }
+
                 break;
             case 5:
                 sizeBallLevelText.text = "Lvl 5";
                 sizeBallPriceText.text = "860";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size5;
-                bullet.transform.localScale = new Vector3(.8f, .8f, .8f);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
+                            new Vector3(.8f, .8f, .8f);
+                    }
+                }
+
                 break;
             case 6:
                 sizeBallLevelText.text = "Lvl 6";
                 sizeBallPriceText.text = "1160";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size6;
-                bullet.transform.localScale = new Vector3(.9f, .9f, .9f);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
+                            new Vector3(.9f, .9f, .9f);
+                    }
+                }
+
                 break;
             case 7:
                 sizeBallLevelText.text = "Lvl 7";
                 sizeBallPriceText.text = "1535";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size7;
-                bullet.transform.localScale = new Vector3(1, 1, 1);
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).GetComponent<Bullet>())
+                    {
+                        pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale = new Vector3(1, 1, 1);
+                    }
+                }
+
+                break;
+            case 8:
+                sizeBallButton.interactable = false;
+                Debug.Log("kapanma");
                 break;
             default:
                 Debug.Log("tıklama sayısı kontrol alanın dışına çıktı");
                 break;
         }
 
+
         SavePlayerPrefs();
     }
 
+    public GameObject pool;
 
     private void Update()
     {
-        ButtonInteractable(gunPowerBtn, gunPriceInt);
-        ButtonInteractable(rateFireButton, rateFirePriceInt);
-        ButtonInteractable(sizeBallButton, sizeBallPriceInt);
+        ButtonInteractable(gunPowerBtn, gunPriceInt,gunPowerCount);
+        ButtonInteractable(rateFireButton, rateFirePriceInt,rateFireCount);
+        ButtonInteractable(sizeBallButton, sizeBallPriceInt,sizeBallCount);
     }
 
-    public void ButtonInteractable(Button button, int priceInt)
+    public void ButtonInteractable(Button button, int priceInt , int count)
     {
-        if (GameEconomy.sCoinCount > priceInt)
+        if (GameEconomy.sCoinCount > priceInt && count<8)
         {
             button.interactable = true;
         }
         else
         {
             button.interactable = false;
-
         }
     }
 
 
     private void SavePlayerPrefs()
     {
-        PlayerPrefs.SetInt("CountCoin6",GameEconomy.sCoinCount); 
-        
+        PlayerPrefs.SetInt("CountCoin6", GameEconomy.sCoinCount);
+
         PlayerPrefs.SetInt("GunPowerCount16", gunPowerCount);
         PlayerPrefs.SetInt("RateFireCount16", rateFireCount);
         PlayerPrefs.SetInt("SizeBallCount16", sizeBallCount);
@@ -254,7 +348,7 @@ public class UpgradeButtonScript : MonoBehaviour
         PlayerPrefs.SetString("rateFirePriceText16", rateFirePriceText.text);
         PlayerPrefs.SetString("sizeBallPriceText16", sizeBallPriceText.text);
 
-        
+
         PlayerPrefs.Save();
     }
 

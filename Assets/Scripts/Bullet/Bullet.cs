@@ -13,7 +13,9 @@ public class Bullet : MonoBehaviour
 
     private int bulletLevelNumber = 1;
     private int bulleSizeNumber = 1;
-  
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out EnemyTrigger enemyTrigger))
@@ -22,4 +24,7 @@ public class Bullet : MonoBehaviour
             ObjectPool.Instance.ReturnObjectToPool(gameObject);
         }
     }
+    
+   
+
 }
