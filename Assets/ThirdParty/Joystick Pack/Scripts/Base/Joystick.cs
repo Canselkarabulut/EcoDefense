@@ -49,7 +49,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         get { return snapY; }
         set { snapY = value; }
     }
-
+    
     [SerializeField] private float handleRange = 1;
     [SerializeField] private float deadZone = 0;
     [SerializeField] private AxisOptions axisOptions = AxisOptions.Both;

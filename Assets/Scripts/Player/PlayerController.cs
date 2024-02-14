@@ -6,43 +6,47 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public DynamicJoystick dynamicJoystick;
+
+    //public DynamicJoystick dynamicJoystick;
+    public FloatingJoystick floatingJoystick;
     public Rigidbody rb;
-    
-    private float _smallestDistance;
-    private float distance;
-    private Vector3 enemyPositionY;
     [SerializeField] Animator anim;
     private PlayerRange playerRange;
 
     private void Start()
     {
-        //    listRangeEnemy = gameObject.GetComponentInChildren<RangeControl>().rangeEnemyList;
         playerRange = gameObject.GetComponent<PlayerRange>();
-        _smallestDistance = Mathf.Infinity;
     }
 
-    public void FixedUpdate()
-    {
-        Vector3 direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
-    }
-
-    
     private void Update()
     {
-        rb.velocity = new Vector3(dynamicJoystick.Horizontal * speed, rb.velocity.y, dynamicJoystick.Vertical * speed);
-        
-        if (dynamicJoystick.Horizontal != 0 || dynamicJoystick.Vertical != 0)
+        if (floatingJoystick != null)
         {
-            anim.SetBool("isRun", true);
-            
-            if (playerRange.enemys.transform.childCount > 0)
+            Vector3 direction = Vector3.forward * floatingJoystick.Vertical +
+                                Vector3.right * floatingJoystick.Horizontal;
+
+            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+
+            rb.velocity = new Vector3(floatingJoystick.Horizontal * speed, transform.position.y,
+                floatingJoystick.Vertical * speed);
+
+
+            if (floatingJoystick.Horizontal != 0 || floatingJoystick.Vertical != 0)
             {
-                playerRange.NearestEnemy();
-                if (playerRange.LookAtEnemy())
+                anim.SetBool("isRun", true);
+
+                if (playerRange.enemys.transform.childCount > 0)
                 {
-                    transform.LookAt(playerRange.NearestEnemy().transform);
+                    playerRange.NearestEnemy();
+                    if (playerRange.LookAtEnemy())
+                    {
+                        transform.LookAt(playerRange.NearestEnemy().transform);
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.LookRotation(rb.velocity);
+                    }
                 }
                 else
                 {
@@ -51,12 +55,17 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                transform.rotation = Quaternion.LookRotation(rb.velocity);
+                anim.SetBool("isRun", false);
+                if (playerRange.enemys.transform.childCount > 0)
+                {
+                    playerRange.NearestEnemy();
+                    if (playerRange.LookAtEnemy())
+                    {
+                        transform.LookAt(playerRange.NearestEnemy().transform);
+                    }
+                }
+               
             }
-        }
-        else
-        {
-            anim.SetBool("isRun", false);
         }
     }
 }
