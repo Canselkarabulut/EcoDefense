@@ -10,30 +10,32 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
     public Animator playerAnimator;
     public Animator virtualCamAnimator;
     public GameObject blackTransition;
+
     public GameObject deadExplore;
-  //  public GameObject scateboard;
-  
+
+    //  public GameObject scateboard;
+
+
     public void PlayerHopeful()
     {
-        playerAnimator.SetBool("isPlay",true);
+        playerAnimator.SetBool("isPlay", true);
     }
 
     public void TowerShot()
     {
-        virtualCamAnimator.SetBool("isTowerShot",true);
+        virtualCamAnimator.SetBool("isTowerShot", true);
     }
 
     public void ScateBoardAnimStart()
     {
-        playerAnimator.SetBool("isScatebord",true);
+        playerAnimator.SetBool("isScatebord", true);
     }
 
     public void ActiveScatebord()
     {
-       // scateboard.SetActive(true);
-       deadExplore.SetActive(true);
-       StartCoroutine(TransitionPlayer());
-
+        // scateboard.SetActive(true);
+        deadExplore.SetActive(true);
+        StartCoroutine(TransitionPlayer());
     }
 
     IEnumerator TransitionPlayer()
@@ -41,12 +43,33 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         blackTransition.SetActive(true);
         transform.gameObject.SetActive(false);
-        
     }
 
 
     public void NextScene()
     {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public GameObject finishCapsule;
+
+    public void FinishCapsuleSize()
+    {
+        finishCapsule.SetActive(true);
+    }
+
+    public void FinishPlayerAnim()
+    {
+        playerAnimator.Play("JumpingUp");
+    }
+
+    public void MapScene()
+    {
+        WordMapControl.mapAnimCount = 1;
+        PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
+        SceneManager.LoadScene(1);
+    }
+    
+   
+    
 }

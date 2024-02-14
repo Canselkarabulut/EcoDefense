@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     {
         SingletonThidGameManager();
     }
+
+
     void SingletonThidGameManager()
     {
         if(_instance == null)

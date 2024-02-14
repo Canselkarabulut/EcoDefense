@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Antarctica.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/FinishAntarticaStory.unity
+    guid: f6da3d4163a11cf4182a4a4e99288e2c
   m_configObjects: {}

@@ -82,25 +82,25 @@ public class WaveControl : MonoBehaviour
         switch (waveNumber)
         {
             case WaveNumber.Wave1:
-                EnemyTextLimit("Wave 1", "12", 12,1);
+                EnemyTextLimit("Wave 1 / 7", "12", 12,1);
                 break;
             case WaveNumber.Wave2:
-                EnemyTextLimit("Wave 2", "14", 14,2);
+                EnemyTextLimit("Wave 2 / 7", "14", 14,2);
                 break;
             case WaveNumber.Wave3:
-                EnemyTextLimit("Wave 3", "16", 16,3);
+                EnemyTextLimit("Wave 3 / 7", "16", 16,3);
                 break;
             case WaveNumber.Wave4:
-                EnemyTextLimit("Wave 4", "18", 18,4);
+                EnemyTextLimit("Wave 4 / 7", "18", 18,4);
                 break;
             case WaveNumber.Wave5:
-                EnemyTextLimit("Wave 5", "20", 20,5);
+                EnemyTextLimit("Wave 5 / 7", "20", 20,5);
                 break;
             case WaveNumber.Wave6:
-                EnemyTextLimit("Wave 6", "22", 22,6);
+                EnemyTextLimit("Wave 6 / 7", "22", 22,6);
                 break;
             case WaveNumber.Wave7:
-                EnemyTextLimit("Wave 7", "25", 25,7);
+                EnemyTextLimit("Wave 7 / 7", "25", 25,7); 
                 break;
         }
     }
@@ -114,7 +114,11 @@ public class WaveControl : MonoBehaviour
         ShockWaveEffect();
     }
 
-
+    public GameObject enemyTextBG;
+    public GameObject player;
+    public Transform sceneCenter;
+    public GameObject floatingJoystick;
+    public GameObject ecoGun;
     public void WaveWaitTime()
     {
       
@@ -170,11 +174,19 @@ public class WaveControl : MonoBehaviour
                             EnemyText();
                             break;
                         case WaveNumber.Wave7:
-                            //win sayfası açılacak
-                            waveNumber = WaveNumber.Wave7;
-                            WaveNumberReturn();
-                            EnemyText();
+                          //oyun tamamlandı
+
+                            waveText.text = "Next";
+                            enemySpawn.gameObject.SetActive(false);
+                            enemyTextBG.SetActive(false);
+                            player.transform.position = sceneCenter.position;
+                            player.transform.rotation = Quaternion.Euler(0,180,0);
+                            player.GetComponent<PlayerController>().floatingJoystick = null;
+                            floatingJoystick.gameObject.SetActive(false);
+                            ecoGun.SetActive(false); // silahı kapat
+                            player.GetComponent<Animator>().SetBool("isWinDance",true);
                             break;
+                        
                     }
                 }
                 else

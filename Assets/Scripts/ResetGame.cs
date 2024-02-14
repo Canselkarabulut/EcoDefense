@@ -55,6 +55,7 @@ public class ResetGame : MonoBehaviour
         rateFirePriceText.text = "330";
         sizeBallPriceText.text = "330";
 
+        PlayerPrefs.SetInt("mapAnimCount",0);
         
         PlayerPrefs.SetInt("CountCoin6", GameEconomy.sCoinCount);
         PlayerPrefs.SetInt("waveCount", waveCount);
@@ -88,7 +89,7 @@ public class ResetGame : MonoBehaviour
     {
         GameEconomy.sCoinCount = PlayerPrefs.GetInt("CountCoin6");
         waveCount = PlayerPrefs.GetInt("waveCount");
-
+        PlayerPrefs.GetInt("mapAnimCount", 0);
 
         gunPowerCount = PlayerPrefs.GetInt("GunPowerCount16", 2);
         rateFireCount = PlayerPrefs.GetInt("RateFireCount16", 2);
