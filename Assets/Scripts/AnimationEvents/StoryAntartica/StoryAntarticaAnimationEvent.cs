@@ -60,7 +60,7 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
 
     public void FinishPlayerAnim()
     {
-        playerAnimator.Play("JumpingUp");
+        playerAnimator.Play("Jumping Up");
     }
 
     public void MapScene()
