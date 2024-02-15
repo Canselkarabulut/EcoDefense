@@ -36,13 +36,13 @@ public class EnemyLife : MonoBehaviour
     {
         if (other.TryGetComponent(out Bullet bullet))
         {
-            _lifeCapacity += enemyTrigger.numberLivesLost; //enemy triggerdaki sayı kadar azaltacak "- olarak geliyor sayı" örneğin -2
+            _lifeCapacity += enemyTrigger.numberLivesLost;
 
-            if (_lifeCapacity == 2)
+            var fireEffectCount = _lifeCapacity + (enemyTrigger.numberLivesLost + enemyTrigger.numberLivesLost);
+            if (fireEffectCount < 1)
             {
                 fireEffect.SetActive(true); //kafanın üstünde ölümünün habercisi olan ateş
             }
-
             if (_lifeCapacity < 1) // yaşam kapasitesi bittiyse
             {
                 GetComponent<CapsuleCollider>().enabled = false;
@@ -55,8 +55,6 @@ public class EnemyLife : MonoBehaviour
                 fireEffect.SetActive(false);
                 dieEffect.SetActive(true);
                 isDie = true;
-
-                //kafamın üstünde coin çıksın resim olarak içini yazı ile dolduracağız enemy spawn da belirtilen
                 coin.SetActive(true);
                 StartCoroutine(EnemyDie());
             }

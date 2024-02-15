@@ -93,7 +93,6 @@ public class EnemySpawn : MonoBehaviour
         {
             waveControl.waitStatus = WaitStatus.GameBreak;
             waveControl._countdownNum = 10;
-           
         }
         else
         {
