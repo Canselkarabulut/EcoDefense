@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLevel: 0
-  bulletSize: 2
+  bulletSize: 0
   bulletRateFire: 0
 --- !u!54 &8355960032959020931
 Rigidbody:
@@ -235,7 +235,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &414204956684783132
 CapsuleCollider:

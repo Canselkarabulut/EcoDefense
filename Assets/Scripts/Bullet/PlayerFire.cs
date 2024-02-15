@@ -16,6 +16,7 @@ public class PlayerFire : MonoBehaviour
     public float bulletSpeed;
     public PlayerRange playerRange;
     public GameObject fireEffect;
+
     private void FixedUpdate()
     {
         _timer += Time.deltaTime;
@@ -27,7 +28,6 @@ public class PlayerFire : MonoBehaviour
                 {
                     _timer = 0f;
                     SpawnObject();
-           
                 }
                 else
                 {
@@ -38,6 +38,7 @@ public class PlayerFire : MonoBehaviour
     }
 
     public GameObject bullet;
+
     public void SpawnObject()
     {
         bullet =
@@ -47,10 +48,13 @@ public class PlayerFire : MonoBehaviour
             //   bullet.transform.SetParent(parentSpawnObject);
             bullet.transform.position = barel.transform.position;
             bullet.transform.rotation = body.transform.rotation;
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody.velocity = barel.transform.forward * bulletSpeed;
+            //   Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            //     bulletRigidbody.velocity = barel.transform.forward * bulletSpeed;
+           // bullet.transform.position = transform.forward * bulletSpeed;
+          //  bullet.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
             bullet.GameObject().SetActive(true);
         }
+
         fireEffect.SetActive(true);
         StartCoroutine(CheckFireStatus(bullet));
     }
@@ -60,9 +64,9 @@ public class PlayerFire : MonoBehaviour
         yield return new WaitForSeconds(3f);
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
+        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+        bulletRigidbody.velocity = Vector3.zero;
         ObjectPool.Instance.ReturnObjectToPool(bullet);
         fireEffect.SetActive(false);
     }
-
-  
 }

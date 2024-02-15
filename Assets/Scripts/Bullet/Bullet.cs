@@ -24,7 +24,9 @@ public class Bullet : MonoBehaviour
             ObjectPool.Instance.ReturnObjectToPool(gameObject);
         }
     }
-    
-   
 
+    private void FixedUpdate()
+    {
+        transform.Translate(Vector3.forward * 15 * Time.deltaTime);
+    }
 }

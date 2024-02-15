@@ -5040,14 +5040,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4940289555181151317}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000044703484, y: 1, z: 0.00000024278415, w: 0.00000010523945}
-  m_LocalPosition: {x: -0.000019326759, y: 0, z: -0.000011689535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.000019327184, y: 0, z: -0.000011427178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3899168391654410871}
   m_Father: {fileID: 5622997999288010045}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5964777290383471749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5335,6 +5335,7 @@ MonoBehaviour:
   dieEffect: {fileID: 4102810818551362650}
   minusLifeText: {fileID: 747505442033618042}
   isDie: 0
+  PauseButton: {fileID: 0}
 --- !u!1001 &3894597671922358523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5682,31 +5683,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.008858828
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.05811084
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9982294
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.009091328
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 32.792
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -114.97
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -107.835
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4a1f6dba9b1c01498f4f6d9185178b8, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -6123,3 +6124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   losePanel: {fileID: 0}
+  elementalArrow: {fileID: 0}
+  playerAnimator: {fileID: 0}

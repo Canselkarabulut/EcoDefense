@@ -34980,7 +34980,6 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   floatingJoystick: {fileID: 5086667483658808865}
   ecoGun: {fileID: 470224379}
-  ElementalArrow: {fileID: 0}
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
@@ -36464,6 +36463,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37a9a8bdc340d442aaa06d186687ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1197572852 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 287531929368103033, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
+  m_PrefabInstance: {fileID: 2464083165585558541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1198252601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3926143612789629055, guid: a34d684ee88385f4982c301316c13325, type: 3}
@@ -60790,6 +60794,10 @@ PrefabInstance:
       propertyPath: elementalArrow
       value: 
       objectReference: {fileID: 1686676240}
+    - target: {fileID: 7273305070957562928, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1197572852}
     - target: {fileID: 8143721457322639424, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000013780605
