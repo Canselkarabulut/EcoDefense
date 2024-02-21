@@ -23,6 +23,7 @@ public class WordMapPlayButton : MonoBehaviour
                 }
                 break;
             case 1:
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
                 //afrika aniimasyon sahnesi veya direk oyun sahnesi
                 break;
         }
