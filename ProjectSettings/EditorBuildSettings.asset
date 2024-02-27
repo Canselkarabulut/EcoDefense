@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Africa/StoryAfrica.unity
     guid: ba72ca6db6f38904eafd7ddd5cf2c275
+  - enabled: 1
+    path: Assets/Scenes/Africa/FinishAfricaStory.unity
+    guid: b40e8c219c5391248bfe0276dcb656ca
   m_configObjects: {}

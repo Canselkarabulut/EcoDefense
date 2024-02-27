@@ -188,6 +188,8 @@ public class WaveControl : MonoBehaviour
                             floatingJoystick.gameObject.SetActive(false);
                             ecoGun.SetActive(false); // silahı kapat
                             player.GetComponent<Animator>().SetBool("isWinDance", true);
+                            
+                            PlayerPrefs.SetInt("waveCount", 1);
                             break;
                     }
 
