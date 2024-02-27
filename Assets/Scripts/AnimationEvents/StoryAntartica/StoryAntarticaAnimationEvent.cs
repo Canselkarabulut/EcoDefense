@@ -18,21 +18,29 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
 
     public void PlayerHopeful()
     {
+        if (playerAnimator == null)
+            return;
         playerAnimator.SetBool("isPlay", true);
     }
 
     public void TowerShot()
     {
+        if (virtualCamAnimator == null)
+            return;
         virtualCamAnimator.SetBool("isTowerShot", true);
     }
 
     public void ScateBoardAnimStart()
     {
+        if (playerAnimator == null)
+            return;
         playerAnimator.SetBool("isScatebord", true);
     }
 
     public void ActiveScatebord()
     {
+        if (deadExplore == null)
+            return;
         // scateboard.SetActive(true);
         deadExplore.SetActive(true);
         StartCoroutine(TransitionPlayer());
@@ -55,21 +63,22 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
 
     public void FinishCapsuleSize()
     {
+        if (finishCapsule == null)
+            return;
         finishCapsule.SetActive(true);
     }
 
     public void FinishPlayerAnim()
     {
+        if (playerAnimator == null)
+            return;
         playerAnimator.Play("Jumping Up");
     }
 
     public void MapScene()
     {
-        WordMapControl.mapAnimCount = 1;
+        WordMapControl.mapAnimCount += 1;
         PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
         SceneManager.LoadScene(1);
     }
-    
-   
-    
 }
