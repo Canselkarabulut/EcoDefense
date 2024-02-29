@@ -17548,6 +17548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AfricaBadCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 5400017147023949510, guid: 7cada79a9ec9b374fb3ae31bfbcd4a55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6147792216848356428, guid: 7cada79a9ec9b374fb3ae31bfbcd4a55, type: 3}
       propertyPath: navMeshAgent
       value: 
