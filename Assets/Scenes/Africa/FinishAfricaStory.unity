@@ -29416,6 +29416,9 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 914728431}
   deadExplore: {fileID: 1488702949}
+  isDoneAntartica: 0
+  isDoneAfrica: 0
+  isDoneAsia: 0
   finishCapsule: {fileID: 0}
 --- !u!1001 &916564662
 PrefabInstance:
@@ -48035,6 +48038,9 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 0}
   deadExplore: {fileID: 1488702949}
+  isDoneAntartica: 0
+  isDoneAfrica: 1
+  isDoneAsia: 0
   finishCapsule: {fileID: 917358611}
 --- !u!1001 &1698933383
 PrefabInstance:
@@ -62926,6 +62932,9 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 914728431}
   deadExplore: {fileID: 1488702949}
+  isDoneAntartica: 0
+  isDoneAfrica: 1
+  isDoneAsia: 0
   finishCapsule: {fileID: 917358611}
 --- !u!4 &6831416179758158792
 Transform:

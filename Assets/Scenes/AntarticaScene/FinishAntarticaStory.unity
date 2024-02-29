@@ -17093,6 +17093,9 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 914728431}
   deadExplore: {fileID: 1488702949}
+  isDoneAntartica: 0
+  isDoneAfrica: 0
+  isDoneAsia: 0
   finishCapsule: {fileID: 2051347253}
 --- !u!1 &949620277
 GameObject:
@@ -23843,6 +23846,9 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 0}
   deadExplore: {fileID: 1488702949}
+  isDoneAntartica: 1
+  isDoneAfrica: 0
+  isDoneAsia: 0
   finishCapsule: {fileID: 2051347253}
 --- !u!1001 &1695008690
 PrefabInstance:
@@ -41148,6 +41154,9 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 914728431}
   deadExplore: {fileID: 1488702949}
+  isDoneAntartica: 1
+  isDoneAfrica: 0
+  isDoneAsia: 0
   finishCapsule: {fileID: 2051347253}
 --- !u!4 &6831416179758158792
 Transform:

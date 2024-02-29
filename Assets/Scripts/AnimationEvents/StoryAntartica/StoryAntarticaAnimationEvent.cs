@@ -78,6 +78,7 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
     public void MapScene()
     {
         WordMapControl.mapAnimCount += 1;
+        Debug.Log("map count: "+  WordMapControl.mapAnimCount);
         PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
         SceneManager.LoadScene(1);
     }

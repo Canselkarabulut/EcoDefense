@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WordMapControl : MonoBehaviour
 {
-   public static int mapAnimCount = 0;
+   public static int mapAnimCount;
    public Animator camAnim;
    public GameObject antarticaDone;
    public GameObject africaDone;
@@ -15,7 +15,7 @@ public class WordMapControl : MonoBehaviour
    public GameObject oceanDone;
    private void Start()
    {
-      mapAnimCount = PlayerPrefs.GetInt("mapAnimCount", 0);
+      mapAnimCount = PlayerPrefs.GetInt("mapAnimCount",0);
       switch (mapAnimCount)
       {
          case 0:
@@ -32,7 +32,4 @@ public class WordMapControl : MonoBehaviour
             break;
       }
    }
-   //antartica bitti mi 
-   //hayır ise antarticaya yaklaşan harita çalışsın 
-   //evet ise afrikaya yaklaşan animasyon
 }
