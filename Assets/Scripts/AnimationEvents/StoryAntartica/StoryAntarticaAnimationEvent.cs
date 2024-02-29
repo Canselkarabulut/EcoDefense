@@ -75,11 +75,36 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
         playerAnimator.Play("Jumping Up");
     }
 
+    private int activeSceneIndex;
+
     public void MapScene()
     {
-        WordMapControl.mapAnimCount += 1;
-        Debug.Log("map count: "+  WordMapControl.mapAnimCount);
+        activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("activeSceneIndex: " + activeSceneIndex);
+        switch (activeSceneIndex)
+        {
+            case 4: //antarticaFinishStoryScene
+                WordMapControl.mapAnimCount = 1;
+                break;
+            case 7://africaFinishStoryScene
+                WordMapControl.mapAnimCount = 2;
+                break;
+            case 10://asiaFinishStoryScene
+                WordMapControl.mapAnimCount = 3;
+                break;
+            case 13: //europeFinishStoryScene
+                WordMapControl.mapAnimCount = 4;
+                break;
+            case 16: //americaFinishStoryScene
+                WordMapControl.mapAnimCount = 5;
+                break;
+            case 19: //OceansFinishStoryScene
+                WordMapControl.mapAnimCount = 6;
+                break;
+        }
         PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
+        Debug.Log("map count: " + WordMapControl.mapAnimCount);
+        // PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
         SceneManager.LoadScene(1);
     }
 }

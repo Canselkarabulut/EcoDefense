@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Asia/Asia.unity
     guid: 203788add448fa24f8048fa36440caa5
+  - enabled: 1
+    path: Assets/Scenes/Asia/FinishAsiaStory.unity
+    guid: 4a87526948255074996140abd9e17300
   m_configObjects: {}

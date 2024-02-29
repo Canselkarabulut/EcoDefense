@@ -30,6 +30,38 @@ public class WordMapControl : MonoBehaviour
             africaDone.SetActive(true);
             camAnim.SetBool("isAsia",true);
             break;
+         case 3:
+            antarticaDone.SetActive(true);
+            africaDone.SetActive(true);
+            asiaDone.SetActive(true);
+            camAnim.SetBool("isEurope",true); //isEurope
+            break;
+         case 4:
+            antarticaDone.SetActive(true);
+            africaDone.SetActive(true);
+            asiaDone.SetActive(true);
+            europeDone.SetActive(true);
+            camAnim.SetBool("isAmerica",true); //isEurope
+            break;
+         case 5:
+            antarticaDone.SetActive(true);
+            africaDone.SetActive(true);
+            asiaDone.SetActive(true);
+            europeDone.SetActive(true);
+            amerikaDone.SetActive(true);
+            camAnim.SetBool("isOceans",true); //isEurope
+            break;
+         case 6:
+            antarticaDone.SetActive(true);
+            africaDone.SetActive(true);
+            asiaDone.SetActive(true);
+            europeDone.SetActive(true);
+            amerikaDone.SetActive(true);
+            oceanDone.SetActive(true);
+            Debug.Log("GameFinish");
+            //Tüm oyun bitti kısmı
+            //camAnim.SetBool("isOceans",true); //isEurope
+            break;
       }
    }
 }
