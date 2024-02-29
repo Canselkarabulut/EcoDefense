@@ -18080,9 +18080,6 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 914728431}
   deadExplore: {fileID: 1488702949}
-  isDoneAntartica: 0
-  isDoneAfrica: 0
-  isDoneAsia: 0
   finishCapsule: {fileID: 0}
 --- !u!1 &1038676446
 GameObject:
@@ -25390,9 +25387,6 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 0}
   deadExplore: {fileID: 1488702949}
-  isDoneAntartica: 0
-  isDoneAfrica: 0
-  isDoneAsia: 1
   finishCapsule: {fileID: 417112659}
 --- !u!1 &1729866024
 GameObject:
@@ -32750,9 +32744,6 @@ MonoBehaviour:
   virtualCamAnimator: {fileID: 1681173399}
   blackTransition: {fileID: 914728431}
   deadExplore: {fileID: 1488702949}
-  isDoneAntartica: 0
-  isDoneAfrica: 0
-  isDoneAsia: 1
   finishCapsule: {fileID: 417112659}
 --- !u!4 &6831416179758158792
 Transform:
