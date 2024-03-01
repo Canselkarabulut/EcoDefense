@@ -8059,7 +8059,7 @@ MonoBehaviour:
   wave4EnemyLimit: 22
   wave5EnemyLimit: 24
   wave6EnemyLimit: 26
-  wave7EnemyLimit: 28
+  wave7EnemyLimit: 30
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
