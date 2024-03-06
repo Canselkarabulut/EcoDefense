@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/04-EuropeScene/FinishEuropaStory.unity
     guid: 74a93aacb948ea74a91eb08e6162b722
+  - enabled: 1
+    path: Assets/Scenes/05-AmericaScene/StoryAmerica.unity
+    guid: 24ab89106502d754e8590dcb9cc97190
+  - enabled: 1
+    path: Assets/Scenes/05-AmericaScene/America.unity
+    guid: 3693d86b40582904f95f9a59b1bebdc8
+  - enabled: 1
+    path: Assets/Scenes/05-AmericaScene/FinishAmericaStory.unity
+    guid: c9552cbebb053604395c9fcb8346d203
   m_configObjects: {}
