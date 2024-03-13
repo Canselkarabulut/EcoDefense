@@ -107,8 +107,8 @@ NavMeshSettings:
     serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
+    agentHeight: 1
+    agentSlope: 11.9
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: e88aab4a4aa128c4691462d7aba583b6, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8d791b8f4a5351b4e85ba21c41940bd2, type: 2}
 --- !u!4 &1457629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3926143612789629055, guid: a34d684ee88385f4982c301316c13325, type: 3}
@@ -11806,7 +11806,7 @@ Transform:
   m_GameObject: {fileID: 197572206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26197,6 +26197,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: 1a885487a0be3a94cba42bcf21175533, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: 1a885487a0be3a94cba42bcf21175533, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1a885487a0be3a94cba42bcf21175533, type: 3}
       propertyPath: m_Name
       value: polygenGround3
@@ -34095,8 +34103,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
-  m_LocalPosition: {x: 0.002, y: 3.642, z: -6.2}
+  m_LocalRotation: {x: 0.30318558, y: 0.0000000163965, z: -0.0000000052167257, w: 0.9529315}
+  m_LocalPosition: {x: 0.002, y: 3.632, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34788,6 +34796,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8700617353114198275, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
       propertyPath: m_LocalScale.x
       value: 6
@@ -34844,13 +34856,81 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8380157826906577798, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -7739189329204300329, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -6733177361254619370, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5824510187379060028, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -391268320553695201, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65702495048144492, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
       propertyPath: m_Name
       value: CoolingTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365132098506396400, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800250516343163423, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735102090226358198, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864342965330004576, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700725330082129686, guid: 6c007fbc477af43499f112517cf93bf1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39898,6 +39978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RisingSteam (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8531994819537875557, guid: e375e01c25ec12d4f86a49fd934fabfc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40348,8 +40432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
-  m_LocalPosition: {x: 0.002, y: 3.642, z: -6.2}
+  m_LocalRotation: {x: 0.30318558, y: 0.0000000163965, z: -0.0000000052167257, w: 0.9529315}
+  m_LocalPosition: {x: 0.002, y: 3.632, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41542,7 +41626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1723015412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41572,7 +41656,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.06666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: d3fa27835c8cec54eb59bed4c5542c25, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8de4021ddafe0ba44943884014a33358, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1723015413
 Transform:
@@ -41583,7 +41667,7 @@ Transform:
   m_GameObject: {fileID: 1723015411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9600744, y: 1.5, z: -0.14}
+  m_LocalPosition: {x: 0.9600744, y: 1.74, z: -0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49381,7 +49465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefabs:
   - {fileID: 3034698580723210716, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
-  - {fileID: 9022269977446156226, guid: f1b72a6956d747848b32cda1e2e9d988, type: 3}
+  - {fileID: 9022269977446156226, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
   poolSize: 100
   parentSpawnObject: {fileID: 1981475851}
 --- !u!4 &1981475851
@@ -59682,6 +59766,10 @@ PrefabInstance:
     - target: {fileID: 8531994819537875557, guid: e375e01c25ec12d4f86a49fd934fabfc, type: 3}
       propertyPath: m_Name
       value: RisingSteam
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531994819537875557, guid: e375e01c25ec12d4f86a49fd934fabfc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

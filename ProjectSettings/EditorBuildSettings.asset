@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/06-OceanScenes/FinishOceanStory.unity
     guid: 9f5d34937358a4f45adefca3bd194e33
+  - enabled: 1
+    path: Assets/Scenes/07-FinishScene/FinishScene.unity
+    guid: 5b07ddc585473a64bbe8be1d2622e005
   m_configObjects: {}
