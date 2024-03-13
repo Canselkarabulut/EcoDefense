@@ -9,17 +9,17 @@ using UnityEngine.SceneManagement;
 public class ResetGame : MonoBehaviour
 {
     private int waveCount = 1;
-    
+
     public TextMeshProUGUI gunLevelText;
     public TextMeshProUGUI gunPriceText;
     private int gunPriceInt = 330;
     private int gunPowerCount = 2;
-    
+
     public TextMeshProUGUI rateFireLevelText;
     public TextMeshProUGUI rateFirePriceText;
     private int rateFirePriceInt = 330;
     private int rateFireCount = 2;
-    
+
     public TextMeshProUGUI sizeBallLevelText;
     public TextMeshProUGUI sizeBallPriceText;
     private int sizeBallCount = 2;
@@ -33,30 +33,38 @@ public class ResetGame : MonoBehaviour
         bullet.bulletLevel = BulletLevel.Lvl1;
         bullet.bulletRateFire = BulletRateFire.FireLvl1;
         bullet.bulletSize = BulletSize.Size1;
-        bullet.transform.localScale = new Vector3(.4f, .4f,.4f);
-        playerFire.spawnInterval = .35f;
-        
-        
+        bullet.transform.localScale = new Vector3(.4f, .4f, .4f);
+        if (playerFire != null)
+            playerFire.spawnInterval = .35f;
+
+
         waveCount = 1;
         GameEconomy.sCoinCount = 0;
         gunPowerCount = 2;
         rateFireCount = 2;
-        sizeBallCount = 2; 
-        
-        gunPriceInt =330;
+        sizeBallCount = 2;
+
+        gunPriceInt = 330;
         rateFirePriceInt = 330;
         sizeBallPriceInt = 330;
-        
-        gunLevelText.text = "Lvl2";
-        rateFireLevelText.text = " Lvl2";
-        sizeBallLevelText.text = "Lvl2";
+        if (gunLevelText != null && rateFireLevelText != null && sizeBallLevelText != null && gunPriceText != null &&
+            rateFirePriceText != null && sizeBallPriceText != null)
+        {
+            gunLevelText.text = "Lvl2";
+            rateFireLevelText.text = " Lvl2";
+            sizeBallLevelText.text = "Lvl2";
+            gunPriceText.text = "330";
+            rateFirePriceText.text = "330";
+            sizeBallPriceText.text = "330";
+            PlayerPrefs.SetString("gunLevelText16", gunLevelText.text);
+            PlayerPrefs.SetString("rateFireLevelText16", rateFireLevelText.text);
+            PlayerPrefs.SetString("sizeBallLevelText16", sizeBallLevelText.text);
+            PlayerPrefs.SetString("gunPriceText16", gunPriceText.text);
+            PlayerPrefs.SetString("rateFirePriceText16", rateFirePriceText.text);
+            PlayerPrefs.SetString("sizeBallPriceText16", sizeBallPriceText.text);
+        }
+        PlayerPrefs.SetInt("mapAnimCount", 0);
 
-        gunPriceText.text =  "330";
-        rateFirePriceText.text = "330";
-        sizeBallPriceText.text = "330";
-
-        PlayerPrefs.SetInt("mapAnimCount",0);
-        
         PlayerPrefs.SetInt("CountCoin6", GameEconomy.sCoinCount);
         PlayerPrefs.SetInt("waveCount", waveCount);
 
@@ -67,22 +75,10 @@ public class ResetGame : MonoBehaviour
         PlayerPrefs.SetInt("GunPriceInt16", gunPriceInt);
         PlayerPrefs.SetInt("RateFirePriceInt16", rateFirePriceInt);
         PlayerPrefs.SetInt("SizeBallPriceInt16", sizeBallPriceInt);
-
-        PlayerPrefs.SetString("gunLevelText16", gunLevelText.text);
-        PlayerPrefs.SetString("rateFireLevelText16", rateFireLevelText.text);
-        PlayerPrefs.SetString("sizeBallLevelText16", sizeBallLevelText.text);
-
-        PlayerPrefs.SetString("gunPriceText16", gunPriceText.text);
-        PlayerPrefs.SetString("rateFirePriceText16", rateFirePriceText.text);
-        PlayerPrefs.SetString("sizeBallPriceText16", sizeBallPriceText.text);
-
-
+        
         PlayerPrefs.Save();
         
-        
-        
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
     }
 
     public void ResetGetPlayerPrefs()

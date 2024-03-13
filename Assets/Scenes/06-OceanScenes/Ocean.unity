@@ -31574,7 +31574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNumber: 0
   waitStatus: 0
-  _countdownNum: 10
+  _countdownNum: 1
   countdownText: {fileID: 1855220413}
   waveText: {fileID: 1825559881}
   totalEnemyText: {fileID: 1302241614}
@@ -31593,13 +31593,13 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   ecoGun: {fileID: 470224379}
   enemyLimit: 0
-  wave1EnemyLimit: 36
-  wave2EnemyLimit: 40
-  wave3EnemyLimit: 42
-  wave4EnemyLimit: 44
-  wave5EnemyLimit: 46
-  wave6EnemyLimit: 48
-  wave7EnemyLimit: 50
+  wave1EnemyLimit: 1
+  wave2EnemyLimit: 1
+  wave3EnemyLimit: 1
+  wave4EnemyLimit: 1
+  wave5EnemyLimit: 1
+  wave6EnemyLimit: 1
+  wave7EnemyLimit: 1
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
