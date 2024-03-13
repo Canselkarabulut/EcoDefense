@@ -306,7 +306,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -314,7 +315,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -372,7 +373,277 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: badCharackter(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Torus.024
+      parentName: badCharackter(Clone)
+      position: {x: -0.012913901, y: 0.12487974, z: -0.071452335}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.023
+      parentName: badCharackter(Clone)
+      position: {x: -0.0136634, y: 0.111266755, z: -0.072201446}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.022
+      parentName: badCharackter(Clone)
+      position: {x: 0.024116928, y: 0.118551396, z: -0.06572516}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.021
+      parentName: badCharackter(Clone)
+      position: {x: -0.05010358, y: 0.118551396, z: -0.06525214}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.020
+      parentName: badCharackter(Clone)
+      position: {x: 0.05333545, y: 0.111266755, z: -0.03798358}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.019
+      parentName: badCharackter(Clone)
+      position: {x: 0.054084953, y: 0.12487974, z: -0.03723459}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.018
+      parentName: badCharackter(Clone)
+      position: {x: -0.08324626, y: 0.12487974, z: -0.03718935}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.017
+      parentName: badCharackter(Clone)
+      position: {x: -0.08399573, y: 0.111266755, z: -0.03793834}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.016
+      parentName: badCharackter(Clone)
+      position: {x: -0.08397105, y: 0.111266755, z: 0.03687285}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.015
+      parentName: badCharackter(Clone)
+      position: {x: -0.083221585, y: 0.12487974, z: 0.03762184}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.014
+      parentName: badCharackter(Clone)
+      position: {x: -0.0913786, y: 0.118551396, z: 0.004970357}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.013
+      parentName: badCharackter(Clone)
+      position: {x: 0.06137198, y: 0.118551396, z: 0.0049200505}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.012
+      parentName: badCharackter(Clone)
+      position: {x: 0.050146785, y: 0.12487974, z: 0.045819625}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.011
+      parentName: badCharackter(Clone)
+      position: {x: 0.050146785, y: 0.111266755, z: 0.045819625}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.010
+      parentName: badCharackter(Clone)
+      position: {x: -0.08867844, y: 0.068748206, z: 0.03784482}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.009
+      parentName: badCharackter(Clone)
+      position: {x: -0.07358977, y: 0.068748206, z: 0.052012842}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.008
+      parentName: badCharackter(Clone)
+      position: {x: 0.06203231, y: 0.068748206, z: 0.045471113}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.007
+      parentName: badCharackter(Clone)
+      position: {x: 0.043198075, y: 0.068748206, z: 0.06322698}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.006
+      parentName: badCharackter(Clone)
+      position: {x: 0.023363244, y: 0.068748206, z: 0.07449572}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.005
+      parentName: badCharackter(Clone)
+      position: {x: -0.059401486, y: 0.068748206, z: 0.062162917}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.004
+      parentName: badCharackter(Clone)
+      position: {x: -0.044691265, y: 0.068748206, z: 0.070532426}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.003
+      parentName: badCharackter(Clone)
+      position: {x: -0.02882642, y: 0.068748206, z: 0.07461868}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.002
+      parentName: badCharackter(Clone)
+      position: {x: -0.012667868, y: 0.068748206, z: 0.07614742}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.001
+      parentName: badCharackter(Clone)
+      position: {x: 0.00599524, y: 0.068748206, z: 0.07614128}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus
+      parentName: badCharackter(Clone)
+      position: {x: -0.014049564, y: 0.06991902, z: -0.00056274235}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 8.057298, y: 8.057298, z: 10.071623}
+    - name: Sphere
+      parentName: badCharackter(Clone)
+      position: {x: -0.014049578, y: -0.0020776093, z: -0.00056274235}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 10.071623, y: 10.071623, z: 10.071623}
+    - name: Cylinder.013
+      parentName: badCharackter(Clone)
+      position: {x: -0.013261054, y: 0.11648574, z: -0.071716025}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.012
+      parentName: badCharackter(Clone)
+      position: {x: 0.023861224, y: 0.11648574, z: -0.06545074}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.011
+      parentName: badCharackter(Clone)
+      position: {x: -0.050013814, y: 0.11648574, z: -0.06497784}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.010
+      parentName: badCharackter(Clone)
+      position: {x: 0.053737782, y: 0.11648574, z: -0.03749828}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.009
+      parentName: badCharackter(Clone)
+      position: {x: -0.0835934, y: 0.11648574, z: -0.03745304}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.008
+      parentName: badCharackter(Clone)
+      position: {x: -0.08356872, y: 0.11648574, z: 0.03735815}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.007
+      parentName: badCharackter(Clone)
+      position: {x: -0.09128889, y: 0.11648574, z: 0.005244717}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.006
+      parentName: badCharackter(Clone)
+      position: {x: 0.061116274, y: 0.11648574, z: 0.0051944703}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.005
+      parentName: badCharackter(Clone)
+      position: {x: 0.049960874, y: 0.11648574, z: 0.045292776}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.004
+      parentName: badCharackter(Clone)
+      position: {x: -0.013912652, y: 0.0938665, z: -0.00056277215}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 9.21533, y: 9.097423, z: 0.67540675}
+    - name: Cylinder.003
+      parentName: badCharackter(Clone)
+      position: {x: 0.11630609, y: 0.003771335, z: -0.0012324005}
+      rotation: {x: 0.00000027972172, y: 0.7072232, z: 0.00000028795353, w: 0.70699036}
+      scale: {x: -3.021487, y: -3.021487, z: -5.0358114}
+    - name: Cylinder.002
+      parentName: badCharackter(Clone)
+      position: {x: -0.14095142, y: 0.003771335, z: -0.00166367}
+      rotation: {x: 0.7072231, y: -0.00000044797332, z: 0.7069904, w: 0.000000049059505}
+      scale: {x: 3.021487, y: 3.021487, z: 5.0358114}
+    - name: Cylinder.001
+      parentName: badCharackter(Clone)
+      position: {x: -0.05115286, y: -0.1207988, z: -0.0005505234}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 3.021487, y: 3.021487, z: 5.0358114}
+    - name: Cylinder
+      parentName: badCharackter(Clone)
+      position: {x: 0.021690395, y: -0.1207988, z: -0.00057451427}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 3.021487, y: 3.021487, z: 5.0358114}
+    - name: Camera.001
+      parentName: badCharackter(Clone)
+      position: {x: 0.68373406, y: 0.49730456, z: 0.7403672}
+      rotation: {x: 0.08442435, y: -0.90473783, z: 0.21254346, w: 0.3593707}
+      scale: {x: 10.071624, y: 10.071623, z: 10.071624}
+    - name: Cylinder.014
+      parentName: badCharackter(Clone)
+      position: {x: 0.013172011, y: 0.14762905, z: 0.016554281}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Cylinder.015
+      parentName: badCharackter(Clone)
+      position: {x: -0.0069840583, y: 0.14762905, z: -0.022413954}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Cylinder.016
+      parentName: badCharackter(Clone)
+      position: {x: -0.027104352, y: 0.14762905, z: 0.047310393}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Cylinder.017
+      parentName: badCharackter(Clone)
+      position: {x: -0.04897097, y: 0.14762905, z: 0.0060269684}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Torus.025
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.1170996, z: 0.6973406, w: 0.69442356}
+      scale: {x: 0.30214873, y: 0.3021487, z: 1.0071617}
+    - name: Torus.027
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.117099606, z: 0.6973406, w: 0.69442356}
+      scale: {x: 1.0071623, y: 1.0071623, z: 1.0071617}
+    - name: Torus.028
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.117099606, z: 0.6973406, w: 0.69442356}
+      scale: {x: 0.7050137, y: 0.7050132, z: 1.0071617}
+    - name: Torus.029
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.117099606, z: 0.6973406, w: 0.69442356}
+      scale: {x: 0.50358117, y: 0.50358117, z: 1.0071617}
+    - name: Torus.030
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.6944621, y: 0.6973844, z: -0.116870955, w: 0.1331111}
+      scale: {x: -0.50358117, y: -0.50358117, z: -1.0071623}
+    - name: Torus.031
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.69446206, y: 0.6973845, z: -0.11687088, w: 0.13311101}
+      scale: {x: -0.7050137, y: -0.7050137, z: -1.0071623}
+    - name: Torus.032
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.6944621, y: 0.6973844, z: -0.116870955, w: 0.1331111}
+      scale: {x: -1.0071623, y: -1.0071623, z: -1.0071623}
+    - name: Torus.033
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.69446206, y: 0.6973845, z: -0.11687088, w: 0.13311101}
+      scale: {x: -0.30214873, y: -0.3021487, z: -1.0071623}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -383,13 +654,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

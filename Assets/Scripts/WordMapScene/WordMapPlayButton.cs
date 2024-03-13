@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WordMapPlayButton : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class WordMapPlayButton : MonoBehaviour
                 }
                 break;
             case 6:
+                this.GetComponent<Button>().interactable = false;
                //tüm oyun bitti - play tuşu çalışmayacak onun yerine alternatif düşün
                 break;
         }

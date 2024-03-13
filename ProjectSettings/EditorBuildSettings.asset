@@ -56,4 +56,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/05-AmericaScene/FinishAmericaStory.unity
     guid: c9552cbebb053604395c9fcb8346d203
+  - enabled: 1
+    path: Assets/Scenes/06-OceanScenes/StoryOcean.unity
+    guid: 75cc014154f73be4e91c5c2a1fdeac8b
+  - enabled: 1
+    path: Assets/Scenes/06-OceanScenes/Ocean.unity
+    guid: 969df0d41e251e54aa7995a55a4d8852
+  - enabled: 1
+    path: Assets/Scenes/06-OceanScenes/FinishOceanStory.unity
+    guid: 9f5d34937358a4f45adefca3bd194e33
   m_configObjects: {}

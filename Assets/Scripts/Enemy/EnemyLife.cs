@@ -43,6 +43,7 @@ public class EnemyLife : MonoBehaviour
             {
                 fireEffect.SetActive(true); //kafanın üstünde ölümünün habercisi olan ateş
             }
+
             if (_lifeCapacity < 1) // yaşam kapasitesi bittiyse
             {
                 GetComponent<CapsuleCollider>().enabled = false;
