@@ -34725,7 +34725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNumber: 0
   waitStatus: 0
-  _countdownNum: 1
+  _countdownNum: 2
   countdownText: {fileID: 1855220413}
   waveText: {fileID: 1825559881}
   totalEnemyText: {fileID: 1302241614}
@@ -43313,7 +43313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b739c73fcd0a11429854e826087157a, type: 2}
   m_sharedMaterial: {fileID: -5802583431396632980, guid: 5b739c73fcd0a11429854e826087157a, type: 2}
@@ -43340,7 +43340,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.35
+  m_fontSize: 27.01
   m_fontSizeBase: 27.01
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -895,6 +895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandDome50000_R100
       objectReference: {fileID: 0}
+    - target: {fileID: 8045321171281137570, guid: c72e7f7a9a451224b9db0c7dd2294973, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8045321171281137582, guid: c72e7f7a9a451224b9db0c7dd2294973, type: 3}
       propertyPath: m_RelativeTorque.y
       value: 1
