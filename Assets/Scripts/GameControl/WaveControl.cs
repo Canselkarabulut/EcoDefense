@@ -12,7 +12,7 @@ public class WaveControl : MonoBehaviour
     [Header("Enum")] public WaveNumber waveNumber;
     public WaitStatus waitStatus;
 
-    [Header("CountDown")] public float _countdownNum=2 ;
+    [Header("CountDown")] public float _countdownNum=3 ;
     public TextMeshProUGUI countdownText;
     private bool isCountdown = false;
 

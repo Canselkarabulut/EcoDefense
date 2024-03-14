@@ -9,6 +9,7 @@ public class MenuButton : MonoBehaviour
 
   public void Menu()
   {
+    Time.timeScale = 1;
     SceneManager.LoadScene(0);
     //menü sahnesini aç
   }

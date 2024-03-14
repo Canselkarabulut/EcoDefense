@@ -13,37 +13,35 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
 
     public GameObject deadExplore;
 
-    //  public GameObject scateboard;
+    private int activeSceneIndex;
 
+    public GameObject finishCapsule;
 
     public void PlayerHopeful()
     {
-        if (playerAnimator == null)
-            return;
-        playerAnimator.SetBool("isPlay", true);
+        if (playerAnimator != null)
+            playerAnimator.SetBool("isPlay", true);
     }
 
     public void TowerShot()
     {
-        if (virtualCamAnimator == null)
-            return;
-        virtualCamAnimator.SetBool("isTowerShot", true);
+        if (virtualCamAnimator != null)
+            virtualCamAnimator.SetBool("isTowerShot", true);
     }
 
     public void ScateBoardAnimStart()
     {
-        if (playerAnimator == null)
-            return;
-        playerAnimator.SetBool("isScatebord", true);
+        if (playerAnimator != null)
+            playerAnimator.SetBool("isScatebord", true);
     }
 
     public void ActiveScatebord()
     {
-        if (deadExplore == null)
-            return;
-        // scateboard.SetActive(true);
-        deadExplore.SetActive(true);
-        StartCoroutine(TransitionPlayer());
+        if (deadExplore != null)
+        {
+            deadExplore.SetActive(true);
+            StartCoroutine(TransitionPlayer());
+        }
     }
 
     IEnumerator TransitionPlayer()
@@ -59,13 +57,11 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public GameObject finishCapsule;
 
     public void FinishCapsuleSize()
     {
-        if (finishCapsule == null)
-            return;
-        finishCapsule.SetActive(true);
+        if (finishCapsule != null)
+            finishCapsule.SetActive(true);
     }
 
     public void FinishPlayerAnim()
@@ -75,21 +71,19 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
         playerAnimator.Play("Jumping Up");
     }
 
-    private int activeSceneIndex;
 
     public void MapScene()
     {
         activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("activeSceneIndex: " + activeSceneIndex);
         switch (activeSceneIndex)
         {
             case 4: //antarticaFinishStoryScene
                 WordMapControl.mapAnimCount = 1;
                 break;
-            case 7://africaFinishStoryScene
+            case 7: //africaFinishStoryScene
                 WordMapControl.mapAnimCount = 2;
                 break;
-            case 10://asiaFinishStoryScene
+            case 10: //asiaFinishStoryScene
                 WordMapControl.mapAnimCount = 3;
                 break;
             case 13: //europeFinishStoryScene
@@ -102,9 +96,8 @@ public class StoryAntarticaAnimationEvent : MonoBehaviour
                 WordMapControl.mapAnimCount = 6;
                 break;
         }
+
         PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
-        Debug.Log("map count: " + WordMapControl.mapAnimCount);
-        // PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
         SceneManager.LoadScene(1);
     }
 }
