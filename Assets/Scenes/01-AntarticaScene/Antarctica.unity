@@ -419,63 +419,6 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1960348300150714324, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
   m_PrefabInstance: {fileID: 265674295651491355}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1634389734
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538360979244309880, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9022269977446156226, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
-      propertyPath: m_Name
-      value: Lvl1BadCharackter@Walking 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 18ad88acb4a56fc46a0826fffd198995, type: 3}
 --- !u!1 &1823646403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2383729174847326639, guid: d722cb69624a91546ae186eeb306d1aa, type: 3}
@@ -1697,9 +1640,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 163698168}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
+      propertyPath: camAudio
+      value: 
+      objectReference: {fileID: 1165641260}
+    - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: waveText
       value: 
       objectReference: {fileID: 7691232126907373374}
+    - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
+      propertyPath: fireAudio
+      value: 
+      objectReference: {fileID: 1823646407}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: hitEffect
       value: 
@@ -1724,6 +1675,10 @@ PrefabInstance:
       propertyPath: enemyTextBG
       value: 
       objectReference: {fileID: 3957561358520874823}
+    - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1197572858}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: sceneCenter
       value: 
@@ -1799,6 +1754,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1085092859189946500, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: camAudio
+      value: 
+      objectReference: {fileID: 1165641260}
+    - target: {fileID: 1085092859189946500, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: fireAudio
+      value: 
+      objectReference: {fileID: 1823646407}
+    - target: {fileID: 1085092859189946500, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1197572858}
     - target: {fileID: 1419374662681154920, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1883,6 +1850,30 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].eventID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4726693878879838126, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: enemys
+      value: 
+      objectReference: {fileID: 841945408}
+    - target: {fileID: 4726693878879838126, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: camAudio
+      value: 
+      objectReference: {fileID: 1165641260}
+    - target: {fileID: 4726693878879838126, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: fireAudio
+      value: 
+      objectReference: {fileID: 1823646407}
+    - target: {fileID: 4726693878879838126, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: enemySpawn
+      value: 
+      objectReference: {fileID: 346612592}
+    - target: {fileID: 4726693878879838126, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1197572858}
+    - target: {fileID: 4726693878879838126, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: gameSoundState
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4849968697658010444, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].eventID
       value: 4
@@ -1955,4 +1946,3 @@ SceneRoots:
   - {fileID: 3449282184260622412}
   - {fileID: 159532056408184373}
   - {fileID: 3078881672697059281}
-  - {fileID: 1634389734}

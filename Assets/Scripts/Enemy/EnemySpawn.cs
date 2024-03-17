@@ -53,7 +53,7 @@ public class EnemySpawn : MonoBehaviour
     public void SpawnObject() //düşmanı oluştur
     {
         enemyCount++; //oluşan düşmanı say
-       
+
         switch (waveControl.waveNumber)
         {
             case WaveNumber.Wave1:
@@ -105,30 +105,31 @@ public class EnemySpawn : MonoBehaviour
                 obj.transform.position = _selectedPoint.position;
                 obj.transform.rotation = _selectedPoint.rotation;
                 //hangi lvl de üretilecek
-                
-               // enemyLevel =obj.GetComponent<EnemyLevelStatus>().enemyLevel;
+                if (obj.GetComponent<EnemyLife>().enemyBorn.enabled)
+                    obj.GetComponent<EnemyLife>().enemyBorn.enabled = true;
+                // enemyLevel =obj.GetComponent<EnemyLevelStatus>().enemyLevel;
                 var randomNumber = Random.Range(startNum, finihNum);
                 switch (randomNumber)
                 {
                     case 0:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl1Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                      
+
                         break;
                     case 1:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl2Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                
+
                         break;
                     case 2:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl3Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                      
+
                         break;
                     case 3:
                         obj.GetComponent<EnemyLevelStatus>().enemyLevel = EnemyLevel.Lvl4Enemy;
                         obj.GetComponent<EnemyLife>().InitializeStart();
-                
+
                         break;
                 }
 
@@ -137,7 +138,7 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-  
+
     IEnumerator DieCount(GameObject obj)
     {
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
@@ -148,6 +149,10 @@ public class EnemySpawn : MonoBehaviour
 
     public void EnemyDieEconomy(GameObject obj)
     {
+        if (obj.GetComponent<EnemyLife>().enemyWalk.enabled)
+            obj.GetComponent<EnemyLife>().enemyWalk.enabled = false;
+        obj.GetComponent<EnemyLife>().enemyWalk.Stop();
+        
         var enemyLevelStatus = obj.GetComponent<EnemyLevelStatus>();
         switch (enemyLevelStatus.EnemyLevelReturn())
         {

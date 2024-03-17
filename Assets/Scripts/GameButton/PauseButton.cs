@@ -7,7 +7,10 @@ public class PauseButton : MonoBehaviour
 {
   public GameObject gamePausePanel;
   public GameObject gameControl;
-
+  
+  [Header("Audio")] public AudioSource camAudio;
+  public AudioSource playerAudio;
+  public AudioSource fireAudio;
   private void Start()
   {
     gamePausePanel.SetActive(false);
@@ -19,12 +22,10 @@ public class PauseButton : MonoBehaviour
   {
     gameControl.SetActive(false);
     gamePausePanel.SetActive(true);
-  //  if (SettingsController.isSoundNum) //sesler açıksa
-  //  {
-  //    firstSound = SettingsController.isSoundNum;
-  //    SettingsController.isSoundNum = false;
-  //  }
     Time.timeScale = 0;
+    camAudio.Stop();
+    playerAudio.Stop();
+    fireAudio.Stop();
   }
   
 }

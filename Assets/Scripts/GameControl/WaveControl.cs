@@ -12,7 +12,7 @@ public class WaveControl : MonoBehaviour
     [Header("Enum")] public WaveNumber waveNumber;
     public WaitStatus waitStatus;
 
-    [Header("CountDown")] public float _countdownNum=3 ;
+    [Header("CountDown")] public float _countdownNum = 3;
     public TextMeshProUGUI countdownText;
     private bool isCountdown = false;
 
@@ -44,8 +44,22 @@ public class WaveControl : MonoBehaviour
     public int wave6EnemyLimit = 22;
     public int wave7EnemyLimit = 25;
 
+    [Header("Audio")] public AudioSource camAudio;
+    public AudioSource playerAudio;
+    public AudioSource fireAudio;
+
+    
+    
     private void Start()
     {
+        if (PlayerPrefs.GetInt("soundNum") == 1)
+        {
+            GameAudioState(true, true, true);
+        }
+        else if (PlayerPrefs.GetInt("soundNum") == 0)
+        {
+            GameAudioState(false, false, false);
+        }
         switch (PlayerPrefs.GetInt("waveCount"))
         {
             case 1:
@@ -251,5 +265,15 @@ public class WaveControl : MonoBehaviour
         shockWave.gameObject.SetActive(true);
         shockWave.Play();
         fireEffect.SetActive(false);
+    }
+    
+    public void GameAudioState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool)
+    {
+        if (camAudio != null && playerAudio != null && fireAudio != null)
+        {
+            camAudio.enabled = camAudioBool;
+            playerAudio.enabled = playerAudioBool;
+            fireAudio.enabled = fireAudioBool;
+        }
     }
 }

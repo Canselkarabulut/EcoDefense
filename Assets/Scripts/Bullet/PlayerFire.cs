@@ -33,7 +33,8 @@ public class PlayerFire : MonoBehaviour
                 else
                 {
                     fireEffect.SetActive(false);
-                    bulletSound.Stop();
+                    if (bulletSound.enabled)
+                        bulletSound.Stop();
                 }
             }
         }
@@ -58,7 +59,8 @@ public class PlayerFire : MonoBehaviour
         }
 
         fireEffect.SetActive(true);
-        bulletSound.Play();
+        if (bulletSound.enabled)
+            bulletSound.Play();
         StartCoroutine(CheckFireStatus(bullet));
     }
 
