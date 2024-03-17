@@ -31,6 +31,8 @@ public class PlayerTrigger : MonoBehaviour
     public static bool isHealthRed;
 
     public GameObject PauseButton;
+
+    public SettingsController settingsController;
     private void Start()
     {
         DOTween.Init();
@@ -51,6 +53,7 @@ public class PlayerTrigger : MonoBehaviour
         if (other.TryGetComponent(out EnemyLevelStatus enemyLevelStatus))
         {
             minusLifeText.gameObject.SetActive(true);
+            settingsController.playerTrigger.Play();
             if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl1Enemy)
             {
                 PlayerLossLife(0.02f);
@@ -100,6 +103,7 @@ public class PlayerTrigger : MonoBehaviour
                     shockWave.SetActive(false);
                     enemys.SetActive(false);
                     playerAnimator.SetBool("isDeath", true);
+                    settingsController.playerDie.Play();
                     transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
                     floatingJoystick.gameObject.SetActive(false);
                     PauseButton.SetActive(false);

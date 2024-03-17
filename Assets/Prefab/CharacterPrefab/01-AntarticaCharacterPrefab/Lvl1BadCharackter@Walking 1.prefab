@@ -1039,37 +1039,6 @@ MonoBehaviour:
   enemyLevelStatus: {fileID: 8778589505086105377}
   minusLifeText: {fileID: 5564548571877642279}
   enemyTrigger: {fileID: 1260597798614566948}
---- !u!1 &8788250938134550010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3922584347472527918}
-  m_Layer: 0
-  m_Name: EnemySound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3922584347472527918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8788250938134550010}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8538360979244309880}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9206055075475342192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,9 +1993,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0dbc07dcc1cea394db57c96a6513330a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6267186653620752959}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0dbc07dcc1cea394db57c96a6513330a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3922584347472527918}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dbc07dcc1cea394db57c96a6513330a, type: 3}
       insertIndex: -1
@@ -2266,7 +2232,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c271cecabcfa144cba52d697adca686, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -21,6 +21,8 @@ public class SettingsController : MonoBehaviour
     [Header("Audio")] public AudioSource camAudio;
     public AudioSource playerAudio;
     public AudioSource fireAudio;
+    public AudioSource playerTrigger;
+    public AudioSource playerDie;
 
 
     public EnemySpawn enemySpawn;
@@ -34,12 +36,14 @@ public class SettingsController : MonoBehaviour
         {
             //    isSoundNum = true; // ses açık
             soundCloseImage.SetActive(false);
+            
         }
 
         if (soundNum == 0)
         {
             //     isSoundNum = false; // ses kapalı
             soundCloseImage.SetActive(true);
+            
         }
 
         if (musicNum == 1)
@@ -63,7 +67,7 @@ public class SettingsController : MonoBehaviour
             //  isSoundNum = false; // açık ses kapandı
             soundNum = 0;
             PlayerPrefs.SetInt("soundNum", soundNum);
-            GameAudioState(false, false, false, false, false, false, false);
+            GameAudioState(false, false, false, false, false, false, false,false,false);
             return;
         }
 
@@ -73,7 +77,7 @@ public class SettingsController : MonoBehaviour
             // isSoundNum = true; // kapalı ses açıldı
             soundNum = 1;
             PlayerPrefs.SetInt("soundNum", soundNum);
-            GameAudioState(true, true, true, true, true, true, true);
+            GameAudioState(true, true, true, true, true, true, true,true,true);
             return;
         }
     }
@@ -127,13 +131,15 @@ public class SettingsController : MonoBehaviour
     private EnemyLife enemyLife;
 
     public void GameAudioState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool, bool enemyBornBool,
-        bool enemyCoinBool, bool enemyTriggerBulletBool, bool enemyWalkBool)
+        bool enemyCoinBool, bool enemyTriggerBulletBool, bool enemyWalkBool,bool playerTriggerBool,bool playerDieBool)
     {
-        if (camAudio != null && playerAudio != null && fireAudio != null)
+        if (camAudio != null && playerAudio != null && fireAudio != null&& playerTrigger != null && playerDie != null)
         {
             camAudio.enabled = camAudioBool;
             playerAudio.enabled = playerAudioBool;
             fireAudio.enabled = fireAudioBool;
+            playerTrigger.enabled = playerTriggerBool;
+            playerDie.enabled = playerDieBool;
         }
 
         if (enemys != null)

@@ -47,19 +47,21 @@ public class WaveControl : MonoBehaviour
     [Header("Audio")] public AudioSource camAudio;
     public AudioSource playerAudio;
     public AudioSource fireAudio;
+    public AudioSource playerTrigger;
+    public AudioSource playerDie;
 
-    
-    
+
     private void Start()
     {
         if (PlayerPrefs.GetInt("soundNum") == 1)
         {
-            GameAudioState(true, true, true);
+            GameAudioState(true, true, true, true, true);
         }
         else if (PlayerPrefs.GetInt("soundNum") == 0)
         {
-            GameAudioState(false, false, false);
+            GameAudioState(false, false, false, false, false);
         }
+
         switch (PlayerPrefs.GetInt("waveCount"))
         {
             case 1:
@@ -266,14 +268,17 @@ public class WaveControl : MonoBehaviour
         shockWave.Play();
         fireEffect.SetActive(false);
     }
-    
-    public void GameAudioState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool)
+
+    public void GameAudioState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool, bool playerTriggerBool,
+        bool playerDieBool)
     {
-        if (camAudio != null && playerAudio != null && fireAudio != null)
+        if (camAudio != null && playerAudio != null && fireAudio != null && playerTrigger != null && playerDie != null)
         {
             camAudio.enabled = camAudioBool;
             playerAudio.enabled = playerAudioBool;
             fireAudio.enabled = fireAudioBool;
+            playerTrigger.enabled = playerTriggerBool;
+            playerDie.enabled = playerDieBool;
         }
     }
 }

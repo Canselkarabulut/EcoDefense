@@ -109,7 +109,7 @@ public class EnemyLife : MonoBehaviour
         GetComponent<EnemyLevelStatus>().enabled = true;
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
-     
+
         if (enemyBorn != null && enemyCoin != null && enemyTriggerBullet != null && enemyWalk != null)
         {
             if (PlayerPrefs.GetInt("soundNum") == 1)
@@ -127,7 +127,9 @@ public class EnemyLife : MonoBehaviour
                 enemyWalk.enabled = false;
             }
         }
-        enemyWalk.Play();
+
+        if (enemyWalk != null)
+            enemyWalk.Play();
         coin.SetActive(false);
 
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)

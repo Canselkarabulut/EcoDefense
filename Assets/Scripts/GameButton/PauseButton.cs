@@ -11,6 +11,9 @@ public class PauseButton : MonoBehaviour
   [Header("Audio")] public AudioSource camAudio;
   public AudioSource playerAudio;
   public AudioSource fireAudio;
+  public AudioSource playerTrigger;
+  public AudioSource playerDie;
+  public GameObject enemys;
   private void Start()
   {
     gamePausePanel.SetActive(false);
@@ -26,6 +29,12 @@ public class PauseButton : MonoBehaviour
     camAudio.Stop();
     playerAudio.Stop();
     fireAudio.Stop();
+    playerTrigger.Stop();
+    playerDie.Stop();
+    for (int i = 0; i < enemys.transform.childCount; i++)
+    {
+      enemys.transform.GetChild(i).GetComponent<EnemyLife>().enemyWalk.Stop();
+    }
   }
   
 }
