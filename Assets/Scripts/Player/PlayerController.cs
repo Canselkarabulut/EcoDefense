@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] Animator anim;
     private PlayerRange playerRange;
-
-    private void Start()
+    public AudioSource walkSound;
+private void Start()
     {
         playerRange = gameObject.GetComponent<PlayerRange>();
     }
@@ -35,7 +35,10 @@ public class PlayerController : MonoBehaviour
             if (floatingJoystick.Horizontal != 0 || floatingJoystick.Vertical != 0)
             {
                 anim.SetBool("isRun", true);
-
+                if (!walkSound.isPlaying)
+                {
+                    walkSound.Play();
+                }
                 if (playerRange.enemys.transform.childCount > 0)
                 {
                     playerRange.NearestEnemy();
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 anim.SetBool("isRun", false);
+                walkSound.Stop();
                 if (playerRange.enemys.transform.childCount > 0)
                 {
                     playerRange.NearestEnemy();

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enum;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class SettingsController : MonoBehaviour
     private int soundNum = 1; //1 açık , 0 kapalı
     private int musicNum = 1; //1 açık , 0 kapalı
     public LanguageState languageState;
+
+
+    public Button settingButton;
+    public Button playButton;
+
     private void Start()
     {
         //sesler açık
@@ -31,6 +37,7 @@ public class SettingsController : MonoBehaviour
         {
             musicCloseImage.SetActive(false);
         }
+
         if (musicNum == 0)
         {
             musicCloseImage.SetActive(true);
@@ -39,12 +46,12 @@ public class SettingsController : MonoBehaviour
 
     public void SoundButton()
     {
-        if (soundNum == 1) 
+        if (soundNum == 1)
         {
             soundCloseImage.SetActive(true);
             Debug.Log("sesler kapandı");
             soundNum = 0;
-            PlayerPrefs.SetInt("soundNum",soundNum);
+            PlayerPrefs.SetInt("soundNum", soundNum);
             return;
         }
 
@@ -53,19 +60,19 @@ public class SettingsController : MonoBehaviour
             soundCloseImage.SetActive(false);
             Debug.Log("sesler açıldı");
             soundNum = 1;
-            PlayerPrefs.SetInt("soundNum",soundNum);
+            PlayerPrefs.SetInt("soundNum", soundNum);
             return;
         }
     }
 
     public void MusicButton()
     {
-        if (musicNum == 1) 
+        if (musicNum == 1)
         {
             musicCloseImage.SetActive(true);
             Debug.Log("müzik kapandı");
             musicNum = 0;
-            PlayerPrefs.SetInt("musicNum",musicNum);
+            PlayerPrefs.SetInt("musicNum", musicNum);
             return;
         }
 
@@ -74,28 +81,38 @@ public class SettingsController : MonoBehaviour
             musicCloseImage.SetActive(false);
             Debug.Log("müzik açıldı");
             musicNum = 1;
-            PlayerPrefs.SetInt("musicNum",musicNum);
+            PlayerPrefs.SetInt("musicNum", musicNum);
             return;
         }
     }
 
     public void ClosePanelButton()
     {
+        if (settingButton != null && playButton != null)
+        {
+            settingButton.interactable = true;
+            playButton.interactable = true;
+        }
         settingPanel.SetActive(false);
     }
 
     public void SettingPanelOpenButton()
     {
+        if (settingButton != null && playButton != null)
+        {
+            settingButton.interactable = false;
+            playButton.interactable = false;
+        }
         settingPanel.SetActive(true);
     }
 
- //   public void TurkishButton()
- //   {
- //       languageState = LanguageState.Turkish;
- //   }
+    //   public void TurkishButton()
+    //   {
+    //       languageState = LanguageState.Turkish;
+    //   }
 //
- //   public void EnglishButton()
- //   {
- //       languageState = LanguageState.English;
- //   }
+    //   public void EnglishButton()
+    //   {
+    //       languageState = LanguageState.English;
+    //   }
 }

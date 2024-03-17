@@ -184,7 +184,7 @@ public class WaveControl : MonoBehaviour
                             break;
                         case WaveNumber.Wave7:
                             //oyun tamamlandı
-
+                            player.GetComponent<PlayerController>().walkSound.Stop();
                             waveText.text = "Next";
                             enemySpawn.gameObject.SetActive(false);
                             enemyTextBG.SetActive(false);
