@@ -19,6 +19,11 @@ public class PauseButton : MonoBehaviour
   {
     gameControl.SetActive(false);
     gamePausePanel.SetActive(true);
+  //  if (SettingsController.isSoundNum) //sesler açıksa
+  //  {
+  //    firstSound = SettingsController.isSoundNum;
+  //    SettingsController.isSoundNum = false;
+  //  }
     Time.timeScale = 0;
   }
   

@@ -16,6 +16,7 @@ public class PlayerFire : MonoBehaviour
     public float bulletSpeed;
     public PlayerRange playerRange;
     public GameObject fireEffect;
+    public AudioSource bulletSound;
 
     private void FixedUpdate()
     {
@@ -32,6 +33,7 @@ public class PlayerFire : MonoBehaviour
                 else
                 {
                     fireEffect.SetActive(false);
+                    bulletSound.Stop();
                 }
             }
         }
@@ -50,12 +52,13 @@ public class PlayerFire : MonoBehaviour
             bullet.transform.rotation = body.transform.rotation;
             //   Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             //     bulletRigidbody.velocity = barel.transform.forward * bulletSpeed;
-           // bullet.transform.position = transform.forward * bulletSpeed;
-          //  bullet.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+            // bullet.transform.position = transform.forward * bulletSpeed;
+            //  bullet.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
             bullet.GameObject().SetActive(true);
         }
 
         fireEffect.SetActive(true);
+        bulletSound.Play();
         StartCoroutine(CheckFireStatus(bullet));
     }
 

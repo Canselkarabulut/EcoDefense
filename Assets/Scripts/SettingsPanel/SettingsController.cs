@@ -17,29 +17,38 @@ public class SettingsController : MonoBehaviour
 
     public Button settingButton;
     public Button playButton;
+    
+    
+  //  public static bool isSoundNum; // true ses açık, false kapalı
+  //  public static bool isMusicNum; // true ses açık, false kapalı
 
     private void Start()
     {
         //sesler açık
         soundNum = PlayerPrefs.GetInt("soundNum", 1);
         musicNum = PlayerPrefs.GetInt("musicNum", 1);
+        
         if (soundNum == 1)
         {
+        //    isSoundNum = true; // ses açık
             soundCloseImage.SetActive(false);
         }
 
         if (soundNum == 0)
         {
+       //     isSoundNum = false; // ses kapalı
             soundCloseImage.SetActive(true);
         }
 
         if (musicNum == 1)
         {
+          //  isMusicNum = true;
             musicCloseImage.SetActive(false);
         }
 
         if (musicNum == 0)
         {
+          //  isMusicNum = false;
             musicCloseImage.SetActive(true);
         }
     }
@@ -49,6 +58,7 @@ public class SettingsController : MonoBehaviour
         if (soundNum == 1)
         {
             soundCloseImage.SetActive(true);
+          //  isSoundNum = false; // açık ses kapandı
             Debug.Log("sesler kapandı");
             soundNum = 0;
             PlayerPrefs.SetInt("soundNum", soundNum);
@@ -58,6 +68,7 @@ public class SettingsController : MonoBehaviour
         if (soundNum == 0)
         {
             soundCloseImage.SetActive(false);
+           // isSoundNum = true; // kapalı ses açıldı
             Debug.Log("sesler açıldı");
             soundNum = 1;
             PlayerPrefs.SetInt("soundNum", soundNum);
@@ -70,6 +81,7 @@ public class SettingsController : MonoBehaviour
         if (musicNum == 1)
         {
             musicCloseImage.SetActive(true);
+          //  isMusicNum = false; // açık müzik kapandı
             Debug.Log("müzik kapandı");
             musicNum = 0;
             PlayerPrefs.SetInt("musicNum", musicNum);
@@ -79,6 +91,7 @@ public class SettingsController : MonoBehaviour
         if (musicNum == 0)
         {
             musicCloseImage.SetActive(false);
+         //   isMusicNum = true; // kapalı müzik açıldı
             Debug.Log("müzik açıldı");
             musicNum = 1;
             PlayerPrefs.SetInt("musicNum", musicNum);
