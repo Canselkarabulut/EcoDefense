@@ -20,7 +20,7 @@ public class EnemyLife : MonoBehaviour
     public bool isDie;
     public GameObject heart;
     public EnemyTrigger enemyTrigger;
-
+    public AudioSource enemySound;
     private void Awake()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();
@@ -53,6 +53,7 @@ public class EnemyLife : MonoBehaviour
                 GetComponent<EnemyLife>().enabled = false;
                 GetComponent<EnemyTrigger>().enabled = false;
                 enemyAnimator.SetBool("isDie", true);
+                enemySound.Stop();
                 fireEffect.SetActive(false);
                 dieEffect.SetActive(true);
                 isDie = true;
@@ -62,6 +63,7 @@ public class EnemyLife : MonoBehaviour
         }
     }
 
+    
     IEnumerator EnemyDie()
     {
         yield return new WaitForSeconds(3);
