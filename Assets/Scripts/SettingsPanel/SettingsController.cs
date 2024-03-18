@@ -24,9 +24,11 @@ public class SettingsController : MonoBehaviour
     public AudioSource playerTrigger;
     public AudioSource playerDie;
 
+    public MusicManager musicManager;
 
     public EnemySpawn enemySpawn;
 
+    // public AudioSource musicAudio;
     private void Start()
     {
         //sesler açık
@@ -34,27 +36,21 @@ public class SettingsController : MonoBehaviour
         musicNum = PlayerPrefs.GetInt("musicNum");
         if (soundNum == 1)
         {
-            //    isSoundNum = true; // ses açık
             soundCloseImage.SetActive(false);
-            
         }
 
         if (soundNum == 0)
         {
-            //     isSoundNum = false; // ses kapalı
             soundCloseImage.SetActive(true);
-            
         }
 
         if (musicNum == 1)
         {
-            //  isMusicNum = true;
             musicCloseImage.SetActive(false);
         }
 
         if (musicNum == 0)
         {
-            //  isMusicNum = false;
             musicCloseImage.SetActive(true);
         }
     }
@@ -67,7 +63,7 @@ public class SettingsController : MonoBehaviour
             //  isSoundNum = false; // açık ses kapandı
             soundNum = 0;
             PlayerPrefs.SetInt("soundNum", soundNum);
-            GameAudioState(false, false, false, false, false, false, false,false,false);
+            GameSoundState(false, false, false, false, false, false, false, false, false);
             return;
         }
 
@@ -77,7 +73,7 @@ public class SettingsController : MonoBehaviour
             // isSoundNum = true; // kapalı ses açıldı
             soundNum = 1;
             PlayerPrefs.SetInt("soundNum", soundNum);
-            GameAudioState(true, true, true, true, true, true, true,true,true);
+            GameSoundState(true, true, true, true, true, true, true, true, true);
             return;
         }
     }
@@ -87,8 +83,9 @@ public class SettingsController : MonoBehaviour
         if (musicNum == 1)
         {
             musicCloseImage.SetActive(true);
-            //  isMusicNum = false; // açık müzik kapandı
             Debug.Log("müzik kapandı");
+            if (musicManager != null)
+                musicManager.audioSource.Stop();
             musicNum = 0;
             PlayerPrefs.SetInt("musicNum", musicNum);
             return;
@@ -99,6 +96,9 @@ public class SettingsController : MonoBehaviour
             musicCloseImage.SetActive(false);
             //   isMusicNum = true; // kapalı müzik açıldı
             Debug.Log("müzik açıldı");
+            //   musicAudio.Play();
+            if (musicManager != null)
+                musicManager.audioSource.Play();
             musicNum = 1;
             PlayerPrefs.SetInt("musicNum", musicNum);
             return;
@@ -130,10 +130,10 @@ public class SettingsController : MonoBehaviour
     public GameObject enemys;
     private EnemyLife enemyLife;
 
-    public void GameAudioState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool, bool enemyBornBool,
-        bool enemyCoinBool, bool enemyTriggerBulletBool, bool enemyWalkBool,bool playerTriggerBool,bool playerDieBool)
+    public void GameSoundState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool, bool enemyBornBool,
+        bool enemyCoinBool, bool enemyTriggerBulletBool, bool enemyWalkBool, bool playerTriggerBool, bool playerDieBool)
     {
-        if (camAudio != null && playerAudio != null && fireAudio != null&& playerTrigger != null && playerDie != null)
+        if (camAudio != null && playerAudio != null && fireAudio != null && playerTrigger != null && playerDie != null)
         {
             camAudio.enabled = camAudioBool;
             playerAudio.enabled = playerAudioBool;
