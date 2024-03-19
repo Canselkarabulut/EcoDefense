@@ -1135,6 +1135,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5065456563515455758, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
   m_PrefabInstance: {fileID: 6414400225571401701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2254221957167585007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5663657670974410993, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+  m_PrefabInstance: {fileID: 6414400225571401701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254221957167585003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2483965473518777018 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8898082025080462687, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
@@ -1158,7 +1169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b61fe9c9940864ca7094b9c7ae86d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicManager: {fileID: 0}
 --- !u!1001 &2627108285276753160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1221,11 +1231,11 @@ PrefabInstance:
       objectReference: {fileID: 1197572845}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000163965
+      value: -0.000000016396507
       objectReference: {fileID: 0}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000052167257
+      value: 0.000000005216728
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1689,11 +1699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000163965
+      value: -0.000000016396507
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000052167257
+      value: 0.000000005216728
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1966,6 +1976,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1457369431974795149, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
   m_PrefabInstance: {fileID: 6414400225571401701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5565634142793676908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4081519964372336468, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+  m_PrefabInstance: {fileID: 6414400225571401701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565634142793676904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6414400225571401701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2010,6 +2031,14 @@ PrefabInstance:
       propertyPath: playerTrigger
       value: 
       objectReference: {fileID: 2129386549}
+    - target: {fileID: 1085092859189946500, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 5565634142793676908}
+    - target: {fileID: 1323977816854018199, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 5565634142793676908}
     - target: {fileID: 1419374662681154920, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2090,6 +2119,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1565465594289159798, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 2254221957167585007}
+    - target: {fileID: 1565465594289159798, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 5565634142793676908}
+    - target: {fileID: 2322390828244822059, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 2254221957167585007}
     - target: {fileID: 2717333200730879340, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].eventID
       value: 4
@@ -2234,7 +2275,7 @@ SceneRoots:
   - {fileID: 265674295651491355}
   - {fileID: 355653828418558191}
   - {fileID: 5358166121071925959}
-  - {fileID: 4588175562300095087}
   - {fileID: 3449282184260622412}
   - {fileID: 159532056408184373}
   - {fileID: 3078881672697059281}
+  - {fileID: 4588175562300095087}

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour
 {
     public GameObject gameUpgradePanel;
     public GameObject gameControl;
-
+    public Button pausePanel;
     private void Start()
     {
         gameUpgradePanel.SetActive(false);
@@ -18,6 +19,7 @@ public class UpgradeButton : MonoBehaviour
     {
         gameControl.SetActive(false);
         gameUpgradePanel.SetActive(true);
+        pausePanel.interactable = false;
         Time.timeScale = 0;
     }
 }

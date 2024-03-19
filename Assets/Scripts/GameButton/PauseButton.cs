@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseButton : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PauseButton : MonoBehaviour
   public AudioSource playerTrigger;
   public AudioSource playerDie;
   public GameObject enemys;
+  public Button upgradeButton;
   private void Start()
   {
     gamePausePanel.SetActive(false);
@@ -35,6 +37,8 @@ public class PauseButton : MonoBehaviour
     {
       enemys.transform.GetChild(i).GetComponent<EnemyLife>().enemyWalk.Stop();
     }
+
+    upgradeButton.interactable = false;
   }
   
 }

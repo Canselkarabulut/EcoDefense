@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Enum;
 using UnityEngine;
@@ -10,53 +11,57 @@ public class UpgradeButtonScript : MonoBehaviour
     public Button gunPowerBtn;
     public TextMeshProUGUI gunLevelText;
     public TextMeshProUGUI gunPriceText;
-    private int gunPriceInt = 330;
-    private int gunPowerCount = 2;
+    [HideInInspector] public int gunPriceInt = 330;
+    [HideInInspector] public int gunPowerCount = 2;
 
 
     public Button rateFireButton;
     public TextMeshProUGUI rateFireLevelText;
     public TextMeshProUGUI rateFirePriceText;
-    private int rateFirePriceInt = 330;
-    private int rateFireCount = 2;
+    [HideInInspector] public int rateFirePriceInt = 330;
+    [HideInInspector] public int rateFireCount = 2;
 
 
     public Button sizeBallButton;
     public TextMeshProUGUI sizeBallLevelText;
     public TextMeshProUGUI sizeBallPriceText;
-    public int sizeBallCount = 2;
-    private int sizeBallPriceInt = 330;
+    [HideInInspector] public int sizeBallCount = 2;
+    [HideInInspector] public int sizeBallPriceInt = 330;
 
 
     public GameEconomy gameEconomy;
     public PlayerFire playerFire;
 
 
-    private int bulletLevelNumber = 1;
-    private int bulleSizeNumber = 1;
+    [HideInInspector] public int bulletLevelNumber = 1;
+    [HideInInspector] public int bulleSizeNumber = 1;
 
     public Bullet bullet;
+    public GameObject pool;
+    private int
+        maxButtonClickCount =
+            8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
 
-    
+
 
     private void Start()
     {
         LoadPlayerPrefs();
+        Debug.Log("pool sayısı gelecek");
     }
+
 
     public void GunPowerBtn()
     {
         GameEconomy.sCoinCount -= gunPriceInt;
         gameEconomy.CoinText();
         gunPowerCount++;
-
         switch (gunPowerCount)
         {
             case 2:
                 gunLevelText.text = "Lvl 2";
                 gunPriceText.text = "330";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
-
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
@@ -64,8 +69,6 @@ public class UpgradeButtonScript : MonoBehaviour
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl2;
                     }
                 }
-
-                bullet.bulletLevel = BulletLevel.Lvl2;
 
                 break;
             case 3:
@@ -146,7 +149,6 @@ public class UpgradeButtonScript : MonoBehaviour
         SavePlayerPrefs();
     }
 
-
     public void RateOfFireButton()
     {
         GameEconomy.sCoinCount -= rateFirePriceInt;
@@ -158,6 +160,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 rateFireLevelText.text = "Lvl 2";
                 rateFirePriceText.text = "330";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
+
                 bullet.bulletRateFire = BulletRateFire.FireLvl2;
                 playerFire.spawnInterval = .35f;
                 break;
@@ -216,27 +219,27 @@ public class UpgradeButtonScript : MonoBehaviour
                 sizeBallLevelText.text = "Lvl 2";
                 sizeBallPriceText.text = "330";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
-                bullet.bulletSize = BulletSize.Size2;
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
+                        bullet.bulletSize = BulletSize.Size2;
                         pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
                             new Vector3(.5f, .5f, .5f);
                     }
                 }
-
 
                 break;
             case 3:
                 sizeBallLevelText.text = "Lvl 3";
                 sizeBallPriceText.text = "430";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
-                bullet.bulletSize = BulletSize.Size3;
+
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
+                        bullet.bulletSize = BulletSize.Size3;
                         pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
                             new Vector3(.6f, .6f, .6f);
                     }
@@ -247,11 +250,12 @@ public class UpgradeButtonScript : MonoBehaviour
                 sizeBallLevelText.text = "Lvl 4";
                 sizeBallPriceText.text = "600";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
-                bullet.bulletSize = BulletSize.Size4;
+
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
+                        bullet.bulletSize = BulletSize.Size4;
                         pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
                             new Vector3(.7f, .7f, .7f);
                     }
@@ -267,6 +271,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
+                        bullet.bulletSize = BulletSize.Size5;
                         pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
                             new Vector3(.8f, .8f, .8f);
                     }
@@ -277,11 +282,12 @@ public class UpgradeButtonScript : MonoBehaviour
                 sizeBallLevelText.text = "Lvl 6";
                 sizeBallPriceText.text = "1160";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
-                bullet.bulletSize = BulletSize.Size6;
+
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
+                        bullet.bulletSize = BulletSize.Size6;
                         pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale =
                             new Vector3(.9f, .9f, .9f);
                     }
@@ -292,11 +298,12 @@ public class UpgradeButtonScript : MonoBehaviour
                 sizeBallLevelText.text = "Lvl 7";
                 sizeBallPriceText.text = "1535";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
-                bullet.bulletSize = BulletSize.Size7;
+
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
+                        bullet.bulletSize = BulletSize.Size7;
                         pool.transform.GetChild(i).GetComponent<Bullet>().transform.localScale = new Vector3(1, 1, 1);
                     }
                 }
@@ -315,18 +322,12 @@ public class UpgradeButtonScript : MonoBehaviour
         SavePlayerPrefs();
     }
 
-    public GameObject pool;
-
     private void Update()
     {
         ButtonInteractable(gunPowerBtn, gunPriceInt, gunPowerCount);
         ButtonInteractable(rateFireButton, rateFirePriceInt, rateFireCount);
         ButtonInteractable(sizeBallButton, sizeBallPriceInt, sizeBallCount);
     }
-
-    private int
-        maxButtonClickCount =
-            8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
 
     public void ButtonInteractable(Button button, int priceInt, int count)
     {
@@ -339,7 +340,6 @@ public class UpgradeButtonScript : MonoBehaviour
             button.interactable = false;
         }
     }
-
 
     private void SavePlayerPrefs()
     {
@@ -367,13 +367,13 @@ public class UpgradeButtonScript : MonoBehaviour
 
     public void LoadPlayerPrefs()
     {
-        gunPowerCount = PlayerPrefs.GetInt("GunPowerCount16", 2);
-        rateFireCount = PlayerPrefs.GetInt("RateFireCount16", 2);
-        sizeBallCount = PlayerPrefs.GetInt("SizeBallCount16", 2);
+        gunPowerCount = PlayerPrefs.GetInt("GunPowerCount16");
+        rateFireCount = PlayerPrefs.GetInt("RateFireCount16");
+        sizeBallCount = PlayerPrefs.GetInt("SizeBallCount16");
 
-        gunPriceInt = PlayerPrefs.GetInt("GunPriceInt16", 330);
-        rateFirePriceInt = PlayerPrefs.GetInt("RateFirePriceInt16", 330);
-        sizeBallPriceInt = PlayerPrefs.GetInt("SizeBallPriceInt16", 330);
+        gunPriceInt = PlayerPrefs.GetInt("GunPriceInt16");
+        rateFirePriceInt = PlayerPrefs.GetInt("RateFirePriceInt16");
+        sizeBallPriceInt = PlayerPrefs.GetInt("SizeBallPriceInt16");
 
         gunLevelText.text = PlayerPrefs.GetString("gunLevelText16", "Lvl2");
         rateFireLevelText.text = PlayerPrefs.GetString("rateFireLevelText16", "Lvl2");
@@ -382,5 +382,6 @@ public class UpgradeButtonScript : MonoBehaviour
         gunPriceText.text = PlayerPrefs.GetString("gunPriceText16", "330");
         rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText16", "330");
         sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText16", "330");
+        
     }
 }

@@ -2243,6 +2243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameControl: {fileID: 745067804}
+  upgradeButton: {fileID: 1634276513}
+  pauseButton: {fileID: 346805893}
 --- !u!114 &241408527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2258,15 +2260,22 @@ MonoBehaviour:
   gunPowerBtn: {fileID: 1153608461}
   gunLevelText: {fileID: 1468136564}
   gunPriceText: {fileID: 1848671029}
+  gunPriceInt: 330
+  gunPowerCount: 2
   rateFireButton: {fileID: 806804726}
   rateFireLevelText: {fileID: 878026663}
   rateFirePriceText: {fileID: 427928768}
+  rateFirePriceInt: 330
+  rateFireCount: 2
   sizeBallButton: {fileID: 338891224}
   sizeBallLevelText: {fileID: 2022971487}
   sizeBallPriceText: {fileID: 1784195656}
   sizeBallCount: 2
+  sizeBallPriceInt: 330
   gameEconomy: {fileID: 1068201431}
   playerFire: {fileID: 1823646405}
+  bulletLevelNumber: 1
+  bulleSizeNumber: 1
   bullet: {fileID: 7031217446093141461, guid: 55eb452949bf33b428c7813dcd3a2bd2, type: 3}
   pool: {fileID: 1981475849}
 --- !u!4 &247360908 stripped
@@ -3514,6 +3523,7 @@ MonoBehaviour:
   playerTrigger: {fileID: 2464083165585558543}
   playerDie: {fileID: 2464083165585558545}
   enemys: {fileID: 841945408}
+  upgradeButton: {fileID: 1634276513}
 --- !u!114 &346805897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,6 +4681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUpgradePanel: {fileID: 241408522}
   gameControl: {fileID: 745067804}
+  pausePanel: {fileID: 0}
 --- !u!95 &490898646
 Animator:
   serializedVersion: 5
@@ -11811,6 +11822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUpgradePanel: {fileID: 241408522}
   gameControl: {fileID: 745067804}
+  pausePanel: {fileID: 346805893}
 --- !u!114 &1634276518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11983,7 +11995,7 @@ MonoBehaviour:
   fireAudio: {fileID: 1823646406}
   playerTrigger: {fileID: 2464083165585558543}
   playerDie: {fileID: 2464083165585558545}
-  enemySpawn: {fileID: 346612592}
+  musicManager: {fileID: 0}
   enemys: {fileID: 841945408}
 --- !u!114 &1727104786
 MonoBehaviour:
@@ -12010,6 +12022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameControl: {fileID: 745067804}
+  upgradeButton: {fileID: 1634276513}
+  pauseButton: {fileID: 0}
 --- !u!114 &1727104788
 MonoBehaviour:
   m_ObjectHideFlags: 0
