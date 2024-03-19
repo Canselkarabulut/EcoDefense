@@ -37,6 +37,8 @@ public class UpgradeButtonScript : MonoBehaviour
 
     public Bullet bullet;
 
+    
+
     private void Start()
     {
         LoadPlayerPrefs();
@@ -54,7 +56,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 gunLevelText.text = "Lvl 2";
                 gunPriceText.text = "330";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
-                
+
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
@@ -62,6 +64,7 @@ public class UpgradeButtonScript : MonoBehaviour
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl2;
                     }
                 }
+
                 bullet.bulletLevel = BulletLevel.Lvl2;
 
                 break;
@@ -76,6 +79,7 @@ public class UpgradeButtonScript : MonoBehaviour
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl3;
                     }
                 }
+
                 bullet.bulletLevel = BulletLevel.Lvl3;
                 break;
             case 4:
@@ -89,6 +93,7 @@ public class UpgradeButtonScript : MonoBehaviour
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl4;
                     }
                 }
+
                 bullet.bulletLevel = BulletLevel.Lvl4;
                 break;
             case 5:
@@ -102,18 +107,21 @@ public class UpgradeButtonScript : MonoBehaviour
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl5;
                     }
                 }
+
                 bullet.bulletLevel = BulletLevel.Lvl5;
                 break;
             case 6:
                 gunLevelText.text = "Lvl 6";
                 gunPriceText.text = "1160";
-                gunPriceInt = Convert.ToInt32(gunPriceText.text);  for (int i = 0; i < pool.transform.childCount; i++)
+                gunPriceInt = Convert.ToInt32(gunPriceText.text);
+                for (int i = 0; i < pool.transform.childCount; i++)
                 {
                     if (pool.transform.GetChild(i).GetComponent<Bullet>())
                     {
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl6;
                     }
                 }
+
                 bullet.bulletLevel = BulletLevel.Lvl6;
                 break;
             case 7:
@@ -127,6 +135,7 @@ public class UpgradeButtonScript : MonoBehaviour
                         pool.transform.GetChild(i).GetComponent<Bullet>().bulletLevel = BulletLevel.Lvl7;
                     }
                 }
+
                 bullet.bulletLevel = BulletLevel.Lvl7;
                 break;
             default:
@@ -310,15 +319,18 @@ public class UpgradeButtonScript : MonoBehaviour
 
     private void Update()
     {
-        ButtonInteractable(gunPowerBtn, gunPriceInt,gunPowerCount);
-        ButtonInteractable(rateFireButton, rateFirePriceInt,rateFireCount);
-        ButtonInteractable(sizeBallButton, sizeBallPriceInt,sizeBallCount);
+        ButtonInteractable(gunPowerBtn, gunPriceInt, gunPowerCount);
+        ButtonInteractable(rateFireButton, rateFirePriceInt, rateFireCount);
+        ButtonInteractable(sizeBallButton, sizeBallPriceInt, sizeBallCount);
     }
 
-    private int maxButtonClickCount = 8;/*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
-    public void ButtonInteractable(Button button, int priceInt , int count)
+    private int
+        maxButtonClickCount =
+            8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
+
+    public void ButtonInteractable(Button button, int priceInt, int count)
     {
-        if (GameEconomy.sCoinCount > priceInt-1 && count<maxButtonClickCount)
+        if (GameEconomy.sCoinCount > priceInt - 1 && count < maxButtonClickCount)
         {
             button.interactable = true;
         }

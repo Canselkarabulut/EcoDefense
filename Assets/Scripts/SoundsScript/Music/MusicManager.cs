@@ -29,7 +29,6 @@ public class MusicManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
     }
-
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
