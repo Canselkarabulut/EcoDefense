@@ -34,12 +34,35 @@ public class MusicManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         PlayMusicForScene(SceneManager.GetActiveScene().buildIndex);
+        if (PlayerPrefs.GetInt("musicNum") == 0)
+        {
+            StopMusic();
+            Debug.Log(PlayerPrefs.GetInt("musicNum"));
+        }
+
+        if (PlayerPrefs.GetInt("musicNum") == 1)
+        {
+            StartMusic();
+            Debug.Log(PlayerPrefs.GetInt("musicNum"));
+        }
+
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (PlayerPrefs.GetInt("musicNum") == 0)
+        {
+            StopMusic();
+            Debug.Log(PlayerPrefs.GetInt("musicNum"));
+        }
+
+        if (PlayerPrefs.GetInt("musicNum") == 1)
+        {
+            StartMusic();
+            Debug.Log(PlayerPrefs.GetInt("musicNum"));
+        }
+
         PlayMusicForScene(scene.buildIndex);
-        AssignMusicButton();
     }
 
     void PlayMusicForScene(int sceneIndex)
@@ -103,49 +126,18 @@ public class MusicManager : MonoBehaviour
 
             // Müziği değiştir ve çalmaya başla
             audioSource.clip = musicToPlay;
-            audioSource.Play();
+          //  audioSource.Play();
         }
     }
 
-    private SettingsController settingsController;
-    private Music music;
-    public Button musicButton;
-    void AssignMusicButton()
+    public void StopMusic()
     {
-        GameObject canvas = GameObject.Find("Canvas");
-        if (canvas != null)
-        {
-            settingsController= canvas.GetComponentInChildren<SettingsController>();
-            if (settingsController != null)
-                music = settingsController.GetComponentInChildren<Music>();
-            if (music != null)
-                musicButton = music.GetComponentInChildren<Button>();
-            // Button musicButton = canvas.transform.Find("MusicButton").GetComponent<Button>();
-            if (musicButton != null)
-            {
-                musicButton.onClick.RemoveAllListeners();
-                musicButton.onClick.AddListener(ToggleMusic);
-            }
-            else
-            {
-                Debug.LogWarning("Music button not found on the canvas.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Canvas not found in the scene.");
-        }
+        audioSource.Stop();
     }
 
-    void ToggleMusic()
+    // Müziği başlat
+    public void StartMusic()
     {
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
-        }
-        else
-        {
-            audioSource.Play();
-        }
+        audioSource.Play();
     }
 }

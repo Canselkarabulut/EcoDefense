@@ -26,11 +26,13 @@ public class SettingsController : MonoBehaviour
 
     public MusicManager musicManager;
 
-    public EnemySpawn enemySpawn;
+ //   public EnemySpawn enemySpawn;
 
     // public AudioSource musicAudio;
     private void Start()
     {
+        musicManager = FindObjectOfType<MusicManager>();
+
         //sesler açık
         soundNum = PlayerPrefs.GetInt("soundNum");
         musicNum = PlayerPrefs.GetInt("musicNum");
@@ -83,10 +85,10 @@ public class SettingsController : MonoBehaviour
         if (musicNum == 1)
         {
             musicCloseImage.SetActive(true);
-            Debug.Log("müzik kapandı");
-            if (musicManager != null)
-                musicManager.audioSource.Stop();
+            //    Debug.Log("müzik kapandı");
             musicNum = 0;
+            if (musicManager != null)
+                musicManager.StopMusic();
             PlayerPrefs.SetInt("musicNum", musicNum);
             return;
         }
@@ -95,10 +97,10 @@ public class SettingsController : MonoBehaviour
         {
             musicCloseImage.SetActive(false);
             //   isMusicNum = true; // kapalı müzik açıldı
-            Debug.Log("müzik açıldı");
+            //  Debug.Log("müzik açıldı");
             //   musicAudio.Play();
             if (musicManager != null)
-                musicManager.audioSource.Play();
+                musicManager.StartMusic();
             musicNum = 1;
             PlayerPrefs.SetInt("musicNum", musicNum);
             return;

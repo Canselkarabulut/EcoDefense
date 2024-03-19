@@ -30,6 +30,7 @@ public class ResetGame : MonoBehaviour
 
     public void ResetSetPlayerPrefs()
     {
+        Time.timeScale = 1;
         bullet.bulletLevel = BulletLevel.Lvl1;
         bullet.bulletRateFire = BulletRateFire.FireLvl1;
         bullet.bulletSize = BulletSize.Size1;

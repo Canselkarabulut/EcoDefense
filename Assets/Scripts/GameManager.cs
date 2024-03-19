@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager _instance { get; set;}
+    public static GameManager _instance { get; set; }
+
     private void Awake()
     {
         SingletonThidGameManager();
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void SingletonThidGameManager()
     {
-        if(_instance == null)
+        if (_instance == null)
         {
             _instance = this;
             DontDestroyOnLoad(this);
