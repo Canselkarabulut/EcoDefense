@@ -37,34 +37,18 @@ public class MusicManager : MonoBehaviour
         if (PlayerPrefs.GetInt("musicNum") == 0)
         {
             StopMusic();
-            Debug.Log(PlayerPrefs.GetInt("musicNum"));
         }
 
         if (PlayerPrefs.GetInt("musicNum") == 1)
         {
             StartMusic();
-            Debug.Log(PlayerPrefs.GetInt("musicNum"));
         }
-
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (PlayerPrefs.GetInt("musicNum") == 0)
-        {
-            StopMusic();
-            Debug.Log(PlayerPrefs.GetInt("musicNum"));
-        }
-
-        if (PlayerPrefs.GetInt("musicNum") == 1)
-        {
-            StartMusic();
-            Debug.Log(PlayerPrefs.GetInt("musicNum"));
-        }
-
         PlayMusicForScene(scene.buildIndex);
     }
-
     void PlayMusicForScene(int sceneIndex)
     {
         AudioClip musicToPlay = null;
@@ -126,16 +110,17 @@ public class MusicManager : MonoBehaviour
 
             // Müziği değiştir ve çalmaya başla
             audioSource.clip = musicToPlay;
-          //  audioSource.Play();
+            if (PlayerPrefs.GetInt("musicNum") == 1)
+            {
+                StartMusic();
+            }
+           
         }
     }
-
     public void StopMusic()
     {
         audioSource.Stop();
     }
-
-    // Müziği başlat
     public void StartMusic()
     {
         audioSource.Play();

@@ -25,7 +25,8 @@ public class PlayerFire : MonoBehaviour
         {
             if (playerRange.enemys.transform.childCount > 0)
             {
-                if (playerRange.LookAtEnemy() && !playerRange.GetComponentInChildren<PlayerTrigger>().isDie)
+                if (playerRange.LookAtEnemy() && !playerRange.GetComponentInChildren<PlayerTrigger>().isDie &&
+                    !playerRange.NearestEnemy().GetComponent<EnemyLife>().isDie)
                 {
                     _timer = 0f;
                     SpawnObject();
@@ -33,6 +34,7 @@ public class PlayerFire : MonoBehaviour
                 else
                 {
                     fireEffect.SetActive(false);
+                    //    playerRange.NearestEnemy();
                     if (bulletSound.enabled)
                         bulletSound.Stop();
                 }
