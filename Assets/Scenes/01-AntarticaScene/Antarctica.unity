@@ -1231,11 +1231,11 @@ PrefabInstance:
       objectReference: {fileID: 1197572845}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000163965
+      value: -0.000000016396507
       objectReference: {fileID: 0}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000052167257
+      value: 0.000000005216728
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1699,11 +1699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000163965
+      value: -0.000000016396507
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000052167257
+      value: 0.000000005216728
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1923,7 +1923,7 @@ PrefabInstance:
       objectReference: {fileID: 1323190570326071331}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: _countdownNum
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: countdownText
@@ -1947,31 +1947,31 @@ PrefabInstance:
       objectReference: {fileID: 8445544198824750055}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave1EnemyLimit
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave2EnemyLimit
-      value: 5
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave3EnemyLimit
-      value: 5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave4EnemyLimit
-      value: 5
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave5EnemyLimit
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave6EnemyLimit
-      value: 5
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: wave7EnemyLimit
-      value: 5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: floatingJoystick

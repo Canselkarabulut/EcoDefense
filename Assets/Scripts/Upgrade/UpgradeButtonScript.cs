@@ -47,7 +47,6 @@ public class UpgradeButtonScript : MonoBehaviour
     private void Start()
     {
         LoadPlayerPrefs();
-        Debug.Log("pool sayısı gelecek");
     }
 
 
@@ -207,7 +206,6 @@ public class UpgradeButtonScript : MonoBehaviour
                 playerFire.spawnInterval = 0.1f;
                 break;
             default:
-                Debug.Log("tıklama sayısı kontrol alanın dışına çıktı");
                 break;
         }
 
