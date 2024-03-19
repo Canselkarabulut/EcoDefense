@@ -2036,6 +2036,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5565634142793676908}
     - target: {fileID: 1323977816854018199, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 2254221957167585007}
+    - target: {fileID: 1323977816854018199, guid: 1055bd53665aa7c4fa5216c68f2a86c4, type: 3}
       propertyPath: upgradeButton
       value: 
       objectReference: {fileID: 5565634142793676908}

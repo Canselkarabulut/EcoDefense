@@ -49,18 +49,18 @@ public class ResetGame : MonoBehaviour
         rateFirePriceInt = 330;
         sizeBallPriceInt = 330;
 
-        
+
         gunLevelText.text = "Lvl2";
         rateFireLevelText.text = " Lvl2";
         sizeBallLevelText.text = "Lvl2";
         gunPriceText.text = "330";
         rateFirePriceText.text = "330";
         sizeBallPriceText.text = "330";
-        
+
         PlayerPrefs.SetString("gunLevelText16", gunLevelText.text);
         PlayerPrefs.SetString("rateFireLevelText16", rateFireLevelText.text);
         PlayerPrefs.SetString("sizeBallLevelText16", sizeBallLevelText.text);
-       
+
         PlayerPrefs.SetString("gunPriceText16", gunPriceText.text);
         PlayerPrefs.SetString("rateFirePriceText16", rateFirePriceText.text);
         PlayerPrefs.SetString("sizeBallPriceText16", sizeBallPriceText.text);
@@ -77,10 +77,11 @@ public class ResetGame : MonoBehaviour
         PlayerPrefs.SetInt("GunPriceInt16", gunPriceInt);
         PlayerPrefs.SetInt("RateFirePriceInt16", rateFirePriceInt);
         PlayerPrefs.SetInt("SizeBallPriceInt16", sizeBallPriceInt);
-        
-        PlayerPrefs.SetInt("musicNum",1);
-        PlayerPrefs.SetInt("soundNum",1);
-        
+
+        PlayerPrefs.SetInt("musicNum", 1);
+        PlayerPrefs.SetInt("soundNum", 1);
+
+        PlayerPrefs.SetFloat("spawnInterval", .4f);
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }

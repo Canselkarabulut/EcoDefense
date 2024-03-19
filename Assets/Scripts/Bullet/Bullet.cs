@@ -14,7 +14,10 @@ public class Bullet : MonoBehaviour
     private int bulletLevelNumber = 1;
     private int bulleSizeNumber = 1;
 
-
+    private void Start()
+    {
+       
+    }
 
     private void OnTriggerEnter(Collider other)
     {
