@@ -44,7 +44,7 @@ public class PlayerFire : MonoBehaviour
                 {
                     fireEffect.SetActive(false);
                     if (bulletSound.enabled)
-                        bulletSound.Stop();
+                       bulletSound.Stop();
                 }
             }
         }
@@ -77,7 +77,7 @@ public class PlayerFire : MonoBehaviour
         transform.rotation = Quaternion.identity;
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = Vector3.zero;
-        ObjectPool.Instance.ReturnObjectToPool(bullet);
+      //  ObjectPool.Instance.ReturnObjectToPool(bullet);
         fireEffect.SetActive(false);
     }
 }

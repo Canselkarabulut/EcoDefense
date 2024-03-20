@@ -7961,13 +7961,13 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   ecoGun: {fileID: 470224379}
   enemyLimit: 0
-  wave1EnemyLimit: 20
-  wave2EnemyLimit: 22
-  wave3EnemyLimit: 24
-  wave4EnemyLimit: 26
-  wave5EnemyLimit: 28
-  wave6EnemyLimit: 30
-  wave7EnemyLimit: 2
+  wave1EnemyLimit: 80
+  wave2EnemyLimit: 85
+  wave3EnemyLimit: 90
+  wave4EnemyLimit: 95
+  wave5EnemyLimit: 100
+  wave6EnemyLimit: 105
+  wave7EnemyLimit: 110
   camAudio: {fileID: 1587605560}
   playerAudio: {fileID: 1197572852}
   fireAudio: {fileID: 1823646406}

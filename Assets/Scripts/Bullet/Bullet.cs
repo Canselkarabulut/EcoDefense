@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
         if (other.TryGetComponent(out EnemyTrigger enemyTrigger))
         {
             enemyTrigger.minusLife.MinusText();
-            ObjectPool.Instance.ReturnObjectToPool(gameObject);
+            ObjectPool.Instance.ReturnObjectToPool(this.gameObject);
         }
     }
 

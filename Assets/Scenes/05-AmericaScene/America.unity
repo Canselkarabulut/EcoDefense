@@ -3160,14 +3160,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340246666}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.50099987, y: 5.392, z: -0.00000027247836}
+  m_LocalRotation: {x: 0.145687, y: -0.009471595, z: -0.45894158, w: 0.8763894}
+  m_LocalPosition: {x: -0.50099975, y: 5.3920045, z: -0.00000038045516}
   m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1034114721}
   m_Father: {fileID: 1572972712}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.28, y: -8.924, z: -56.4}
 --- !u!95 &340246668
 Animator:
   serializedVersion: 5
@@ -8887,13 +8887,13 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   ecoGun: {fileID: 470224379}
   enemyLimit: 0
-  wave1EnemyLimit: 30
-  wave2EnemyLimit: 32
-  wave3EnemyLimit: 34
-  wave4EnemyLimit: 36
-  wave5EnemyLimit: 38
-  wave6EnemyLimit: 40
-  wave7EnemyLimit: 42
+  wave1EnemyLimit: 150
+  wave2EnemyLimit: 155
+  wave3EnemyLimit: 160
+  wave4EnemyLimit: 165
+  wave5EnemyLimit: 170
+  wave6EnemyLimit: 175
+  wave7EnemyLimit: 180
   camAudio: {fileID: 1587605560}
   playerAudio: {fileID: 1197572852}
   fireAudio: {fileID: 1823646406}

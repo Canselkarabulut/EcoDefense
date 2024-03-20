@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Pool;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class EnemySpawn : MonoBehaviour
@@ -14,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
     public Transform parentSpawnObject;
     public WaveControl waveControl;
     public GameObject pointEnemySpawn;
-    public float spawnInterval = 2f;
+    [HideInInspector] public float spawnInterval = 2f;
     public TextMeshProUGUI killEnemyText;
     public int killEnemyCount;
 
@@ -33,6 +34,7 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(spawnInterval);
         _timer += Time.deltaTime;
         if (_timer >= spawnInterval)
         {
@@ -57,31 +59,66 @@ public class EnemySpawn : MonoBehaviour
         switch (waveControl.waveNumber)
         {
             case WaveNumber.Wave1:
-                spawnInterval = 2.2f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 2.5f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = 1f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = .4f;
                 EnemyLevelControl(0, 1); //0
                 break;
             case WaveNumber.Wave2:
-                spawnInterval = 2.3f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 2f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = .8f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = .4f;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave3:
-                spawnInterval = 2.5f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 1.7f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = .7f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = .4f;
                 EnemyLevelControl(0, 2); //0,1
                 break;
             case WaveNumber.Wave4:
-                spawnInterval = 2.7f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 2f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = .8f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = .8f;
                 EnemyLevelControl(0, 3); //0,1,2
                 break;
             case WaveNumber.Wave5:
-                spawnInterval = 3f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 2.5f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = 1f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = 1f;
                 EnemyLevelControl(1, 3); //1,2
                 break;
             case WaveNumber.Wave6:
-                spawnInterval = 3.2f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 2.25f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = 1.3f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = 1.4f;
                 EnemyLevelControl(1, 4); //1.2,3
                 break;
             case WaveNumber.Wave7:
-                spawnInterval = 3.7f;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                    spawnInterval = 2f;
+                else if (SceneManager.GetActiveScene().buildIndex == 6)
+                    spawnInterval = 1.4f;
+                else if (SceneManager.GetActiveScene().buildIndex >= 9)
+                    spawnInterval = 1.6f;
                 EnemyLevelControl(2, 4); //2,3
                 break;
         }
@@ -137,8 +174,6 @@ public class EnemySpawn : MonoBehaviour
             }
         }
     }
-
-
     IEnumerator DieCount(GameObject obj)
     {
         yield return new WaitUntil(() => obj.GetComponent<EnemyLife>().isDie);
@@ -152,7 +187,7 @@ public class EnemySpawn : MonoBehaviour
         if (obj.GetComponent<EnemyLife>().enemyWalk.enabled)
             obj.GetComponent<EnemyLife>().enemyWalk.enabled = false;
         obj.GetComponent<EnemyLife>().enemyWalk.Stop();
-        
+
         var enemyLevelStatus = obj.GetComponent<EnemyLevelStatus>();
         switch (enemyLevelStatus.EnemyLevelReturn())
         {

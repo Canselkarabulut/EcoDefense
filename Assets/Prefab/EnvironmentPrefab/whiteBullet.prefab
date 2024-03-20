@@ -92,15 +92,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f317e7624ce26ea4c97a624b8bfae384, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f317e7624ce26ea4c97a624b8bfae384, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f317e7624ce26ea4c97a624b8bfae384, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f317e7624ce26ea4c97a624b8bfae384, type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,9 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7477276627cface4a9c86e9dfcaebf3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLevel: 0
-  bulletSize: 0
-  bulletRateFire: 0
+  bulletLevel: 6
+  bulletSize: 6
+  bulletRateFire: 6
 --- !u!54 &8355960032959020931
 Rigidbody:
   m_ObjectHideFlags: 0
