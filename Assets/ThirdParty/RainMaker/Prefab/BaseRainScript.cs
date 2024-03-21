@@ -7,7 +7,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -18,27 +17,23 @@ namespace DigitalRuby.RainMaker
         [Tooltip("Camera the rain should hover over, defaults to main camera")]
         public Camera Camera;
 
-        [Tooltip("Whether rain should follow the camera. If false, rain must be moved manually and will not follow the camera.")]
+        [Tooltip(
+            "Whether rain should follow the camera. If false, rain must be moved manually and will not follow the camera.")]
         public bool FollowCamera = true;
 
-        [Tooltip("Light rain looping clip")]
-        public AudioClip RainSoundLight;
+        [Tooltip("Light rain looping clip")] public AudioClip RainSoundLight;
 
-        [Tooltip("Medium rain looping clip")]
-        public AudioClip RainSoundMedium;
+        [Tooltip("Medium rain looping clip")] public AudioClip RainSoundMedium;
 
-        [Tooltip("Heavy rain looping clip")]
-        public AudioClip RainSoundHeavy;
+        [Tooltip("Heavy rain looping clip")] public AudioClip RainSoundHeavy;
 
         [Tooltip("AudoMixer used for the rain sound")]
         public AudioMixerGroup RainSoundAudioMixer;
 
-        [Tooltip("Intensity of rain (0-1)")]
-        [Range(0.0f, 1.0f)]
+        [Tooltip("Intensity of rain (0-1)")] [Range(0.0f, 1.0f)]
         public float RainIntensity;
 
-        [Tooltip("Rain particle system")]
-        public ParticleSystem RainFallParticleSystem;
+        [Tooltip("Rain particle system")] public ParticleSystem RainFallParticleSystem;
 
         [Tooltip("Particles system for when rain hits something")]
         public ParticleSystem RainExplosionParticleSystem;
@@ -46,12 +41,10 @@ namespace DigitalRuby.RainMaker
         [Tooltip("Particle system to use for rain mist")]
         public ParticleSystem RainMistParticleSystem;
 
-        [Tooltip("The threshold for intensity (0 - 1) at which mist starts to appear")]
-        [Range(0.0f, 1.0f)]
+        [Tooltip("The threshold for intensity (0 - 1) at which mist starts to appear")] [Range(0.0f, 1.0f)]
         public float RainMistThreshold = 0.5f;
 
-        [Tooltip("Wind looping clip")]
-        public AudioClip WindSound;
+        [Tooltip("Wind looping clip")] public AudioClip WindSound;
 
         [Tooltip("Wind sound volume modifier, use this to lower your sound if it's too loud.")]
         public float WindSoundVolumeModifier = 0.5f;
@@ -59,7 +52,8 @@ namespace DigitalRuby.RainMaker
         [Tooltip("Wind zone that will affect and follow the rain")]
         public WindZone WindZone;
 
-        [Tooltip("X = minimum wind speed. Y = maximum wind speed. Z = sound multiplier. Wind speed is divided by Z to get sound multiplier value. Set Z to lower than Y to increase wind sound volume, or higher to decrease wind sound volume.")]
+        [Tooltip(
+            "X = minimum wind speed. Y = maximum wind speed. Z = sound multiplier. Wind speed is divided by Z to get sound multiplier value. Set Z to lower than Y to increase wind sound volume, or higher to decrease wind sound volume.")]
         public Vector3 WindSpeedRange = new Vector3(50.0f, 500.0f, 500.0f);
 
         [Tooltip("How often the wind speed and direction changes (minimum and maximum change interval in seconds)")]
@@ -89,10 +83,12 @@ namespace DigitalRuby.RainMaker
                 {
                     WindZone.transform.position = Camera.transform.position;
                 }
+
                 if (!Camera.orthographic)
                 {
                     WindZone.transform.Translate(0.0f, WindZone.radius, 0.0f);
                 }
+
                 if (nextWindTime < Time.time)
                 {
                     WindZone.windMain = UnityEngine.Random.Range(WindSpeedRange.x, WindSpeedRange.y);
@@ -104,8 +100,10 @@ namespace DigitalRuby.RainMaker
                     }
                     else
                     {
-                        WindZone.transform.rotation = Quaternion.Euler(UnityEngine.Random.Range(-30.0f, 30.0f), UnityEngine.Random.Range(0.0f, 360.0f), 0.0f);
+                        WindZone.transform.rotation = Quaternion.Euler(UnityEngine.Random.Range(-30.0f, 30.0f),
+                            UnityEngine.Random.Range(0.0f, 360.0f), 0.0f);
                     }
+
                     nextWindTime = Time.time + UnityEngine.Random.Range(WindChangeInterval.x, WindChangeInterval.y);
                     audioSourceWind.Play((WindZone.windMain / WindSpeedRange.z) * WindSoundVolumeModifier);
                 }
@@ -116,6 +114,7 @@ namespace DigitalRuby.RainMaker
                 {
                     WindZone.gameObject.SetActive(false);
                 }
+
                 audioSourceWind.Stop();
             }
 
@@ -134,12 +133,14 @@ namespace DigitalRuby.RainMaker
                         audioSourceRainCurrent.Stop();
                         audioSourceRainCurrent = null;
                     }
+
                     if (RainFallParticleSystem != null)
                     {
                         ParticleSystem.EmissionModule e = RainFallParticleSystem.emission;
                         e.enabled = false;
                         RainFallParticleSystem.Stop();
                     }
+
                     if (RainMistParticleSystem != null)
                     {
                         ParticleSystem.EmissionModule e = RainMistParticleSystem.emission;
@@ -162,15 +163,18 @@ namespace DigitalRuby.RainMaker
                     {
                         newSource = audioSourceRainLight;
                     }
+
                     if (audioSourceRainCurrent != newSource)
                     {
                         if (audioSourceRainCurrent != null)
                         {
                             audioSourceRainCurrent.Stop();
                         }
+
                         audioSourceRainCurrent = newSource;
                         audioSourceRainCurrent.Play(1.0f);
                     }
+
                     if (RainFallParticleSystem != null)
                     {
                         ParticleSystem.EmissionModule e = RainFallParticleSystem.emission;
@@ -179,11 +183,13 @@ namespace DigitalRuby.RainMaker
                         {
                             RainFallParticleSystem.Play();
                         }
+
                         ParticleSystem.MinMaxCurve rate = e.rateOverTime;
                         rate.mode = ParticleSystemCurveMode.Constant;
                         rate.constantMin = rate.constantMax = RainFallEmissionRate();
                         e.rateOverTime = rate;
                     }
+
                     if (RainMistParticleSystem != null)
                     {
                         ParticleSystem.EmissionModule e = RainMistParticleSystem.emission;
@@ -192,6 +198,7 @@ namespace DigitalRuby.RainMaker
                         {
                             RainMistParticleSystem.Play();
                         }
+
                         float emissionRate;
                         if (RainIntensity < RainMistThreshold)
                         {
@@ -202,6 +209,7 @@ namespace DigitalRuby.RainMaker
                             // must have RainMistThreshold or higher rain intensity to start seeing mist
                             emissionRate = MistEmissionRate();
                         }
+
                         ParticleSystem.MinMaxCurve rate = e.rateOverTime;
                         rate.mode = ParticleSystemCurveMode.Constant;
                         rate.constantMin = rate.constantMax = emissionRate;
@@ -213,9 +221,7 @@ namespace DigitalRuby.RainMaker
 
         protected virtual void Start()
         {
-
 #if DEBUG
-
             if (RainFallParticleSystem == null)
             {
                 Debug.LogError("Rain fall particle system must be set to a particle system");
@@ -244,6 +250,7 @@ namespace DigitalRuby.RainMaker
                 rainMaterial.EnableKeyword("SOFTPARTICLES_OFF");
                 rainRenderer.material = rainMaterial;
             }
+
             if (RainExplosionParticleSystem != null)
             {
                 ParticleSystem.EmissionModule e = RainExplosionParticleSystem.emission;
@@ -253,6 +260,7 @@ namespace DigitalRuby.RainMaker
                 rainExplosionMaterial.EnableKeyword("SOFTPARTICLES_OFF");
                 rainRenderer.material = rainExplosionMaterial;
             }
+
             if (RainMistParticleSystem != null)
             {
                 ParticleSystem.EmissionModule e = RainMistParticleSystem.emission;
@@ -268,15 +276,14 @@ namespace DigitalRuby.RainMaker
                 {
                     rainMistMaterial.EnableKeyword("SOFTPARTICLES_OFF");
                 }
+
                 rainRenderer.material = rainMistMaterial;
             }
         }
 
         protected virtual void Update()
         {
-
 #if DEBUG
-
             if (RainFallParticleSystem == null)
             {
                 Debug.LogError("Rain fall particle system must be set to a particle system");
@@ -294,20 +301,19 @@ namespace DigitalRuby.RainMaker
 
         protected virtual float RainFallEmissionRate()
         {
-            return (RainFallParticleSystem.main.maxParticles / RainFallParticleSystem.main.startLifetime.constant) * RainIntensity;
+            return (RainFallParticleSystem.main.maxParticles / RainFallParticleSystem.main.startLifetime.constant) *
+                   RainIntensity;
         }
 
         protected virtual float MistEmissionRate()
         {
-            return (RainMistParticleSystem.main.maxParticles / RainMistParticleSystem.main.startLifetime.constant) * RainIntensity * RainIntensity;
+            return (RainMistParticleSystem.main.maxParticles / RainMistParticleSystem.main.startLifetime.constant) *
+                   RainIntensity * RainIntensity;
         }
 
         protected virtual bool UseRainMistSoftParticles
         {
-            get
-            {
-                return true;
-            }
+            get { return true; }
         }
     }
 
@@ -328,12 +334,13 @@ namespace DigitalRuby.RainMaker
                 AudioSource.outputAudioMixerGroup = mixer;
             }
 
+//todo:volumeRain
             AudioSource.loop = true;
             AudioSource.clip = clip;
             AudioSource.playOnAwake = false;
             AudioSource.volume = 0.0f;
             AudioSource.Stop();
-            TargetVolume = 1.0f;
+            TargetVolume = .5f;
         }
 
         public void Play(float targetVolume)
@@ -343,6 +350,7 @@ namespace DigitalRuby.RainMaker
                 AudioSource.volume = 0.0f;
                 AudioSource.Play();
             }
+
             TargetVolume = targetVolume;
         }
 
@@ -353,7 +361,8 @@ namespace DigitalRuby.RainMaker
 
         public void Update()
         {
-            if (AudioSource.isPlaying && (AudioSource.volume = Mathf.Lerp(AudioSource.volume, TargetVolume, Time.deltaTime)) == 0.0f)
+            if (AudioSource.isPlaying &&
+                (AudioSource.volume = Mathf.Lerp(AudioSource.volume, TargetVolume, Time.deltaTime)) == 0.0f)
             {
                 AudioSource.Stop();
             }

@@ -201,7 +201,7 @@ public class WaveControl : MonoBehaviour
                         case WaveNumber.Wave7:
                             //oyun tamamlandı
                             player.GetComponent<PlayerController>().walkSound.Stop();
-                            waveText.text = "Next";
+                            waveText.text = "Level Up";
                             enemySpawn.gameObject.SetActive(false);
                             enemyTextBG.SetActive(false);
                             player.transform.position = sceneCenter.position;

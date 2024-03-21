@@ -30,7 +30,7 @@ public class PlayerTrigger : MonoBehaviour
     public bool isDie;
     public static bool isHealthRed;
 
-    public GameObject PauseButton;
+//    public GameObject PauseButton;
 
     public SettingsController settingsController;
     private void Start()
@@ -45,7 +45,7 @@ public class PlayerTrigger : MonoBehaviour
         enemys.SetActive(true);
         dieEffect.SetActive(false);
         isDie = false;
-        PauseButton.SetActive(true);
+     //   PauseButton.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -106,7 +106,7 @@ public class PlayerTrigger : MonoBehaviour
                     settingsController.playerDie.Play();
                     transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
                     floatingJoystick.gameObject.SetActive(false);
-                    PauseButton.SetActive(false);
+                  //  PauseButton.SetActive(false);
                 }
             }
         }

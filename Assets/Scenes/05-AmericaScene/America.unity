@@ -4928,7 +4928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUpgradePanel: {fileID: 241408522}
   gameControl: {fileID: 745067804}
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 346805893}
 --- !u!95 &490898646
 Animator:
   serializedVersion: 5
@@ -8468,7 +8468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: 0.000000016396507, z: -0.000000005216728, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.57, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8887,13 +8887,13 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   ecoGun: {fileID: 470224379}
   enemyLimit: 0
-  wave1EnemyLimit: 150
-  wave2EnemyLimit: 155
-  wave3EnemyLimit: 160
-  wave4EnemyLimit: 165
-  wave5EnemyLimit: 170
-  wave6EnemyLimit: 175
-  wave7EnemyLimit: 180
+  wave1EnemyLimit: 44
+  wave2EnemyLimit: 46
+  wave3EnemyLimit: 47
+  wave4EnemyLimit: 48
+  wave5EnemyLimit: 50
+  wave6EnemyLimit: 52
+  wave7EnemyLimit: 55
   camAudio: {fileID: 1587605560}
   playerAudio: {fileID: 1197572852}
   fireAudio: {fileID: 1823646406}
@@ -12751,7 +12751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: 0.000000016396507, z: -0.000000005216728, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.57, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15689,6 +15689,7 @@ MonoBehaviour:
   _playerHealthbar: {fileID: 1829892243}
   playerTrigger: {fileID: 2129386546}
   speed: 0.05
+  player: {fileID: 163698168}
 --- !u!114 &1931626412
 MonoBehaviour:
   m_ObjectHideFlags: 0

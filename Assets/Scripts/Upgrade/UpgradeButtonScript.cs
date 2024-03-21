@@ -11,14 +11,14 @@ public class UpgradeButtonScript : MonoBehaviour
     public Button gunPowerBtn;
     public TextMeshProUGUI gunLevelText;
     public TextMeshProUGUI gunPriceText;
-    [HideInInspector] public int gunPriceInt = 330;
+    [HideInInspector] public int gunPriceInt = 1038;
     [HideInInspector] public int gunPowerCount = 2;
 
 
     public Button rateFireButton;
     public TextMeshProUGUI rateFireLevelText;
     public TextMeshProUGUI rateFirePriceText;
-    [HideInInspector] public int rateFirePriceInt = 330;
+    [HideInInspector] public int rateFirePriceInt = 1186;
     [HideInInspector] public int rateFireCount = 2;
 
 
@@ -26,7 +26,7 @@ public class UpgradeButtonScript : MonoBehaviour
     public TextMeshProUGUI sizeBallLevelText;
     public TextMeshProUGUI sizeBallPriceText;
     [HideInInspector] public int sizeBallCount = 2;
-    [HideInInspector] public int sizeBallPriceInt = 330;
+    [HideInInspector] public int sizeBallPriceInt = 741;
 
 
     public GameEconomy gameEconomy;
@@ -59,7 +59,7 @@ public class UpgradeButtonScript : MonoBehaviour
         {
             case 2:
                 gunLevelText.text = "Lvl 2";
-                gunPriceText.text = "330";
+                gunPriceText.text = "1038";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -73,7 +73,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 3:
                 gunLevelText.text = "Lvl 3";
-                gunPriceText.text = "430";
+                gunPriceText.text = "1482";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -87,7 +87,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 4:
                 gunLevelText.text = "Lvl 4";
-                gunPriceText.text = "600";
+                gunPriceText.text = "1866";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -101,7 +101,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 5:
                 gunLevelText.text = "Lvl 5";
-                gunPriceText.text = "860";
+                gunPriceText.text = "2310";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -115,7 +115,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 6:
                 gunLevelText.text = "Lvl 6";
-                gunPriceText.text = "1160";
+                gunPriceText.text = "2636";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -129,7 +129,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 7:
                 gunLevelText.text = "Lvl 7";
-                gunPriceText.text = "1535";
+                gunPriceText.text = "3586";
                 gunPriceInt = Convert.ToInt32(gunPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -141,8 +141,11 @@ public class UpgradeButtonScript : MonoBehaviour
 
                 bullet.bulletLevel = BulletLevel.Lvl7;
                 break;
+            case 8:
+                gunLevelText.text = "Max";
+                gunPriceText.text = "Max";
+                break;
             default:
-                Debug.Log("tıklama sayısı kontrol alanın dışına çıktı");
                 break;
         }
 
@@ -158,7 +161,7 @@ public class UpgradeButtonScript : MonoBehaviour
         {
             case 2:
                 rateFireLevelText.text = "Lvl 2";
-                rateFirePriceText.text = "330";
+                rateFirePriceText.text = "1186";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
 
                 bullet.bulletRateFire = BulletRateFire.FireLvl2;
@@ -167,7 +170,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 3:
                 rateFireLevelText.text = "Lvl 3";
-                rateFirePriceText.text = "430";
+                rateFirePriceText.text = "1694";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
                 bullet.bulletRateFire = BulletRateFire.FireLvl3;
                 PlayerPrefs.SetFloat("spawnInterval", .3f);
@@ -175,7 +178,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 4:
                 rateFireLevelText.text = "Lvl 4";
-                rateFirePriceText.text = "600";
+                rateFirePriceText.text = "2132";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
                 bullet.bulletRateFire = BulletRateFire.FireLvl4;
                 PlayerPrefs.SetFloat("spawnInterval", .25f);
@@ -183,7 +186,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 5:
                 rateFireLevelText.text = "Lvl 5";
-                rateFirePriceText.text = "860";
+                rateFirePriceText.text = "2640";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
                 bullet.bulletRateFire = BulletRateFire.FireLvl5;
                 PlayerPrefs.SetFloat("spawnInterval", .2f);
@@ -191,7 +194,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 6:
                 rateFireLevelText.text = "Lvl 6";
-                rateFirePriceText.text = "1160";
+                rateFirePriceText.text = "3012";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
                 bullet.bulletRateFire = BulletRateFire.FireLvl6;
                 PlayerPrefs.SetFloat("spawnInterval", .15f);
@@ -199,11 +202,15 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 7:
                 rateFireLevelText.text = "Lvl 7";
-                rateFirePriceText.text = "1535";
+                rateFirePriceText.text = "3138";
                 rateFirePriceInt = Convert.ToInt32(rateFirePriceText.text);
                 bullet.bulletRateFire = BulletRateFire.FireLvl7;
                 PlayerPrefs.SetFloat("spawnInterval", .1f);
                 playerFire.spawnInterval = 0.1f;
+                break;
+            case 8:
+                rateFireLevelText.text = "Max";
+                rateFirePriceText.text = "Max";
                 break;
             default:
                 break;
@@ -222,7 +229,7 @@ public class UpgradeButtonScript : MonoBehaviour
         {
             case 2:
                 sizeBallLevelText.text = "Lvl 2";
-                sizeBallPriceText.text = "330";
+                sizeBallPriceText.text = "741";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 for (int i = 0; i < pool.transform.childCount; i++)
                 {
@@ -239,7 +246,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 3:
                 sizeBallLevelText.text = "Lvl 3";
-                sizeBallPriceText.text = "430";
+                sizeBallPriceText.text = "1059";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
 
                 for (int i = 0; i < pool.transform.childCount; i++)
@@ -257,7 +264,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 4:
                 sizeBallLevelText.text = "Lvl 4";
-                sizeBallPriceText.text = "600";
+                sizeBallPriceText.text = "1333";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
 
                 for (int i = 0; i < pool.transform.childCount; i++)
@@ -275,7 +282,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 5:
                 sizeBallLevelText.text = "Lvl 5";
-                sizeBallPriceText.text = "860";
+                sizeBallPriceText.text = "1650";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
                 bullet.bulletSize = BulletSize.Size5;
                 for (int i = 0; i < pool.transform.childCount; i++)
@@ -293,7 +300,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 6:
                 sizeBallLevelText.text = "Lvl 6";
-                sizeBallPriceText.text = "1160";
+                sizeBallPriceText.text = "1883";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
 
                 for (int i = 0; i < pool.transform.childCount; i++)
@@ -312,7 +319,7 @@ public class UpgradeButtonScript : MonoBehaviour
                 break;
             case 7:
                 sizeBallLevelText.text = "Lvl 7";
-                sizeBallPriceText.text = "1535";
+                sizeBallPriceText.text = "2241";
                 sizeBallPriceInt = Convert.ToInt32(sizeBallPriceText.text);
 
                 for (int i = 0; i < pool.transform.childCount; i++)
@@ -328,11 +335,11 @@ public class UpgradeButtonScript : MonoBehaviour
                     new Vector3(1, 1, 1);
                 break;
             case 8:
+                sizeBallLevelText.text = "Max";
+                sizeBallPriceText.text = "Max";
                 sizeBallButton.interactable = false;
-                Debug.Log("kapanma");
                 break;
             default:
-                Debug.Log("tıklama sayısı kontrol alanın dışına çıktı");
                 break;
         }
 
@@ -397,9 +404,9 @@ public class UpgradeButtonScript : MonoBehaviour
         rateFireLevelText.text = PlayerPrefs.GetString("rateFireLevelText16", "Lvl2");
         sizeBallLevelText.text = PlayerPrefs.GetString("sizeBallLevelText16", "Lvl2");
 
-        gunPriceText.text = PlayerPrefs.GetString("gunPriceText16", "330");
-        rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText16", "330");
-        sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText16", "330");
+        gunPriceText.text = PlayerPrefs.GetString("gunPriceText16", "1038");
+        rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText16", "1186");
+        sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText16", "741");
 
         playerFire.spawnInterval = PlayerPrefs.GetFloat("spawnInterval");
     }

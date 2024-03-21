@@ -2946,83 +2946,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &337787761
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 481863163}
-    m_Modifications:
-    - target: {fileID: 8985264917601230168, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917601243496, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917601250088, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917616850966, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: m_Name
-      value: RainPrefab Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985264917627538580, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 963194227}
-    - target: {fileID: 8985264917627538580, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-      propertyPath: RainIntensity
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
 --- !u!1 &338891222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,7 +4541,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1717330466}
   - {fileID: 1856924169}
   - {fileID: 1397221118}
   - {fileID: 1188229797}
@@ -4681,7 +4603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUpgradePanel: {fileID: 241408522}
   gameControl: {fileID: 745067804}
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 346805893}
 --- !u!95 &490898646
 Animator:
   serializedVersion: 5
@@ -7582,7 +7504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3031856, y: 1e-45, z: 0, w: 0.9529315}
+  m_LocalRotation: {x: 0.3031856, y: -3e-45, z: 1e-45, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.68, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7961,13 +7883,13 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   ecoGun: {fileID: 470224379}
   enemyLimit: 0
-  wave1EnemyLimit: 80
-  wave2EnemyLimit: 85
-  wave3EnemyLimit: 90
-  wave4EnemyLimit: 95
-  wave5EnemyLimit: 100
-  wave6EnemyLimit: 105
-  wave7EnemyLimit: 110
+  wave1EnemyLimit: 28
+  wave2EnemyLimit: 30
+  wave3EnemyLimit: 32
+  wave4EnemyLimit: 34
+  wave5EnemyLimit: 36
+  wave6EnemyLimit: 38
+  wave7EnemyLimit: 40
   camAudio: {fileID: 1587605560}
   playerAudio: {fileID: 1197572852}
   fireAudio: {fileID: 1823646406}
@@ -11374,7 +11296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3031856, y: 1e-45, z: -0, w: 0.9529315}
+  m_LocalRotation: {x: 0.3031856, y: -3e-45, z: 1e-45, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.68, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11883,11 +11805,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449563582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1717330466 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8985264917616633362, guid: 7e727acdb585f7d48ac034e28ca1678a, type: 3}
-  m_PrefabInstance: {fileID: 337787761}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1723015411
 GameObject:
   m_ObjectHideFlags: 0
@@ -11996,6 +11913,7 @@ MonoBehaviour:
   playerTrigger: {fileID: 2464083165585558543}
   playerDie: {fileID: 2464083165585558545}
   musicManager: {fileID: 0}
+  rainScript: {fileID: 0}
   enemys: {fileID: 841945408}
 --- !u!114 &1727104786
 MonoBehaviour:
@@ -13735,6 +13653,7 @@ MonoBehaviour:
   _playerHealthbar: {fileID: 1829892243}
   playerTrigger: {fileID: 2129386546}
   speed: 0.05
+  player: {fileID: 163698168}
 --- !u!114 &1931626412
 MonoBehaviour:
   m_ObjectHideFlags: 0

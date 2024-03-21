@@ -32,27 +32,9 @@ public class SpawnInterval : MonoBehaviour
    }
 
    private string addtxt0;
-   private string addtxt1;
-   private string addtxt2;
-   private string addtxt3;
    public void AddText0()
    {
       addtxt0 = "0,";
       value.text = addtxt0;
-   }
-   public void AddText1()
-   {
-      addtxt0 = "1,";
-      value.text = addtxt1;
-   }
-   public void AddText2()
-   {
-      addtxt0 = "2,";
-      value.text = addtxt2;
-   }
-   public void AddText3()
-   {
-      addtxt0 = "3,";
-      value.text = addtxt3;
    }
 }

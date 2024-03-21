@@ -4738,7 +4738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUpgradePanel: {fileID: 241408522}
   gameControl: {fileID: 745067804}
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 346805893}
 --- !u!95 &490898646
 Animator:
   serializedVersion: 5
@@ -8624,13 +8624,13 @@ MonoBehaviour:
   sceneCenter: {fileID: 1433851678}
   ecoGun: {fileID: 470224379}
   enemyLimit: 0
-  wave1EnemyLimit: 115
-  wave2EnemyLimit: 120
-  wave3EnemyLimit: 125
-  wave4EnemyLimit: 130
-  wave5EnemyLimit: 135
-  wave6EnemyLimit: 140
-  wave7EnemyLimit: 145
+  wave1EnemyLimit: 36
+  wave2EnemyLimit: 38
+  wave3EnemyLimit: 40
+  wave4EnemyLimit: 42
+  wave5EnemyLimit: 44
+  wave6EnemyLimit: 46
+  wave7EnemyLimit: 50
   camAudio: {fileID: 1587605560}
   playerAudio: {fileID: 1197572852}
   fireAudio: {fileID: 1823646406}
@@ -15641,6 +15641,7 @@ MonoBehaviour:
   _playerHealthbar: {fileID: 1829892243}
   playerTrigger: {fileID: 2129386546}
   speed: 0.05
+  player: {fileID: 163698168}
 --- !u!114 &1931626412
 MonoBehaviour:
   m_ObjectHideFlags: 0

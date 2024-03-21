@@ -12,14 +12,16 @@ public class EnemyTrigger : MonoBehaviour
     public BulletLevel triggerBulletLevel;
     public int numberLivesLost; //kaybedilen canların seviyesi
     public EnemyLife enemyLife;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Bullet bullet))
         {
             triggerEffect.Play();
-            enemyLife.enemyTriggerBullet.Play();
+            if (enemyLife.enemyTriggerBullet != null)
+                enemyLife.enemyTriggerBullet.Play();
             triggerBulletLevel = bullet.bulletLevel; //bana değen bulletin leveline bak ve onu tut
-            
+
             minusLife.gameObject.SetActive(true);
         }
     }

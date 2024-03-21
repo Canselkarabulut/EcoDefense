@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DigitalRuby.RainMaker;
 using Enum;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +27,7 @@ public class SettingsController : MonoBehaviour
 
     public MusicManager musicManager;
 
+    public RainScript rainScript;
  //   public EnemySpawn enemySpawn;
 
     // public AudioSource musicAudio;
@@ -142,6 +144,7 @@ public class SettingsController : MonoBehaviour
             fireAudio.enabled = fireAudioBool;
             playerTrigger.enabled = playerTriggerBool;
             playerDie.enabled = playerDieBool;
+ 
         }
 
         if (enemys != null)

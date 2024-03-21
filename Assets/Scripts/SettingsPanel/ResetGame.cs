@@ -45,17 +45,17 @@ public class ResetGame : MonoBehaviour
         rateFireCount = 2;
         sizeBallCount = 2;
 
-        gunPriceInt = 330;
-        rateFirePriceInt = 330;
-        sizeBallPriceInt = 330;
+        gunPriceInt = 1038;
+        rateFirePriceInt = 1186;
+        sizeBallPriceInt = 741;
 
 
         gunLevelText.text = "Lvl2";
         rateFireLevelText.text = " Lvl2";
         sizeBallLevelText.text = "Lvl2";
-        gunPriceText.text = "330";
-        rateFirePriceText.text = "330";
-        sizeBallPriceText.text = "330";
+        gunPriceText.text = "1038";
+        rateFirePriceText.text = "1186";
+        sizeBallPriceText.text = "741";
 
         PlayerPrefs.SetString("gunLevelText16", gunLevelText.text);
         PlayerPrefs.SetString("rateFireLevelText16", rateFireLevelText.text);
@@ -96,16 +96,16 @@ public class ResetGame : MonoBehaviour
         rateFireCount = PlayerPrefs.GetInt("RateFireCount16", 2);
         sizeBallCount = PlayerPrefs.GetInt("SizeBallCount16", 2);
 
-        gunPriceInt = PlayerPrefs.GetInt("GunPriceInt16", 330);
-        rateFirePriceInt = PlayerPrefs.GetInt("RateFirePriceInt16", 330);
-        sizeBallPriceInt = PlayerPrefs.GetInt("SizeBallPriceInt16", 330);
+        gunPriceInt = PlayerPrefs.GetInt("GunPriceInt16", 1038);
+        rateFirePriceInt = PlayerPrefs.GetInt("RateFirePriceInt16", 1186);
+        sizeBallPriceInt = PlayerPrefs.GetInt("SizeBallPriceInt16", 741);
 
         gunLevelText.text = PlayerPrefs.GetString("gunLevelText16", "Lvl2");
         rateFireLevelText.text = PlayerPrefs.GetString("rateFireLevelText16", "Lvl2");
         sizeBallLevelText.text = PlayerPrefs.GetString("sizeBallLevelText16", "Lvl2");
 
-        gunPriceText.text = PlayerPrefs.GetString("gunPriceText16", "330");
-        rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText16", "330");
-        sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText16", "330");
+        gunPriceText.text = PlayerPrefs.GetString("gunPriceText16", "1038");
+        rateFirePriceText.text = PlayerPrefs.GetString("rateFirePriceText16", "1186");
+        sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText16", "741");
     }
 }
