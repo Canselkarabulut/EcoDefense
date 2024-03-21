@@ -34,7 +34,7 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(spawnInterval);
+       
         _timer += Time.deltaTime;
         if (_timer >= spawnInterval)
         {
