@@ -792,6 +792,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2130921419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7964211284854237208, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
+  m_PrefabInstance: {fileID: 3078881672697059281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2130921421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130921419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.35272774, y: 0.34812015, z: 0.28430492}
+  m_Center: {x: -0.02612277, y: 0.11195347, z: 0.056028537}
 --- !u!1001 &135518065874986770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,6 +988,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1197572858}
     - target: {fileID: 545279062198659385, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
+      propertyPath: gameCenter
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 545279062198659385, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
       propertyPath: floatingJoystick
       value: 
       objectReference: {fileID: 3540359252748192136}
@@ -1043,6 +1073,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7225373869629474645, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249221124082606118, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569863405750097540, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569863405750097540, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1617,6 +1659,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4392086345322876485, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7964211284854237208, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2130921421}
   m_SourcePrefab: {fileID: 100100000, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
 --- !u!1001 &3449282184260622412
 PrefabInstance:
