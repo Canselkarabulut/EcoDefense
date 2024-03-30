@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-
-    //public DynamicJoystick dynamicJoystick;
     public FloatingJoystick floatingJoystick;
-    public Rigidbody rb;
+
     [SerializeField] Animator anim;
     private PlayerRange playerRange;
     public AudioSource walkSound;
@@ -25,23 +22,13 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = Vector3.forward * floatingJoystick.Vertical +
                                 Vector3.right * floatingJoystick.Horizontal;
-
-            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
-
-
-            rb.velocity = new Vector3(floatingJoystick.Horizontal * speed, transform.position.y,
-                floatingJoystick.Vertical * speed);
-
-
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
             if (floatingJoystick.Horizontal != 0 || floatingJoystick.Vertical != 0)
             {
                 anim.SetBool("isRun", true);
-                if (walkSound.enabled)
+                if (walkSound.enabled && !walkSound.isPlaying)
                 {
-                    if (!walkSound.isPlaying)
-                    {
-                        walkSound.Play();
-                    }
+                    walkSound.Play();
                 }
 
                 if (playerRange.enemys.transform.childCount > 0)
@@ -53,12 +40,12 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        transform.rotation = Quaternion.LookRotation(rb.velocity);
+                        transform.rotation = Quaternion.LookRotation(direction);
                     }
                 }
                 else
                 {
-                    transform.rotation = Quaternion.LookRotation(rb.velocity);
+                    transform.rotation = Quaternion.LookRotation(direction);
                 }
             }
             else
@@ -68,7 +55,6 @@ public class PlayerController : MonoBehaviour
                 {
                     walkSound.Stop();
                 }
-
 
                 if (playerRange.enemys.transform.childCount > 0)
                 {

@@ -13226,7 +13226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3031856, y: 1e-45, z: 0, w: 0.9529315}
+  m_LocalRotation: {x: 0.3031856, y: -3e-45, z: 1e-45, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.68, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21986,7 +21986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3031856, y: 1e-45, z: -0, w: 0.9529315}
+  m_LocalRotation: {x: 0.3031856, y: -3e-45, z: 1e-45, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.68, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31730,6 +31730,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1702344437}
     - target: {fileID: 2541453506984617864, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541453506984617864, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
       propertyPath: walkSound
       value: 
       objectReference: {fileID: 1197572852}
@@ -31789,7 +31793,8 @@ PrefabInstance:
       propertyPath: losePanel
       value: 
       objectReference: {fileID: 449939264}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5609717936995735605, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

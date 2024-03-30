@@ -53664,6 +53664,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1777692332}
     - target: {fileID: 2541453506984617864, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541453506984617864, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
       propertyPath: walkSound
       value: 
       objectReference: {fileID: 1197572852}
@@ -53727,7 +53731,8 @@ PrefabInstance:
       propertyPath: losePanel
       value: 
       objectReference: {fileID: 449939264}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5609717936995735605, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
