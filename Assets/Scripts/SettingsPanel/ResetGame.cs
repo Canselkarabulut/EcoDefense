@@ -12,18 +12,18 @@ public class ResetGame : MonoBehaviour
 
     public TextMeshProUGUI gunLevelText;
     public TextMeshProUGUI gunPriceText;
-    private int gunPriceInt = 330;
+    private int gunPriceInt = 1038;
     private int gunPowerCount = 2;
 
     public TextMeshProUGUI rateFireLevelText;
     public TextMeshProUGUI rateFirePriceText;
-    private int rateFirePriceInt = 330;
+    private int rateFirePriceInt = 1186;
     private int rateFireCount = 2;
 
     public TextMeshProUGUI sizeBallLevelText;
     public TextMeshProUGUI sizeBallPriceText;
     private int sizeBallCount = 2;
-    private int sizeBallPriceInt = 330;
+    private int sizeBallPriceInt = 741;
 
     public Bullet bullet;
     public PlayerFire playerFire;

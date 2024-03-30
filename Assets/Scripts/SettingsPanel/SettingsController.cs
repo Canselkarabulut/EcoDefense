@@ -26,8 +26,7 @@ public class SettingsController : MonoBehaviour
     public AudioSource playerDie;
 
     public MusicManager musicManager;
-
-    public RainScript rainScript;
+    
  //   public EnemySpawn enemySpawn;
 
     // public AudioSource musicAudio;
@@ -36,8 +35,8 @@ public class SettingsController : MonoBehaviour
         musicManager = FindObjectOfType<MusicManager>();
 
         //sesler açık
-        soundNum = PlayerPrefs.GetInt("soundNum");
-        musicNum = PlayerPrefs.GetInt("musicNum");
+        soundNum = PlayerPrefs.GetInt("soundNum",1);
+        musicNum = PlayerPrefs.GetInt("musicNum",1);
         if (soundNum == 1)
         {
             soundCloseImage.SetActive(false);

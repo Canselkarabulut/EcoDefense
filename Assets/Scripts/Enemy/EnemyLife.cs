@@ -129,7 +129,8 @@ public class EnemyLife : MonoBehaviour
         }
 
         if (enemyWalk != null)
-            enemyWalk.Play();
+            if (enemyWalk.enabled)
+                enemyWalk.Play();
         coin.SetActive(false);
 
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)

@@ -13,6 +13,7 @@ public class WordMapPlayButton : MonoBehaviour
     private int americaGameWaveCount=0;
     private int oceanGameWaveCount=0;
 
+    public ResetGame resetGame;
     public void PlayGame()
     {
         switch (WordMapControl.mapAnimCount)
@@ -21,6 +22,8 @@ public class WordMapPlayButton : MonoBehaviour
                 antarticaGameWaveCount = PlayerPrefs.GetInt("waveCount");
                 if (antarticaGameWaveCount <= 1)
                 {
+                    resetGame.ResetSetPlayerPrefs();
+                    //reset kısmını burada da çek
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // antartika GİRİŞ animasyonu
                 }
                 else

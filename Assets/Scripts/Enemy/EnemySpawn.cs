@@ -34,7 +34,6 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(spawnInterval);
         _timer += Time.deltaTime;
         if (_timer >= spawnInterval)
         {
@@ -229,7 +228,6 @@ public class EnemySpawn : MonoBehaviour
     {
         if (obj.GetComponent<EnemyLife>().enemyWalk.enabled)
             obj.GetComponent<EnemyLife>().enemyWalk.enabled = false;
-        obj.GetComponent<EnemyLife>().enemyWalk.Stop();
 
         var enemyLevelStatus = obj.GetComponent<EnemyLevelStatus>();
         switch (enemyLevelStatus.EnemyLevelReturn())
@@ -247,5 +245,10 @@ public class EnemySpawn : MonoBehaviour
                 gameEconomy.CoinCount(40);
                 break;
         }
+
+        obj.GetComponent<EnemyLife>().enemyBorn.enabled=false;
+        obj.GetComponent<EnemyLife>().enemyCoin.enabled=false;
+        obj.GetComponent<EnemyLife>().enemyTriggerBullet.enabled=false;
+        obj.GetComponent<EnemyLife>().enemyWalk.enabled=false;
     }
 }

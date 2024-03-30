@@ -39,9 +39,9 @@ public class UpgradeButtonScript : MonoBehaviour
     public Bullet bullet;
     public GameObject pool;
 
-    private int
-        maxButtonClickCount =
-            8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
+    private int maxgunPowerButtonClickCount = 8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
+    private int maxrateFireButtonClickCount = 8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
+    private int maxsizeBalButtonClickCount = 8; /*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
 
 
     private void Start()
@@ -349,16 +349,17 @@ public class UpgradeButtonScript : MonoBehaviour
 
     private void Update()
     {
-        ButtonInteractable(gunPowerBtn, gunPriceInt, gunPowerCount);
-        ButtonInteractable(rateFireButton, rateFirePriceInt, rateFireCount);
-        ButtonInteractable(sizeBallButton, sizeBallPriceInt, sizeBallCount);
+        ButtonInteractable(gunPowerBtn, gunPriceInt, gunPowerCount,maxgunPowerButtonClickCount);
+        ButtonInteractable(rateFireButton, rateFirePriceInt, rateFireCount,maxgunPowerButtonClickCount);
+        ButtonInteractable(sizeBallButton, sizeBallPriceInt, sizeBallCount,maxsizeBalButtonClickCount);
     }
 
-    public void ButtonInteractable(Button button, int priceInt, int count)
+    public void ButtonInteractable(Button button, int priceInt, int count ,int maxButtonClickCount )
     {
-        if (GameEconomy.sCoinCount > priceInt - 1 && count < maxButtonClickCount)
+        if (GameEconomy.sCoinCount > priceInt - 1)
         {
             button.interactable = true;
+           
         }
         else
         {
