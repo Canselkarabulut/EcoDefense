@@ -101,7 +101,7 @@ public class MusicManager : MonoBehaviour
         if (musicToPlay != null)
         {
             // Müzik zaten çalıyorsa ve aynı müzik tekrar çalınacaksa
-            if (audioSource.clip == musicToPlay && audioSource.isPlaying)
+            if (audioSource.clip == musicToPlay || audioSource.isPlaying)
             {
                 // Hiçbir şey yapma
                 return;
@@ -112,6 +112,9 @@ public class MusicManager : MonoBehaviour
             if (PlayerPrefs.GetInt("musicNum") == 1)
             {
                 StartMusic();
+            } else if (PlayerPrefs.GetInt("musicNum") == 0)
+            {
+                StopMusic();
             }
            
         }
