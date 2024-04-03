@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using GoogleMobileAds.Api;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class WaveControl : MonoBehaviour
 
     [Header("CountDown")] public float _countdownNum = 3;
     public TextMeshProUGUI countdownText;
-    private bool isCountdown = false;
+    [HideInInspector] public bool isCountdown = false;
 
     [Header("Canvas")] public TextMeshProUGUI waveText;
     public TextMeshProUGUI totalEnemyText;
@@ -50,8 +51,7 @@ public class WaveControl : MonoBehaviour
     public AudioSource playerTrigger;
     public AudioSource playerDie;
 
-    [Header("Ads")] //public AdsManager adsManager;
-    public bool ads;
+    [Header("Ads")] public bool isAds;
 
     private void Start()
     {
@@ -134,6 +134,7 @@ public class WaveControl : MonoBehaviour
         }
     }
 
+
     private void EnemyTextLimit(string _waveString, string _totalEnemyText, int _enemyLimit, int waveCount)
     {
         PlayerPrefs.SetInt("waveCount", waveCount);
@@ -175,31 +176,37 @@ public class WaveControl : MonoBehaviour
                             waveNumber = WaveNumber.Wave2;
                             WaveNumberReturn();
                             EnemyText();
+                            isAds = true;
                             break;
                         case WaveNumber.Wave2:
                             waveNumber = WaveNumber.Wave3;
                             WaveNumberReturn();
                             EnemyText();
+                            isAds = true;
                             break;
                         case WaveNumber.Wave3:
                             waveNumber = WaveNumber.Wave4;
                             WaveNumberReturn();
                             EnemyText();
+                            isAds = true;
                             break;
                         case WaveNumber.Wave4:
                             waveNumber = WaveNumber.Wave5;
                             WaveNumberReturn();
                             EnemyText();
+                            isAds = true;
                             break;
                         case WaveNumber.Wave5:
                             waveNumber = WaveNumber.Wave6;
                             WaveNumberReturn();
                             EnemyText();
+                            isAds = true;
                             break;
                         case WaveNumber.Wave6:
                             waveNumber = WaveNumber.Wave7;
                             WaveNumberReturn();
                             EnemyText();
+                            isAds = true;
                             break;
                         case WaveNumber.Wave7:
                             //oyun tamamlandı
@@ -213,7 +220,7 @@ public class WaveControl : MonoBehaviour
                             floatingJoystick.gameObject.SetActive(false);
                             ecoGun.SetActive(false); // silahı kapat
                             player.GetComponent<Animator>().SetBool("isWinDance", true);
-
+                            isAds = true;
                             PlayerPrefs.SetInt("waveCount", 1);
                             break;
                     }
@@ -259,8 +266,8 @@ public class WaveControl : MonoBehaviour
             countdownText.text = Convert.ToInt32(_countdownNum).ToString();
             if (_countdownNum <= 1)
             {
-                WaveWaitTime();
                 isCountdown = false;
+                WaveWaitTime();
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SkipButton : MonoBehaviour
 {
     private int activeSceneIndex;
-
+    public bool isSkipAds;
     public void StorySkip()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -38,6 +38,7 @@ public class SkipButton : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("mapAnimCount", WordMapControl.mapAnimCount);
+        isSkipAds = true;
         SceneManager.LoadScene(1);
     }
 }
