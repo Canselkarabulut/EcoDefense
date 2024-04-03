@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.2
     agentHeight: 1
     agentSlope: 11.9
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 8d791b8f4a5351b4e85ba21c41940bd2, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1ce88b09030c1b242b20c40a3aea9b4c, type: 2}
 --- !u!1 &163698168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8827704707044476424, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
@@ -521,6 +521,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1323203262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323203264}
+  - component: {fileID: 1323203263}
+  m_Layer: 0
+  m_Name: BannerAds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1323203263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323203262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d631e23f26dc8f4186fcb1bcc66829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1323203264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323203262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15072891, y: 1.7895199, z: 0.81354475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1433851678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4173610732868143621, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
@@ -1031,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3582688339519462423, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4628520065238237825, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
       propertyPath: losePanel
       value: 
@@ -1286,11 +1334,11 @@ PrefabInstance:
       objectReference: {fileID: 1197572845}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000163965
+      value: -0.000000016396507
       objectReference: {fileID: 0}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000052167257
+      value: 0.000000005216728
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1348,6 +1396,14 @@ PrefabInstance:
       propertyPath: penguinTargets
       value: 
       objectReference: {fileID: 936462149}
+    - target: {fileID: 1566002684742950255, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566002684742950255, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753409383209922127, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
       propertyPath: penguinTargets
       value: 
@@ -1400,6 +1456,10 @@ PrefabInstance:
       propertyPath: penguinTargets
       value: 
       objectReference: {fileID: 936462149}
+    - target: {fileID: 2769271545361080890, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2872795290498794828, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
       propertyPath: penguinTargets
       value: 
@@ -1528,6 +1588,10 @@ PrefabInstance:
       propertyPath: penguinTargets
       value: 
       objectReference: {fileID: 936462149}
+    - target: {fileID: 6732238590910327682, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6848289312074363872, guid: 610e448ef9b1541469faef6a997ec757, type: 3}
       propertyPath: penguinTargets
       value: 
@@ -1775,11 +1839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000163965
+      value: -0.000000016396507
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000052167257
+      value: 0.000000005216728
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1969,6 +2033,10 @@ PrefabInstance:
       propertyPath: shockWave
       value: 
       objectReference: {fileID: 1510540832}
+    - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
+      propertyPath: adsManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: enemySpawn
       value: 
@@ -2491,3 +2559,4 @@ SceneRoots:
   - {fileID: 159532056408184373}
   - {fileID: 3078881672697059281}
   - {fileID: 4588175562300095087}
+  - {fileID: 1323203264}

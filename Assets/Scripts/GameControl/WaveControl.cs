@@ -50,6 +50,8 @@ public class WaveControl : MonoBehaviour
     public AudioSource playerTrigger;
     public AudioSource playerDie;
 
+    [Header("Ads")] //public AdsManager adsManager;
+    public bool ads;
 
     private void Start()
     {
@@ -140,6 +142,7 @@ public class WaveControl : MonoBehaviour
         waveText.text = _waveString;
         ShockWaveEffect();
     }
+
 
     public void WaveWaitTime()
     {
@@ -256,8 +259,8 @@ public class WaveControl : MonoBehaviour
             countdownText.text = Convert.ToInt32(_countdownNum).ToString();
             if (_countdownNum <= 1)
             {
-                isCountdown = false;
                 WaveWaitTime();
+                isCountdown = false;
             }
         }
     }

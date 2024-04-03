@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -46.3, y: 36}
+  m_AnchoredPosition: {x: -46.3, y: 48}
   m_SizeDelta: {x: 68.2352, y: 67.9844}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &32873636
@@ -1915,7 +1915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56.5, y: -227.92474}
+  m_AnchoredPosition: {x: 56.5, y: -215.92474}
   m_SizeDelta: {x: 79.1025, y: 76.6739}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209405803
@@ -2340,6 +2340,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400639990}
   m_CullTransparentMesh: 1
+--- !u!1 &1401437214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401437216}
+  - component: {fileID: 1401437215}
+  m_Layer: 0
+  m_Name: BannerAds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1401437215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401437214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d631e23f26dc8f4186fcb1bcc66829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1401437216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401437214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15072891, y: 1.7895199, z: 0.81354475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1442170869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,7 +3538,6 @@ MonoBehaviour:
   playerTrigger: {fileID: 0}
   playerDie: {fileID: 0}
   musicManager: {fileID: 0}
-  rainScript: {fileID: 0}
   enemys: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -3511,3 +3554,4 @@ SceneRoots:
   - {fileID: 656039115}
   - {fileID: 669341387}
   - {fileID: 592286968}
+  - {fileID: 1401437216}
