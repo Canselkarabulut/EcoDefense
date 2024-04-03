@@ -29,10 +29,10 @@ public class MusicManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
     }
+
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        PlayMusicForScene(SceneManager.GetActiveScene().buildIndex);
         if (PlayerPrefs.GetInt("musicNum") == 0)
         {
             StopMusic();
@@ -46,62 +46,32 @@ public class MusicManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        PlayMusicForScene(scene.buildIndex);
+        PlayMusicForScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     void PlayMusicForScene(int sceneIndex)
     {
         AudioClip musicToPlay = null;
-
-        switch (sceneIndex)
+        if (sceneIndex != 0)
         {
-            case 0:
-                musicToPlay = backgrounMusic;
-                break;
-            case 3:
+            if (sceneIndex % 3 == 0)
+            {
                 musicToPlay = actionMusic;
-                break;
-            case 4:
+            }
+            else
+            {
                 musicToPlay = backgrounMusic;
-                break;
-            case 6:
-                musicToPlay = actionMusic;
-                break;
-            case 7:
-                musicToPlay = backgrounMusic;
-                break;
-            case 9:
-                musicToPlay = actionMusic;
-                break;
-            case 10:
-                musicToPlay = backgrounMusic;
-                break;
-            case 12:
-                musicToPlay = actionMusic;
-                break;
-            case 13:
-                musicToPlay = backgrounMusic;
-                break;
-            case 15:
-                musicToPlay = actionMusic;
-                break;
-            case 16:
-                musicToPlay = backgrounMusic;
-                break;
-            case 18:
-                musicToPlay = actionMusic;
-                break;
-            case 19:
-                musicToPlay = backgrounMusic;
-                break;
-            default:
-                musicToPlay = backgrounMusic;
-                break;
+            }
+        }
+        else
+        {
+            musicToPlay = backgrounMusic;
         }
 
         if (musicToPlay != null)
         {
             // Müzik zaten çalıyorsa ve aynı müzik tekrar çalınacaksa
-            if (audioSource.clip == musicToPlay || audioSource.isPlaying)
+            if (audioSource.clip == musicToPlay)
             {
                 // Hiçbir şey yapma
                 return;
@@ -109,20 +79,15 @@ public class MusicManager : MonoBehaviour
 
             // Müziği değiştir ve çalmaya başla
             audioSource.clip = musicToPlay;
-            if (PlayerPrefs.GetInt("musicNum") == 1)
-            {
-                StartMusic();
-            } else if (PlayerPrefs.GetInt("musicNum") == 0)
-            {
-                StopMusic();
-            }
-           
+            audioSource.Play();
         }
     }
+
     public void StopMusic()
     {
         audioSource.Stop();
     }
+
     public void StartMusic()
     {
         audioSource.Play();
