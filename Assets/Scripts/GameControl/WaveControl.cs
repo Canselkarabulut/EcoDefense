@@ -55,6 +55,7 @@ public class WaveControl : MonoBehaviour
 
     public GameObject additionalMoneyButton;
     public MusicManager musicManager;
+
     private void Start()
     {
         musicManager = GameObject.FindObjectOfType<MusicManager>();
@@ -69,11 +70,14 @@ public class WaveControl : MonoBehaviour
 
         if (PlayerPrefs.GetInt("musicNum") == 1)
         {
-            musicManager.StartMusic();
+            if (musicManager != null)
+                musicManager.StartMusic();
         }
+
         if (PlayerPrefs.GetInt("musicNum") == 0)
         {
-            musicManager.StopMusic();
+            if (musicManager != null)
+                musicManager.StopMusic();
         }
 
         switch (PlayerPrefs.GetInt("waveCount"))
