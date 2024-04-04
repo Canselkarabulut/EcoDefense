@@ -53,6 +53,8 @@ public class WaveControl : MonoBehaviour
 
     [Header("Ads")] public bool isAds;
 
+    public GameObject additionalMoneyButton;
+
     private void Start()
     {
         if (PlayerPrefs.GetInt("soundNum") == 1)
@@ -99,6 +101,7 @@ public class WaveControl : MonoBehaviour
         EnemyText();
         waitStatus = WaitStatus.Game;
         WaveWaitTime();
+        additionalMoneyButton.SetActive(false);
     }
 
     public WaveNumber WaveNumberReturn()
@@ -158,6 +161,7 @@ public class WaveControl : MonoBehaviour
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
                 upgradeButton.SetActive(true);
+                additionalMoneyButton.SetActive(true);
                 if (_countdownNum > 1)
                 {
                     isCountdown = true;
@@ -242,6 +246,7 @@ public class WaveControl : MonoBehaviour
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
             upgradeButton.SetActive(false);
+            additionalMoneyButton.SetActive(false);
             StartCoroutine(GameBreakWait());
         }
     }

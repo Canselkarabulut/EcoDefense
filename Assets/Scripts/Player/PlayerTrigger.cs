@@ -30,9 +30,12 @@ public class PlayerTrigger : MonoBehaviour
     public bool isDie;
     public static bool isHealthRed;
 
+    public GameObject showRewardedAdsButton;
+
 //    public GameObject PauseButton;
 
     public SettingsController settingsController;
+
     private void Start()
     {
         DOTween.Init();
@@ -45,7 +48,8 @@ public class PlayerTrigger : MonoBehaviour
         enemys.SetActive(true);
         dieEffect.SetActive(false);
         isDie = false;
-     //   PauseButton.SetActive(true);
+        //   PauseButton.SetActive(true);
+        showRewardedAdsButton.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,13 +83,12 @@ public class PlayerTrigger : MonoBehaviour
             }
         }
     }
-
- 
+    
     public void PlayerLossLife(float amountDdeath)
     {
         healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
         loseEffect.Play();
-       
+
         if (healthBar.transform.localScale.x < .35)
         {
             healthBar.GetComponent<Renderer>().material = healthbarOrange;
@@ -93,6 +96,7 @@ public class PlayerTrigger : MonoBehaviour
             if (healthBar.transform.localScale.x < .2)
             {
                 healthBar.GetComponent<Renderer>().material = healthbarRed;
+                showRewardedAdsButton.SetActive(true);
                 if (healthBar.transform.localScale.x < .05)
                 {
                     //   bulletSpawn.SetActive(false);
@@ -106,14 +110,14 @@ public class PlayerTrigger : MonoBehaviour
                     settingsController.playerDie.Play();
                     transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
                     floatingJoystick.gameObject.SetActive(false);
-                  //  PauseButton.SetActive(false);
+                    showRewardedAdsButton.SetActive(false);
+                    //  PauseButton.SetActive(false);
                 }
             }
         }
         else
         {
-            healthBar.GetComponent<Renderer>().material = healthbarGreen; 
-     
+            healthBar.GetComponent<Renderer>().material = healthbarGreen;
         }
     }
 }
