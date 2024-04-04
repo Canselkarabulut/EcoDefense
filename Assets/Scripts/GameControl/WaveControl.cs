@@ -54,9 +54,10 @@ public class WaveControl : MonoBehaviour
     [Header("Ads")] public bool isAds;
 
     public GameObject additionalMoneyButton;
-
+    public MusicManager musicManager;
     private void Start()
     {
+        musicManager = GameObject.FindObjectOfType<MusicManager>();
         if (PlayerPrefs.GetInt("soundNum") == 1)
         {
             GameAudioState(true, true, true, true, true);
@@ -64,6 +65,15 @@ public class WaveControl : MonoBehaviour
         else if (PlayerPrefs.GetInt("soundNum") == 0)
         {
             GameAudioState(false, false, false, false, false);
+        }
+
+        if (PlayerPrefs.GetInt("musicNum") == 1)
+        {
+            musicManager.StartMusic();
+        }
+        if (PlayerPrefs.GetInt("musicNum") == 0)
+        {
+            musicManager.StopMusic();
         }
 
         switch (PlayerPrefs.GetInt("waveCount"))
