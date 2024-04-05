@@ -83,7 +83,7 @@ public class PlayerTrigger : MonoBehaviour
             }
         }
     }
-    
+
     public void PlayerLossLife(float amountDdeath)
     {
         healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
@@ -92,7 +92,6 @@ public class PlayerTrigger : MonoBehaviour
         if (healthBar.transform.localScale.x < .35)
         {
             healthBar.GetComponent<Renderer>().material = healthbarOrange;
-
             if (healthBar.transform.localScale.x < .2)
             {
                 healthBar.GetComponent<Renderer>().material = healthbarRed;
@@ -118,6 +117,18 @@ public class PlayerTrigger : MonoBehaviour
         else
         {
             healthBar.GetComponent<Renderer>().material = healthbarGreen;
+        }
+    }
+
+    private void Update()
+    {
+        if (showRewardedAdsButton.activeInHierarchy)
+        {
+            if (healthBar.transform.localScale.x > .2)
+            {
+                showRewardedAdsButton.SetActive(false);
+                Debug.Log("can buton kalksın");
+            }
         }
     }
 }

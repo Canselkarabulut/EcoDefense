@@ -47,6 +47,9 @@ public class UpgradeButtonScript : MonoBehaviour
     private void Start()
     {
         LoadPlayerPrefs();
+        maxgunPowerButtonClickCount = 8;
+        maxrateFireButtonClickCount = 8;
+        maxsizeBalButtonClickCount = 8;
     }
 
 
@@ -358,8 +361,14 @@ public class UpgradeButtonScript : MonoBehaviour
     {
         if (GameEconomy.sCoinCount > priceInt - 1)
         {
-            button.interactable = true;
-           
+            if(count<maxButtonClickCount)
+            {
+                button.interactable = true;
+            }
+            else
+            {
+                button.interactable = false;
+            }
         }
         else
         {
