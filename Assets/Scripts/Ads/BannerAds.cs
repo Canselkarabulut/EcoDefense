@@ -33,7 +33,7 @@ public class BannerAds : MonoBehaviour
     /// </summary>
     public void CreateBannerView()
     {
-        Debug.Log("Creating banner view");
+       ///// Debug.Log("Creating banner view");
 
         // If we already have a banner, destroy the old one.
         if (_bannerView != null)
@@ -58,7 +58,7 @@ public class BannerAds : MonoBehaviour
         var adRequest = new AdRequest();
 
         // send the request to load the ad.
-        Debug.Log("Loading banner ad.");
+/////        Debug.Log("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
     }
     /// <summary>

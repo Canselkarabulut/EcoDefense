@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
-using GoogleMobileAds;
 using GoogleMobileAds.Api;
 using TMPro;
 
@@ -17,14 +12,10 @@ public class AdsManager : MonoBehaviour
     public AnimationEvents bodyAnimationEvents;
     [Header("Music")] private int lastMusicNum;
     private int lastSoundNum;
-
     [Header("Button")] public GameObject showRewardedAdsButton;
     public GameObject additionalMoneyButton;
-
-
     [Header("Text")] public int additionalMoneyCount = 2;
     public TextMeshProUGUI additionalMoneyCountText;
-
     private void Start()
     {
         musicManager = FindObjectOfType<MusicManager>();
@@ -77,7 +68,7 @@ public class AdsManager : MonoBehaviour
     /// </summary>
     public void CreateBannerView()
     {
-        Debug.Log("Creating banner view");
+/////        Debug.Log("Creating banner view");
 
         // If we already have a banner, destroy the old one.
         if (_bannerView != null)
@@ -102,7 +93,7 @@ public class AdsManager : MonoBehaviour
         var adRequest = new AdRequest();
 
         // send the request to load the ad.
-        Debug.Log("Loading banner ad.");
+/////        Debug.Log("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
     }
 
@@ -114,8 +105,8 @@ public class AdsManager : MonoBehaviour
         // Raised when an ad is loaded into the banner view.
         _bannerView.OnBannerAdLoaded += () =>
         {
-            Debug.Log("Banner view loaded an ad with response : "
-                      + _bannerView.GetResponseInfo());
+     /////       Debug.Log("Banner view loaded an ad with response : "
+     /////                 + _bannerView.GetResponseInfo());
         };
         // Raised when an ad fails to load into the banner view.
         _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
@@ -126,18 +117,18 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         _bannerView.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log(String.Format("Banner view paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
+ /////           Debug.Log(String.Format("Banner view paid {0} {1}.",
+/////                adValue.Value,
+ /////               adValue.CurrencyCode));
         };
         // Raised when an impression is recorded for an ad.
-        _bannerView.OnAdImpressionRecorded += () => { Debug.Log("Banner view recorded an impression."); };
+        _bannerView.OnAdImpressionRecorded += () => {/* Debug.Log("Banner view recorded an impression.");*/ };
         // Raised when a click is recorded for an ad.
-        _bannerView.OnAdClicked += () => { Debug.Log("Banner view was clicked."); };
+        _bannerView.OnAdClicked += () => {/* Debug.Log("Banner view was clicked.");*/ };
         // Raised when an ad opened full screen content.
-        _bannerView.OnAdFullScreenContentOpened += () => { Debug.Log("Banner view full screen content opened."); };
+        _bannerView.OnAdFullScreenContentOpened += () => { /*"Banner view full screen content opened.");*/ };
         // Raised when the ad closed full screen content.
-        _bannerView.OnAdFullScreenContentClosed += () => { Debug.Log("Banner view full screen content closed."); };
+        _bannerView.OnAdFullScreenContentClosed += () => { /*"Banner view full screen content closed.");*/ };
     }
 
     /// <summary>
@@ -147,7 +138,7 @@ public class AdsManager : MonoBehaviour
     {
         if (_bannerView != null)
         {
-            Debug.Log("Destroying banner view.");
+/////            Debug.Log("Destroying banner view.");
             _bannerView.Destroy();
             _bannerView = null;
         }
@@ -176,7 +167,7 @@ public class AdsManager : MonoBehaviour
             _interstitialAd = null;
         }
 
-        Debug.Log("Loading the interstitial ad.");
+/////        Debug.Log("Loading the interstitial ad.");
 
         // create our request used to load the ad.
         var adRequest = new AdRequest();
@@ -193,8 +184,8 @@ public class AdsManager : MonoBehaviour
                     return;
                 }
 
-                Debug.Log("Interstitial ad loaded with response : "
-                          + ad.GetResponseInfo());
+/////                Debug.Log("Interstitial ad loaded with response : "
+/////                          + ad.GetResponseInfo());
 
                 _interstitialAd = ad;
             });
@@ -204,7 +195,7 @@ public class AdsManager : MonoBehaviour
     {
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
-            Debug.Log("Showing interstitial ad.");
+ /////           Debug.Log("Showing interstitial ad.");
             //sesleri kapat
             if (musicManager != null)
             {
@@ -232,29 +223,29 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         interstitialAd.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
+/////            Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
+/////                adValue.Value,
+/////                adValue.CurrencyCode));
         };
         // Raised when an impression is recorded for an ad.
-        interstitialAd.OnAdImpressionRecorded += () => { Debug.Log("Interstitial ad recorded an impression."); };
+        interstitialAd.OnAdImpressionRecorded += () => { /*"Interstitial ad recorded an impression.");*/};
         // Raised when a click is recorded for an ad.
-        interstitialAd.OnAdClicked += () => { Debug.Log("Interstitial ad was clicked."); };
+        interstitialAd.OnAdClicked += () => {/* Debug.Log("Interstitial ad was clicked.");*/ };
         // Raised when an ad opened full screen content.
         interstitialAd.OnAdFullScreenContentOpened += () =>
         {
-            Debug.Log("Interstitial ad full screen content opened.");
+ /////           Debug.Log("Interstitial ad full screen content opened.");
         };
         // Raised when the ad closed full screen content.
         interstitialAd.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Interstitial ad full screen content closed.");
+/////            Debug.Log("Interstitial ad full screen content closed.");
         };
         // Raised when the ad failed to open full screen content.
         interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError("Interstitial ad failed to open full screen content " +
-                           "with error : " + error);
+/////            Debug.LogError("Interstitial ad failed to open full screen content " +
+/////                           "with error : " + error);
         };
     }
 
@@ -263,7 +254,7 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad closed full screen content.
         interstitialAd.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Interstitial Ad full screen content closed.");
+ /////           Debug.Log("Interstitial Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
             LoadInterstitialAd();
@@ -322,7 +313,7 @@ public class AdsManager : MonoBehaviour
             _rewardedAd = null;
         }
 
-        Debug.Log("Loading the rewarded ad.");
+/////        Debug.Log("Loading the rewarded ad.");
 
         // create our request used to load the ad.
         var adRequest = new AdRequest();
@@ -339,8 +330,8 @@ public class AdsManager : MonoBehaviour
                     return;
                 }
 
-                Debug.Log("Rewarded ad loaded with response : "
-                          + ad.GetResponseInfo());
+/////                Debug.Log("Rewarded ad loaded with response : "
+/////                          + ad.GetResponseInfo());
 
                 _rewardedAd = ad;
             });
@@ -375,7 +366,7 @@ public class AdsManager : MonoBehaviour
                 //playerın can barı yeşil olacak
                 playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
                 playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
-                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+ /////               Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
             RegisterReloadHandler(_rewardedAd);
         }
@@ -409,7 +400,7 @@ public class AdsManager : MonoBehaviour
                 // playerın canı kırmızı olduğunda izlenen reklam
                 additionalMoneyCount--;
                 additionalMoneyCountText.text = additionalMoneyCount.ToString();
-                Debug.Log(additionalMoneyCount);
+              
                 if (additionalMoneyCount == 0)
                 {
                     additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
@@ -420,7 +411,7 @@ public class AdsManager : MonoBehaviour
                 GameEconomy.sCoinCount += 200;
                 gameEconomy.CoinText();
                 //playerın can barı yeşil olacak
-                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+/////                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
             RegisterReloadHandler(_rewardedAd);
         }
@@ -431,7 +422,7 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Rewarded Ad full screen content closed.");
+/////            Debug.Log("Rewarded Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
             LoadRewardedAd();
