@@ -2168,6 +2168,9 @@ MonoBehaviour:
   gameControl: {fileID: 745067804}
   upgradeButton: {fileID: 1634276513}
   pauseButton: {fileID: 346805893}
+  tutorialUpgrade: {fileID: 0}
+  tutorialAds: {fileID: 0}
+  waveControl: {fileID: 0}
 --- !u!114 &241408527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3761,7 +3764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 17.399902, y: -22.004517}
+  m_AnchoredPosition: {x: 17.399902, y: -50}
   m_SizeDelta: {x: 43.1482, y: 43.1482}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &346805893
@@ -5059,7 +5062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.4369, y: -18.099976}
+  m_AnchoredPosition: {x: 0.4369, y: -45}
   m_SizeDelta: {x: 101.3228, y: 43.1741}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &460108083
@@ -11758,7 +11761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.025804, y: -42.527}
+  m_AnchoredPosition: {x: -0.025804, y: -66}
   m_SizeDelta: {x: 91.7073, y: 42.0802}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &667332811
@@ -13664,11 +13667,14 @@ MonoBehaviour:
   waveControl: {fileID: 1068201429}
   gameEconomy: {fileID: 1068201431}
   playerTrigger: {fileID: 2129386546}
-  bodyAnimationEvents: {fileID: 2464083165585558546}
   showRewardedAdsButton: {fileID: 2089094870}
   additionalMoneyButton: {fileID: 436867503}
   additionalMoneyCount: 2
   additionalMoneyCountText: {fileID: 283454021}
+  tutorialFirstAdsPanel: {fileID: 0}
+  upgradeButton: {fileID: 0}
+  tutorialHelathAdsPanel: {fileID: 0}
+  coinAnim: {fileID: 1999311287}
 --- !u!4 &925630122
 Transform:
   m_ObjectHideFlags: 0
@@ -19183,7 +19189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -63}
+  m_AnchoredPosition: {x: 0, y: -84}
   m_SizeDelta: {x: 91.7589, y: 64.284485}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1006382698
@@ -19375,6 +19381,14 @@ MonoBehaviour:
   isAds: 0
   additionalMoneyButton: {fileID: 436867503}
   musicManager: {fileID: 0}
+  tutorialCount: 0
+  saveTutorialCount: 0
+  tutorialUpgradePanel: {fileID: 0}
+  tutorialFirstAdsPanel: {fileID: 0}
+  healthLine: {fileID: 0}
+  showRewardedAdsButton: {fileID: 2089094870}
+  tutorialHealthAds: {fileID: 0}
+  adsManager: {fileID: 925630121}
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
@@ -28745,6 +28759,9 @@ MonoBehaviour:
   gameControl: {fileID: 745067804}
   upgradeButton: {fileID: 1634276513}
   pauseButton: {fileID: 346805893}
+  tutorialUpgrade: {fileID: 0}
+  tutorialAds: {fileID: 0}
+  waveControl: {fileID: 0}
 --- !u!114 &1702344440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31322,6 +31339,8 @@ GameObject:
   - component: {fileID: 1999311284}
   - component: {fileID: 1999311286}
   - component: {fileID: 1999311285}
+  - component: {fileID: 1999311287}
+  - component: {fileID: 1999311288}
   m_Layer: 5
   m_Name: CoinImageBg
   m_TagString: Untagged
@@ -31346,7 +31365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.600098, y: -18.5}
+  m_AnchoredPosition: {x: -12.600098, y: -50}
   m_SizeDelta: {x: 89.3139, y: 37.541016}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1999311285
@@ -31387,6 +31406,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999311283}
   m_CullTransparentMesh: 1
+--- !u!95 &1999311287
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999311283}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ea78d482a637934980267955d769508, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1999311288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999311283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccb1595e92a9784088d772a9c863a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2018204500
 GameObject:
   m_ObjectHideFlags: 0
@@ -32949,17 +33001,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2464083165585558546 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7273305070957562928, guid: 6e9cb8a5ec709e0498e84f125079b7e2, type: 3}
-  m_PrefabInstance: {fileID: 2464083165585558541}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163698168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5188bd00252e16b4b8d501f9b8e28a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5086667482547596208
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class PlayerTrigger : MonoBehaviour
 //    public GameObject PauseButton;
 
     public SettingsController settingsController;
+    public GameObject tutorialHealthAds;
 
     private void Start()
     {
@@ -50,6 +51,11 @@ public class PlayerTrigger : MonoBehaviour
         isDie = false;
         //   PauseButton.SetActive(true);
         showRewardedAdsButton.SetActive(false);
+        if (tutorialHealthAds != null)
+        {
+            tutorialHealthAds.SetActive(false);
+        }
+        healthAdsNum = PlayerPrefs.GetInt("healthAdsNum", 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,6 +90,9 @@ public class PlayerTrigger : MonoBehaviour
         }
     }
 
+
+
+    public int healthAdsNum = 0;
     public void PlayerLossLife(float amountDdeath)
     {
         healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
@@ -96,6 +105,18 @@ public class PlayerTrigger : MonoBehaviour
             {
                 healthBar.GetComponent<Renderer>().material = healthbarRed;
                 showRewardedAdsButton.SetActive(true);
+                //    if (waveControl != null)
+                //    {
+                healthAdsNum++;
+                PlayerPrefs.SetInt("healthAdsNum",healthAdsNum);
+                if (PlayerPrefs.GetInt("healthAdsNum") == 1)
+                {
+                    if (tutorialHealthAds != null)
+                        tutorialHealthAds.SetActive(true);
+                    
+                }
+               
+
                 if (healthBar.transform.localScale.x < .05)
                 {
                     //   bulletSpawn.SetActive(false);
@@ -110,6 +131,10 @@ public class PlayerTrigger : MonoBehaviour
                     transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
                     floatingJoystick.gameObject.SetActive(false);
                     showRewardedAdsButton.SetActive(false);
+                    if (tutorialHealthAds != null)
+                    {
+                        tutorialHealthAds.SetActive(false);
+                    }
                     //  PauseButton.SetActive(false);
                 }
             }
@@ -126,7 +151,11 @@ public class PlayerTrigger : MonoBehaviour
         {
             if (healthBar.transform.localScale.x > .2)
             {
-                showRewardedAdsButton.SetActive(false);
+                showRewardedAdsButton.SetActive(false);  
+                if (tutorialHealthAds != null)
+                {
+                    tutorialHealthAds.SetActive(false);
+                }
                 Debug.Log("can buton kalksın");
             }
         }

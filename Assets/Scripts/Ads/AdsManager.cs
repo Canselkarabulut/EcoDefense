@@ -1,6 +1,8 @@
 using UnityEngine;
 using GoogleMobileAds.Api;
 using TMPro;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class AdsManager : MonoBehaviour
 {
@@ -8,14 +10,23 @@ public class AdsManager : MonoBehaviour
     public SettingsController settingsController;
     public WaveControl waveControl;
     public GameEconomy gameEconomy;
+
     public PlayerTrigger playerTrigger;
-    public AnimationEvents bodyAnimationEvents;
+
+    // public AnimationEvents bodyAnimationEvents;
     [Header("Music")] private int lastMusicNum;
     private int lastSoundNum;
     [Header("Button")] public GameObject showRewardedAdsButton;
     public GameObject additionalMoneyButton;
     [Header("Text")] public int additionalMoneyCount = 2;
     public TextMeshProUGUI additionalMoneyCountText;
+
+    public GameObject tutorialFirstAdsPanel;
+    public Button upgradeButton;
+    public GameObject tutorialHelathAdsPanel;
+
+
+    public Animator coinAnim;
     private void Start()
     {
         musicManager = FindObjectOfType<MusicManager>();
@@ -42,20 +53,25 @@ public class AdsManager : MonoBehaviour
                 waveControl.isAds = false;
             }
         }
-
-        if (bodyAnimationEvents.isLoseAds)
-        {
-            ShowInterstitialAd();
-            bodyAnimationEvents.isLoseAds = false;
-        }
+        
+        ////   if (bodyAnimationEvents.isLoseAds)
+        //   {
+        //       ShowInterstitialAd();
+        //      bodyAnimationEvents.isLoseAds = false;
+        //   }
+        
+        //coin butonu büyüyüp eski haline gelsin
+        //coin scale başlangıç bilgisi 
+        // coin position başlangıç bilgisi
+        //reklam izlendiyse ve bittiyse büyü ve buttonun oraya gel ve hızlıca eski yerine ve haline dön
     }
 
     #region Banner
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
-  //  private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
+ //   private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
+     private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else
@@ -78,7 +94,7 @@ public class AdsManager : MonoBehaviour
         }
 
         // Create a 320x50 banner at top of the screen
-        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Bottom);
+        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
     }
 
 
@@ -106,8 +122,8 @@ public class AdsManager : MonoBehaviour
         // Raised when an ad is loaded into the banner view.
         _bannerView.OnBannerAdLoaded += () =>
         {
-     /////       Debug.Log("Banner view loaded an ad with response : "
-     /////                 + _bannerView.GetResponseInfo());
+            /////       Debug.Log("Banner view loaded an ad with response : "
+            /////                 + _bannerView.GetResponseInfo());
         };
         // Raised when an ad fails to load into the banner view.
         _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
@@ -118,18 +134,30 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         _bannerView.OnAdPaid += (AdValue adValue) =>
         {
- /////           Debug.Log(String.Format("Banner view paid {0} {1}.",
+            /////           Debug.Log(String.Format("Banner view paid {0} {1}.",
 /////                adValue.Value,
- /////               adValue.CurrencyCode));
+            /////               adValue.CurrencyCode));
         };
         // Raised when an impression is recorded for an ad.
-        _bannerView.OnAdImpressionRecorded += () => {/* Debug.Log("Banner view recorded an impression.");*/ };
+        _bannerView.OnAdImpressionRecorded += () =>
+        {
+            /* Debug.Log("Banner view recorded an impression.");*/
+        };
         // Raised when a click is recorded for an ad.
-        _bannerView.OnAdClicked += () => {/* Debug.Log("Banner view was clicked.");*/ };
+        _bannerView.OnAdClicked += () =>
+        {
+            /* Debug.Log("Banner view was clicked.");*/
+        };
         // Raised when an ad opened full screen content.
-        _bannerView.OnAdFullScreenContentOpened += () => { /*"Banner view full screen content opened.");*/ };
+        _bannerView.OnAdFullScreenContentOpened += () =>
+        {
+            /*"Banner view full screen content opened.");*/
+        };
         // Raised when the ad closed full screen content.
-        _bannerView.OnAdFullScreenContentClosed += () => { /*"Banner view full screen content closed.");*/ };
+        _bannerView.OnAdFullScreenContentClosed += () =>
+        {
+            /*"Banner view full screen content closed.");*/
+        };
     }
 
     /// <summary>
@@ -151,9 +179,9 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
-  //  private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
-    
+  //  private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
+     private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
+
 #elif UNITY_IPHONE
   private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -198,7 +226,7 @@ public class AdsManager : MonoBehaviour
     {
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
- /////           Debug.Log("Showing interstitial ad.");
+            /////           Debug.Log("Showing interstitial ad.");
             //sesleri kapat
             if (musicManager != null)
             {
@@ -231,13 +259,19 @@ public class AdsManager : MonoBehaviour
 /////                adValue.CurrencyCode));
         };
         // Raised when an impression is recorded for an ad.
-        interstitialAd.OnAdImpressionRecorded += () => { /*"Interstitial ad recorded an impression.");*/};
+        interstitialAd.OnAdImpressionRecorded += () =>
+        {
+            /*"Interstitial ad recorded an impression.");*/
+        };
         // Raised when a click is recorded for an ad.
-        interstitialAd.OnAdClicked += () => {/* Debug.Log("Interstitial ad was clicked.");*/ };
+        interstitialAd.OnAdClicked += () =>
+        {
+            /* Debug.Log("Interstitial ad was clicked.");*/
+        };
         // Raised when an ad opened full screen content.
         interstitialAd.OnAdFullScreenContentOpened += () =>
         {
- /////           Debug.Log("Interstitial ad full screen content opened.");
+            /////           Debug.Log("Interstitial ad full screen content opened.");
         };
         // Raised when the ad closed full screen content.
         interstitialAd.OnAdFullScreenContentClosed += () =>
@@ -257,7 +291,7 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad closed full screen content.
         interstitialAd.OnAdFullScreenContentClosed += () =>
         {
- /////           Debug.Log("Interstitial Ad full screen content closed.");
+            /////           Debug.Log("Interstitial Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
             LoadInterstitialAd();
@@ -295,8 +329,8 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
-//    private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
+  //  private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
+       private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
@@ -361,6 +395,10 @@ public class AdsManager : MonoBehaviour
                 settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
             }
 
+            if (tutorialHelathAdsPanel != null)
+            {
+                tutorialHelathAdsPanel.SetActive(false);
+            }
             _rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
@@ -370,7 +408,7 @@ public class AdsManager : MonoBehaviour
                 //playerın can barı yeşil olacak
                 playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
                 playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
- /////               Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+                /////               Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
             RegisterReloadHandler(_rewardedAd);
         }
@@ -396,7 +434,16 @@ public class AdsManager : MonoBehaviour
                 lastSoundNum = PlayerPrefs.GetInt("soundNum");
                 settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
             }
-
+            if (tutorialFirstAdsPanel != null)
+                if (tutorialFirstAdsPanel.activeInHierarchy)
+                {
+                    if (upgradeButton != null)
+                    {
+                        upgradeButton.interactable = true;
+                        tutorialFirstAdsPanel.SetActive(false);
+                    }
+                   
+                }
             _rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
@@ -404,7 +451,8 @@ public class AdsManager : MonoBehaviour
                 // playerın canı kırmızı olduğunda izlenen reklam
                 additionalMoneyCount--;
                 additionalMoneyCountText.text = additionalMoneyCount.ToString();
-              
+            
+                
                 if (additionalMoneyCount == 0)
                 {
                     additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
@@ -414,7 +462,9 @@ public class AdsManager : MonoBehaviour
 
                 GameEconomy.sCoinCount += 200;
                 gameEconomy.CoinText();
-                //playerın can barı yeşil olacak
+                coinAnim.SetBool("isCoinAdd", true);
+
+
 /////                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
             RegisterReloadHandler(_rewardedAd);

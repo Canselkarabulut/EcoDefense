@@ -7,6 +7,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class WaveControl : MonoBehaviour
 {
@@ -56,6 +57,16 @@ public class WaveControl : MonoBehaviour
     public GameObject additionalMoneyButton;
     public MusicManager musicManager;
 
+    
+    
+    public int tutorialCount = 0;
+    public int saveTutorialCount = 0;
+    public GameObject tutorialUpgradePanel;
+    public GameObject tutorialFirstAdsPanel;
+    public GameObject healthLine;
+    public GameObject showRewardedAdsButton;
+    public GameObject tutorialHealthAds;
+    public AdsManager adsManager;
     private void Start()
     {
         musicManager = GameObject.FindObjectOfType<MusicManager>();
@@ -116,6 +127,13 @@ public class WaveControl : MonoBehaviour
         waitStatus = WaitStatus.Game;
         WaveWaitTime();
         additionalMoneyButton.SetActive(false);
+        if (tutorialUpgradePanel != null)
+        {
+            tutorialUpgradePanel.SetActive(false);
+        }
+
+        saveTutorialCount = PlayerPrefs.GetInt("tutorialCount", 0);
+        tutorialCount = saveTutorialCount;
     }
 
     public WaveNumber WaveNumberReturn()
@@ -159,9 +177,12 @@ public class WaveControl : MonoBehaviour
         enemyLimit = _enemyLimit;
         waveText.text = _waveString;
         ShockWaveEffect();
+        adsManager.additionalMoneyCount = 2;
+        adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
+ 
     }
 
-
+   
     public void WaveWaitTime()
     {
         if (waitStatus == WaitStatus.GameBreak)
@@ -171,11 +192,46 @@ public class WaveControl : MonoBehaviour
                 enemySpawn.enemyCount = 0;
                 hitEffect.gameObject.SetActive(false);
                 healthPenguins.SetActive(true);
+                showRewardedAdsButton.SetActive(false);
+                if (tutorialHealthAds != null)
+                {
+                    tutorialHealthAds.SetActive(false);
+                }
                 countdownText.gameObject.SetActive(true);
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
                 upgradeButton.SetActive(true);
                 additionalMoneyButton.SetActive(true);
+                tutorialCount++;
+                PlayerPrefs.SetInt("tutorialCount", tutorialCount);
+                saveTutorialCount = PlayerPrefs.GetInt("tutorialCount");
+                if (waveNumber == WaveNumber.Wave1)
+               //sadece en başta bir kere çağırılacak
+                {
+                    if (saveTutorialCount == 1) 
+                    {
+                        if (tutorialUpgradePanel != null)
+                        {
+                            tutorialUpgradePanel.SetActive(true); // upgrade buttonunu gösteren el paneli
+                            //geri sayımı durdurduruldu ve kapanınca geri sayım yeniden başlıyor
+                        } 
+                        //tutorial panreli aç yeşil alana git desin
+                        //upgrade butonuna bas diyen el çıksın
+                        //paranın yetersiz olduğu animasyonunu görelim upgrade yi kapattıralım para buttonununa bastırtıp oyuncuyu salalım
+                    }
+                    else
+                    {
+                        if (healthLine != null)
+                            healthLine.SetActive(false);
+                    }
+                    
+                }
+                else
+                {
+                    if (healthLine != null)
+                        healthLine.SetActive(false);
+                }
+
                 if (_countdownNum > 1)
                 {
                     isCountdown = true;
@@ -194,37 +250,31 @@ public class WaveControl : MonoBehaviour
                             waveNumber = WaveNumber.Wave2;
                             WaveNumberReturn();
                             EnemyText();
-                            isAds = true;
                             break;
                         case WaveNumber.Wave2:
                             waveNumber = WaveNumber.Wave3;
                             WaveNumberReturn();
                             EnemyText();
-                            isAds = true;
                             break;
                         case WaveNumber.Wave3:
                             waveNumber = WaveNumber.Wave4;
                             WaveNumberReturn();
                             EnemyText();
-                            isAds = true;
                             break;
                         case WaveNumber.Wave4:
                             waveNumber = WaveNumber.Wave5;
                             WaveNumberReturn();
                             EnemyText();
-                            isAds = true;
                             break;
                         case WaveNumber.Wave5:
                             waveNumber = WaveNumber.Wave6;
                             WaveNumberReturn();
                             EnemyText();
-                            isAds = true;
                             break;
                         case WaveNumber.Wave6:
                             waveNumber = WaveNumber.Wave7;
                             WaveNumberReturn();
                             EnemyText();
-                            isAds = true;
                             break;
                         case WaveNumber.Wave7:
                             //oyun tamamlandı
@@ -240,6 +290,8 @@ public class WaveControl : MonoBehaviour
                             player.GetComponent<Animator>().SetBool("isWinDance", true);
                             isAds = true;
                             PlayerPrefs.SetInt("waveCount", 1);
+                            tutorialCount = 2;
+                            PlayerPrefs.SetInt("tutorialCount", tutorialCount);
                             break;
                     }
 
@@ -281,12 +333,28 @@ public class WaveControl : MonoBehaviour
     {
         if (isCountdown)
         {
-            _countdownNum -= Time.deltaTime;
-            countdownText.text = Convert.ToInt32(_countdownNum).ToString();
-            if (_countdownNum <= 1)
+            if (tutorialUpgradePanel != null && tutorialFirstAdsPanel != null)
             {
-                isCountdown = false;
-                WaveWaitTime();
+                if (!tutorialUpgradePanel.activeInHierarchy && !tutorialFirstAdsPanel.activeInHierarchy)
+                {
+                    _countdownNum -= Time.deltaTime;
+                    countdownText.text = Convert.ToInt32(_countdownNum).ToString();
+                    if (_countdownNum <= 1)
+                    {
+                        isCountdown = false;
+                        WaveWaitTime();
+                    }
+                }
+            }
+            else
+            {
+                _countdownNum -= Time.deltaTime;
+                countdownText.text = Convert.ToInt32(_countdownNum).ToString();
+                if (_countdownNum <= 1)
+                {
+                    isCountdown = false;
+                    WaveWaitTime();
+                }
             }
         }
     }

@@ -26,27 +26,34 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        audioSource = GetComponent<AudioSource>();
     }
-
+    private const string PlayerPrefsKey = "IsFirstTime";
+    private int _musicNum;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if (PlayerPrefs.GetInt("musicNum") == 0)
-        {
-            StopMusic();
-        }
-
-        if (PlayerPrefs.GetInt("musicNum") == 1)
-        {
-            StartMusic();
-        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         PlayMusicForScene(SceneManager.GetActiveScene().buildIndex);
+        //ilk açılışta müziğin çalması
+        if (!PlayerPrefs.HasKey(PlayerPrefsKey))
+        {
+            PlayerPrefs.SetInt(PlayerPrefsKey, 1);
+            StartMusic();
+        }
+        _musicNum = PlayerPrefs.GetInt("musicNum", 1);
+        if (_musicNum == 0)
+        {
+            StopMusic();
+        }
+
+        if (_musicNum == 1)
+        {
+            StartMusic();
+        }
     }
 
     void PlayMusicForScene(int sceneIndex)
@@ -67,7 +74,6 @@ public class MusicManager : MonoBehaviour
         {
             musicToPlay = backgrounMusic;
         }
-
         if (musicToPlay != null)
         {
             // Müzik zaten çalıyorsa ve aynı müzik tekrar çalınacaksa
@@ -92,4 +98,5 @@ public class MusicManager : MonoBehaviour
     {
         audioSource.Play();
     }
+
 }

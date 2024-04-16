@@ -2107,6 +2107,9 @@ MonoBehaviour:
   gameControl: {fileID: 0}
   upgradeButton: {fileID: 0}
   pauseButton: {fileID: 0}
+  tutorialUpgrade: {fileID: 0}
+  tutorialAds: {fileID: 0}
+  waveControl: {fileID: 0}
 --- !u!114 &304243901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6477,7 +6480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1203432835
 MonoBehaviour:
   m_ObjectHideFlags: 0

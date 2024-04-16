@@ -14,10 +14,10 @@ public class AnimationEvents : MonoBehaviour
         losePanel.SetActive(false);
     }
 
-    public bool isLoseAds;
+   // public bool isLoseAds;
     public void LosePanel()
     {
-        isLoseAds = true;
+  //      isLoseAds = true;
         losePanel.SetActive(true);
     }
 
