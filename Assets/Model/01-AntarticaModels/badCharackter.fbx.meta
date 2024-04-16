@@ -1,0 +1,670 @@
+fileFormatVersion: 2
+guid: 1a4eaa3a4c699ba43b323c1f11a7565c
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 27eff7646ee3fcf4aa6ceb53c3ec2d79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: cec67d0b95aac8640b91d41e48a09844, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 6f6c1b5dd801df44aad0f184a6c47bf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 727bbf8c6f9d99f4d90b07888c20281b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 1a06fc34ad233fa47a5724df14a106cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: eece25e3abe439b4eb1386ab30571ce0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 547dff15c8789bb479b31d655229752a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: d84828c859ca5c64bb874c740a598a76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: 886ab8ea91b803741baba63a2de6488d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: b60e281256ba1284388c05aa8794230a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: eb1843b49f49a6643a0302cfe15e4498, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: 47761cef740ce9a4288ce8329e78d49d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: c38180f0f38095c4e9fa6652f2f502ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: 36e685a5405cd2e4381375e44f3d9096, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 6425b64760aeb3748ba9159c41a22695, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: edf81feea65111342875e857bb47559c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.017
+    second: {fileID: 2100000, guid: b3d042fe20e7ecc4daea550dfe87add3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.018
+    second: {fileID: 2100000, guid: 0ff53b103c145d442ae268da1913b741, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: 6ee0aa808b67ee841bef8c337b32636b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.020
+    second: {fileID: 2100000, guid: 5973aaf4a07b66743b99e2b891786db0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.021
+    second: {fileID: 2100000, guid: 8556502a95d11634db865cc6f83910e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.022
+    second: {fileID: 2100000, guid: 7fcbc36adf128654f9f02482b40623b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.023
+    second: {fileID: 2100000, guid: 0d4aa93576f936d4c9805fd8322a6573, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.024
+    second: {fileID: 2100000, guid: 42770f6bef1ce8247a851bcd92e38b5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.025
+    second: {fileID: 2100000, guid: c46b12eba6743f44db6f1503f39f620d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.026
+    second: {fileID: 2100000, guid: d8ea89835a9efe44d9670ba563327aaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.027
+    second: {fileID: 2100000, guid: eba64804fad9fa34cbf22fc8e2be423e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.028
+    second: {fileID: 2100000, guid: 4a2c3a98f235db94e975ea3e7431b285, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.029
+    second: {fileID: 2100000, guid: f79b7e9e5b8683e47beb27894dcaab65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.030
+    second: {fileID: 2100000, guid: f7856e32ccc20534ab18e704ba6b58ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.031
+    second: {fileID: 2100000, guid: c3a412a809c85cb448a3e73435182de0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.032
+    second: {fileID: 2100000, guid: a69b92ca51a96d045ab2f9bce04609dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.033
+    second: {fileID: 2100000, guid: 119b0fa66965d4e4a937e4c5e38c66ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.034
+    second: {fileID: 2100000, guid: 3920e601067371a43978f6080f7d5be7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.035
+    second: {fileID: 2100000, guid: 5fd11ba39a1024647b8619e942d8966a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.036
+    second: {fileID: 2100000, guid: 4e32e019e2199d449ab68469ff85f13c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.037
+    second: {fileID: 2100000, guid: 1a376a9de99f57d44b4cb241e04e2691, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.038
+    second: {fileID: 2100000, guid: ddcc20fc060ad874fb29ba579efacf03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.039
+    second: {fileID: 2100000, guid: 4afb1d17d552dac4ea2f3e32ca74c7de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.040
+    second: {fileID: 2100000, guid: e278ff55e928914488ad587c1b176b3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.041
+    second: {fileID: 2100000, guid: b63ef88445a21b34c8b0aa2b546c524f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.042
+    second: {fileID: 2100000, guid: 6d5b739a33edb1c46bdaac45599bf5d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.043
+    second: {fileID: 2100000, guid: 7a2fe9553ada0e147b89dc8bf1440aa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.044
+    second: {fileID: 2100000, guid: d8dcf32b5c94ba64996c67ce44b7152d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.045
+    second: {fileID: 2100000, guid: 311a6f104b1a31444bd0996fc24f95d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.046
+    second: {fileID: 2100000, guid: 441fc6afc6009314b906e6c1f23622d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.047
+    second: {fileID: 2100000, guid: ba6c2e4e4fafa7d4c881f191a568a615, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.048
+    second: {fileID: 2100000, guid: 5279ad7327d85fa419dda6092f9af510, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.049
+    second: {fileID: 2100000, guid: 03eab78db04f81a4f9cf9cc2aa771944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.050
+    second: {fileID: 2100000, guid: 63d52bfbffafbad4482b4830324ede8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.051
+    second: {fileID: 2100000, guid: e85c13e9c8797044d95afe5fe986a380, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.052
+    second: {fileID: 2100000, guid: 3dd3b8dbe3937f34d9126895306b8967, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.053
+    second: {fileID: 2100000, guid: 56169d6adb0f9e44794c2577618d7c19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.054
+    second: {fileID: 2100000, guid: 1ace1f1e927d6aa4ebbf55e98de9b9d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.055
+    second: {fileID: 2100000, guid: 33068d01a8e1b464ba45dae9b0b3064d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.056
+    second: {fileID: 2100000, guid: 6d8fd3399e7da8c489c352630f69e777, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.057
+    second: {fileID: 2100000, guid: 3403fbc285a45f948a079d207661ea25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.058
+    second: {fileID: 2100000, guid: 491f0196403add14f8ccd1dd566b28e3, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: badCharackter(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Torus.024
+      parentName: badCharackter(Clone)
+      position: {x: -0.012913901, y: 0.12487974, z: -0.071452335}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.023
+      parentName: badCharackter(Clone)
+      position: {x: -0.0136634, y: 0.111266755, z: -0.072201446}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.022
+      parentName: badCharackter(Clone)
+      position: {x: 0.024116928, y: 0.118551396, z: -0.06572516}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.021
+      parentName: badCharackter(Clone)
+      position: {x: -0.05010358, y: 0.118551396, z: -0.06525214}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.020
+      parentName: badCharackter(Clone)
+      position: {x: 0.05333545, y: 0.111266755, z: -0.03798358}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.019
+      parentName: badCharackter(Clone)
+      position: {x: 0.054084953, y: 0.12487974, z: -0.03723459}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.018
+      parentName: badCharackter(Clone)
+      position: {x: -0.08324626, y: 0.12487974, z: -0.03718935}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.017
+      parentName: badCharackter(Clone)
+      position: {x: -0.08399573, y: 0.111266755, z: -0.03793834}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.016
+      parentName: badCharackter(Clone)
+      position: {x: -0.08397105, y: 0.111266755, z: 0.03687285}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.015
+      parentName: badCharackter(Clone)
+      position: {x: -0.083221585, y: 0.12487974, z: 0.03762184}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.014
+      parentName: badCharackter(Clone)
+      position: {x: -0.0913786, y: 0.118551396, z: 0.004970357}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.013
+      parentName: badCharackter(Clone)
+      position: {x: 0.06137198, y: 0.118551396, z: 0.0049200505}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 1.3093102, y: 1.3093102, z: 1.0071623}
+    - name: Torus.012
+      parentName: badCharackter(Clone)
+      position: {x: 0.050146785, y: 0.12487974, z: 0.045819625}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.011
+      parentName: badCharackter(Clone)
+      position: {x: 0.050146785, y: 0.111266755, z: 0.045819625}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 1.5107435, y: 1.5107435, z: 1.0071623}
+    - name: Torus.010
+      parentName: badCharackter(Clone)
+      position: {x: -0.08867844, y: 0.068748206, z: 0.03784482}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.009
+      parentName: badCharackter(Clone)
+      position: {x: -0.07358977, y: 0.068748206, z: 0.052012842}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.008
+      parentName: badCharackter(Clone)
+      position: {x: 0.06203231, y: 0.068748206, z: 0.045471113}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.007
+      parentName: badCharackter(Clone)
+      position: {x: 0.043198075, y: 0.068748206, z: 0.06322698}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.006
+      parentName: badCharackter(Clone)
+      position: {x: 0.023363244, y: 0.068748206, z: 0.07449572}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.005
+      parentName: badCharackter(Clone)
+      position: {x: -0.059401486, y: 0.068748206, z: 0.062162917}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.004
+      parentName: badCharackter(Clone)
+      position: {x: -0.044691265, y: 0.068748206, z: 0.070532426}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.003
+      parentName: badCharackter(Clone)
+      position: {x: -0.02882642, y: 0.068748206, z: 0.07461868}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.002
+      parentName: badCharackter(Clone)
+      position: {x: -0.012667868, y: 0.068748206, z: 0.07614742}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus.001
+      parentName: badCharackter(Clone)
+      position: {x: 0.00599524, y: 0.068748206, z: 0.07614128}
+      rotation: {x: 0.000000015448146, y: 0.7072232, z: -0.000000015453235, w: 0.70699036}
+      scale: {x: 2.5179057, y: 2.5179057, z: 2.0143244}
+    - name: Torus
+      parentName: badCharackter(Clone)
+      position: {x: -0.014049564, y: 0.06991902, z: -0.00056274235}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 8.057298, y: 8.057298, z: 10.071623}
+    - name: Sphere
+      parentName: badCharackter(Clone)
+      position: {x: -0.014049578, y: -0.0020776093, z: -0.00056274235}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 10.071623, y: 10.071623, z: 10.071623}
+    - name: Cylinder.013
+      parentName: badCharackter(Clone)
+      position: {x: -0.013261054, y: 0.11648574, z: -0.071716025}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.012
+      parentName: badCharackter(Clone)
+      position: {x: 0.023861224, y: 0.11648574, z: -0.06545074}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.011
+      parentName: badCharackter(Clone)
+      position: {x: -0.050013814, y: 0.11648574, z: -0.06497784}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.010
+      parentName: badCharackter(Clone)
+      position: {x: 0.053737782, y: 0.11648574, z: -0.03749828}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.009
+      parentName: badCharackter(Clone)
+      position: {x: -0.0835934, y: 0.11648574, z: -0.03745304}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.008
+      parentName: badCharackter(Clone)
+      position: {x: -0.08356872, y: 0.11648574, z: 0.03735815}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.007
+      parentName: badCharackter(Clone)
+      position: {x: -0.09128889, y: 0.11648574, z: 0.005244717}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.006
+      parentName: badCharackter(Clone)
+      position: {x: 0.061116274, y: 0.11648574, z: 0.0051944703}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.005
+      parentName: badCharackter(Clone)
+      position: {x: 0.049960874, y: 0.11648574, z: 0.045292776}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 2.0143247}
+    - name: Cylinder.004
+      parentName: badCharackter(Clone)
+      position: {x: -0.013912652, y: 0.0938665, z: -0.00056277215}
+      rotation: {x: -0.49980655, y: 0.5001934, z: 0.49997127, w: 0.50002867}
+      scale: {x: 9.21533, y: 9.097423, z: 0.67540675}
+    - name: Cylinder.003
+      parentName: badCharackter(Clone)
+      position: {x: 0.11630609, y: 0.003771335, z: -0.0012324005}
+      rotation: {x: 0.00000027972172, y: 0.7072232, z: 0.00000028795353, w: 0.70699036}
+      scale: {x: -3.021487, y: -3.021487, z: -5.0358114}
+    - name: Cylinder.002
+      parentName: badCharackter(Clone)
+      position: {x: -0.14095142, y: 0.003771335, z: -0.00166367}
+      rotation: {x: 0.7072231, y: -0.00000044797332, z: 0.7069904, w: 0.000000049059505}
+      scale: {x: 3.021487, y: 3.021487, z: 5.0358114}
+    - name: Cylinder.001
+      parentName: badCharackter(Clone)
+      position: {x: -0.05115286, y: -0.1207988, z: -0.0005505234}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 3.021487, y: 3.021487, z: 5.0358114}
+    - name: Cylinder
+      parentName: badCharackter(Clone)
+      position: {x: 0.021690395, y: -0.1207988, z: -0.00057451427}
+      rotation: {x: -0.49976128, y: 0.5002387, z: 0.499926, w: 0.5000739}
+      scale: {x: 3.021487, y: 3.021487, z: 5.0358114}
+    - name: Camera.001
+      parentName: badCharackter(Clone)
+      position: {x: 0.68373406, y: 0.49730456, z: 0.7403672}
+      rotation: {x: 0.08442435, y: -0.90473783, z: 0.21254346, w: 0.3593707}
+      scale: {x: 10.071624, y: 10.071623, z: 10.071624}
+    - name: Cylinder.014
+      parentName: badCharackter(Clone)
+      position: {x: 0.013172011, y: 0.14762905, z: 0.016554281}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Cylinder.015
+      parentName: badCharackter(Clone)
+      position: {x: -0.0069840583, y: 0.14762905, z: -0.022413954}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Cylinder.016
+      parentName: badCharackter(Clone)
+      position: {x: -0.027104352, y: 0.14762905, z: 0.047310393}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Cylinder.017
+      parentName: badCharackter(Clone)
+      position: {x: -0.04897097, y: 0.14762905, z: 0.0060269684}
+      rotation: {x: -0.4998971, y: 0.5001029, z: 0.50006175, w: 0.49993825}
+      scale: {x: 1.0071622, y: 1.0071622, z: 5.0358114}
+    - name: Torus.025
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.1170996, z: 0.6973406, w: 0.69442356}
+      scale: {x: 0.30214873, y: 0.3021487, z: 1.0071617}
+    - name: Torus.027
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.117099606, z: 0.6973406, w: 0.69442356}
+      scale: {x: 1.0071623, y: 1.0071623, z: 1.0071617}
+    - name: Torus.028
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.117099606, z: 0.6973406, w: 0.69442356}
+      scale: {x: 0.7050137, y: 0.7050132, z: 1.0071617}
+    - name: Torus.029
+      parentName: badCharackter(Clone)
+      position: {x: 0.028139824, y: -0.0031231344, z: 0.090989806}
+      rotation: {x: 0.13334073, y: 0.117099606, z: 0.6973406, w: 0.69442356}
+      scale: {x: 0.50358117, y: 0.50358117, z: 1.0071617}
+    - name: Torus.030
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.6944621, y: 0.6973844, z: -0.116870955, w: 0.1331111}
+      scale: {x: -0.50358117, y: -0.50358117, z: -1.0071623}
+    - name: Torus.031
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.69446206, y: 0.6973845, z: -0.11687088, w: 0.13311101}
+      scale: {x: -0.7050137, y: -0.7050137, z: -1.0071623}
+    - name: Torus.032
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.6944621, y: 0.6973844, z: -0.116870955, w: 0.1331111}
+      scale: {x: -1.0071623, y: -1.0071623, z: -1.0071623}
+    - name: Torus.033
+      parentName: badCharackter(Clone)
+      position: {x: -0.054454956, y: -0.0031231344, z: 0.091016985}
+      rotation: {x: -0.69446206, y: 0.6973845, z: -0.11687088, w: 0.13311101}
+      scale: {x: -0.30214873, y: -0.3021487, z: -1.0071623}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

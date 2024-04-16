@@ -2,19 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using GoogleMobileAds.Api;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class WaveControl : MonoBehaviour
 {
     [Header("Enum")] public WaveNumber waveNumber;
     public WaitStatus waitStatus;
 
-    [Header("CountDown")] public float _countdownNum = 10;
+    [Header("CountDown")] public float _countdownNum = 3;
     public TextMeshProUGUI countdownText;
-    private bool isCountdown = false;
+    [HideInInspector] public bool isCountdown = false;
 
     [Header("Canvas")] public TextMeshProUGUI waveText;
     public TextMeshProUGUI totalEnemyText;
@@ -44,8 +46,51 @@ public class WaveControl : MonoBehaviour
     public int wave6EnemyLimit = 22;
     public int wave7EnemyLimit = 25;
 
+    [Header("Audio")] public AudioSource camAudio;
+    public AudioSource playerAudio;
+    public AudioSource fireAudio;
+    public AudioSource playerTrigger;
+    public AudioSource playerDie;
+
+    [Header("Ads")] public bool isAds;
+
+    public GameObject additionalMoneyButton;
+    public MusicManager musicManager;
+
+    
+    
+    public int tutorialCount = 0;
+    public int saveTutorialCount = 0;
+    public GameObject tutorialUpgradePanel;
+    public GameObject tutorialFirstAdsPanel;
+    public GameObject healthLine;
+    public GameObject showRewardedAdsButton;
+    public GameObject tutorialHealthAds;
+    public AdsManager adsManager;
     private void Start()
     {
+        musicManager = GameObject.FindObjectOfType<MusicManager>();
+        if (PlayerPrefs.GetInt("soundNum") == 1)
+        {
+            GameAudioState(true, true, true, true, true);
+        }
+        else if (PlayerPrefs.GetInt("soundNum") == 0)
+        {
+            GameAudioState(false, false, false, false, false);
+        }
+
+        if (PlayerPrefs.GetInt("musicNum") == 1)
+        {
+            if (musicManager != null)
+                musicManager.StartMusic();
+        }
+
+        if (PlayerPrefs.GetInt("musicNum") == 0)
+        {
+            if (musicManager != null)
+                musicManager.StopMusic();
+        }
+
         switch (PlayerPrefs.GetInt("waveCount"))
         {
             case 1:
@@ -81,6 +126,14 @@ public class WaveControl : MonoBehaviour
         EnemyText();
         waitStatus = WaitStatus.Game;
         WaveWaitTime();
+        additionalMoneyButton.SetActive(false);
+        if (tutorialUpgradePanel != null)
+        {
+            tutorialUpgradePanel.SetActive(false);
+        }
+
+        saveTutorialCount = PlayerPrefs.GetInt("tutorialCount", 0);
+        tutorialCount = saveTutorialCount;
     }
 
     public WaveNumber WaveNumberReturn()
@@ -116,6 +169,7 @@ public class WaveControl : MonoBehaviour
         }
     }
 
+
     private void EnemyTextLimit(string _waveString, string _totalEnemyText, int _enemyLimit, int waveCount)
     {
         PlayerPrefs.SetInt("waveCount", waveCount);
@@ -123,8 +177,12 @@ public class WaveControl : MonoBehaviour
         enemyLimit = _enemyLimit;
         waveText.text = _waveString;
         ShockWaveEffect();
+        adsManager.additionalMoneyCount = 2;
+        adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
+ 
     }
 
+   
     public void WaveWaitTime()
     {
         if (waitStatus == WaitStatus.GameBreak)
@@ -134,10 +192,46 @@ public class WaveControl : MonoBehaviour
                 enemySpawn.enemyCount = 0;
                 hitEffect.gameObject.SetActive(false);
                 healthPenguins.SetActive(true);
+                showRewardedAdsButton.SetActive(false);
+                if (tutorialHealthAds != null)
+                {
+                    tutorialHealthAds.SetActive(false);
+                }
                 countdownText.gameObject.SetActive(true);
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
                 upgradeButton.SetActive(true);
+                additionalMoneyButton.SetActive(true);
+                tutorialCount++;
+                PlayerPrefs.SetInt("tutorialCount", tutorialCount);
+                saveTutorialCount = PlayerPrefs.GetInt("tutorialCount");
+                if (waveNumber == WaveNumber.Wave1)
+               //sadece en başta bir kere çağırılacak
+                {
+                    if (saveTutorialCount == 1) 
+                    {
+                        if (tutorialUpgradePanel != null)
+                        {
+                            tutorialUpgradePanel.SetActive(true); // upgrade buttonunu gösteren el paneli
+                            //geri sayımı durdurduruldu ve kapanınca geri sayım yeniden başlıyor
+                        } 
+                        //tutorial panreli aç yeşil alana git desin
+                        //upgrade butonuna bas diyen el çıksın
+                        //paranın yetersiz olduğu animasyonunu görelim upgrade yi kapattıralım para buttonununa bastırtıp oyuncuyu salalım
+                    }
+                    else
+                    {
+                        if (healthLine != null)
+                            healthLine.SetActive(false);
+                    }
+                    
+                }
+                else
+                {
+                    if (healthLine != null)
+                        healthLine.SetActive(false);
+                }
+
                 if (_countdownNum > 1)
                 {
                     isCountdown = true;
@@ -184,8 +278,8 @@ public class WaveControl : MonoBehaviour
                             break;
                         case WaveNumber.Wave7:
                             //oyun tamamlandı
-
-                            waveText.text = "Next";
+                            player.GetComponent<PlayerController>().walkSound.Stop();
+                            waveText.text = "Level Up";
                             enemySpawn.gameObject.SetActive(false);
                             enemyTextBG.SetActive(false);
                             player.transform.position = sceneCenter.position;
@@ -194,8 +288,10 @@ public class WaveControl : MonoBehaviour
                             floatingJoystick.gameObject.SetActive(false);
                             ecoGun.SetActive(false); // silahı kapat
                             player.GetComponent<Animator>().SetBool("isWinDance", true);
-
+                            isAds = true;
                             PlayerPrefs.SetInt("waveCount", 1);
+                            tutorialCount = 2;
+                            PlayerPrefs.SetInt("tutorialCount", tutorialCount);
                             break;
                     }
 
@@ -216,6 +312,7 @@ public class WaveControl : MonoBehaviour
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
             upgradeButton.SetActive(false);
+            additionalMoneyButton.SetActive(false);
             StartCoroutine(GameBreakWait());
         }
     }
@@ -236,12 +333,28 @@ public class WaveControl : MonoBehaviour
     {
         if (isCountdown)
         {
-            _countdownNum -= Time.deltaTime;
-            countdownText.text = Convert.ToInt32(_countdownNum).ToString();
-            if (_countdownNum <= 1)
+            if (tutorialUpgradePanel != null && tutorialFirstAdsPanel != null)
             {
-                isCountdown = false;
-                WaveWaitTime();
+                if (!tutorialUpgradePanel.activeInHierarchy && !tutorialFirstAdsPanel.activeInHierarchy)
+                {
+                    _countdownNum -= Time.deltaTime;
+                    countdownText.text = Convert.ToInt32(_countdownNum).ToString();
+                    if (_countdownNum <= 1)
+                    {
+                        isCountdown = false;
+                        WaveWaitTime();
+                    }
+                }
+            }
+            else
+            {
+                _countdownNum -= Time.deltaTime;
+                countdownText.text = Convert.ToInt32(_countdownNum).ToString();
+                if (_countdownNum <= 1)
+                {
+                    isCountdown = false;
+                    WaveWaitTime();
+                }
             }
         }
     }
@@ -251,5 +364,18 @@ public class WaveControl : MonoBehaviour
         shockWave.gameObject.SetActive(true);
         shockWave.Play();
         fireEffect.SetActive(false);
+    }
+
+    public void GameAudioState(bool camAudioBool, bool playerAudioBool, bool fireAudioBool, bool playerTriggerBool,
+        bool playerDieBool)
+    {
+        if (camAudio != null && playerAudio != null && fireAudio != null && playerTrigger != null && playerDie != null)
+        {
+            camAudio.enabled = camAudioBool;
+            playerAudio.enabled = playerAudioBool;
+            fireAudio.enabled = fireAudioBool;
+            playerTrigger.enabled = playerTriggerBool;
+            playerDie.enabled = playerDieBool;
+        }
     }
 }

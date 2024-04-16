@@ -16,22 +16,35 @@ public class PlayerFire : MonoBehaviour
     public float bulletSpeed;
     public PlayerRange playerRange;
     public GameObject fireEffect;
+    public AudioSource bulletSound;
+    private bool isRange;
+    private GameObject narestEnemy;
 
     private void FixedUpdate()
     {
         _timer += Time.deltaTime;
+
+        if (playerRange.enemys.transform.childCount > 0)
+        {
+            narestEnemy = playerRange.NearestEnemy();
+            isRange = playerRange.LookAtEnemy();
+        }
+
         if (_timer >= spawnInterval)
         {
+            _timer = 0f;
             if (playerRange.enemys.transform.childCount > 0)
             {
-                if (playerRange.LookAtEnemy() && !playerRange.GetComponentInChildren<PlayerTrigger>().isDie)
+                if (isRange && !playerRange.GetComponentInChildren<PlayerTrigger>().isDie &&
+                    !narestEnemy.GetComponent<EnemyLife>().isDie)
                 {
-                    _timer = 0f;
                     SpawnObject();
                 }
                 else
                 {
                     fireEffect.SetActive(false);
+                    if (bulletSound.enabled)
+                       bulletSound.Stop();
                 }
             }
         }
@@ -48,14 +61,12 @@ public class PlayerFire : MonoBehaviour
             //   bullet.transform.SetParent(parentSpawnObject);
             bullet.transform.position = barel.transform.position;
             bullet.transform.rotation = body.transform.rotation;
-            //   Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            //     bulletRigidbody.velocity = barel.transform.forward * bulletSpeed;
-           // bullet.transform.position = transform.forward * bulletSpeed;
-          //  bullet.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
             bullet.GameObject().SetActive(true);
         }
 
         fireEffect.SetActive(true);
+        if (bulletSound.enabled)
+            bulletSound.Play();
         StartCoroutine(CheckFireStatus(bullet));
     }
 
@@ -66,7 +77,7 @@ public class PlayerFire : MonoBehaviour
         transform.rotation = Quaternion.identity;
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = Vector3.zero;
-        ObjectPool.Instance.ReturnObjectToPool(bullet);
+      //  ObjectPool.Instance.ReturnObjectToPool(bullet);
         fireEffect.SetActive(false);
     }
 }

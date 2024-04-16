@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,8 +20,16 @@ public class EnemyLife : MonoBehaviour
     public Animator enemyAnimator;
     public bool isDie;
     public GameObject heart;
+
     public EnemyTrigger enemyTrigger;
 
+
+    public AudioSource enemyBorn;
+    public AudioSource enemyCoin;
+    public AudioSource enemyTriggerBullet;
+    public AudioSource enemyWalk;
+
+    //  public AudioSource enemySound;
     private void Awake()
     {
         _enemyLevelStatus = this.gameObject.GetComponent<EnemyLevelStatus>();
@@ -43,6 +52,7 @@ public class EnemyLife : MonoBehaviour
             {
                 fireEffect.SetActive(true); //kafanın üstünde ölümünün habercisi olan ateş
             }
+
             if (_lifeCapacity < 1) // yaşam kapasitesi bittiyse
             {
                 GetComponent<CapsuleCollider>().enabled = false;
@@ -52,6 +62,9 @@ public class EnemyLife : MonoBehaviour
                 GetComponent<EnemyLife>().enabled = false;
                 GetComponent<EnemyTrigger>().enabled = false;
                 enemyAnimator.SetBool("isDie", true);
+                if (enemyTriggerBullet.enabled)
+                    enemyTriggerBullet.enabled = false;
+                //  enemySound.Stop();
                 fireEffect.SetActive(false);
                 dieEffect.SetActive(true);
                 isDie = true;
@@ -60,6 +73,7 @@ public class EnemyLife : MonoBehaviour
             }
         }
     }
+
 
     IEnumerator EnemyDie()
     {
@@ -78,6 +92,7 @@ public class EnemyLife : MonoBehaviour
         InitializeStart();
     }
 
+
     public void InitializeStart()
     {
         isDie = false;
@@ -95,7 +110,27 @@ public class EnemyLife : MonoBehaviour
         GetComponent<EnemyLife>().enabled = true;
         GetComponent<EnemyTrigger>().enabled = true;
 
+        if (enemyBorn != null && enemyCoin != null && enemyTriggerBullet != null && enemyWalk != null)
+        {
+            if (PlayerPrefs.GetInt("soundNum") == 1)
+            {
+                enemyBorn.enabled = true;
+                enemyCoin.enabled = true;
+                enemyTriggerBullet.enabled = true;
+                enemyWalk.enabled = true;
+            }
+            else if (PlayerPrefs.GetInt("soundNum") == 0)
+            {
+                enemyBorn.enabled = false;
+                enemyCoin.enabled = false;
+                enemyTriggerBullet.enabled = false;
+                enemyWalk.enabled = false;
+            }
+        }
 
+        if (enemyWalk != null)
+            if (enemyWalk.enabled)
+                enemyWalk.Play();
         coin.SetActive(false);
 
         if (_enemyLevelStatus.EnemyLevelReturn() == EnemyLevel.Lvl1Enemy)

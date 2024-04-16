@@ -35,11 +35,9 @@ public class PlayerRange : MonoBehaviour
                     smallestDistance = distance;
                     nearestEnemy = enemy.transform;
                 }
+                
             }
-            
         }
-
-
         return nearestEnemy.gameObject;
     }
 

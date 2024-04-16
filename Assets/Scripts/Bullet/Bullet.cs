@@ -14,14 +14,17 @@ public class Bullet : MonoBehaviour
     private int bulletLevelNumber = 1;
     private int bulleSizeNumber = 1;
 
-
+    private void Start()
+    {
+       
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out EnemyTrigger enemyTrigger))
         {
             enemyTrigger.minusLife.MinusText();
-            ObjectPool.Instance.ReturnObjectToPool(gameObject);
+            ObjectPool.Instance.ReturnObjectToPool(this.gameObject);
         }
     }
 

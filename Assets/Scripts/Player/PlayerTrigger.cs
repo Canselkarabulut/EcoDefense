@@ -30,7 +30,13 @@ public class PlayerTrigger : MonoBehaviour
     public bool isDie;
     public static bool isHealthRed;
 
-    public GameObject PauseButton;
+    public GameObject showRewardedAdsButton;
+
+//    public GameObject PauseButton;
+
+    public SettingsController settingsController;
+    public GameObject tutorialHealthAds;
+
     private void Start()
     {
         DOTween.Init();
@@ -43,7 +49,13 @@ public class PlayerTrigger : MonoBehaviour
         enemys.SetActive(true);
         dieEffect.SetActive(false);
         isDie = false;
-        PauseButton.SetActive(true);
+        //   PauseButton.SetActive(true);
+        showRewardedAdsButton.SetActive(false);
+        if (tutorialHealthAds != null)
+        {
+            tutorialHealthAds.SetActive(false);
+        }
+        healthAdsNum = PlayerPrefs.GetInt("healthAdsNum", 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,6 +63,7 @@ public class PlayerTrigger : MonoBehaviour
         if (other.TryGetComponent(out EnemyLevelStatus enemyLevelStatus))
         {
             minusLifeText.gameObject.SetActive(true);
+            settingsController.playerTrigger.Play();
             if (enemyLevelStatus.enemyLevel == EnemyLevel.Lvl1Enemy)
             {
                 PlayerLossLife(0.02f);
@@ -77,19 +90,33 @@ public class PlayerTrigger : MonoBehaviour
         }
     }
 
- 
+
+
+    public int healthAdsNum = 0;
     public void PlayerLossLife(float amountDdeath)
     {
         healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
         loseEffect.Play();
-       
+
         if (healthBar.transform.localScale.x < .35)
         {
             healthBar.GetComponent<Renderer>().material = healthbarOrange;
-
             if (healthBar.transform.localScale.x < .2)
             {
                 healthBar.GetComponent<Renderer>().material = healthbarRed;
+                showRewardedAdsButton.SetActive(true);
+                //    if (waveControl != null)
+                //    {
+                healthAdsNum++;
+                PlayerPrefs.SetInt("healthAdsNum",healthAdsNum);
+                if (PlayerPrefs.GetInt("healthAdsNum") == 1)
+                {
+                    if (tutorialHealthAds != null)
+                        tutorialHealthAds.SetActive(true);
+                    
+                }
+               
+
                 if (healthBar.transform.localScale.x < .05)
                 {
                     //   bulletSpawn.SetActive(false);
@@ -100,16 +127,37 @@ public class PlayerTrigger : MonoBehaviour
                     shockWave.SetActive(false);
                     enemys.SetActive(false);
                     playerAnimator.SetBool("isDeath", true);
+                    settingsController.playerDie.Play();
                     transform.parent.GetComponent<PlayerController>().floatingJoystick = null;
                     floatingJoystick.gameObject.SetActive(false);
-                    PauseButton.SetActive(false);
+                    showRewardedAdsButton.SetActive(false);
+                    if (tutorialHealthAds != null)
+                    {
+                        tutorialHealthAds.SetActive(false);
+                    }
+                    //  PauseButton.SetActive(false);
                 }
             }
         }
         else
         {
-            healthBar.GetComponent<Renderer>().material = healthbarGreen; 
-     
+            healthBar.GetComponent<Renderer>().material = healthbarGreen;
+        }
+    }
+
+    private void Update()
+    {
+        if (showRewardedAdsButton.activeInHierarchy)
+        {
+            if (healthBar.transform.localScale.x > .2)
+            {
+                showRewardedAdsButton.SetActive(false);  
+                if (tutorialHealthAds != null)
+                {
+                    tutorialHealthAds.SetActive(false);
+                }
+                Debug.Log("can buton kalksın");
+            }
         }
     }
 }

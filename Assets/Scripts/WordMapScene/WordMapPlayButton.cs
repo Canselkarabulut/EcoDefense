@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WordMapPlayButton : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class WordMapPlayButton : MonoBehaviour
     private int americaGameWaveCount=0;
     private int oceanGameWaveCount=0;
 
+    public ResetGame resetGame;
     public void PlayGame()
     {
         switch (WordMapControl.mapAnimCount)
@@ -20,6 +22,8 @@ public class WordMapPlayButton : MonoBehaviour
                 antarticaGameWaveCount = PlayerPrefs.GetInt("waveCount");
                 if (antarticaGameWaveCount <= 1)
                 {
+                    resetGame.ResetSetPlayerPrefs();
+                    //reset kısmını burada da çek
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // antartika GİRİŞ animasyonu
                 }
                 else
@@ -83,6 +87,7 @@ public class WordMapPlayButton : MonoBehaviour
                 }
                 break;
             case 6:
+               
                //tüm oyun bitti - play tuşu çalışmayacak onun yerine alternatif düşün
                 break;
         }
