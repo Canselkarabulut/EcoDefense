@@ -2,8 +2,7 @@ Unity Version 2022.3.7
 
 Görseller :
 
- ![Image Sequence_004_0013](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/a710383d-1206-4e58-bac9-288a2685503c) 
- ![Image Sequence_015_0042](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/3c42e853-caff-470f-a8b9-16d1f7ecb27f) 
- ![Image Sequence_022_0129](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/3a6f6487-f3d5-4369-8aee-603e6c017a03) 
- ![Image Sequence_001_0117](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/11e786e1-39e9-4d5f-b393-be41cc43b8a9) 
+![1 fw](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/037f4960-baf8-4bd8-83d5-a89797a4b51a) ![2 fw](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/f77511b4-65d5-4fb2-adb8-ab95fa8fd504) ![3 fw](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/20273a6d-9869-4457-b6b9-e6125632f7dc)
+![4 fw](https://github.com/Canselkarabulut/EcoDefense/assets/90397911/6e8f7060-87e5-4d0e-ae89-bac91fca3bd8)
+
 
