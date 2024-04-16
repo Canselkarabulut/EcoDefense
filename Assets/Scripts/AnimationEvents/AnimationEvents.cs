@@ -8,7 +8,7 @@ public class AnimationEvents : MonoBehaviour
 {
     public GameObject losePanel;
     public GameObject elementalArrow;
-
+    public Animator playerAnimator;
     private void Start()
     {
         losePanel.SetActive(false);
@@ -19,6 +19,10 @@ public class AnimationEvents : MonoBehaviour
         losePanel.SetActive(true);
     }
 
+    public void ActiveScateboard()
+    {
+        playerAnimator.Play("Skateboarding");  
+    }
 
     public void TransitionAnim()
     {

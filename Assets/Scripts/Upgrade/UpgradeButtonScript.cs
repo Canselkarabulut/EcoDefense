@@ -315,9 +315,10 @@ public class UpgradeButtonScript : MonoBehaviour
         ButtonInteractable(sizeBallButton, sizeBallPriceInt,sizeBallCount);
     }
 
+    private int maxButtonClickCount = 8;/*maksimum buton tıklama sayısı 7 olduğu için 8 dedik upgradeler 7 ye kadar ayarlandığından */
     public void ButtonInteractable(Button button, int priceInt , int count)
     {
-        if (GameEconomy.sCoinCount > priceInt && count<8)
+        if (GameEconomy.sCoinCount > priceInt && count<maxButtonClickCount)
         {
             button.interactable = true;
         }
