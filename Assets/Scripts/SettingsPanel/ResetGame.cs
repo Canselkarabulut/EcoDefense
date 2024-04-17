@@ -77,9 +77,9 @@ public class ResetGame : MonoBehaviour
         PlayerPrefs.SetInt("GunPriceInt16", gunPriceInt);
         PlayerPrefs.SetInt("RateFirePriceInt16", rateFirePriceInt);
         PlayerPrefs.SetInt("SizeBallPriceInt16", sizeBallPriceInt);
-      
+
         PlayerPrefs.SetFloat("spawnInterval", .4f);
-  
+
         if (SceneManager.GetActiveScene().buildIndex != 1)
         {
             PlayerPrefs.SetInt("musicNum", 1);
@@ -87,6 +87,9 @@ public class ResetGame : MonoBehaviour
             PlayerPrefs.Save();
             SceneManager.LoadScene(0);
         }
+
+        PlayerPrefs.SetInt("tutorialCount", 0);
+        PlayerPrefs.SetInt("healthAdsNum", 0);
         PlayerPrefs.Save();
     }
 

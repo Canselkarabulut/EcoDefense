@@ -56,20 +56,27 @@ public class WaveControl : MonoBehaviour
 
     public GameObject additionalMoneyButton;
     public MusicManager musicManager;
-
     
-    
+    [Header("TutorialMore")]
     public int tutorialCount = 0;
-    public int saveTutorialCount = 0;
+    public int saveTutorialCount = 0; 
+   
+    public GameObject showRewardedAdsButton;
+    public AdsManager adsManager;
+    
+    [Header("TutorialPanel")]
     public GameObject tutorialUpgradePanel;
     public GameObject tutorialFirstAdsPanel;
-    public GameObject healthLine;
-    public GameObject showRewardedAdsButton;
     public GameObject tutorialHealthAds;
-    public AdsManager adsManager;
+    public GameObject healthLine;
+   
+   
+
     private void Start()
     {
+      
         musicManager = GameObject.FindObjectOfType<MusicManager>();
+
         if (PlayerPrefs.GetInt("soundNum") == 1)
         {
             GameAudioState(true, true, true, true, true);
@@ -91,6 +98,7 @@ public class WaveControl : MonoBehaviour
                 musicManager.StopMusic();
         }
 
+      
         switch (PlayerPrefs.GetInt("waveCount"))
         {
             case 1:
@@ -179,10 +187,9 @@ public class WaveControl : MonoBehaviour
         ShockWaveEffect();
         adsManager.additionalMoneyCount = 2;
         adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
- 
     }
 
-   
+
     public void WaveWaitTime()
     {
         if (waitStatus == WaitStatus.GameBreak)
@@ -197,6 +204,7 @@ public class WaveControl : MonoBehaviour
                 {
                     tutorialHealthAds.SetActive(false);
                 }
+
                 countdownText.gameObject.SetActive(true);
                 countdownText.transform.parent.gameObject.SetActive(true);
                 bulletSpawn.SetActive(false);
@@ -206,15 +214,19 @@ public class WaveControl : MonoBehaviour
                 PlayerPrefs.SetInt("tutorialCount", tutorialCount);
                 saveTutorialCount = PlayerPrefs.GetInt("tutorialCount");
                 if (waveNumber == WaveNumber.Wave1)
-               //sadece en başta bir kere çağırılacak
+                    //sadece en başta bir kere çağırılacak
                 {
-                    if (saveTutorialCount == 1) 
+                    if (saveTutorialCount == 1)
                     {
                         if (tutorialUpgradePanel != null)
                         {
+                            player.GetComponent<PlayerController>().floatingJoystick = null;
+                            player.GetComponent<PlayerController>().anim.SetBool("isRun",false);
+                          //  floatingJoystick.gameObject.SetActive(false);
+                          
                             tutorialUpgradePanel.SetActive(true); // upgrade buttonunu gösteren el paneli
                             //geri sayımı durdurduruldu ve kapanınca geri sayım yeniden başlıyor
-                        } 
+                        }
                         //tutorial panreli aç yeşil alana git desin
                         //upgrade butonuna bas diyen el çıksın
                         //paranın yetersiz olduğu animasyonunu görelim upgrade yi kapattıralım para buttonununa bastırtıp oyuncuyu salalım
@@ -224,7 +236,6 @@ public class WaveControl : MonoBehaviour
                         if (healthLine != null)
                             healthLine.SetActive(false);
                     }
-                    
                 }
                 else
                 {
@@ -358,7 +369,6 @@ public class WaveControl : MonoBehaviour
             }
         }
     }
-
     public void ShockWaveEffect()
     {
         shockWave.gameObject.SetActive(true);

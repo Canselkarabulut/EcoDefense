@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
@@ -12,7 +13,7 @@ public class PausePanel : MonoBehaviour
     public GameObject tutorialUpgrade;
     public GameObject tutorialAds;
     public WaveControl waveControl;
-
+   
     public void PausePanelClose()
     {
         Time.timeScale = 1;
@@ -36,6 +37,7 @@ public class PausePanel : MonoBehaviour
                         //ilk halse
                         tutorialAds.SetActive(true);
                         upgradeButton.interactable = false;
+                  
                     }
                 }
             }

@@ -36,9 +36,10 @@ public class PlayerTrigger : MonoBehaviour
 
     public SettingsController settingsController;
     public GameObject tutorialHealthAds;
-
+    public int healthAdsNum = 0;
     private void Start()
     {
+   
         DOTween.Init();
         healthBar.GetComponent<Renderer>().material = healthbarGreen;
         healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
@@ -92,7 +93,7 @@ public class PlayerTrigger : MonoBehaviour
 
 
 
-    public int healthAdsNum = 0;
+   
     public void PlayerLossLife(float amountDdeath)
     {
         healthBar.transform.localScale += new Vector3(-amountDdeath, 0, 0);
