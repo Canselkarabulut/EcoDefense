@@ -17,7 +17,7 @@ public class PausePanel : MonoBehaviour
     public void PausePanelClose()
     {
         Time.timeScale = 1;
-        gameObject.SetActive(false);
+   
         if (gameObject != null)
             gameControl.SetActive(true);
         upgradeButton.interactable = true;
@@ -42,7 +42,7 @@ public class PausePanel : MonoBehaviour
                 }
             }
         }
-      
+        gameObject.SetActive(false);
        
 
        

@@ -1200,6 +1200,7 @@ MonoBehaviour:
   gameplayTutorial: {fileID: 641172101}
   floatingJoystick: {fileID: 3540359252748192136}
   player: {fileID: 163698168}
+  upgradeButton: {fileID: 7034903875099136177}
 --- !u!1 &1575915461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,9 +4762,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1607606702}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: ShowRewardedAdsAdditionalMoney
+      - m_Target: {fileID: 1543041392}
+        m_TargetAssemblyTypeName: AddMoneyButton, Assembly-CSharp
+        m_MethodName: AddPanelClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4773,9 +4774,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1543041392}
-        m_TargetAssemblyTypeName: AddMoneyButton, Assembly-CSharp
-        m_MethodName: AddPanelClose
+      - m_Target: {fileID: 1607606702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: ShowRewardedAdsAdditionalMoney
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5870,11 +5871,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016396507
+      value: 0.0000000163965
       objectReference: {fileID: 0}
     - target: {fileID: 9043527384693258651, guid: 844700fc55d353f4ca5ff2ba12553cd7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005216728
+      value: -0.0000000052167257
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7928,11 +7929,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016396507
+      value: 0.0000000163965
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005216728
+      value: -0.0000000052167257
       objectReference: {fileID: 0}
     - target: {fileID: 4548195151972719486, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -31383,7 +31383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: 0.000000016396507, z: -0.000000005216728, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.668, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31889,12 +31889,12 @@ MonoBehaviour:
   musicManager: {fileID: 0}
   tutorialCount: 0
   saveTutorialCount: 0
+  showRewardedAdsButton: {fileID: 953831018}
+  adsManager: {fileID: 721437344}
   tutorialUpgradePanel: {fileID: 0}
   tutorialFirstAdsPanel: {fileID: 0}
-  healthLine: {fileID: 0}
-  showRewardedAdsButton: {fileID: 953831018}
   tutorialHealthAds: {fileID: 0}
-  adsManager: {fileID: 721437344}
+  healthLine: {fileID: 0}
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
@@ -35390,11 +35390,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 18.75
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -36176,7 +36176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: 0.000000016396507, z: -0.000000005216728, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.668, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
