@@ -13,7 +13,8 @@ public class PausePanel : MonoBehaviour
     public GameObject tutorialUpgrade;
     public GameObject tutorialAds;
     public WaveControl waveControl;
-   
+  
+    
     public void PausePanelClose()
     {
         Time.timeScale = 1;
@@ -21,6 +22,8 @@ public class PausePanel : MonoBehaviour
         if (gameObject != null)
             gameControl.SetActive(true);
         upgradeButton.interactable = true;
+        //upgradeButton.GetComponent<UpgradeButton>().isActive = false;
+        upgradeButton.GetComponent<UpgradeButton>().warningHand.SetActive(false);
         pauseButton.interactable = true;
         if (waveControl != null)
         {
@@ -37,7 +40,8 @@ public class PausePanel : MonoBehaviour
                         //ilk halse
                         tutorialAds.SetActive(true);
                         upgradeButton.interactable = false;
-                  
+                        waveControl.saveTutorialCount++;
+
                     }
                 }
             }

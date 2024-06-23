@@ -7595,6 +7595,8 @@ MonoBehaviour:
   tutorialFirstAdsPanel: {fileID: 0}
   upgradeButton: {fileID: 0}
   tutorialHelathAdsPanel: {fileID: 0}
+  isAdsShownRewardedHealth: 0
+  isAdsShownRewarded: 0
   coinAnim: {fileID: 1999311287}
 --- !u!4 &812661517
 Transform:
@@ -9229,7 +9231,7 @@ MonoBehaviour:
   playerTrigger: {fileID: 2464083165585558543}
   playerDie: {fileID: 2464083165585558545}
   isAds: 0
-  additionalMoneyButton: {fileID: 812661515}
+  additionalMoneyButton: {fileID: 1758839333}
   musicManager: {fileID: 0}
   tutorialCount: 0
   saveTutorialCount: 0
@@ -10789,6 +10791,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1285498725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285498727}
+  - component: {fileID: 1285498726}
+  m_Layer: 0
+  m_Name: AdShowControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1285498726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285498725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f51d1e1abfe15242b60567d2e726096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adsManager: {fileID: 812661516}
+  additionalMoneyCount: 2
+  additionalMoneyCountText: {fileID: 768928419}
+  gameEconomy: {fileID: 1068201431}
+  coinAnim: {fileID: 1999311287}
+  adsMoneyButton: {fileID: 1758839333}
+  showRewardedAdsButton: {fileID: 1340575184}
+  playerTrigger: {fileID: 2129386546}
+--- !u!4 &1285498727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285498725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302241612
 GameObject:
   m_ObjectHideFlags: 0
@@ -11404,6 +11458,18 @@ MonoBehaviour:
       - m_Target: {fileID: 812661516}
         m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
         m_MethodName: ShowRewardedAdHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1285498726}
+        m_TargetAssemblyTypeName: AdsShowControl, Assembly-CSharp
+        m_MethodName: AdsShowHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13759,7 +13825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1634276512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14684,7 +14750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1758839334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14753,6 +14819,18 @@ MonoBehaviour:
       - m_Target: {fileID: 812661516}
         m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
         m_MethodName: ShowRewardedAdsAdditionalMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1285498726}
+        m_TargetAssemblyTypeName: AdsShowControl, Assembly-CSharp
+        m_MethodName: AdsShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18657,3 +18735,4 @@ SceneRoots:
   - {fileID: 585335251}
   - {fileID: 823367216}
   - {fileID: 812661517}
+  - {fileID: 1285498727}

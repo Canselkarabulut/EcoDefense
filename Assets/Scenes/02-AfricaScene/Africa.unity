@@ -4183,6 +4183,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449563582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &395586372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395586374}
+  - component: {fileID: 395586373}
+  m_Layer: 0
+  m_Name: AdShowControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &395586373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395586372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f51d1e1abfe15242b60567d2e726096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adsManager: {fileID: 925630121}
+  additionalMoneyCount: 2
+  additionalMoneyCountText: {fileID: 283454021}
+  gameEconomy: {fileID: 1068201431}
+  coinAnim: {fileID: 1999311287}
+  adsMoneyButton: {fileID: 436867503}
+  showRewardedAdsButton: {fileID: 2089094870}
+  playerTrigger: {fileID: 2129386546}
+--- !u!4 &395586374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395586372}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &403715290
 GameObject:
   m_ObjectHideFlags: 0
@@ -4621,6 +4673,18 @@ MonoBehaviour:
       - m_Target: {fileID: 925630121}
         m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
         m_MethodName: ShowRewardedAdsAdditionalMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 395586373}
+        m_TargetAssemblyTypeName: AdsShowControl, Assembly-CSharp
+        m_MethodName: AdsShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13674,6 +13738,8 @@ MonoBehaviour:
   tutorialFirstAdsPanel: {fileID: 0}
   upgradeButton: {fileID: 0}
   tutorialHelathAdsPanel: {fileID: 0}
+  isAdsShownRewardedHealth: 0
+  isAdsShownRewarded: 0
   coinAnim: {fileID: 1999311287}
 --- !u!4 &925630122
 Transform:
@@ -31941,6 +32007,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 395586373}
+        m_TargetAssemblyTypeName: AdsShowControl, Assembly-CSharp
+        m_MethodName: AdsShowHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2089094873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33267,3 +33345,4 @@ SceneRoots:
   - {fileID: 481863163}
   - {fileID: 1787106156}
   - {fileID: 925630122}
+  - {fileID: 395586374}

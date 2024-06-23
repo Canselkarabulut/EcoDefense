@@ -25,19 +25,25 @@ public class AdsManager : MonoBehaviour
     public Button upgradeButton;
     public GameObject tutorialHelathAdsPanel;
 
+    public bool isAdsShownRewardedHealth;
+    public bool isAdsShownRewarded;
 
     public Animator coinAnim;
+    private int countShowRewardedClick;
+
     private void Start()
     {
         musicManager = FindObjectOfType<MusicManager>();
         lastMusicNum = PlayerPrefs.GetInt("musicNum");
         lastSoundNum = PlayerPrefs.GetInt("soundNum");
+        isAdsShownRewardedHealth = false;
+        isAdsShownRewarded = false;
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
         });
-        LoadAd(); // banner reklam
+        // LoadAd(); // banner reklam
         LoadInterstitialAd(); // geçiş reklamı
         LoadRewardedAd(); //ödüllü reklam
     }
@@ -53,134 +59,123 @@ public class AdsManager : MonoBehaviour
                 waveControl.isAds = false;
             }
         }
-        
-        ////   if (bodyAnimationEvents.isLoseAds)
-        //   {
-        //       ShowInterstitialAd();
-        //      bodyAnimationEvents.isLoseAds = false;
-        //   }
-        
-        //coin butonu büyüyüp eski haline gelsin
-        //coin scale başlangıç bilgisi 
-        // coin position başlangıç bilgisi
-        //reklam izlendiyse ve bittiyse büyü ve buttonun oraya gel ve hızlıca eski yerine ve haline dön
     }
 
-    #region Banner
-
-    // These ad units are configured to always serve test ads.
-#if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
-   //  private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
-#elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
-#else
-  private string _adUnitId = "unused";
-#endif
-
-    BannerView _bannerView;
-
-    /// <summary>
-    /// Creates a 320x50 banner view at top of the screen.
-    /// </summary>
-    public void CreateBannerView()
-    {
-/////        Debug.Log("Creating banner view");
-
-        // If we already have a banner, destroy the old one.
-        if (_bannerView != null)
-        {
-            DestroyBannerView();
-        }
-
-        // Create a 320x50 banner at top of the screen
-        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
-    }
-
-
-    public void LoadAd()
-    {
-        // create an instance of a banner view first.
-        if (_bannerView == null)
-        {
-            CreateBannerView();
-        }
-
-        // create our request used to load the ad.
-        var adRequest = new AdRequest();
-
-        // send the request to load the ad.
-/////        Debug.Log("Loading banner ad.");
-        _bannerView.LoadAd(adRequest);
-    }
-
-    /// <summary>
-    /// listen to events the banner view may raise.
-    /// </summary>
-    private void ListenToAdEvents()
-    {
-        // Raised when an ad is loaded into the banner view.
-        _bannerView.OnBannerAdLoaded += () =>
-        {
-            /////       Debug.Log("Banner view loaded an ad with response : "
-            /////                 + _bannerView.GetResponseInfo());
-        };
-        // Raised when an ad fails to load into the banner view.
-        _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
-        {
-            Debug.LogError("Banner view failed to load an ad with error : "
-                           + error);
-        };
-        // Raised when the ad is estimated to have earned money.
-        _bannerView.OnAdPaid += (AdValue adValue) =>
-        {
-            /////           Debug.Log(String.Format("Banner view paid {0} {1}.",
-/////                adValue.Value,
-            /////               adValue.CurrencyCode));
-        };
-        // Raised when an impression is recorded for an ad.
-        _bannerView.OnAdImpressionRecorded += () =>
-        {
-            /* Debug.Log("Banner view recorded an impression.");*/
-        };
-        // Raised when a click is recorded for an ad.
-        _bannerView.OnAdClicked += () =>
-        {
-            /* Debug.Log("Banner view was clicked.");*/
-        };
-        // Raised when an ad opened full screen content.
-        _bannerView.OnAdFullScreenContentOpened += () =>
-        {
-            /*"Banner view full screen content opened.");*/
-        };
-        // Raised when the ad closed full screen content.
-        _bannerView.OnAdFullScreenContentClosed += () =>
-        {
-            /*"Banner view full screen content closed.");*/
-        };
-    }
-
-    /// <summary>
-    /// Destroys the banner view.
-    /// </summary>
-    public void DestroyBannerView()
-    {
-        if (_bannerView != null)
-        {
-/////            Debug.Log("Destroying banner view.");
-            _bannerView.Destroy();
-            _bannerView = null;
-        }
-    }
-
-    #endregion
+//    #region Banner
+//
+//    // These ad units are configured to always serve test ads.
+//#if UNITY_ANDROID
+//  //  private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
+//     private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
+//#elif UNITY_IPHONE
+//  private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
+//#else
+//  private string _adUnitId = "unused";
+//#endif
+//
+//    BannerView _bannerView;
+//
+//    /// <summary>
+//    /// Creates a 320x50 banner view at top of the screen.
+//    /// </summary>
+//    public void CreateBannerView()
+//    {
+///////        Debug.Log("Creating banner view");
+//
+//        // If we already have a banner, destroy the old one.
+//        if (_bannerView != null)
+//        {
+//            DestroyBannerView();
+//        }
+//
+//        // Create a 320x50 banner at top of the screen
+//        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
+//    }
+//
+//
+//    public void LoadAd()
+//    {
+//        // create an instance of a banner view first.
+//        if (_bannerView == null)
+//        {
+//            CreateBannerView();
+//        }
+//
+//        // create our request used to load the ad.
+//        var adRequest = new AdRequest();
+//
+//        // send the request to load the ad.
+///////        Debug.Log("Loading banner ad.");
+//        _bannerView.LoadAd(adRequest);
+//    }
+//
+//    /// <summary>
+//    /// listen to events the banner view may raise.
+//    /// </summary>
+//    private void ListenToAdEvents()
+//    {
+//        // Raised when an ad is loaded into the banner view.
+//        _bannerView.OnBannerAdLoaded += () =>
+//        {
+//            /////       Debug.Log("Banner view loaded an ad with response : "
+//            /////                 + _bannerView.GetResponseInfo());
+//        };
+//        // Raised when an ad fails to load into the banner view.
+//        _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
+//        {
+//            Debug.LogError("Banner view failed to load an ad with error : "
+//                           + error);
+//        };
+//        // Raised when the ad is estimated to have earned money.
+//        _bannerView.OnAdPaid += (AdValue adValue) =>
+//        {
+//            /////           Debug.Log(String.Format("Banner view paid {0} {1}.",
+///////                adValue.Value,
+//            /////               adValue.CurrencyCode));
+//        };
+//        // Raised when an impression is recorded for an ad.
+//        _bannerView.OnAdImpressionRecorded += () =>
+//        {
+//            /* Debug.Log("Banner view recorded an impression.");*/
+//        };
+//        // Raised when a click is recorded for an ad.
+//        _bannerView.OnAdClicked += () =>
+//        {
+//            /* Debug.Log("Banner view was clicked.");*/
+//        };
+//        // Raised when an ad opened full screen content.
+//        _bannerView.OnAdFullScreenContentOpened += () =>
+//        {
+//            /*"Banner view full screen content opened.");*/
+//        };
+//        // Raised when the ad closed full screen content.
+//        _bannerView.OnAdFullScreenContentClosed += () =>
+//        {
+//            /*"Banner view full screen content closed.");*/
+//        };
+//    }
+//
+//    /// <summary>
+//    /// Destroys the banner view.
+//    /// </summary>
+//    public void DestroyBannerView()
+//    {
+//        if (_bannerView != null)
+//        {
+///////            Debug.Log("Destroying banner view.");
+//            _bannerView.Destroy();
+//            _bannerView = null;
+//        }
+//    }
+//
+//    #endregion
 
     #region InterstitialAd
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
-  //   private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
+    //  private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
+    private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
 
 #elif UNITY_IPHONE
   private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/4411468910";
@@ -329,8 +324,8 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
-  //    private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
+    //  private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
+    private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
@@ -344,6 +339,7 @@ public class AdsManager : MonoBehaviour
     /// </summary>
     public void LoadRewardedAd()
     {
+        isAdsShownRewarded = false;
         // Clean up the old ad before loading a new one.
         if (_rewardedAd != null)
         {
@@ -377,40 +373,44 @@ public class AdsManager : MonoBehaviour
 
     public void ShowRewardedAdHealth()
     {
-        const string rewardMsg =
-            "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
-
-        if (_rewardedAd != null && _rewardedAd.CanShowAd())
+        countShowRewardedClick++;
+        if (countShowRewardedClick == 3)
         {
-            //sesleri kapat
-            if (musicManager != null)
-            {
-                lastMusicNum = PlayerPrefs.GetInt("musicNum");
-                musicManager.StopMusic();
-            }
+            const string rewardMsg =
+                "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
 
-            if (settingsController != null)
+            if (_rewardedAd != null && _rewardedAd.CanShowAd())
             {
-                lastSoundNum = PlayerPrefs.GetInt("soundNum");
-                settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
-            }
+                //sesleri kapat
+                if (musicManager != null)
+                {
+                    lastMusicNum = PlayerPrefs.GetInt("musicNum");
+                    musicManager.StopMusic();
+                }
 
-            if (tutorialHelathAdsPanel != null)
-            {
-                tutorialHelathAdsPanel.SetActive(false);
+                if (settingsController != null)
+                {
+                    lastSoundNum = PlayerPrefs.GetInt("soundNum");
+                    settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
+                }
+
+                if (tutorialHelathAdsPanel != null)
+                {
+                    tutorialHelathAdsPanel.SetActive(false);
+                }
+
+                _rewardedAd.Show((Reward reward) =>
+                {
+                    // TODO: Reward the user.
+
+                    showRewardedAdsButton.SetActive(false); // ödüllü reklamı açan buton kapandı
+                    playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
+                    playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
+                    countShowRewardedClick = 0;
+                    isAdsShownRewardedHealth = true;
+                });
+                RegisterReloadHandler(_rewardedAd);
             }
-            _rewardedAd.Show((Reward reward) =>
-            {
-                // TODO: Reward the user.
-                // kullanıcıya verilecek ödül burada yazılacak
-                // playerın canı kırmızı olduğunda izlenen reklam
-                showRewardedAdsButton.SetActive(false); // ödüllü reklamı açan buton kapandı
-                //playerın can barı yeşil olacak
-                playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
-                playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
-                /////               Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
-            });
-            RegisterReloadHandler(_rewardedAd);
         }
     }
 
@@ -434,6 +434,7 @@ public class AdsManager : MonoBehaviour
                 lastSoundNum = PlayerPrefs.GetInt("soundNum");
                 settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
             }
+
             if (tutorialFirstAdsPanel != null)
                 if (tutorialFirstAdsPanel.activeInHierarchy)
                 {
@@ -442,8 +443,8 @@ public class AdsManager : MonoBehaviour
                         upgradeButton.interactable = true;
                         tutorialFirstAdsPanel.SetActive(false);
                     }
-                   
                 }
+
             _rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
@@ -451,8 +452,8 @@ public class AdsManager : MonoBehaviour
                 // playerın canı kırmızı olduğunda izlenen reklam
                 additionalMoneyCount--;
                 additionalMoneyCountText.text = additionalMoneyCount.ToString();
-            
-                
+
+
                 if (additionalMoneyCount == 0)
                 {
                     additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
@@ -460,6 +461,7 @@ public class AdsManager : MonoBehaviour
                     additionalMoneyCountText.text = additionalMoneyCount.ToString();
                 }
 
+                isAdsShownRewarded = true;
                 GameEconomy.sCoinCount += 200;
                 gameEconomy.CoinText();
                 coinAnim.SetBool("isCoinAdd", true);

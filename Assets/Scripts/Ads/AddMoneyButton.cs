@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,17 +15,24 @@ public class AddMoneyButton : MonoBehaviour
     [Header("None")] public FloatingJoystick floatingJoystick;
     public GameObject player;
     public Button upgradeButton;
+    
+    [Header("adsShowControl")]
+    public AdsShowControl adsShowControl;
     public void AddPanelClose()
     {
         upgradeButton.interactable = true;
         player.GetComponent<PlayerController>().floatingJoystick = floatingJoystick;
         floatingJoystick.gameObject.SetActive(true);
         adsPanel.SetActive(false);
-    }
+        adsShowControl.AdsShow();
 
+    }
+   
     public void AddHealthPanelClose()
     {
         tutorialHealthAds.SetActive(false);
+        adsShowControl.AdsShowHealth();
+
     }
 
     private void Start()

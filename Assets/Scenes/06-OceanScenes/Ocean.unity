@@ -17038,6 +17038,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 620603486}
+        m_TargetAssemblyTypeName: AdsShowControl, Assembly-CSharp
+        m_MethodName: AdsShow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &299393571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24902,6 +24914,58 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1485431763}
   m_SourcePrefab: {fileID: 100100000, guid: 1a885487a0be3a94cba42bcf21175533, type: 3}
+--- !u!1 &620603485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620603487}
+  - component: {fileID: 620603486}
+  m_Layer: 0
+  m_Name: AdShowControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &620603486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620603485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f51d1e1abfe15242b60567d2e726096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adsManager: {fileID: 721437344}
+  additionalMoneyCount: 2
+  additionalMoneyCountText: {fileID: 1173024908}
+  gameEconomy: {fileID: 1068201431}
+  coinAnim: {fileID: 1999311287}
+  adsMoneyButton: {fileID: 299393568}
+  showRewardedAdsButton: {fileID: 953831018}
+  playerTrigger: {fileID: 2129386546}
+--- !u!4 &620603487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620603485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622080548
 GameObject:
   m_ObjectHideFlags: 0
@@ -25393,7 +25457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &721437344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25418,6 +25482,8 @@ MonoBehaviour:
   tutorialFirstAdsPanel: {fileID: 0}
   upgradeButton: {fileID: 0}
   tutorialHelathAdsPanel: {fileID: 0}
+  isAdsShownRewardedHealth: 0
+  isAdsShownRewarded: 0
   coinAnim: {fileID: 1999311287}
 --- !u!4 &721437345
 Transform:
@@ -31238,6 +31304,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 620603486}
+        m_TargetAssemblyTypeName: AdsShowControl, Assembly-CSharp
+        m_MethodName: AdsShowHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &953831021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31383,7 +31461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: 0.000000016396507, z: -0.000000005216728, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.668, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36176,7 +36254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30318558, y: 0.000000016396507, z: -0.000000005216728, w: 0.9529315}
+  m_LocalRotation: {x: 0.30318558, y: -0.0000000163965, z: 0.0000000052167257, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.668, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -55073,3 +55151,4 @@ SceneRoots:
   - {fileID: 481863163}
   - {fileID: 1529801979}
   - {fileID: 721437345}
+  - {fileID: 620603487}

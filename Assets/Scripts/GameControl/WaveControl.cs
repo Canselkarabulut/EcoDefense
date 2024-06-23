@@ -23,7 +23,7 @@ public class WaveControl : MonoBehaviour
     public GameObject upgradeButton;
     public UpgradeButtonScript upgradePanel;
     public GameObject floatingJoystick;
-
+ 
     [Header("GameObject")] public GameObject enemys;
     public GameObject bulletSpawn;
     public ParticleSystem shockWave;
@@ -187,6 +187,8 @@ public class WaveControl : MonoBehaviour
         ShockWaveEffect();
         adsManager.additionalMoneyCount = 2;
         adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
+        adsManager.isAdsShownRewarded = false;
+        adsManager.isAdsShownRewardedHealth = false; 
     }
 
 
@@ -322,6 +324,7 @@ public class WaveControl : MonoBehaviour
             hitEffect.gameObject.SetActive(true);
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
+           // upgradeButton.GetComponent<UpgradeButton>().isActive = false;
             upgradeButton.SetActive(false);
             additionalMoneyButton.SetActive(false);
             StartCoroutine(GameBreakWait());
