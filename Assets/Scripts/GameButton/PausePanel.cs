@@ -23,7 +23,7 @@ public class PausePanel : MonoBehaviour
             gameControl.SetActive(true);
         upgradeButton.interactable = true;
         //upgradeButton.GetComponent<UpgradeButton>().isActive = false;
-        upgradeButton.GetComponent<UpgradeButton>().warningHand.SetActive(false);
+     //   upgradeButton.GetComponent<UpgradeButton>().warningHand.SetActive(false);
         pauseButton.interactable = true;
         if (waveControl != null)
         {

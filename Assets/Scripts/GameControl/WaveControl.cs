@@ -325,7 +325,7 @@ public class WaveControl : MonoBehaviour
             countdownText.transform.parent.gameObject.SetActive(false);
             countdownText.gameObject.SetActive(false);
            // upgradeButton.GetComponent<UpgradeButton>().isActive = false;
-            upgradeButton.SetActive(false);
+          //  upgradeButton.SetActive(false);
             additionalMoneyButton.SetActive(false);
             StartCoroutine(GameBreakWait());
         }
