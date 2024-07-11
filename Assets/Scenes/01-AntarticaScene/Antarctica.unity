@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adsManager: {fileID: 1607606702}
-  additionalMoneyCount: 2
+  additionalMoneyCount: 1
   additionalMoneyCountText: {fileID: 6917664269063246054}
   gameEconomy: {fileID: 1068201431}
   coinAnim: {fileID: 7227268490266133497}
@@ -1422,7 +1422,7 @@ MonoBehaviour:
   playerTrigger: {fileID: 2129386546}
   showRewardedAdsButton: {fileID: 7121022286194478113}
   additionalMoneyButton: {fileID: 5693979327525118353}
-  additionalMoneyCount: 2
+  additionalMoneyCount: 1
   additionalMoneyCountText: {fileID: 6917664269063246054}
   tutorialFirstAdsPanel: {fileID: 244776553}
   upgradeButton: {fileID: 7034903875099136177}
@@ -10976,7 +10976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b739c73fcd0a11429854e826087157a, type: 2}
   m_sharedMaterial: {fileID: -5802583431396632980, guid: 5b739c73fcd0a11429854e826087157a, type: 2}
@@ -14067,6 +14067,6 @@ SceneRoots:
   - {fileID: 159532056408184373}
   - {fileID: 3078881672697059281}
   - {fileID: 4588175562300095087}
-  - {fileID: 1607606703}
   - {fileID: 1542961760}
+  - {fileID: 1607606703}
   - {fileID: 477453483}

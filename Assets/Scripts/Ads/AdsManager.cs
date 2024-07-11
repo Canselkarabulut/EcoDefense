@@ -61,120 +61,11 @@ public class AdsManager : MonoBehaviour
         }
     }
 
-//    #region Banner
-//
-//    // These ad units are configured to always serve test ads.
-//#if UNITY_ANDROID
-//  //  private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
-//     private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
-//#elif UNITY_IPHONE
-//  private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
-//#else
-//  private string _adUnitId = "unused";
-//#endif
-//
-//    BannerView _bannerView;
-//
-//    /// <summary>
-//    /// Creates a 320x50 banner view at top of the screen.
-//    /// </summary>
-//    public void CreateBannerView()
-//    {
-///////        Debug.Log("Creating banner view");
-//
-//        // If we already have a banner, destroy the old one.
-//        if (_bannerView != null)
-//        {
-//            DestroyBannerView();
-//        }
-//
-//        // Create a 320x50 banner at top of the screen
-//        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
-//    }
-//
-//
-//    public void LoadAd()
-//    {
-//        // create an instance of a banner view first.
-//        if (_bannerView == null)
-//        {
-//            CreateBannerView();
-//        }
-//
-//        // create our request used to load the ad.
-//        var adRequest = new AdRequest();
-//
-//        // send the request to load the ad.
-///////        Debug.Log("Loading banner ad.");
-//        _bannerView.LoadAd(adRequest);
-//    }
-//
-//    /// <summary>
-//    /// listen to events the banner view may raise.
-//    /// </summary>
-//    private void ListenToAdEvents()
-//    {
-//        // Raised when an ad is loaded into the banner view.
-//        _bannerView.OnBannerAdLoaded += () =>
-//        {
-//            /////       Debug.Log("Banner view loaded an ad with response : "
-//            /////                 + _bannerView.GetResponseInfo());
-//        };
-//        // Raised when an ad fails to load into the banner view.
-//        _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
-//        {
-//            Debug.LogError("Banner view failed to load an ad with error : "
-//                           + error);
-//        };
-//        // Raised when the ad is estimated to have earned money.
-//        _bannerView.OnAdPaid += (AdValue adValue) =>
-//        {
-//            /////           Debug.Log(String.Format("Banner view paid {0} {1}.",
-///////                adValue.Value,
-//            /////               adValue.CurrencyCode));
-//        };
-//        // Raised when an impression is recorded for an ad.
-//        _bannerView.OnAdImpressionRecorded += () =>
-//        {
-//            /* Debug.Log("Banner view recorded an impression.");*/
-//        };
-//        // Raised when a click is recorded for an ad.
-//        _bannerView.OnAdClicked += () =>
-//        {
-//            /* Debug.Log("Banner view was clicked.");*/
-//        };
-//        // Raised when an ad opened full screen content.
-//        _bannerView.OnAdFullScreenContentOpened += () =>
-//        {
-//            /*"Banner view full screen content opened.");*/
-//        };
-//        // Raised when the ad closed full screen content.
-//        _bannerView.OnAdFullScreenContentClosed += () =>
-//        {
-//            /*"Banner view full screen content closed.");*/
-//        };
-//    }
-//
-//    /// <summary>
-//    /// Destroys the banner view.
-//    /// </summary>
-//    public void DestroyBannerView()
-//    {
-//        if (_bannerView != null)
-//        {
-///////            Debug.Log("Destroying banner view.");
-//            _bannerView.Destroy();
-//            _bannerView = null;
-//        }
-//    }
-//
-//    #endregion
-
     #region InterstitialAd
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    //  private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
+ //     private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
     private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
 
 #elif UNITY_IPHONE
@@ -324,8 +215,8 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    //  private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
-    private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
+      private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
+   // private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
@@ -457,7 +348,7 @@ public class AdsManager : MonoBehaviour
                 if (additionalMoneyCount == 0)
                 {
                     additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
-                    additionalMoneyCount = 2;
+                    additionalMoneyCount = 1;
                     additionalMoneyCountText.text = additionalMoneyCount.ToString();
                 }
 
