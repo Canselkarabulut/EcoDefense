@@ -64,11 +64,11 @@ public class WaveControl : MonoBehaviour
     public GameObject showRewardedAdsButton;
     public AdsManager adsManager;
     
-    [Header("TutorialPanel")]
-    public GameObject tutorialUpgradePanel;
-    public GameObject tutorialFirstAdsPanel;
-    public GameObject tutorialHealthAds;
-    public GameObject healthLine;
+  //  [Header("TutorialPanel")]
+  //  public GameObject tutorialUpgradePanel;
+  //  public GameObject tutorialFirstAdsPanel;
+ //   public GameObject tutorialHealthAds;
+  //  public GameObject healthLine;
    
    
 
@@ -135,10 +135,10 @@ public class WaveControl : MonoBehaviour
         waitStatus = WaitStatus.Game;
         WaveWaitTime();
         additionalMoneyButton.SetActive(false);
-        if (tutorialUpgradePanel != null)
-        {
-            tutorialUpgradePanel.SetActive(false);
-        }
+      //   if (tutorialUpgradePanel != null)
+      //  {
+      //      tutorialUpgradePanel.SetActive(false);
+      //  }
 
         saveTutorialCount = PlayerPrefs.GetInt("tutorialCount", 0);
         tutorialCount = saveTutorialCount;
@@ -185,8 +185,8 @@ public class WaveControl : MonoBehaviour
         enemyLimit = _enemyLimit;
         waveText.text = _waveString;
         ShockWaveEffect();
-        adsManager.additionalMoneyCount = 2;
-        adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
+        adsManager.additionalMoneyCount = 1;
+      //  adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
         adsManager.isAdsShownRewarded = false;
         adsManager.isAdsShownRewardedHealth = false; 
     }
@@ -202,10 +202,10 @@ public class WaveControl : MonoBehaviour
                 hitEffect.gameObject.SetActive(false);
                 healthPenguins.SetActive(true);
                 showRewardedAdsButton.SetActive(false);
-                if (tutorialHealthAds != null)
-                {
-                    tutorialHealthAds.SetActive(false);
-                }
+              //  if (tutorialHealthAds != null)
+              //  {
+              //      tutorialHealthAds.SetActive(false);
+              //  }
 
                 countdownText.gameObject.SetActive(true);
                 countdownText.transform.parent.gameObject.SetActive(true);
@@ -215,35 +215,35 @@ public class WaveControl : MonoBehaviour
                 tutorialCount++;
                 PlayerPrefs.SetInt("tutorialCount", tutorialCount);
                 saveTutorialCount = PlayerPrefs.GetInt("tutorialCount");
-                if (waveNumber == WaveNumber.Wave1)
-                    //sadece en başta bir kere çağırılacak
-                {
-                    if (saveTutorialCount == 1)
-                    {
-                        if (tutorialUpgradePanel != null)
-                        {
-                            player.GetComponent<PlayerController>().floatingJoystick = null;
-                            player.GetComponent<PlayerController>().anim.SetBool("isRun",false);
-                          //  floatingJoystick.gameObject.SetActive(false);
-                          
-                            tutorialUpgradePanel.SetActive(true); // upgrade buttonunu gösteren el paneli
-                            //geri sayımı durdurduruldu ve kapanınca geri sayım yeniden başlıyor
-                        }
-                        //tutorial panreli aç yeşil alana git desin
-                        //upgrade butonuna bas diyen el çıksın
-                        //paranın yetersiz olduğu animasyonunu görelim upgrade yi kapattıralım para buttonununa bastırtıp oyuncuyu salalım
-                    }
-                    else
-                    {
-                        if (healthLine != null)
-                            healthLine.SetActive(false);
-                    }
-                }
-                else
-                {
-                    if (healthLine != null)
-                        healthLine.SetActive(false);
-                }
+               // if (waveNumber == WaveNumber.Wave1)
+               //     //sadece en başta bir kere çağırılacak
+               // {
+               //     if (saveTutorialCount == 1)
+               //     {
+               //         if (tutorialUpgradePanel != null)
+               //         {
+               //             player.GetComponent<PlayerController>().floatingJoystick = null;
+               //             player.GetComponent<PlayerController>().anim.SetBool("isRun",false);
+               //           //  floatingJoystick.gameObject.SetActive(false);
+               //           
+               //             tutorialUpgradePanel.SetActive(true); // upgrade buttonunu gösteren el paneli
+               //             //geri sayımı durdurduruldu ve kapanınca geri sayım yeniden başlıyor
+               //         }
+               //         //tutorial panreli aç yeşil alana git desin
+               //         //upgrade butonuna bas diyen el çıksın
+               //         //paranın yetersiz olduğu animasyonunu görelim upgrade yi kapattıralım para buttonununa bastırtıp oyuncuyu salalım
+               //     }
+               //     else
+               //     {
+               //         if (healthLine != null)
+               //             healthLine.SetActive(false);
+               //     }
+               // }
+               // else
+               // {
+               //     if (healthLine != null)
+               //         healthLine.SetActive(false);
+               // }
 
                 if (_countdownNum > 1)
                 {
@@ -347,10 +347,10 @@ public class WaveControl : MonoBehaviour
     {
         if (isCountdown)
         {
-            if (tutorialUpgradePanel != null && tutorialFirstAdsPanel != null)
-            {
-                if (!tutorialUpgradePanel.activeInHierarchy && !tutorialFirstAdsPanel.activeInHierarchy)
-                {
+          //  if ( tutorialFirstAdsPanel != null)
+           // {
+            //    if (!tutorialFirstAdsPanel.activeInHierarchy)
+             //   {
                     _countdownNum -= Time.deltaTime;
                     countdownText.text = Convert.ToInt32(_countdownNum).ToString();
                     if (_countdownNum <= 1)
@@ -358,18 +358,18 @@ public class WaveControl : MonoBehaviour
                         isCountdown = false;
                         WaveWaitTime();
                     }
-                }
-            }
-            else
-            {
-                _countdownNum -= Time.deltaTime;
-                countdownText.text = Convert.ToInt32(_countdownNum).ToString();
-                if (_countdownNum <= 1)
-                {
-                    isCountdown = false;
-                    WaveWaitTime();
-                }
-            }
+             //   }
+        //    }
+          //  else
+       //     {
+     //           _countdownNum -= Time.deltaTime;
+      //          countdownText.text = Convert.ToInt32(_countdownNum).ToString();
+      //          if (_countdownNum <= 1)
+      //          {
+      //              isCountdown = false;
+      //              WaveWaitTime();
+       //         }
+     //       }
         }
     }
     public void ShockWaveEffect()

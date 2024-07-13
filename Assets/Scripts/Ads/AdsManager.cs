@@ -19,9 +19,9 @@ public class AdsManager : MonoBehaviour
     [Header("Button")] public GameObject showRewardedAdsButton;
     public GameObject additionalMoneyButton;
     [Header("Text")] public int additionalMoneyCount = 2;
-    public TextMeshProUGUI additionalMoneyCountText;
+//    public TextMeshProUGUI additionalMoneyCountText;
 
-    public GameObject tutorialFirstAdsPanel;
+    //public GameObject tutorialFirstAdsPanel;
     public Button upgradeButton;
     public GameObject tutorialHelathAdsPanel;
 
@@ -65,8 +65,8 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
- //     private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
-    private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
+      private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
+  //  private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
 
 #elif UNITY_IPHONE
   private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/4411468910";
@@ -326,15 +326,15 @@ public class AdsManager : MonoBehaviour
                 settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
             }
 
-            if (tutorialFirstAdsPanel != null)
-                if (tutorialFirstAdsPanel.activeInHierarchy)
-                {
-                    if (upgradeButton != null)
-                    {
-                        upgradeButton.interactable = true;
-                        tutorialFirstAdsPanel.SetActive(false);
-                    }
-                }
+          //  if (tutorialFirstAdsPanel != null)
+          //      if (tutorialFirstAdsPanel.activeInHierarchy)
+           //     {
+            //        if (upgradeButton != null)
+            //        {
+           //             upgradeButton.interactable = true;
+            //            tutorialFirstAdsPanel.SetActive(false);
+           //         }
+          //      }
 
             _rewardedAd.Show((Reward reward) =>
             {
@@ -342,14 +342,14 @@ public class AdsManager : MonoBehaviour
                 // kullanıcıya verilecek ödül burada yazılacak
                 // playerın canı kırmızı olduğunda izlenen reklam
                 additionalMoneyCount--;
-                additionalMoneyCountText.text = additionalMoneyCount.ToString();
+             //   additionalMoneyCountText.text = additionalMoneyCount.ToString();
 
 
                 if (additionalMoneyCount == 0)
                 {
                     additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
                     additionalMoneyCount = 1;
-                    additionalMoneyCountText.text = additionalMoneyCount.ToString();
+                   // additionalMoneyCountText.text = additionalMoneyCount.ToString();
                 }
 
                 isAdsShownRewarded = true;

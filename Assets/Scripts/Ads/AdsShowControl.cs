@@ -6,7 +6,7 @@ using UnityEngine;
 public class AdsShowControl : MonoBehaviour
 {
     public AdsManager adsManager;
-    [Header("MoneyAds")] public int additionalMoneyCount = 2;
+    [Header("MoneyAds")] public int additionalMoneyCount = 1;
     public TextMeshProUGUI additionalMoneyCountText;
     public GameEconomy gameEconomy;
     public Animator coinAnim;
@@ -26,7 +26,7 @@ public class AdsShowControl : MonoBehaviour
             if (additionalMoneyCount == 0)
             {
                 adsMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
-                additionalMoneyCount = 2;
+                additionalMoneyCount = 1;
                 additionalMoneyCountText.text = additionalMoneyCount.ToString();
             }
             

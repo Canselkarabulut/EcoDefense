@@ -11,10 +11,6 @@ public class UpgradeButton : MonoBehaviour
     public Button pausePanel;
 
     public UpgradeButtonScript upgradeButtonScript;
-    private int gunPowerButtonCoin;
-    private int rateofFireButtonCoin;
-    private int sizeBallButtonCoin;
-    public bool isActive = false;
     public GameObject warninUgpgradeEffect;
     public Animator upgradeButton;
 
@@ -23,9 +19,6 @@ public class UpgradeButton : MonoBehaviour
         gameUpgradePanel.SetActive(false);
         gameControl.SetActive(true);
         Time.timeScale = 1;
-        gunPowerButtonCoin = upgradeButtonScript.gunPriceInt;
-        rateofFireButtonCoin = upgradeButtonScript.rateFirePriceInt;
-        sizeBallButtonCoin = upgradeButtonScript.sizeBallPriceInt;
     }
 
     public void Upgrade()
@@ -38,9 +31,9 @@ public class UpgradeButton : MonoBehaviour
 
     private void Update()
     {
-        UpgradeActiveEffect(warninUgpgradeEffect, gunPowerButtonCoin);
-        UpgradeActiveEffect(warninUgpgradeEffect, rateofFireButtonCoin);
-        UpgradeActiveEffect(warninUgpgradeEffect, sizeBallButtonCoin);
+        UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.gunPriceInt);
+        UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.rateFirePriceInt);
+        UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.sizeBallPriceInt);
     }
 
     public void UpgradeActiveEffect(GameObject warningEffect, int priceInt)

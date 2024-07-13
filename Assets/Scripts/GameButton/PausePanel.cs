@@ -10,8 +10,8 @@ public class PausePanel : MonoBehaviour
     public GameObject gameControl;
     public Button upgradeButton;
     public Button pauseButton;
-    public GameObject tutorialUpgrade;
-    public GameObject tutorialAds;
+   // public GameObject tutorialUpgrade;
+    //public GameObject tutorialAds;
     public WaveControl waveControl;
   
     
@@ -25,27 +25,27 @@ public class PausePanel : MonoBehaviour
         //upgradeButton.GetComponent<UpgradeButton>().isActive = false;
      //   upgradeButton.GetComponent<UpgradeButton>().warningHand.SetActive(false);
         pauseButton.interactable = true;
-        if (waveControl != null)
-        {
-            if (waveControl.waveNumber == WaveNumber.Wave1)
-            {
-                if (waveControl.saveTutorialCount == 1)
-                {
-                    if (tutorialUpgrade != null)
-                    {
-                        tutorialUpgrade.SetActive(false);
-                    }
-                    if (tutorialAds != null)
-                    {
-                        //ilk halse
-                        tutorialAds.SetActive(true);
-                        upgradeButton.interactable = false;
-                        waveControl.saveTutorialCount++;
-
-                    }
-                }
-            }
-        }
+      //  if (waveControl != null)
+      //  {
+      //      if (waveControl.waveNumber == WaveNumber.Wave1)
+      //      {
+      //          if (waveControl.saveTutorialCount == 1)
+      //          {
+      //              if (tutorialUpgrade != null)
+      //              {
+      //                  tutorialUpgrade.SetActive(false);
+      //              }
+      //              if (tutorialAds != null)
+      //              {
+      //                  //ilk halse
+      //                  tutorialAds.SetActive(true);
+      //                  upgradeButton.interactable = false;
+      //                  waveControl.saveTutorialCount++;
+////
+      //              }
+      //          }
+      //      }
+      //  }
         gameObject.SetActive(false);
        
 
