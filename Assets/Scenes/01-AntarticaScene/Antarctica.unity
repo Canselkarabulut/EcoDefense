@@ -602,83 +602,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5809724252054851561, guid: d722cb69624a91546ae186eeb306d1aa, type: 3}
   m_PrefabInstance: {fileID: 159532056408184373}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1036544970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1036544971}
-  - component: {fileID: 1036544973}
-  - component: {fileID: 1036544972}
-  m_Layer: 5
-  m_Name: TutorialHealthAds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1036544971
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036544970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1373739104}
-  - {fileID: 1417323980}
-  m_Father: {fileID: 5383532982190652045}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1036544972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036544970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1036544973
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036544970}
-  m_CullTransparentMesh: 1
 --- !u!114 &1068201429 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
@@ -929,98 +852,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1373739103
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1373739104}
-  - component: {fileID: 1373739107}
-  - component: {fileID: 1373739106}
-  - component: {fileID: 1373739108}
-  m_Layer: 5
-  m_Name: ImgHandHealthAds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1373739104
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373739103}
-  m_LocalRotation: {x: -0, y: -0, z: 0.10870785, w: -0.9940738}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1036544971}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.482}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 122}
-  m_SizeDelta: {x: 86.8885, y: 69.41962}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1373739106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373739103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 47c47a3d81e375145aa9b9eb23f898f8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1373739107
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373739103}
-  m_CullTransparentMesh: 1
---- !u!114 &1373739108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373739103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4267a4e34259ab24e9ed54650eb9cbbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 1417323980}
-  pointB: {fileID: 652037400}
-  duration: 7
-  isHandDistance: 0
 --- !u!1 &1390399678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,41 +949,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390399678}
   m_CullTransparentMesh: 1
---- !u!1 &1417323979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1417323980}
-  m_Layer: 5
-  m_Name: targetA
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1417323980
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417323979}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1036544971}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 112}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!20 &1427497732 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8245606508126740110, guid: 96856a1e25cbd0743952cd5da709bfcc, type: 3}
@@ -1217,7 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adsPanel: {fileID: 244776553}
-  tutorialHealthAds: {fileID: 1036544970}
+  tutorialHealthAds: {fileID: 0}
   waveControl: {fileID: 1068201429}
   gameplayTutorial: {fileID: 641172101}
   floatingJoystick: {fileID: 3540359252748192136}
@@ -1301,9 +1097,7 @@ MonoBehaviour:
   showRewardedAdsButton: {fileID: 7121022286194478113}
   additionalMoneyButton: {fileID: 5693979327525118353}
   additionalMoneyCount: 1
-  additionalMoneyCountText: {fileID: 0}
   upgradeButton: {fileID: 7034903875099136177}
-  tutorialHelathAdsPanel: {fileID: 1036544970}
   isAdsShownRewardedHealth: 0
   isAdsShownRewarded: 0
   coinAnim: {fileID: 7227268490266133497}
@@ -2647,7 +2441,7 @@ PrefabInstance:
     - target: {fileID: 3269075284098305400, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
       propertyPath: tutorialHealthAds
       value: 
-      objectReference: {fileID: 1036544970}
+      objectReference: {fileID: 0}
     - target: {fileID: 3269075284098305400, guid: c6514adb03ae3dd4183fa49b281ca580, type: 3}
       propertyPath: settingsController
       value: 
@@ -4795,6 +4589,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1607606702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: NoShowRewardedAdsAdditionalMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1773310009904148555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6686,6 +6492,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1607606702}
         m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
         m_MethodName: ShowRewardedAdHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1607606702}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: NoShowRewardedAdHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8812,7 +8630,7 @@ PrefabInstance:
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: tutorialHealthAds
       value: 
-      objectReference: {fileID: 1036544970}
+      objectReference: {fileID: 0}
     - target: {fileID: 2594701673123521750, guid: c94da23de27470d46a7c3e001c438d76, type: 3}
       propertyPath: tutorialHealthPanel
       value: 
@@ -8862,7 +8680,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8777043662026375658}
-  - {fileID: 1036544971}
   - {fileID: 641172102}
   - {fileID: 1388887996751178247}
   - {fileID: 8296618467294520528}

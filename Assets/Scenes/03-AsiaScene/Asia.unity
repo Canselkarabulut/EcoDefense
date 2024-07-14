@@ -4608,6 +4608,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 708212654}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: NoShowRewardedAdsAdditionalMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &473783102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6452,7 +6464,6 @@ MonoBehaviour:
   additionalMoneyButton: {fileID: 473783099}
   additionalMoneyCount: 2
   upgradeButton: {fileID: 0}
-  tutorialHelathAdsPanel: {fileID: 0}
   isAdsShownRewardedHealth: 0
   isAdsShownRewarded: 0
   coinAnim: {fileID: 1999311287}
@@ -7811,7 +7822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3031856, y: -3e-45, z: 1e-45, w: 0.9529315}
+  m_LocalRotation: {x: 0.3031856, y: 1e-45, z: 0, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.68, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9096,6 +9107,18 @@ MonoBehaviour:
       - m_Target: {fileID: 708212654}
         m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
         m_MethodName: ShowRewardedAdHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 708212654}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: NoShowRewardedAdHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11954,7 +11977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587605557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3031856, y: -3e-45, z: 1e-45, w: 0.9529315}
+  m_LocalRotation: {x: 0.3031856, y: 1e-45, z: -0, w: 0.9529315}
   m_LocalPosition: {x: 0.002, y: 3.68, z: -6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

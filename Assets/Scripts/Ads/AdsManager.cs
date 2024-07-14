@@ -18,18 +18,20 @@ public class AdsManager : MonoBehaviour
     private int lastSoundNum;
     [Header("Button")] public GameObject showRewardedAdsButton;
     public GameObject additionalMoneyButton;
+
     [Header("Text")] public int additionalMoneyCount = 2;
 //    public TextMeshProUGUI additionalMoneyCountText;
 
     //public GameObject tutorialFirstAdsPanel;
     public Button upgradeButton;
-    public GameObject tutorialHelathAdsPanel;
+
 
     public bool isAdsShownRewardedHealth;
     public bool isAdsShownRewarded;
 
     public Animator coinAnim;
     private int countShowRewardedClick;
+    private bool idLoadRewardedAd;
 
     private void Start()
     {
@@ -65,7 +67,7 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-  //    private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
+    //    private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
     private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
 
 #elif UNITY_IPHONE
@@ -215,7 +217,7 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-  //    private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
+    //    private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
     private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
@@ -259,6 +261,7 @@ public class AdsManager : MonoBehaviour
 /////                          + ad.GetResponseInfo());
 
                 _rewardedAd = ad;
+                Debug.Log("_ad = rewardedAd");
             });
     }
 
@@ -283,11 +286,6 @@ public class AdsManager : MonoBehaviour
                 {
                     lastSoundNum = PlayerPrefs.GetInt("soundNum");
                     settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
-                }
-
-                if (tutorialHelathAdsPanel != null)
-                {
-                    tutorialHelathAdsPanel.SetActive(false);
                 }
 
                 _rewardedAd.Show((Reward reward) =>
@@ -326,39 +324,20 @@ public class AdsManager : MonoBehaviour
                 settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
             }
 
-          //  if (tutorialFirstAdsPanel != null)
-          //      if (tutorialFirstAdsPanel.activeInHierarchy)
-           //     {
-            //        if (upgradeButton != null)
-            //        {
-           //             upgradeButton.interactable = true;
-            //            tutorialFirstAdsPanel.SetActive(false);
-           //         }
-          //      }
-
             _rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
-                // kullanıcıya verilecek ödül burada yazılacak
-                // playerın canı kırmızı olduğunda izlenen reklam
                 additionalMoneyCount--;
-             //   additionalMoneyCountText.text = additionalMoneyCount.ToString();
-
-
                 if (additionalMoneyCount == 0)
                 {
                     additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
                     additionalMoneyCount = 1;
-                   // additionalMoneyCountText.text = additionalMoneyCount.ToString();
                 }
 
                 isAdsShownRewarded = true;
                 GameEconomy.sCoinCount += 200;
                 gameEconomy.CoinText();
                 coinAnim.SetBool("isCoinAdd", true);
-
-
-/////                Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
             RegisterReloadHandler(_rewardedAd);
         }
@@ -402,4 +381,33 @@ public class AdsManager : MonoBehaviour
     }
 
     #endregion
+
+    public void NoShowRewardedAdHealth()
+    {
+        if (_rewardedAd == null)
+        {
+            showRewardedAdsButton.SetActive(false); // ödüllü reklamı açan buton kapandı
+            playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
+            playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
+            isAdsShownRewardedHealth = true;
+        }
+    }
+
+    public void NoShowRewardedAdsAdditionalMoney()
+    {
+        if (_rewardedAd == null)
+        {
+            additionalMoneyCount--;
+            if (additionalMoneyCount == 0)
+            {
+                additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
+                additionalMoneyCount = 1;
+            }
+
+            isAdsShownRewarded = true;
+            GameEconomy.sCoinCount += 200;
+            gameEconomy.CoinText();
+            coinAnim.SetBool("isCoinAdd", true);
+        }
+    }
 }
