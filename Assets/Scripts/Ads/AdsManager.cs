@@ -65,8 +65,8 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-      private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
-  //  private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
+  //    private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
+    private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
 
 #elif UNITY_IPHONE
   private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/4411468910";
@@ -215,8 +215,8 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-      private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
-   // private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
+  //    private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
+    private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
