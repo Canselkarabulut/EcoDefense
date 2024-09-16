@@ -220,9 +220,9 @@ public class AdsManager : MonoBehaviour
         private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
   //  private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
+  private string _adRewardedUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
-  private string _adUnitId = "unused";
+  private string _adRewardedUnitId = "unused";
 #endif
 
     private RewardedAd _rewardedAd;

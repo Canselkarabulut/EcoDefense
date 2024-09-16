@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3879925, g: 0.46408516, b: 0.55341953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -910,6 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b61fe9c9940864ca7094b9c7ae86d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bannerPrefab: {fileID: 191867095829603873, guid: 3ed59855be2082346af110d08b1e776b, type: 3}
 --- !u!4 &592286968
 Transform:
   m_ObjectHideFlags: 0
@@ -2365,12 +2365,12 @@ GameObject:
   - component: {fileID: 1401437216}
   - component: {fileID: 1401437215}
   m_Layer: 0
-  m_Name: BannerAds
+  m_Name: GoogleBannerAds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1401437215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2383,6 +2383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d631e23f26dc8f4186fcb1bcc66829d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bannerAdsView: {fileID: 0}
 --- !u!4 &1401437216
 Transform:
   m_ObjectHideFlags: 0
