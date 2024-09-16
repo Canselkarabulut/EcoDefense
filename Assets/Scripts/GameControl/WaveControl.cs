@@ -63,7 +63,8 @@ public class WaveControl : MonoBehaviour
    
     public GameObject showRewardedAdsButton;
     public AdsManager adsManager;
-    
+
+    public GameObject line;
   //  [Header("TutorialPanel")]
   //  public GameObject tutorialUpgradePanel;
   //  public GameObject tutorialFirstAdsPanel;
@@ -268,6 +269,7 @@ public class WaveControl : MonoBehaviour
                             waveNumber = WaveNumber.Wave3;
                             WaveNumberReturn();
                             EnemyText();
+                            line.SetActive(false);
                             break;
                         case WaveNumber.Wave3:
                             waveNumber = WaveNumber.Wave4;
