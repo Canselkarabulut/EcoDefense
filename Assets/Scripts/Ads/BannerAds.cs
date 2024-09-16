@@ -20,7 +20,7 @@ public class BannerAds : MonoBehaviour
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
   private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
- //  private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
+//   private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else
@@ -28,7 +28,7 @@ public class BannerAds : MonoBehaviour
 #endif
 
     BannerView _bannerView;
-
+    public Transform bannerAdsView;
     /// <summary>
     /// Creates a 320x50 banner view at top of the screen.
     /// </summary>
@@ -43,7 +43,8 @@ public class BannerAds : MonoBehaviour
         }
 
         // Create a 320x50 banner at top of the screen
-        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
+      
+        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Bottom);
     }
 
 
