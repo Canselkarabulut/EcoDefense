@@ -1,4 +1,4 @@
-﻿using CrazyGames;
+﻿//using CrazyGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,14 +29,14 @@ public class EditCrazySDKLoadingScene : MonoBehaviour
     private bool idLoadRewardedAd;
 
 
-    [SerializeField] private CrazyAdType adType = CrazyAdType.Midgame;
+ //   [SerializeField] private CrazyAdType adType = CrazyAdType.Midgame;
 
     void Start()
     {
-        if (CrazySDK.IsAvailable)
-        {
-            CrazySDK.Init(() => { Debug.Log("CrazySDK initialized"); });
-        }
+     //   if (CrazySDK.IsAvailable)
+     //   {
+     //       CrazySDK.Init(() => { Debug.Log("CrazySDK initialized"); });
+    //    }
 
         musicManager = FindObjectOfType<MusicManager>();
         lastMusicNum = PlayerPrefs.GetInt("musicNum");
@@ -46,11 +46,11 @@ public class EditCrazySDKLoadingScene : MonoBehaviour
 
     public void ShowRewardedAdHealth() //reklam açılınca müzikleri kapat // oyunu durdur
     {
-        print("Player Died! Requesting ad " + adType);
-        CrazySDK.Ad.RequestAd(
-            adType,
-            () =>
-            {
+      //  print("Player Died! Requesting ad " + adType);
+     //   CrazySDK.Ad.RequestAd(
+     //       adType,
+     //       () =>
+   //         {
                 countShowRewardedClick++;
                 if (countShowRewardedClick == 3)
                 {
@@ -69,23 +69,23 @@ public class EditCrazySDKLoadingScene : MonoBehaviour
                     }
                 }
 
-                Time.timeScale = 0;
-            },
-            (error) =>
-            {
-                enabled = false;
-                print("Ad error, not respawning: " + error);
-            },
-            () =>
-            {
-                Time.timeScale = 1;
-                if (musicManager != null)
-                {
-                    if (lastMusicNum == 1)
-                    {
-                        musicManager.StartMusic();
-                    }
-                }
+         //       Time.timeScale = 0;
+       //     },
+       //     (error) =>
+        //    {
+       //         enabled = false;
+      //          print("Ad error, not respawning: " + error);
+      //      },
+     //       () =>
+   //         {
+   //             Time.timeScale = 1;
+   //             if (musicManager != null)
+   //             {
+   //                 if (lastMusicNum == 1)
+  //                  {
+ //                       musicManager.StartMusic();
+  //                  }
+   //             }
 
                 if (settingsController != null)
                 {
@@ -100,18 +100,18 @@ public class EditCrazySDKLoadingScene : MonoBehaviour
                 playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
                 countShowRewardedClick = 0;
               
-            }
-        );
+          //  }
+      //  );
     }
 
 
     public void ShowRewardedAdsAdditionalMoney()
     {
-        print("Player Died! Requesting ad " + adType);
-        CrazySDK.Ad.RequestAd(
-            adType,
-            () =>
-            {
+      //  print("Player Died! Requesting ad " + adType);
+     //   CrazySDK.Ad.RequestAd(
+     //       adType,
+    //        () =>
+    //        {
                 //sesleri kapat
                 if (musicManager != null)
                 {
@@ -126,23 +126,23 @@ public class EditCrazySDKLoadingScene : MonoBehaviour
                 }
 
 
-                Time.timeScale = 0;
-            },
-            (error) =>
-            {
-                enabled = false;
-                print("Ad error, not respawning: " + error);
-            },
-            () =>
-            {
-                Time.timeScale = 1;
-                if (musicManager != null)
-                {
-                    if (lastMusicNum == 1)
-                    {
-                        musicManager.StartMusic();
-                    }
-                }
+         //       Time.timeScale = 0;
+   //         },
+   //         (error) =>
+   //        {
+   //             enabled = false;
+  //              print("Ad error, not respawning: " + error);
+  //          },
+  //          () =>
+   //         {
+   //             Time.timeScale = 1;
+  //              if (musicManager != null)
+   //             {
+    //                if (lastMusicNum == 1)
+  //                  {
+  //                      musicManager.StartMusic();
+   //                 }
+   //             }
 
                 if (settingsController != null)
                 {
@@ -163,6 +163,6 @@ public class EditCrazySDKLoadingScene : MonoBehaviour
                 gameEconomy.CoinText();
                 coinAnim.SetBool("isCoinAdd", true);
             }
-        );
-    }
+     //  );
+   // }
 }
