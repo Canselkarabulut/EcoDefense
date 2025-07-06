@@ -68,4 +68,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/07-FinishScene/FinishScene.unity
     guid: 5b07ddc585473a64bbe8be1d2622e005
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a3590d84fe26510418932974d9f3bfc3, type: 2}
