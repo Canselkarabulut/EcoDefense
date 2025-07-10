@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GoogleMobileAds;
-using GoogleMobileAds.Api;
+ using GoogleMobileAds;
+ using GoogleMobileAds.Api;
 
 public class BannerAds : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class BannerAds : MonoBehaviour
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
   private string _adUnitId = "ca-app-pub-6768650963516253/7128626846"; //orjinal
-//   private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
+ //  private string _adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else
@@ -80,7 +80,7 @@ public class BannerAds : MonoBehaviour
             Debug.LogError("Banner view failed to load an ad with error : "
                            + error);
         };
-        // Raised when the ad is estimated to have earned money.
+ // Raised when the ad is estimated to have earned money.
         _bannerView.OnAdPaid += (AdValue adValue) =>
         {
             Debug.Log(String.Format("Banner view paid {0} {1}.",
@@ -119,5 +119,5 @@ public class BannerAds : MonoBehaviour
             _bannerView.Destroy();
             _bannerView = null;
         }
-    }
+  }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
-using GoogleMobileAds.Api;
+ using GoogleMobileAds.Api;
+ using GoogleMobileAds;
 using TMPro;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
@@ -44,10 +45,10 @@ public class AdsManager : MonoBehaviour
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
-        });
+       });
         // LoadAd(); // banner reklam
         LoadInterstitialAd(); // geçiş reklamı
-        LoadRewardedAd(); //ödüllü reklam
+          LoadRewardedAd(); //ödüllü reklam
     }
 
     private void Update()
@@ -68,7 +69,7 @@ public class AdsManager : MonoBehaviour
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
     private string _adInterstitialUnitId = "ca-app-pub-6768650963516253/3341107840"; //orjinal
-    //  private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
+   //  private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712"; //test
 
 #elif UNITY_IPHONE
   private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/4411468910";
@@ -80,34 +81,34 @@ public class AdsManager : MonoBehaviour
     public void LoadInterstitialAd()
     {
         // Clean up the old ad before loading a new one.
-        if (_interstitialAd != null)
-        {
-            _interstitialAd.Destroy();
-            _interstitialAd = null;
-        }
+              if (_interstitialAd != null)
+            {
+                _interstitialAd.Destroy();
+               _interstitialAd = null;
+          }
 
 /////        Debug.Log("Loading the interstitial ad.");
 
         // create our request used to load the ad.
-        var adRequest = new AdRequest();
+           var adRequest = new AdRequest();
 
         // send the request to load the ad.
-        InterstitialAd.Load(_adInterstitialUnitId, adRequest,
+         InterstitialAd.Load(_adInterstitialUnitId, adRequest,
             (InterstitialAd ad, LoadAdError error) =>
             {
                 // if error is not null, the load request failed.
-                if (error != null || ad == null)
-                {
-                    Debug.LogError("interstitial ad failed to load an ad " +
-                                   "with error : " + error);
-                    return;
+                        if (error != null || ad == null)
+                        {
+                           Debug.LogError("interstitial ad failed to load an ad " +
+                                         "with error : " + error);
+                                              return;
                 }
 
 /////                Debug.Log("Interstitial ad loaded with response : "
 /////                          + ad.GetResponseInfo());
 
-                _interstitialAd = ad;
-            });
+             _interstitialAd = ad;
+                  });
     }
 
     public void ShowInterstitialAd()
@@ -128,17 +129,17 @@ public class AdsManager : MonoBehaviour
                 settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
             }
 
-            _interstitialAd.Show();
-            RegisterReloadHandler(_interstitialAd);
+              _interstitialAd.Show();
+               RegisterReloadHandler(_interstitialAd);
         }
-        else
+         else
         {
             Debug.LogError("Interstitial ad is not ready yet.");
         }
     }
 
-    private void RegisterEventHandlers(InterstitialAd interstitialAd)
-    {
+     private void RegisterEventHandlers(InterstitialAd interstitialAd)
+     {
         // Raised when the ad is estimated to have earned money.
         interstitialAd.OnAdPaid += (AdValue adValue) =>
         {
@@ -147,69 +148,69 @@ public class AdsManager : MonoBehaviour
 /////                adValue.CurrencyCode));
         };
         // Raised when an impression is recorded for an ad.
-        interstitialAd.OnAdImpressionRecorded += () =>
-        {
+           interstitialAd.OnAdImpressionRecorded += () =>
+            {
             /*"Interstitial ad recorded an impression.");*/
-        };
+               };
         // Raised when a click is recorded for an ad.
-        interstitialAd.OnAdClicked += () =>
-        {
+           interstitialAd.OnAdClicked += () =>
+            {
             /* Debug.Log("Interstitial ad was clicked.");*/
-        };
+                };
         // Raised when an ad opened full screen content.
-        interstitialAd.OnAdFullScreenContentOpened += () =>
-        {
+          interstitialAd.OnAdFullScreenContentOpened += () =>
+          {
             /////           Debug.Log("Interstitial ad full screen content opened.");
-        };
+               };
         // Raised when the ad closed full screen content.
-        interstitialAd.OnAdFullScreenContentClosed += () =>
-        {
+         interstitialAd.OnAdFullScreenContentClosed += () =>
+          {
 /////            Debug.Log("Interstitial ad full screen content closed.");
-        };
+       };
         // Raised when the ad failed to open full screen content.
-        interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
-        {
+         interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
+           {
 /////            Debug.LogError("Interstitial ad failed to open full screen content " +
 /////                           "with error : " + error);
-        };
+     };
     }
 
-    private void RegisterReloadHandler(InterstitialAd interstitialAd)
-    {
+   private void RegisterReloadHandler(InterstitialAd interstitialAd)
+ {
         // Raised when the ad closed full screen content.
-        interstitialAd.OnAdFullScreenContentClosed += () =>
-        {
+     interstitialAd.OnAdFullScreenContentClosed += () =>
+      {
             /////           Debug.Log("Interstitial Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadInterstitialAd();
+           LoadInterstitialAd();
             //sesleri eski haline çevir
-            if (musicManager != null)
+           if (musicManager != null)
             {
-                if (lastMusicNum == 1)
-                {
-                    musicManager.StartMusic();
+                           if (lastMusicNum == 1)
+               {
+                   musicManager.StartMusic();
                 }
-            }
+                     }
 
-            if (settingsController != null)
-            {
-                if (lastSoundNum == 1)
-                {
+                      if (settingsController != null)
+           {
+               if (lastSoundNum == 1)
+                         {
                     settingsController.GameSoundState(true, true, true, true, true, true, true, true, true);
-                }
-            }
-        };
+                                   }
+                             }
+                        };
         // Raised when the ad failed to open full screen content.
-        interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
-        {
-            Debug.LogError("Interstitial ad failed to open full screen content " +
-                           "with error : " + error);
+              interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
+              {
+                 Debug.LogError("Interstitial ad failed to open full screen content " +
+                                 "with error : " + error);
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadInterstitialAd();
-        };
-    }
+                   LoadInterstitialAd();
+                };
+ }
 
     #endregion
 
@@ -218,202 +219,202 @@ public class AdsManager : MonoBehaviour
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
     private string _adRewardedUnitId = "ca-app-pub-6768650963516253/9654987332"; //orjinal
-    //  private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
+  //    private string _adRewardedUnitId = "ca-app-pub-3940256099942544/5224354917"; //test
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
   private string _adUnitId = "unused";
 #endif
 
-    private RewardedAd _rewardedAd;
+  private RewardedAd _rewardedAd;
 
     /// <summary>
     /// Loads the rewarded ad.
     /// </summary>
-    public void LoadRewardedAd()
-    {
-        isAdsShownRewarded = false;
-        // Clean up the old ad before loading a new one.
+  public void LoadRewardedAd()
+   {
+       isAdsShownRewarded = false;
+       // Clean up the old ad before loading a new one.
         if (_rewardedAd != null)
-        {
-            _rewardedAd.Destroy();
-            _rewardedAd = null;
-        }
+       {
+           _rewardedAd.Destroy();
+           _rewardedAd = null;
+       }
 
 /////        Debug.Log("Loading the rewarded ad.");
 
         // create our request used to load the ad.
-        var adRequest = new AdRequest();
+       var adRequest = new AdRequest();
 
         // send the request to load the ad.
-        RewardedAd.Load(_adRewardedUnitId, adRequest,
-            (RewardedAd ad, LoadAdError error) =>
-            {
+      RewardedAd.Load(_adRewardedUnitId, adRequest,
+         (RewardedAd ad, LoadAdError error) =>
+          {
                 // if error is not null, the load request failed.
-                if (error != null || ad == null)
-                {
-                    Debug.LogError("Rewarded ad failed to load an ad " +
-                                   "with error : " + error);
-                    return;
-                }
+          if (error != null || ad == null)
+              {
+                                    Debug.LogError("Rewarded ad failed to load an ad " +
+                                                 "with error : " + error);
+                                                return;
+               }
 
 /////                Debug.Log("Rewarded ad loaded with response : "
 /////                          + ad.GetResponseInfo());
 
-                _rewardedAd = ad;
-                Debug.Log("_ad = rewardedAd");
+            _rewardedAd = ad;
+            Debug.Log("_ad = rewardedAd");
             });
-    }
+  }
 
-    public void ShowRewardedAdHealth()
-    {
-        countShowRewardedClick++;
-        if (countShowRewardedClick == 3)
-        {
-            const string rewardMsg =
-                "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
+  public void ShowRewardedAdHealth()
+   {
+       countShowRewardedClick++;
+      if (countShowRewardedClick == 2)
+       {
+           const string rewardMsg =
+               "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
 
-            if (_rewardedAd != null && _rewardedAd.CanShowAd())
+           if (_rewardedAd != null && _rewardedAd.CanShowAd())
             {
-                //sesleri kapat
-                if (musicManager != null)
-                {
-                    lastMusicNum = PlayerPrefs.GetInt("musicNum");
-                    musicManager.StopMusic();
-                }
+               //sesleri kapat
+               if (musicManager != null)
+               {
+                   lastMusicNum = PlayerPrefs.GetInt("musicNum");
+                   musicManager.StopMusic();
+               }
 
-                if (settingsController != null)
+               if (settingsController != null)
                 {
-                    lastSoundNum = PlayerPrefs.GetInt("soundNum");
-                    settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
-                }
+                   lastSoundNum = PlayerPrefs.GetInt("soundNum");
+                   settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
+               }
 
                 _rewardedAd.Show((Reward reward) =>
-                {
+               {
                     // TODO: Reward the user.
 
                     showRewardedAdsButton.SetActive(false); // ödüllü reklamı açan buton kapandı
                     playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
-                    playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
-                    countShowRewardedClick = 0;
-                    isAdsShownRewardedHealth = true;
-                });
-                RegisterReloadHandler(_rewardedAd);
+                   playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
+                   countShowRewardedClick = 0;
+                  isAdsShownRewardedHealth = true;
+               });
+               RegisterReloadHandler(_rewardedAd);
             }
         }
         else
         {
             playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
             playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
-            isAdsShownRewardedHealth = true;
-        }
+           isAdsShownRewardedHealth = true;
+       }
     }
 
 
-    public void ShowRewardedAdsAdditionalMoney()
+   public void ShowRewardedAdsAdditionalMoney()
     {
-        const string rewardMsg =
-            "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
+       const string rewardMsg =
+           "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
 
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
-            //sesleri kapat
-            if (musicManager != null)
+           //sesleri kapat
+           if (musicManager != null)
             {
-                lastMusicNum = PlayerPrefs.GetInt("musicNum");
+               lastMusicNum = PlayerPrefs.GetInt("musicNum");
                 musicManager.StopMusic();
             }
 
-            if (settingsController != null)
+           if (settingsController != null)
             {
-                lastSoundNum = PlayerPrefs.GetInt("soundNum");
-                settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
-            }
+               lastSoundNum = PlayerPrefs.GetInt("soundNum");
+               settingsController.GameSoundState(false, false, false, false, false, false, false, false, false);
+           }
 
             _rewardedAd.Show((Reward reward) =>
             {
-                // TODO: Reward the user.
-                additionalMoneyCount--;
-                if (additionalMoneyCount == 0)
-                {
-                    additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
-                    additionalMoneyCount = 1;
-                }
+               // TODO: Reward the user.
+               additionalMoneyCount--;
+               if (additionalMoneyCount == 0)
+              {
+                  additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
+                   additionalMoneyCount = 1;
+              }
 
                 isAdsShownRewarded = true;
                 GameEconomy.sCoinCount += 200;
-                gameEconomy.CoinText();
-                coinAnim.SetBool("isCoinAdd", true);
-            });
+               gameEconomy.CoinText();
+               coinAnim.SetBool("isCoinAdd", true);
+           });
             RegisterReloadHandler(_rewardedAd);
         }
     }
 
     private void RegisterReloadHandler(RewardedAd ad)
-    {
-        // Raised when the ad closed full screen content.
-        ad.OnAdFullScreenContentClosed += () =>
-        {
+   {
+ // Raised when the ad closed full screen content.
+       ad.OnAdFullScreenContentClosed += () =>
+       {
 /////            Debug.Log("Rewarded Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadRewardedAd();
-            //sesleri eski haline çevir
-            if (musicManager != null)
-            {
-                if (lastMusicNum == 1)
+          LoadRewardedAd();
+     //sesleri eski haline çevir
+           if (musicManager != null)
+           {
+               if (lastMusicNum == 1)
                 {
-                    musicManager.StartMusic();
-                }
-            }
+                   musicManager.StartMusic();
+               }
+                   }
 
-            if (settingsController != null)
-            {
-                if (lastSoundNum == 1)
-                {
-                    settingsController.GameSoundState(true, true, true, true, true, true, true, true, true);
-                }
+           if (settingsController != null)
+           {
+               if (lastSoundNum == 1)
+               {
+                   settingsController.GameSoundState(true, true, true, true, true, true, true, true, true);
+               }
             }
-        };
+       };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError("Rewarded ad failed to open full screen content " +
+           Debug.LogError("Rewarded ad failed to open full screen content " +
                            "with error : " + error);
 
-            // Reload the ad so that we can show another as soon as possible.
-            LoadRewardedAd();
+     // Reload the ad so that we can show another as soon as possible.
+           LoadRewardedAd();
         };
     }
 
     #endregion
 
-    public void NoShowRewardedAdHealth()
-    {
-        if (_rewardedAd == null)
-        {
+   public void NoShowRewardedAdHealth()
+   {
+       if (_rewardedAd == null)
+       {
             showRewardedAdsButton.SetActive(false); // ödüllü reklamı açan buton kapandı
-            playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
-            playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
-            isAdsShownRewardedHealth = true;
-        }
-    }
+           playerTrigger.healthBar.GetComponent<Renderer>().material = playerTrigger.healthbarGreen;
+           playerTrigger.healthBar.transform.localScale = new Vector3(.6f, 0.07f, 0.02f);
+           isAdsShownRewardedHealth = true;
+       }
+   }
 
-    public void NoShowRewardedAdsAdditionalMoney()
+   public void NoShowRewardedAdsAdditionalMoney()
     {
         if (_rewardedAd == null)
         {
-            additionalMoneyCount--;
-            if (additionalMoneyCount == 0)
-            {
-                additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
+           additionalMoneyCount--;
+           if (additionalMoneyCount == 0)
+          {
+               additionalMoneyButton.SetActive(false); // ödüllü reklamı açan buton kapandı
                 additionalMoneyCount = 1;
             }
 
-            isAdsShownRewarded = true;
-            GameEconomy.sCoinCount += 200;
-            gameEconomy.CoinText();
-            coinAnim.SetBool("isCoinAdd", true);
-        }
+           isAdsShownRewarded = true;
+           GameEconomy.sCoinCount += 200;
+           gameEconomy.CoinText();
+           coinAnim.SetBool("isCoinAdd", true);
+       }
     }
-}
+ }

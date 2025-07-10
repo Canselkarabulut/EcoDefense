@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
-using GoogleMobileAds.Api;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
