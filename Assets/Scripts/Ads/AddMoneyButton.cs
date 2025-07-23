@@ -16,22 +16,22 @@ public class AddMoneyButton : MonoBehaviour
     public GameObject player;
     public Button upgradeButton;
     
-    [Header("adsShowControl")]
-    public AdsShowControl adsShowControl;
+  //  [Header("adsShowControl")]
+  //  public AdsShowControl adsShowControl;
     public void AddPanelClose()
     {
         upgradeButton.interactable = true;
         player.GetComponent<PlayerController>().floatingJoystick = floatingJoystick;
         floatingJoystick.gameObject.SetActive(true);
         adsPanel.SetActive(false);
-        adsShowControl.AdsShow();
+      //  adsShowControl.AdsShow();
 
     }
    
     public void AddHealthPanelClose()
     {
         tutorialHealthAds.SetActive(false);
-        adsShowControl.AdsShowHealth();
+   //     adsShowControl.AdsShowHealth();
 
     }
 

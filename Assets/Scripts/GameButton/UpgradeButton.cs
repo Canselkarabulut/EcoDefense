@@ -29,12 +29,12 @@ public class UpgradeButton : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    private void Update()
-    {
-        UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.gunPriceInt);
-        UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.rateFirePriceInt);
-        UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.sizeBallPriceInt);
-    }
+  //  private void Update()
+  //  {
+  //      UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.gunPriceInt);
+  //      UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.rateFirePriceInt);
+  //      UpgradeActiveEffect(warninUgpgradeEffect, upgradeButtonScript.sizeBallPriceInt);
+  //  }
 
     public void UpgradeActiveEffect(GameObject warningEffect, int priceInt)
     {

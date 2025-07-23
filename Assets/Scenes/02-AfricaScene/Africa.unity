@@ -1328,6 +1328,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136428825}
   m_CullTransparentMesh: 0
+--- !u!1 &139204999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139205001}
+  - component: {fileID: 139205000}
+  m_Layer: 0
+  m_Name: BannerAds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &139205000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139204999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d631e23f26dc8f4186fcb1bcc66829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsController: {fileID: 1702344437}
+  waveControl: {fileID: 1068201429}
+  gameEconomy: {fileID: 1068201431}
+  playerTrigger: {fileID: 2129386546}
+  showRewardedAdsButton: {fileID: 2089094870}
+  additionalMoneyButton: {fileID: 436867503}
+  upgradeButton: {fileID: 1634276513}
+  coinAnim: {fileID: 1999311287}
+  adsTestTxt: {fileID: 0}
+  adsTestTxt2: {fileID: 0}
+  adsTestTxt3: {fileID: 0}
+  adsTestTxt4: {fileID: 0}
+  additionalMoneyCount: 2
+  isAdsShownRewardedHealth: 0
+  isAdsShownRewarded: 0
+  countShowRewardedClick: 0
+  idLoadRewardedAd: 0
+--- !u!4 &139205001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139204999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15072891, y: 1.7895199, z: 0.81354475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148683922
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,7 +4171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f51d1e1abfe15242b60567d2e726096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adsManager: {fileID: 925630121}
+  adsManager: {fileID: 139205000}
   additionalMoneyCount: 1
   additionalMoneyCountText: {fileID: 0}
   gameEconomy: {fileID: 1068201431}
@@ -4569,21 +4630,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 925630121}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+      - m_Target: {fileID: 139205000}
+        m_TargetAssemblyTypeName: BannerAds, Assembly-CSharp
         m_MethodName: ShowRewardedAdsAdditionalMoney
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 925630121}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: NoShowRewardedAdsAdditionalMoney
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11392,7 +11441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604087096}
   - component: {fileID: 604087095}
-  - component: {fileID: 604087094}
+  - component: {fileID: 604087097}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -11400,26 +11449,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &604087094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604087093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &604087095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11450,6 +11479,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604087097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604087093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!1 &610689178
 GameObject:
   m_ObjectHideFlags: 0
@@ -13699,62 +13759,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 449563582}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &925630120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 925630122}
-  - component: {fileID: 925630121}
-  m_Layer: 0
-  m_Name: AdsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &925630121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925630120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb529cbf91e089742b05cc67d473ede8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicManager: {fileID: 0}
-  settingsController: {fileID: 1702344437}
-  waveControl: {fileID: 1068201429}
-  gameEconomy: {fileID: 1068201431}
-  playerTrigger: {fileID: 2129386546}
-  showRewardedAdsButton: {fileID: 2089094870}
-  additionalMoneyButton: {fileID: 436867503}
-  additionalMoneyCount: 2
-  upgradeButton: {fileID: 0}
-  isAdsShownRewardedHealth: 0
-  isAdsShownRewarded: 0
-  coinAnim: {fileID: 1999311287}
---- !u!4 &925630122
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925630120}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.33687, y: 132.08667, z: -92.25689}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &956641012
 PrefabInstance:
@@ -19458,7 +19462,7 @@ MonoBehaviour:
   tutorialCount: 0
   saveTutorialCount: 0
   showRewardedAdsButton: {fileID: 2089094870}
-  adsManager: {fileID: 925630121}
+  bannerAdsManager: {fileID: 139205000}
 --- !u!4 &1068201430
 Transform:
   m_ObjectHideFlags: 0
@@ -20833,7 +20837,7 @@ Canvas:
   m_GameObject: {fileID: 1308270483}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 963194227}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -29001,7 +29005,7 @@ MonoBehaviour:
   gameControl: {fileID: 745067804}
   upgradeButton: {fileID: 1634276513}
   pauseButton: {fileID: 346805893}
-  waveControl: {fileID: 0}
+  waveControl: {fileID: 1068201429}
 --- !u!114 &1702344440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32119,21 +32123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 925630121}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+      - m_Target: {fileID: 139205000}
+        m_TargetAssemblyTypeName: BannerAds, Assembly-CSharp
         m_MethodName: ShowRewardedAdHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 925630121}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: NoShowRewardedAdHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33475,5 +33467,5 @@ SceneRoots:
   - {fileID: 186437268}
   - {fileID: 481863163}
   - {fileID: 1787106156}
-  - {fileID: 925630122}
   - {fileID: 395586374}
+  - {fileID: 139205001}

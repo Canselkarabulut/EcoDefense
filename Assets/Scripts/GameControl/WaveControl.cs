@@ -61,7 +61,7 @@ public class WaveControl : MonoBehaviour
     public int saveTutorialCount = 0; 
    
     public GameObject showRewardedAdsButton;
-    public AdsManager adsManager;
+    public BannerAds bannerAdsManager;
     
   //  [Header("TutorialPanel")]
   //  public GameObject tutorialUpgradePanel;
@@ -184,10 +184,10 @@ public class WaveControl : MonoBehaviour
         enemyLimit = _enemyLimit;
         waveText.text = _waveString;
         ShockWaveEffect();
-        adsManager.additionalMoneyCount = 1;
+        bannerAdsManager.additionalMoneyCount = 1;
       //  adsManager.additionalMoneyCountText.text = adsManager.additionalMoneyCount.ToString();
-        adsManager.isAdsShownRewarded = false;
-        adsManager.isAdsShownRewardedHealth = false; 
+      bannerAdsManager.isAdsShownRewarded = false;
+      bannerAdsManager.isAdsShownRewardedHealth = false; 
     }
 
 

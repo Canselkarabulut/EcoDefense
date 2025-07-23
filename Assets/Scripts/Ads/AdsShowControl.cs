@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AdsShowControl : MonoBehaviour
 {
-    public AdsManager adsManager;
+    public BannerAds adsManager;
     [Header("MoneyAds")] public int additionalMoneyCount = 1;
     public TextMeshProUGUI additionalMoneyCountText;
     public GameEconomy gameEconomy;
