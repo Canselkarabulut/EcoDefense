@@ -1,5 +1,5 @@
 # ninja log v5
-363	494	7740456561786314	C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z41304d/obj/arm64-v8a/libswappywrapper.so	3d963bf8c389cdea
-8	363	7740456560505763	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	860884699c12d685
-56	551	7749944559431286	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	860884699c12d685
-551	807	7749944561968689	C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z41304d/obj/arm64-v8a/libswappywrapper.so	3d963bf8c389cdea
+2303	2608	7762878842573604	C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z41304d/obj/arm64-v8a/libswappywrapper.so	3d963bf8c389cdea
+668	2303	7762878839517301	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	860884699c12d685
+158	7604	7763563540784947	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	860884699c12d685
+7605	10001	7763563561339603	C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z41304d/obj/arm64-v8a/libswappywrapper.so	3d963bf8c389cdea
