@@ -66,7 +66,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "swappywrapper::@7e25bd1f32ce224db4e9",
-					"jsonFile" : "target-swappywrapper-RelWithDebInfo-8b02a83ca82094d78445.json",
+					"jsonFile" : "target-swappywrapper-RelWithDebInfo-7e164320490b7e245a2b.json",
 					"name" : "swappywrapper",
 					"projectIndex" : 1
 				}
@@ -76,7 +76,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/.utmp/RelWithDebInfo/4z41304d/arm64-v8a",
+		"build" : "C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/.utmp/RelWithDebInfo/4z41304d/armeabi-v7a",
 		"source" : "C:/Users/Canse/OneDrive/Belgeler/GitHub/EcoDefense/ecoDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp"
 	},
 	"version" : 
