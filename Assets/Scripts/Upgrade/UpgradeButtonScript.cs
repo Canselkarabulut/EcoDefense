@@ -356,7 +356,7 @@ public class UpgradeButtonScript : MonoBehaviour
         ButtonInteractable(rateFireButton, rateFirePriceInt, rateFireCount,maxgunPowerButtonClickCount);
         ButtonInteractable(sizeBallButton, sizeBallPriceInt, sizeBallCount,maxsizeBalButtonClickCount);
     }
-
+    
     public void ButtonInteractable(Button button, int priceInt, int count ,int maxButtonClickCount )
     {
         if (GameEconomy.sCoinCount > priceInt - 1)
@@ -419,5 +419,17 @@ public class UpgradeButtonScript : MonoBehaviour
         sizeBallPriceText.text = PlayerPrefs.GetString("sizeBallPriceText16", "741");
 
         playerFire.spawnInterval = PlayerPrefs.GetFloat("spawnInterval");
+    }
+    
+    
+    
+    
+    //paramız olduğunda upgrade butona tıklmamız gerektiğini ve upgrade almamızı sağlayan ek yapmalıyız.
+    //yeterli para olunca upgrade butonunun üstünde el çıksın tıklamayı gösteren
+    //tıkladıktan sonra da açılan panelde alınabilir olanların etrafında effect olsun
+
+    public void ActiveButtonControl()
+    {
+        //aktif olan butonlar effect ile parlayacak
     }
 }

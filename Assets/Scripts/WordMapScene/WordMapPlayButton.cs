@@ -91,5 +91,6 @@ public class WordMapPlayButton : MonoBehaviour
                //tüm oyun bitti - play tuşu çalışmayacak onun yerine alternatif düşün
                 break;
         }
+        gameObject.SetActive(false);
     }
 }

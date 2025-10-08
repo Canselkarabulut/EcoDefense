@@ -14,6 +14,7 @@ public class MusicManager : MonoBehaviour
     [HideInInspector] public AudioSource audioSource;
 
     private static MusicManager instance;
+    private int _musicNum = 1;
 
     void Awake()
     {
@@ -27,33 +28,27 @@ public class MusicManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private const string PlayerPrefsKey = "IsFirstTime";
-    private int _musicNum;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        AudioClip musicToPlay = null;
+        _musicNum = PlayerPrefs.GetInt("musicNum", 1);
+        musicToPlay = backgrounMusic;
+        if (_musicNum == 1)
+        {
+            StartMusic();
+        }
+
+        if (_musicNum == 0)
+        {
+            StopMusic();
+        }
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         PlayMusicForScene(SceneManager.GetActiveScene().buildIndex);
-        //ilk açılışta müziğin çalması
-        if (!PlayerPrefs.HasKey(PlayerPrefsKey))
-        {
-            PlayerPrefs.SetInt(PlayerPrefsKey, 1);
-            StartMusic();
-        }
-        _musicNum = PlayerPrefs.GetInt("musicNum", 1);
-        if (_musicNum == 0)
-        {
-            StopMusic();
-        }
-
-        if (_musicNum == 1)
-        {
-            StartMusic();
-        }
     }
 
     void PlayMusicForScene(int sceneIndex)
@@ -74,6 +69,7 @@ public class MusicManager : MonoBehaviour
         {
             musicToPlay = backgrounMusic;
         }
+
         if (musicToPlay != null)
         {
             // Müzik zaten çalıyorsa ve aynı müzik tekrar çalınacaksa
@@ -98,5 +94,4 @@ public class MusicManager : MonoBehaviour
     {
         audioSource.Play();
     }
-
 }

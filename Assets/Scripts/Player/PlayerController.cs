@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public FloatingJoystick floatingJoystick;
 
-    [SerializeField] Animator anim;
+    [SerializeField]public Animator anim;
     private PlayerRange playerRange;
     public AudioSource walkSound;
 

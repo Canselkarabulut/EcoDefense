@@ -76,7 +76,7 @@ public class PlayerFire : MonoBehaviour
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-        bulletRigidbody.velocity = Vector3.zero;
+        bulletRigidbody.linearVelocity = Vector3.zero;
       //  ObjectPool.Instance.ReturnObjectToPool(bullet);
         fireEffect.SetActive(false);
     }
